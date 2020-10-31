@@ -112,3 +112,14 @@
         </ul>
       </div> -->
     </nav>
+    <style>
+    .custom-card-dashboard{padding: 5%; margin-bottom: 3%; font-size: 1.4rem;
+    }
+    .custom-card-dashboard:hover{
+        background-color: blue;
+        color: white;
+    }
+    a:hover{
+        text-decoration: none;
+    }
+    </style>
