@@ -38,6 +38,8 @@ $routes->get('/', 'PublicPageLoader::home');
 $routes->get('admin-login','PublicPageLoader::admin_login');
 $routes->post('user-login-exe','Authentication::login');
 
+// Admin Dashboard
+$routes->get('admin-dashboard','AdminPageLoader::dashboard');
 
 /**
  * --------------------------------------------------------------------
