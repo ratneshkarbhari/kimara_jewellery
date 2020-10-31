@@ -16,8 +16,8 @@ if (file_exists(SYSTEMPATH . 'Config/Routes.php'))
  * --------------------------------------------------------------------
  */
 $routes->setDefaultNamespace('App\Controllers');
-$routes->setDefaultController('Home');
-$routes->setDefaultMethod('index');
+$routes->setDefaultController('PublicPageLoader');
+$routes->setDefaultMethod('home');
 $routes->setTranslateURIDashes(false);
 $routes->set404Override();
 $routes->setAutoRoute(true);
@@ -30,7 +30,14 @@ $routes->setAutoRoute(true);
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-$routes->get('/', 'Home::index');
+$routes->get('not-found', 'PublicPageLoader::not_found');
+$routes->get('/', 'PublicPageLoader::home');
+
+
+// SitePages
+$routes->get('admin-login','PublicPageLoader::admin_login');
+$routes->post('user-login-exe','Authentication::login');
+
 
 /**
  * --------------------------------------------------------------------
