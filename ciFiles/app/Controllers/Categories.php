@@ -141,6 +141,27 @@ class Categories extends BaseController
             unlink($featuredImgSquarePath);
         }
 
+        $categoryDeleted = $categoryModel->delete($categoryId);
+
+        $data['title'] = 'Manage Categories';
+
+        $data['categories'] = $data['pcats'] = $categoryModel->findAll();
+
+
+        if ($categoryDeleted) {
+            
+    
+            $data['error'] = ''; $data['success'] = 'Category Deleted Successfully';
+
+            $this->admin_page_loader('categories',$data);
+            
+        }else {
+
+            $data['error'] = 'Category couldnt be deleted'; $data['success'] = '';
+
+            $this->admin_page_loader('categories',$data);
+            
+        }
 
     }
 
