@@ -11,8 +11,10 @@
 
 
     <!-- Bootstrap core CSS -->
-<link href="<?php echo site_url('assets/css/bootstrap.min.css'); ?>" rel="stylesheet">
+    <link href="<?php echo site_url('assets/css/bootstrap.min.css'); ?>" rel="stylesheet">
 
+    <!-- Admin css -->
+    <link href="<?php echo site_url('assets/css/admin.min.css'); ?>" rel="stylesheet">
 
 
 
@@ -43,7 +45,7 @@
   <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-toggle="collapse" data-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
+  <input class="form-control form-control-dark w-100 d-none" type="text" placeholder="Search" aria-label="Search">
   <ul class="navbar-nav px-3">
     <li class="nav-item text-nowrap">
       <a class="nav-link" href="<?php echo site_url('logout'); ?>">Sign out</a>
@@ -112,14 +114,3 @@
         </ul>
       </div> -->
     </nav>
-    <style>
-    .custom-card-dashboard{padding: 5%; margin-bottom: 3%; font-size: 1.4rem;
-    }
-    .custom-card-dashboard:hover{
-        background-color: blue;
-        color: white;
-    }
-    a:hover{
-        text-decoration: none;
-    }
-    </style>

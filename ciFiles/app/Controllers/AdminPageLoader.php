@@ -1,5 +1,8 @@
 <?php namespace App\Controllers;
 
+use App\Models\CategoryModel;
+use App\Models\ProductModel;
+
 class AdminPageLoader extends BaseController
 {
 
@@ -15,6 +18,14 @@ class AdminPageLoader extends BaseController
 
     }
 
+    private function admin_page_loader($viewName,$data){
+
+        echo view('templates/admin_header',$data);
+        echo view('adminPages/'.$viewName,$data);
+        echo view('templates/admin_footer',$data);
+
+    }
+
 	public function dashboard()
 	{
 
@@ -22,9 +33,41 @@ class AdminPageLoader extends BaseController
         
         $data['title'] = 'Admin Dashboard';
         
-        echo view('templates/admin_header',$data);
-        echo view('adminPages/dashboard',$data);
-        echo view('templates/admin_footer',$data);
+        $this->admin_page_loader('dashboard',$data);
+
+    }
+
+    public function categories()
+	{
+
+        $this->send_to_login();
+        
+        $data['title'] = 'Manage Categories';
+
+        $categoryModel = new CategoryModel();
+
+        $data['categories'] = $data['pcats'] = $categoryModel->findAll();
+
+        $data['error'] = $data['success'] = '';
+        
+        $this->admin_page_loader('categories',$data);
+
+    }
+
+    public function add_category()
+	{
+
+        $this->send_to_login();
+        
+        $data['title'] = 'Add Category';
+
+        $categoryModel = new CategoryModel();
+
+        $data['categories'] = $categoryModel->findAll();
+
+        $data['error'] = $data['success'] = '';
+        
+        $this->admin_page_loader('add_category',$data);
 
     }
 }

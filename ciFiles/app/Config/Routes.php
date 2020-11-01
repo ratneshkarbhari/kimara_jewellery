@@ -40,6 +40,12 @@ $routes->post('user-login-exe','Authentication::login');
 
 // Admin Dashboard
 $routes->get('admin-dashboard','AdminPageLoader::dashboard');
+$routes->get('manage-categories','AdminPageLoader::categories');
+$routes->get('add-category','AdminPageLoader::add_category');
+
+// Category Routs
+$routes->post('add-category-exe','Categories::add');
+
 
 /**
  * --------------------------------------------------------------------
