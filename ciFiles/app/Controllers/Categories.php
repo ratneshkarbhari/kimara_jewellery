@@ -118,4 +118,30 @@ class Categories extends BaseController
         
 
     }
+
+    public function delete(){
+        $this->send_to_login();
+
+        $categoryId = $this->request->getPost('id');
+
+        $categoryModel = new CategoryModel();
+
+        $categoryData = $categoryModel->find($categoryId);
+
+        $featuredImageFolderPath = './assets/images/category_featured_images/';
+
+        $featuredImgRectPath = $featuredImageFolderPath.$categoryData['featured_image_rect'];
+        $featuredImgSquarePath = $featuredImageFolderPath.$categoryData['featured_image_square'];
+
+        if(is_file($featuredImgRectPath)){
+            unlink($featuredImgRectPath);
+        }
+
+        if (is_file($featuredImgSquarePath)) {
+            unlink($featuredImgSquarePath);
+        }
+
+
+    }
+
 }

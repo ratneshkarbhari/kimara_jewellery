@@ -43,7 +43,7 @@
                             <td><?php echo $category['description']; ?></td>
                             <td>
                                 <a class="btn btn-secondary" href="<?php echo site_url('edit-category/'.$category['slug']); ?>">Edit</a>
-                                <form action="" style="display: inline;" method="post">
+                                <form action="<?php echo site_url('delete-category-exe'); ?>" style="display: inline;" method="post">
                                     <input type="hidden" name="id" value="<?php echo $category['id']; ?>">
                                     <button type="submit" class="btn btn-danger">Delete</button>
                                 </form>

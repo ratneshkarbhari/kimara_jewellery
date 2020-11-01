@@ -45,6 +45,7 @@ $routes->get('add-category','AdminPageLoader::add_category');
 
 // Category Routs
 $routes->post('add-category-exe','Categories::add');
+$routes->post('delete-category-exe','Categories::delete');
 
 
 /**

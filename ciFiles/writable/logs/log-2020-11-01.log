@@ -44,3 +44,10 @@ CRITICAL - 2020-11-01 06:34:21 --> Undefined variable: featuredImageRandomName
 #3 /var/www/html/kimara_jewellery/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
 #4 /var/www/html/kimara_jewellery/index.php(47): CodeIgniter\CodeIgniter->run()
 #5 {main}
+CRITICAL - 2020-11-01 08:16:28 --> Undefined variable: featuredImageRect
+#0 /var/www/html/kimara_jewellery/ciFiles/app/Controllers/Categories.php(133): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/kimara_jewellery/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Categories->delete()
+#2 /var/www/html/kimara_jewellery/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#3 /var/www/html/kimara_jewellery/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#4 /var/www/html/kimara_jewellery/index.php(47): CodeIgniter\CodeIgniter->run()
+#5 {main}
