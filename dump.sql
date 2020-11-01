@@ -66,7 +66,6 @@ CREATE TABLE `categories` (
 
 LOCK TABLES `categories` WRITE;
 /*!40000 ALTER TABLE `categories` DISABLE KEYS */;
-INSERT INTO `categories` VALUES (1,'Designs under 15K','designs-under-15k','Designs under 15 K Description','1604234102_2220e43de1c4745147d8.jpg','1604234102_30d0e454555b9da7fe13.jpg',0,'visible');
 /*!40000 ALTER TABLE `categories` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -177,4 +176,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-11-01 19:32:50
+-- Dump completed on 2020-11-01 19:53:47
