@@ -88,7 +88,7 @@
             
                 <div class="col-lg-4 col-md-6-sm-12">
                 
-                    <a href="">
+                    <a href="<?php echo site_url('product/'.$product['slug']); ?>">
                         <div class="card">
                         
                             <img src="<?php echo site_url('assets/images/featured_image_product/'.$product['featured_image']); ?>" class="card-img-top">
@@ -123,23 +123,3 @@
     max-height: 70vh;
 }
 </style>
-<script>
-var owlSliderHome = $('#home-hero-slider');
-owlSliderHome.owlCarousel({
-    responsive:{
-        0:{
-            items:1
-        },
-        600:{
-            items:1
-        },
-        1000:{
-            items:1
-        }
-    },
-    loop:true,
-    autoplay:true,
-    autoplayTimeout:3500,
-    autoplayHoverPause:true
-});
-</script>

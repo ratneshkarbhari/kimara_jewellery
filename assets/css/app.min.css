@@ -28,6 +28,11 @@ a.nav-link{
     background-color: lightgray;
 }
 
+footer#site-footer{
+  padding: 2% 0;
+  background-color: #424242;;
+}
+
 /* 
   ##Device = Desktops
   ##Screen = 1281px to higher resolution desktops

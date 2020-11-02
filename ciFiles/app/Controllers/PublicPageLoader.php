@@ -38,8 +38,7 @@ class PublicPageLoader extends BaseController
 
 	}
 
-	public function admin_login()
-	{
+	public function admin_login(){
 
 		$session = session();
 
@@ -67,6 +66,26 @@ class PublicPageLoader extends BaseController
 		echo view('templates/footer',$data);
 
 	}
+
+
+	public function shop(){
+		$data['title'] = 'Shop';
+
+		$productModel = new ProductModel();
+
+		$cache = \Config\Services::cache();
+
+		
+		if (!$cache->get('cached_products')) {
+			$productsFetched = $productModel->findAll();
+			$cache->save('cached_products',$productsFetched);
+		}
+
+		$data['products'] = $cache->get('cached_products');
+
+		$this->public_page_loader('shop',$data);
+	}
+
 	//--------------------------------------------------------------------
 
 }

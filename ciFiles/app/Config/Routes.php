@@ -36,7 +36,11 @@ $routes->get('/', 'PublicPageLoader::home');
 
 // SitePages
 $routes->get('admin-login','PublicPageLoader::admin_login');
-$routes->post('user-login-exe','Authentication::login');
+$routes->get('shop','PublicPageLoader::shop');
+
+
+// Auth Endpoints
+
 
 // Admin Dashboard
 $routes->get('admin-dashboard','AdminPageLoader::dashboard');
@@ -55,6 +59,9 @@ $routes->post('update-category-exe','Categories::update');
 // Products
 $routes->post('add-product-exe','Products::add');
 $routes->post('delete-product-exe','Products::delete');
+
+
+
 
 /**
  * --------------------------------------------------------------------
