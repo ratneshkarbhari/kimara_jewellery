@@ -4,7 +4,7 @@
 .custom-card-dashboard{padding: 5%; margin-bottom: 3%; font-size: 1.4rem;
 }
 .custom-card-dashboard:hover{
-    background-color: blue;
+    background-color: purple;
     color: white;
 }
 a:hover{
@@ -14,6 +14,26 @@ a:hover{
     margin-top: 5%;
 }
 .sidebar .nav-link:hover{
-    background-color: blue;
+    background-color: purple;
     color: #fff;
+}
+
+.sidebar-link:hover{
+    color: #fff !important;
+}
+.sidebar-link{
+    color: #000;
+}
+.navbar-brand{
+    color: #fff !important;
+}
+a{
+    color: #000 !important;
+}
+.bg-dark{
+    background-color: purple !important;
+}
+.btn-success,.btn-primary,.btn-danger,.btn-secondary{
+    color: #fff !important;
+    cursor: pointer;
 }

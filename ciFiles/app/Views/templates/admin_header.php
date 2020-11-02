@@ -48,7 +48,7 @@
   <input class="form-control form-control-dark w-100 d-none" type="text" placeholder="Search" aria-label="Search">
   <ul class="navbar-nav px-3">
     <li class="nav-item text-nowrap">
-      <a class="nav-link" href="<?php echo site_url('logout'); ?>">Sign out</a>
+      <a class="nav-link" style="color: white !important;" href="<?php echo site_url('logout'); ?>">Sign out</a>
     </li>
   </ul>
 </nav>
@@ -59,22 +59,22 @@
       <div class="sidebar-sticky pt-3">
         <ul class="nav flex-column">
             <li class="nav-item">
-                <a class="nav-link " href="<?php echo site_url('admin-dashboard'); ?>">
+                <a class="nav-link sidebar-link" href="<?php echo site_url('admin-dashboard'); ?>">
                 Dashboard 
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link " href="<?php echo site_url('manage-categories'); ?>">
+                <a class="nav-link sidebar-link" href="<?php echo site_url('manage-categories'); ?>">
                 Categories 
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link " href="<?php echo site_url('manage-products'); ?>">
+                <a class="nav-link sidebar-link" href="<?php echo site_url('manage-products'); ?>">
                 Products 
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link " href="<?php echo site_url('manage-orders'); ?>">
+                <a class="nav-link sidebar-link" href="<?php echo site_url('manage-orders'); ?>">
                 Orders 
                 </a>
             </li>

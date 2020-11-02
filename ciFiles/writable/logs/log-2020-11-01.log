@@ -51,3 +51,20 @@ CRITICAL - 2020-11-01 08:16:28 --> Undefined variable: featuredImageRect
 #3 /var/www/html/kimara_jewellery/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
 #4 /var/www/html/kimara_jewellery/index.php(47): CodeIgniter\CodeIgniter->run()
 #5 {main}
+CRITICAL - 2020-11-01 11:37:36 --> Invalid file: adminPages/edit_category.php
+#0 /var/www/html/kimara_jewellery/ciFiles/vendor/codeigniter4/framework/system/View/View.php(228): CodeIgniter\Exceptions\FrameworkException::forInvalidFile()
+#1 /var/www/html/kimara_jewellery/ciFiles/vendor/codeigniter4/framework/system/Common.php(1119): CodeIgniter\View\View->render()
+#2 /var/www/html/kimara_jewellery/ciFiles/app/Controllers/AdminPageLoader.php(24): view()
+#3 /var/www/html/kimara_jewellery/ciFiles/app/Controllers/AdminPageLoader.php(88): App\Controllers\AdminPageLoader->admin_page_loader()
+#4 /var/www/html/kimara_jewellery/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\AdminPageLoader->edit_category()
+#5 /var/www/html/kimara_jewellery/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#6 /var/www/html/kimara_jewellery/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#7 /var/www/html/kimara_jewellery/index.php(47): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-11-01 22:03:01 --> Undefined variable: featuredImageFolderPath
+#0 /var/www/html/kimara_jewellery/ciFiles/app/Controllers/Categories.php(214): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/kimara_jewellery/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Categories->update()
+#2 /var/www/html/kimara_jewellery/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#3 /var/www/html/kimara_jewellery/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#4 /var/www/html/kimara_jewellery/index.php(47): CodeIgniter\CodeIgniter->run()
+#5 {main}

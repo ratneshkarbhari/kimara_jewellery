@@ -27,6 +27,7 @@ class Categories extends BaseController
     }
 
 
+
 	public function add()
 	{
 
@@ -163,6 +164,154 @@ class Categories extends BaseController
             
         }
 
+    }
+
+    public function update(){
+     
+        $this->send_to_login();
+
+        $featuredImageFolderPath = './assets/images/category_featured_images/';
+
+    
+        $categoryId = $this->request->getPost('id');
+
+        $categoryModel = new CategoryModel();
+
+        $categoryData = $categoryModel->find($categoryId);
+
+        $title = $this->request->getPost('title');
+        
+        $slugEntered = $this->request->getPost('slug');
+        
+        if ($slugEntered=='') {
+            $slug = url_title($title,'-',TRUE);
+        } else {
+            $slug = url_title($slugEntered,'-',TRUE);
+        }
+        
+        $categoryExists = $categoryModel->where('slug',$slug)->first();
+
+        if ($categoryExists&&$categoryExists['id']!=$categoryId) {
+            
+            $data['title'] = 'Edit Category';
+
+            $categoryModel = new CategoryModel();
+    
+            $data['category'] = $categoryModel->where('slug',$slug)->first();
+    
+            $data['pcats'] = $categoryModel->findAll();
+    
+            $data['error'] = 'The slug already exists'; $data['success'] = '';
+            
+            $this->admin_page_loader('edit_category',$data);
+            
+        } else {
+
+            $description = $this->request->getPost('description');
+            $parent = $this->request->getPost('parent');
+
+            // Featured Image Square
+
+
+
+            $featuredImgSquarePath = $featuredImageFolderPath.$categoryData['featured_image_square'];
+
+            // Featured Image Rectangular
+
+    
+            $featuredImageRect = $this->request->getFile('featured_image_rect');
+
+            if ($featuredImageRect->isValid()) {
+
+                $prevFeaturedImgRectPath = $featuredImageFolderPath.$categoryData['featured_image_rect'];
+
+                if (is_file($prevFeaturedImgRectPath)) {
+                    unlink($prevFeaturedImgRectPath);
+                }
+
+                $featuredImageRectRandomName = $featuredImageRect->getRandomName();
+    
+                $featuredImageRect->move('assets/images/category_featured_images', $featuredImageRectRandomName);
+                
+            }else {
+                $featuredImageRectRandomName = $categoryData['featured_image_rect'];
+            }
+
+
+            // Featured Image Square
+
+
+            $featuredImageSquare = $this->request->getFile('featured_image_square');
+
+
+            if ($featuredImageSquare->isValid()) {
+
+                $prevFeaturedImgSquarePath = $featuredImageFolderPath.$categoryData['featured_image_rect'];
+
+                if (is_file($prevFeaturedImgSquarePath)) {
+                    unlink($prevFeaturedImgSquarePath);
+                }
+
+                $featuredImageSquareRandomName = $featuredImageSquare->getRandomName();
+    
+                $featuredImageSquare->move('assets/images/category_featured_images', $featuredImageSquareRandomName);
+                
+            }else {
+                $featuredImageSquareRandomName = $categoryData['featured_image_square'];
+            }
+    
+
+            
+    
+    
+    
+            $categoryData = array(
+                'title' => $title,
+                'slug' => $slug,
+                'description' => $description,
+                'parent' => $parent,
+                'featured_image_rect' => $featuredImageRectRandomName,
+                'featured_image_square' => $featuredImageSquareRandomName,
+                'visibility' => $this->request->getPost('visibility')
+            );
+            
+            $response = $categoryModel->update($categoryId,$categoryData);
+
+            if ($response) {
+                
+                $data['title'] = 'Edit Category';
+
+                $categoryModel = new CategoryModel();
+        
+                $data['category'] = $categoryModel->where('slug',$slug)->first();
+        
+                $data['pcats'] = $categoryModel->findAll();
+        
+                $data['error'] = ''; $data['success'] = 'Category updated';
+                
+                $this->admin_page_loader('edit_category',$data);
+
+
+            } else {
+                
+                $data['title'] = 'Edit Category';
+
+                $categoryModel = new CategoryModel();
+        
+                $data['category'] = $categoryModel->where('slug',$slug)->first();
+        
+                $data['pcats'] = $categoryModel->findAll();
+        
+                $data['error'] = 'Category not updated'; $data['success'] = '';
+                
+                $this->admin_page_loader('edit_category',$data);
+
+
+            }
+            
+
+        }
+        
     }
 
 }
