@@ -124,7 +124,7 @@ CREATE TABLE `products` (
   `sizes` text NOT NULL,
   `materials` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -133,7 +133,7 @@ CREATE TABLE `products` (
 
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
-INSERT INTO `products` VALUES (1,'Designs under 15K product','designs-under-15k-product','Product Description',2,0.00,0.00,'1604298643_e79e8a4845e797d458a9.jpg','1604298643_ec741933966b0dbcf7a6.jpg,1604298643_38c0e40b8f2d577deb8b.jpg,1604298643_4fd8f0fba00e4914beda.jpg','1604298643_f64361f3187ae568dfb6.jpg,1604298643_18c5ba031a1b59e549bc.jpg,1604298643_44f54226e2148f03504f.jpg',1,'yes','visible','','');
+INSERT INTO `products` VALUES (4,'Designs under 15K product','designs-under-15k-product','Product Description',2,10.00,5.00,'1604308265_022137974dbafc7b1fdc.jpg','1604308265_7ebb9f627c0560a70298.jpg,1604308265_9f71d28543ce8e7e194c.jpg,1604308265_051b0768a7bb04778391.jpg','1604308265_e3ec82104d65d3b7654b.jpg,1604308265_daba1a4be9f91d3b12a3.jpg,1604308265_9f57953fe1a66f10950f.jpg',1000,'yes','visible','small,medium,large','silver,gold,rosegold');
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -178,4 +178,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-11-02 12:09:51
+-- Dump completed on 2020-11-02 14:54:42
