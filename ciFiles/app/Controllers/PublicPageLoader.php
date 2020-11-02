@@ -69,6 +69,7 @@ class PublicPageLoader extends BaseController
 
 
 	public function shop(){
+
 		$data['title'] = 'Shop';
 
 		$productModel = new ProductModel();
@@ -85,6 +86,19 @@ class PublicPageLoader extends BaseController
 
 		$this->public_page_loader('shop',$data);
 	}
+
+	public function product_page($slug){
+
+		$data['title'] = 'Shop';
+
+		$productModel = new ProductModel();
+
+		$data['product'] = $productModel->where('slug',$slug)->first();
+
+		$this->public_page_loader('product_page',$data);
+
+	}
+
 
 	//--------------------------------------------------------------------
 

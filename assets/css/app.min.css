@@ -38,6 +38,10 @@ footer#site-footer{
   ##Screen = 1281px to higher resolution desktops
 */
 
+main.page-content#product-page{
+  padding: 5% 0;
+}
+
 @media (min-width: 1281px) {
   
     a.navbar-brand{

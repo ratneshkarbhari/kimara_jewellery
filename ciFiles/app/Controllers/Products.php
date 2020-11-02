@@ -120,12 +120,14 @@ class Products extends BaseController
                 'slug' => $slug,
                 'description' => $description,
                 'category' => $category,
-                'price' =>  $this->request->getPost('price'),
-                'sale_price' =>  $this->request->getPost('sale_price'),
                 'featured_image' => $featuredImageRandomName,
                 'gallery_images' => $galleryImageNames,
-                'featured' => $this->request->getPost('featured'),
                 'gallery_videos' => $galleryVideoNames,
+                'sizes' => $this->request->getPost('sizes'),
+                'materials' => $this->request->getPost('materials'),
+                'featured' => $this->request->getPost('featured'),
+                'price' =>  $this->request->getPost('price'),
+                'sale_price' =>  $this->request->getPost('sale_price'),
                 'stock_count' => $this->request->getPost('stock_count'),
                 'visibility' => $this->request->getPost('visibility')
             );
