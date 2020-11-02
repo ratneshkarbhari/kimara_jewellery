@@ -112,19 +112,19 @@ CREATE TABLE `products` (
   `title` text NOT NULL,
   `slug` varchar(500) NOT NULL,
   `description` text NOT NULL,
+  `category` int NOT NULL,
   `price` decimal(10,2) NOT NULL,
   `sale_price` decimal(10,2) NOT NULL,
   `featured_image` varchar(500) NOT NULL,
   `gallery_images` longtext NOT NULL,
   `gallery_videos` longtext NOT NULL,
-  `youtube_video_links` longtext NOT NULL,
-  `attributes_json` longtext NOT NULL,
   `stock_count` int NOT NULL,
   `featured` varchar(100) NOT NULL,
-  `attr_names` longtext NOT NULL,
   `visibility` varchar(50) NOT NULL,
+  `sizes` text NOT NULL,
+  `materials` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -133,6 +133,7 @@ CREATE TABLE `products` (
 
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
+INSERT INTO `products` VALUES (1,'Designs under 15K product','designs-under-15k-product','Product Description',2,0.00,0.00,'1604298643_e79e8a4845e797d458a9.jpg','1604298643_ec741933966b0dbcf7a6.jpg,1604298643_38c0e40b8f2d577deb8b.jpg,1604298643_4fd8f0fba00e4914beda.jpg','1604298643_f64361f3187ae568dfb6.jpg,1604298643_18c5ba031a1b59e549bc.jpg,1604298643_44f54226e2148f03504f.jpg',1,'yes','visible','','');
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -177,4 +178,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-11-02  9:39:57
+-- Dump completed on 2020-11-02 12:09:51

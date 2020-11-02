@@ -44,13 +44,17 @@ $routes->get('manage-categories','AdminPageLoader::categories');
 $routes->get('add-category','AdminPageLoader::add_category');
 $routes->get('edit-category/(:any)','AdminPageLoader::edit_category/$1');
 $routes->get('manage-products','AdminPageLoader::products');
-$routes->get('add-products','AdminPageLoader::add_product');
+$routes->get('add-product','AdminPageLoader::add_product');
 
 // Category Routs
 $routes->post('add-category-exe','Categories::add');
 $routes->post('delete-category-exe','Categories::delete');
 $routes->post('update-category-exe','Categories::update');
 
+
+// Products
+$routes->post('add-product-exe','Products::add');
+$routes->post('delete-product-exe','Products::delete');
 
 /**
  * --------------------------------------------------------------------

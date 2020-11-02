@@ -70,6 +70,7 @@ class AdminPageLoader extends BaseController
         $this->admin_page_loader('add_category',$data);
 
     }
+
     public function edit_category($slug)
 	{
 
@@ -118,7 +119,7 @@ class AdminPageLoader extends BaseController
 
         $data['error'] = $data['success'] = '';
         
-        $this->admin_page_loader('add_category',$data);
+        $this->admin_page_loader('add_product',$data);
     }
 
 }
