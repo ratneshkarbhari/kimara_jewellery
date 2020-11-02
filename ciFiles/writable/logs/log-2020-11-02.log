@@ -86,3 +86,20 @@ CRITICAL - 2020-11-02 00:38:41 --> Undefined variable: categories
 #7 /var/www/html/kimara_jewellery/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
 #8 /var/www/html/kimara_jewellery/index.php(47): CodeIgniter\CodeIgniter->run()
 #9 {main}
+CRITICAL - 2020-11-02 00:47:27 --> Class 'App\Controllers\CategoryModel' not found
+#0 /var/www/html/kimara_jewellery/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\PublicPageLoader->home()
+#1 /var/www/html/kimara_jewellery/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#2 /var/www/html/kimara_jewellery/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#3 /var/www/html/kimara_jewellery/index.php(47): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-11-02 00:48:04 --> Undefined index: featured_image
+#0 /var/www/html/kimara_jewellery/ciFiles/app/Views/sitePages/home.php(35): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/kimara_jewellery/ciFiles/vendor/codeigniter4/framework/system/View/View.php(246): include('/var/www/html/k...')
+#2 /var/www/html/kimara_jewellery/ciFiles/vendor/codeigniter4/framework/system/Common.php(1119): CodeIgniter\View\View->render()
+#3 /var/www/html/kimara_jewellery/ciFiles/app/Controllers/PublicPageLoader.php(12): view()
+#4 /var/www/html/kimara_jewellery/ciFiles/app/Controllers/PublicPageLoader.php(37): App\Controllers\PublicPageLoader->public_page_loader()
+#5 /var/www/html/kimara_jewellery/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\PublicPageLoader->home()
+#6 /var/www/html/kimara_jewellery/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#7 /var/www/html/kimara_jewellery/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#8 /var/www/html/kimara_jewellery/index.php(47): CodeIgniter\CodeIgniter->run()
+#9 {main}
