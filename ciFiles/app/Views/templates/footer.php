@@ -1,4 +1,14 @@
 
+
+    <nav id="mobileBottomNav" class="container" style="padding: 0.5rem 0.7rem; width: 100%; margin: auto;" >
+        
+        <a href="<?php echo site_url(''); ?>" class="nav-linkx w-20 d-inline-block text-center "><img src="<?php echo site_url('assets/icons/home.svg'); ?>" width="15px" height="15px"><br><small>Home</small></a>
+        <a class="nav-linkx w-20 d-inline-block text-center" href="<?php echo site_url('my-account'); ?>"><img src="<?php echo site_url('assets/icons/heart.svg'); ?>" width="15px" height="15px"><br><small>Wishlist</small></a>
+        <a class="nav-linkx w-20 d-inline-block text-center" href="<?php echo site_url('cart'); ?>"><img src="<?php echo site_url('assets/icons/shopping-bag.svg'); ?>"  width="15px" height="15px"><br><small>Cart</small></a>
+        <a class="nav-linkx w-20 d-inline-block text-center" href="<?php echo site_url('my-account'); ?>"><img src="<?php echo site_url('assets/icons/user.svg'); ?>"  width="15px" height="15px"><br><small>Account</small></a>
+    </nav>
+
+
     <footer id="site-footer">
     
         <div class="container">

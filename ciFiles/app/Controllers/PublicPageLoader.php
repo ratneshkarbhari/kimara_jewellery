@@ -21,18 +21,12 @@ class PublicPageLoader extends BaseController
 		$categoryModel = new CategoryModel();
 		$productModel = new ProductModel();
 
-		$cache = \Config\Services::cache();
+		$categoriesFetched = $categoryModel->findAll();
+		$productsFetched = $productModel->findAll();
 
-		
-		if (!$cache->get('cached_categories')) {
-			$categoriesFetched = $categoryModel->findAll();
-			$productsFetched = $productModel->findAll();
-			$cache->save('cached_categories',$categoriesFetched);
-			$cache->save('cached_products',$productsFetched);
-		}
 
-		$data['categories'] = $cache->get('cached_categories');
-		$data['products'] = $cache->get('cached_products');
+		$data['categories'] = $categoriesFetched;
+		$data['products'] = $productsFetched;
 
 		$this->public_page_loader('home',$data);
 
