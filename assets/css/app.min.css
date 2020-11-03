@@ -96,12 +96,41 @@ nav#mobileBottomNav{
   z-index: 90009;
   background-color: white;
 }
+div#sidenavMobileCloser{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999998;
+  bottom: 0;
+  background-color: black;
+  opacity: 0.5;
+  display: none;
+}
+div#sidenavMobile{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 75%;
+  z-index: 999999;
+  bottom: 0;
+  background-color: white;
+  display: none;
+}
+a.dropdown-item{
+  font-size: 15px !important;
+  font-weight: 900 !important;
+}
 
 @media (min-width: 1281px) {
   
     /* a.navbar-brand{
         width: 20%;
     } */
+
+    nav#mobileBottomNav{
+      display: none;
+    }
     
   }
   
@@ -115,6 +144,9 @@ nav#mobileBottomNav{
     /* a.navbar-brand{
         width: 30%;
     } */
+    nav#mobileBottomNav{
+      display: none;
+    }
     
   }
   
