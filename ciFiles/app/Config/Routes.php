@@ -50,8 +50,9 @@ $routes->get('add-category','AdminPageLoader::add_category');
 $routes->get('edit-category/(:any)','AdminPageLoader::edit_category/$1');
 $routes->get('manage-products','AdminPageLoader::products');
 $routes->get('add-product','AdminPageLoader::add_product');
+$routes->get('edit-product/(:any)','AdminPageLoader::edit_product/$1');
 
-// Category Routs
+// Category Routes
 $routes->post('add-category-exe','Categories::add');
 $routes->post('delete-category-exe','Categories::delete');
 $routes->post('update-category-exe','Categories::update');
@@ -60,7 +61,7 @@ $routes->post('update-category-exe','Categories::update');
 // Products
 $routes->post('add-product-exe','Products::add');
 $routes->post('delete-product-exe','Products::delete');
-
+$routes->post('update-product-exe','Products::update');
 
 
 

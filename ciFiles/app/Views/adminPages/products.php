@@ -42,7 +42,7 @@
                             ?></td>
                             <td><?php echo $product['description']; ?></td>
                             <td>
-                                <a class="btn btn-secondary d-none" href="<?php echo site_url('edit-product/'.$product['slug']); ?>">Edit</a>
+                                <a class="btn btn-primary" href="<?php echo site_url('edit-product/'.$product['slug']); ?>">Edit</a>
                                 <form action="<?php echo site_url('delete-product-exe'); ?>" style="display: inline;" method="post">
                                     <input type="hidden" name="id" value="<?php echo $product['id']; ?>">
                                     <button type="submit" class="btn btn-danger">Delete</button>

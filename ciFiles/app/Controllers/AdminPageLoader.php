@@ -122,4 +122,24 @@ class AdminPageLoader extends BaseController
         $this->admin_page_loader('add_product',$data);
     }
 
+    public function edit_product($slug){
+
+        $this->send_to_login();
+
+        $data['title'] = 'Edit Product';
+
+        $categoryModel = new CategoryModel();
+
+        $data['categories'] = $categoryModel->findAll();
+
+        $productModel = new ProductModel();
+
+        $data['product'] = $productModel->where('slug',$slug)->first();
+
+        $data['error'] = $data['success'] = '';
+        
+        $this->admin_page_loader('edit_product',$data);
+
+    }
+
 }
