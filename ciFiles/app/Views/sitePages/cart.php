@@ -1,4 +1,5 @@
 <main class="page-content" id="cart" style="padding: 5% 0;">
+    <?php if(!empty($cart_items)): ?>
     <section id="cart">
         <div class="container-fluid">
             
@@ -69,4 +70,11 @@
             </table>
         </div>
     </section>
+    <?php else: ?>
+    <section id="empty-cart">
+        <div class="container">
+            <h4>Your Cart is empty, head to the <a href="<?php echo site_url('shop'); ?>">Shop</a> and Add thins here.</h4>
+        </div>
+    </section>
+    <?php endif; ?>
 </main>
