@@ -3,7 +3,9 @@
 main.page-content#customer-login{
   padding: 5% 0;
 }
-
+.larger-price-card{
+  font-size: 1.2rem;
+}
 .page-content{
   padding-bottom: 15%;
 }

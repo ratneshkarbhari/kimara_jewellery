@@ -86,7 +86,7 @@
 
                 <?php foreach($products as $product): if($product['featured']=='yes'): ?>
             
-                <div class="col-lg-3 col-md-6-sm-12 custom-half-grid">
+                <div class="col-lg-3 col-md-6-sm-12 custom-half-grid text-center">
                 
                     <a href="<?php echo site_url('product/'.$product['slug']); ?>">
                         <div class="card">
@@ -102,6 +102,10 @@
                                 <?php else: ?>
                                 <span class="smaller-price-card"> ₹ <?php echo $product['price']; ?></span>
                                 <?php endif; ?>
+
+                                <br><br>
+
+                                <button class="btn btn-primary">BUY NOW</button>
 
                             </div>
 

@@ -16,7 +16,7 @@
         
                         <?php foreach($products as $product):  ?>
                     
-                        <div class="col-lg-4 col-md-6-sm-12">
+                        <div class="col-lg-4 col-md-6-sm-12 text-center">
                         
                             <a href="<?php echo site_url('product/'.$product['slug']); ?>">
                                 <div class="card">
@@ -25,12 +25,16 @@
                                 
                                     <div class="card-body">
                                     
-                                    <h6 class="product-title"><?php echo $product['title']; ?></h6>        
+                                        <h6 class="product-title"><?php echo $product['title']; ?></h6>        
                                         <?php if($product['sale_price']!=0.00): ?>
                                         <span class="larger-price-card"> ₹ <?php echo $product['sale_price']; ?></span> | <del><span class="smaller-price-card"> ₹ <?php echo $product['price']; ?></span></del>
                                         <?php else: ?>
                                         <span class="smaller-price-card"> ₹ <?php echo $product['price']; ?></span>
                                         <?php endif; ?>
+
+                                        <br><br>
+
+                                        <button class="btn btn-primary">BUY NOW</button>
         
                                     </div>
         

@@ -16,7 +16,7 @@
     
                     <?php  if(count($products_in_category)>0): foreach($products_in_category as $product):  ?>
                 
-                    <div class="col-lg-4 col-md-6-sm-12" style="margin-bottom: 3%;">
+                    <div class="col-lg-4 col-md-6-sm-12 text-center" style="margin-bottom: 3%;">
                     
                         <a href="<?php echo site_url('product/'.$product['slug']); ?>">
                             <div class="card">
@@ -32,7 +32,11 @@
                                     <?php else: ?>
                                     <span class="smaller-price-card"> ₹ <?php echo $product['price']; ?></span>
                                     <?php endif; ?>
-    
+
+                                    <br><br>
+
+                                    <button class="btn btn-primary">BUY NOW</button>
+
                                 </div>
     
                             </div>
