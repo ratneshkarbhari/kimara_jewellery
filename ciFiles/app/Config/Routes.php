@@ -39,6 +39,7 @@ $routes->get('admin-login','PublicPageLoader::admin_login');
 $routes->get('shop','PublicPageLoader::shop');
 $routes->get('product/(:any)','PublicPageLoader::product_page/$1');
 $routes->get('category/(:any)','PublicPageLoader::category_page/$1');
+$routes->get('customer-login','PublicPageLoader::customer_login');
 
 // Auth Endpoints
 $routes->post('user-login-exe','Authentication::login');

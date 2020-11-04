@@ -14,6 +14,21 @@ class PublicPageLoader extends BaseController
 
 	}
 
+	public function customer_login(){
+	
+		$categoryModel = new CategoryModel();
+
+		$categoriesFetched = $categoryModel->findAll();
+
+		$data['title'] = 'Customer Login';
+		$data['error'] = '';
+
+		$data['categories'] = $categoriesFetched;
+
+		$this->public_page_loader('customer_login',$data);
+		
+	}
+
 	public function home(){
 
 		$data['title'] = 'Tagline';
