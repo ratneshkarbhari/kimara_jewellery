@@ -74,30 +74,48 @@ class PublicPageLoader extends BaseController
 		$data['title'] = 'Shop';
 
 		$productModel = new ProductModel();
+		$categoryModel = new CategoryModel();
 
-		$cache = \Config\Services::cache();
 
-		
-		if (!$cache->get('cached_products')) {
-			$productsFetched = $productModel->findAll();
-			$cache->save('cached_products',$productsFetched);
-		}
+		$data['categories'] = $categoryModel->findAll();
 
-		$data['products'] = $cache->get('cached_products');
+		$data['products'] = $productModel->findAll();
 
 		$this->public_page_loader('shop',$data);
 	}
 
-	public function product_page($slug){
+	public function category_page($slug){
 
-		$data['title'] = 'Shop';
-
-		$productModel = new ProductModel();
 		$categoryModel = new CategoryModel();
 
 		$data['categories'] = $categoryModel->findAll();
 
+		$data['focus_category'] = $focusCategory = $categoryModel->where('slug',$slug)->first();
+		
+		$data['title'] = $focusCategory['title'];
+
+		$productModel = new ProductModel();
+
+		$data['products_in_category'] = $productModel->where('category',$focusCategory['id'])->findAll();
+
+
+		$this->public_page_loader('category_page',$data);
+
+	}
+
+	public function product_page($slug){
+
+		$productModel = new ProductModel();
+
 		$data['product'] = $productModel->where('slug',$slug)->first();
+
+
+		$data['title'] = $data['product']['title'];
+
+		$categoryModel = new CategoryModel();
+
+		$data['categories'] = $categoryModel->findAll();
+
 
 		$this->public_page_loader('product_page',$data);
 

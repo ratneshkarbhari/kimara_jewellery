@@ -17,7 +17,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-3">
-                    <a class="navbar-brand" href="<?php echo site_url(''); ?>"><img src="<?php echo site_url('assets/images/logo.png'); ?>" id="siteLogo"></a>
+                    <a class="navbar-brand" href="<?php echo site_url(''); ?>"><img src="<?php echo site_url('assets/images/newestlogo.png'); ?>" id="siteLogo"></a>
                 </div>
                 <div class="col-lg-7">
                     <form action="" class="d-inline" method="post">

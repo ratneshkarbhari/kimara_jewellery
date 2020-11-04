@@ -10,7 +10,7 @@
                 <div class="col-lg-6 col-md-12 col-sm-12">
                 
                 
-                    <img src="<?php echo site_url('assets/images/featured_image_product/'.$product['featured_image']); ?>" id="product-page-main-product-image">
+                    <img src="<?php echo site_url('assets/images/featured_image_product/'.$product['featured_image']); ?>" id="product-page-main-product-image" style="width: 100%;">
                 
                 </div>
                 <div class="col-lg-6 col-md-12 col-sm-12">

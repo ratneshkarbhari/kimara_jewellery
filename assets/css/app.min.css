@@ -9,6 +9,9 @@ img#siteLogo{
     margin-top: 1%;
     width: 100%;
 }
+.larger-price-card{
+  font-size: 2rem;
+}
 a.nav-link{
     font-size: 1.01rem;
     color: #000 !important;

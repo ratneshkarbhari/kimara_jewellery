@@ -69,7 +69,7 @@
                 </select>
             </div>
             <br>
-            <img src="<?php echo site_url('assets/images/product_featured_images/'.$product['featured_image']); ?>" style="width: 30%;">
+            <img src="<?php echo site_url('assets/images/featured_image_product/'.$product['featured_image']); ?>" style="width: 30%;">
             <div class="form-group">
                 <label for="featured_image">Replace Featured Image</label><br>
                 <input type="file" name="featured_image" id="featured_image" accept="image/*">
