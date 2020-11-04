@@ -32,8 +32,9 @@
                             <td><?php  
                             
                             foreach($categories as $category){
-                                if ($product['id']==$product['category']) {
-                                    echo $product['title'];
+                                if ($category['id']==$product['category']) {
+                                    echo $category['title'];
+                                break;
                                 }else {
                                     echo 'Independent';
                                 }

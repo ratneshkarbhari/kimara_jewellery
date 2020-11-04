@@ -223,3 +223,45 @@ CRITICAL - 2020-11-03 22:32:18 --> Undefined variable: success
 #7 /var/www/html/kimara_jewellery/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
 #8 /var/www/html/kimara_jewellery/index.php(46): CodeIgniter\CodeIgniter->run()
 #9 {main}
+CRITICAL - 2020-11-03 23:41:30 --> The uploaded file has already been moved.
+#0 /var/www/html/kimara_jewellery/ciFiles/vendor/codeigniter4/framework/system/HTTP/Files/UploadedFile.php(167): CodeIgniter\HTTP\Exceptions\HTTPException::forAlreadyMoved()
+#1 /var/www/html/kimara_jewellery/ciFiles/app/Controllers/Products.php(115): CodeIgniter\HTTP\Files\UploadedFile->move()
+#2 /var/www/html/kimara_jewellery/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Products->add()
+#3 /var/www/html/kimara_jewellery/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#4 /var/www/html/kimara_jewellery/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#5 /var/www/html/kimara_jewellery/index.php(46): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-11-03 23:42:36 --> The uploaded file has already been moved.
+#0 /var/www/html/kimara_jewellery/ciFiles/vendor/codeigniter4/framework/system/HTTP/Files/UploadedFile.php(167): CodeIgniter\HTTP\Exceptions\HTTPException::forAlreadyMoved()
+#1 /var/www/html/kimara_jewellery/ciFiles/app/Controllers/Products.php(115): CodeIgniter\HTTP\Files\UploadedFile->move()
+#2 /var/www/html/kimara_jewellery/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Products->add()
+#3 /var/www/html/kimara_jewellery/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#4 /var/www/html/kimara_jewellery/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#5 /var/www/html/kimara_jewellery/index.php(46): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-11-03 23:43:44 --> Undefined variable: img
+#0 /var/www/html/kimara_jewellery/ciFiles/app/Controllers/Products.php(85): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/kimara_jewellery/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Products->add()
+#2 /var/www/html/kimara_jewellery/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#3 /var/www/html/kimara_jewellery/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#4 /var/www/html/kimara_jewellery/index.php(46): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-11-03 23:43:57 --> The uploaded file has already been moved.
+#0 /var/www/html/kimara_jewellery/ciFiles/vendor/codeigniter4/framework/system/HTTP/Files/UploadedFile.php(167): CodeIgniter\HTTP\Exceptions\HTTPException::forAlreadyMoved()
+#1 /var/www/html/kimara_jewellery/ciFiles/app/Controllers/Products.php(119): CodeIgniter\HTTP\Files\UploadedFile->move()
+#2 /var/www/html/kimara_jewellery/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Products->add()
+#3 /var/www/html/kimara_jewellery/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#4 /var/www/html/kimara_jewellery/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#5 /var/www/html/kimara_jewellery/index.php(46): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-11-03 23:46:50 --> Undefined variable: googleLoginUrl
+#0 /var/www/html/kimara_jewellery/ciFiles/app/Views/sitePages/customer_login.php(15): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/kimara_jewellery/ciFiles/vendor/codeigniter4/framework/system/View/View.php(246): include('/var/www/html/k...')
+#2 /var/www/html/kimara_jewellery/ciFiles/vendor/codeigniter4/framework/system/Common.php(1119): CodeIgniter\View\View->render()
+#3 /var/www/html/kimara_jewellery/ciFiles/app/Controllers/PublicPageLoader.php(12): view()
+#4 /var/www/html/kimara_jewellery/ciFiles/app/Controllers/PublicPageLoader.php(28): App\Controllers\PublicPageLoader->public_page_loader()
+#5 /var/www/html/kimara_jewellery/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\PublicPageLoader->customer_login()
+#6 /var/www/html/kimara_jewellery/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#7 /var/www/html/kimara_jewellery/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#8 /var/www/html/kimara_jewellery/index.php(46): CodeIgniter\CodeIgniter->run()
+#9 {main}

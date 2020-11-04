@@ -82,7 +82,11 @@ class Products extends BaseController
 			
 			$featuredImageRandomName = $featuredImage->getRandomName();
 
-			$featuredImage->move('assets/images/featured_image_product', $featuredImageRandomName);
+            if (! $featuredImage->hasMoved()) {
+                $featuredImage->move('assets/images/featured_image_product', $featuredImageRandomName);
+
+            }
+
 
             // GalleryImages Upload
             $galleryImages = $this->request->getFilemULTIPLE('gallery_images');
@@ -110,9 +114,13 @@ class Products extends BaseController
 
 			foreach ($galleryVideos as $galleryVideo) {
 
-				$galleryVideoRandomName = $galleryVideo->getRandomName();
+                $galleryVideoRandomName = $galleryVideo->getRandomName();
+                
+                if (! $galleryVideo->hasMoved()) {
+                    $galleryVideo->move('assets/images/gallery_videos_product', $galleryVideoRandomName);
+                }
 
-				$galleryVideo->move('assets/images/gallery_videos_product', $galleryVideoRandomName);
+
 
 				if($galleryVideoNames==''){
 					$galleryVideoNames.=$galleryVideoRandomName;

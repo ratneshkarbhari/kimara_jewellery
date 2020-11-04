@@ -86,7 +86,7 @@
 
                 <?php foreach($products as $product): if($product['featured']=='yes'): ?>
             
-                <div class="col-lg-4 col-md-6-sm-12 custom-half-grid">
+                <div class="col-lg-3 col-md-6-sm-12 custom-half-grid">
                 
                     <a href="<?php echo site_url('product/'.$product['slug']); ?>">
                         <div class="card">
@@ -95,7 +95,7 @@
                         
                             <div class="card-body">
                             
-                                <h4 class="product-title"><?php echo substr($product['title'],0,12); ?><?php if(strlen($product['title'])>13){echo '...';} ?></h4>
+                            <h6 class="product-title"><?php echo $product['title']; ?></h6>
 
                                 <?php if($product['sale_price']!=0.00): ?>
                                 <span class="larger-price-card"> ₹ <?php echo $product['sale_price']; ?></span> | <del><span class="smaller-price-card"> ₹ <?php echo $product['price']; ?></span></del>
