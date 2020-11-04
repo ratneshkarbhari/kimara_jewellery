@@ -3,17 +3,17 @@
 
     <section id="product-details-section">
     
-        <div class="container-fluid">
+        <div class="container">
         
             <div class="row">
 
-                <div class="col-lg-4 col-md-12 col-sm-12">
+                <div class="col-lg-6 col-md-12 col-sm-12">
                 
                 
-                    <img src="<?php echo site_url('assets/images/featured_image_product/'.$product['featured_image']); ?>" id="product-page-main-product-image" style="width: 100%;">
+                    <img src="<?php echo site_url('assets/images/featured_image_product/'.$product['featured_image']); ?>" id="product-page-main-product-image" style="width: 100%; border: 1px solid darkgray;">
                 
                 </div>
-                <div class="col-lg-8 col-md-12 col-sm-12">
+                <div class="col-lg-6 col-md-12 col-sm-12">
                 
                     <h1 class="product-title"><?php echo $product['title']; ?></h1>
 
@@ -27,7 +27,7 @@
                     
                         <div class="row">
                         
-                            <div  class="col-lg-4 col-md-6 col-sm12 form-group">
+                            <div  class="col-lg-4 col-md-6 col-sm12 form-group" style="padding-left: 0;">
                             
                                 <label for="product-material">Material:</label>
 
@@ -50,18 +50,18 @@
                                 </select>
 
                             </div>
-                            <div class="col-lg-4 col-md-12 col-sm-12 form-group">
+                            <div class="col-lg-8 col-md-12 col-sm-12 form-group" style="padding-left: 0;">
                                 <label for="product-material">Quantity:</label>
 
-                                <select class="form-control" id="product-material">
-                                    <?php $materials = explode(',',$product['materials']); foreach($materials as $material): ?>
-                                    <option value="<?php echo $material; ?>"><?php echo ucfirst($material); ?></option>
-                                    <?php endforeach; ?>
+                                <select class="form-control" id="product-quantity">
+                                    <?php for($i=1;$i<=5;$i++): ?>
+                                    <option value="<?php echo $i; ?>"><?php echo $i; ?></option>
+                                    <?php endfor; ?>
                                 </select>
                             </div>
 
 
-                            <div class="col-lg-4 col-md-12 col-sm-12" style="padding:0;">
+                            <div class="col-lg-12 col-md-12 col-sm-12" style="padding:0;">
                             <button type="button" class="btn btn-success">ADD to Cart</button>
 
                             </div>
