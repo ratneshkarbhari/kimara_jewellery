@@ -86,7 +86,7 @@
             <a href="#" id="sideNavOpenLink" class="nav-link"><img src="<?php echo site_url('assets/icons/menu.svg'); ?>" width="15px" height="15px"></a>
 
                 
-            <a class="navbar-brandx mr-auto" style="margin-left: 3%; width: 50%;" href="<?php echo site_url(''); ?>"><img style="width: 100%;" src="<?php echo site_url('assets/images/logonew.png'); ?>" id="logonew"></a>
+            <a class="navbar-brandx mr-auto" style="margin-left: 3%; width: 50%;" href="<?php echo site_url(''); ?>"><img style="width: 100%;" src="<?php echo site_url('assets/images/newestlogo.png'); ?>" id="logonew"></a>
             
             <a class="nav-link" href="#"><img src="<?php echo site_url('assets/icons/search.svg'); ?>" width="15px" height="15px"></a>
             <a class="nav-link" href="<?php echo site_url('cart'); ?>"><img src="<?php echo site_url('assets/icons/shopping-bag.svg'); ?>" width="15px" height="15px"></a>
