@@ -40,9 +40,18 @@ $routes->get('shop','PublicPageLoader::shop');
 $routes->get('product/(:any)','PublicPageLoader::product_page/$1');
 $routes->get('category/(:any)','PublicPageLoader::category_page/$1');
 $routes->get('customer-login','PublicPageLoader::customer_login');
+$routes->get('my-account','PublicPageLoader::my_account');
+$routes->get('cart','PublicPageLoader::cart');
+
+// cart routes
+$routes->post('add-to-cart-exe','Cart::add');
+$routes->post('update-cart','Cart::update');
+$routes->post('delete-cart-item','Cart::delete');
 
 // Auth Endpoints
 $routes->post('user-login-exe','Authentication::login');
+$routes->post('customer-login-exe','Authentication::customer_login');
+
 
 
 // Admin Dashboard

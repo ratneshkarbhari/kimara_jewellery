@@ -1,18 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+div,h1,h2,h3,h4,h5,h6,span{
+  font-family: 'Raleway', sans-serif;
 
+}
+table thead tr th{
+  font-weight: 900;
+}
 main.page-content#customer-login{
   padding: 5% 0;
 }
 .larger-price-card{
   font-size: 1.2rem;
 }
-.page-content{
-  padding-bottom: 15%;
-}
 
-div,h1,h2,h3,h4,h5,h6,span{
-  font-family: 'Raleway', sans-serif;
 
+select{
+  border: 1px solid black !important;
 }
 
 img#siteLogo{
@@ -137,9 +140,7 @@ a.dropdown-item{
 
 @media (min-width: 1281px) {
   
-    /* a.navbar-brand{
-        width: 20%;
-    } */
+    
 
     nav#mobileBottomNav{
       display: none;
@@ -179,6 +180,9 @@ a.dropdown-item{
     footer#site-footer{
       display: none;
     }
+    .page-content{
+      padding-bottom: 20% !important;
+    }
     
   }
   
@@ -200,6 +204,9 @@ a.dropdown-item{
     }
     footer#site-footer{
       display: none;
+    }
+    .page-content{
+      padding-bottom: 20% !important;
     }
     
   }
@@ -225,6 +232,9 @@ a.dropdown-item{
     footer#site-footer{
       display: none;
     }
+    .page-content{
+      padding-bottom: 20% !important;
+    }
     
   }
   
@@ -248,6 +258,10 @@ a.dropdown-item{
 
     footer#site-footer{
       display: none;
+    }
+
+    .page-content{
+      padding-bottom: 20% !important;
     }
 
   }

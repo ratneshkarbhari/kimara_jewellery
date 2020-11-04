@@ -12,7 +12,7 @@
 </head>
 <body>
 <script src="<?php echo site_url('assets/js/jquery.min.js'); ?>"></script>
-<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+<script src="<?php echo site_url('assets/js/feather.min.js'); ?>"></script>
     <header id="desktop" class="sticky-top">
         <div class="container">
             <div class="row">
@@ -30,7 +30,7 @@
                     
                     <nav id="top-right-nav" class="ml-auto">
                     <a class="nav-link d-inline" href="<?php echo site_url('customer-login'); ?>"><img src="<?php echo site_url('assets/icons/user.svg'); ?>" width="30px" height="30px"></a>
-                    <a class="nav-link d-inline" href="<?php echo site_url('customer-login'); ?>"><img src="<?php echo site_url('assets/icons/shopping-bag.svg'); ?>" width="30px" height="30px"></a>
+                    <a class="nav-link d-inline" href="<?php echo site_url('cart'); ?>"><img src="<?php echo site_url('assets/icons/shopping-bag.svg'); ?>" width="30px" height="30px"></a>
                     </nav>
                 </div>
             </div>

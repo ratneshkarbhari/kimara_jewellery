@@ -2,6 +2,7 @@
 
 use App\Models\ProductModel;
 use App\Models\CategoryModel;
+use App\Models\CartModel;
 
 class PublicPageLoader extends BaseController
 {
@@ -14,8 +15,59 @@ class PublicPageLoader extends BaseController
 
 	}
 
-	public function customer_login(){
+	public function my_account(){
+
+		$session = session();
+
+		$role = $session->get('role');
+
+		if($role!='customer'){
+			return redirect()->to(site_url('customer-login')); 
+		}
+
+		$categoryModel = new CategoryModel();
+
+		$categoriesFetched = $categoryModel->findAll();
+
+		$data['title'] = 'Customer Login';
+		$data['error'] = $data['success'] = '';
+
+		$data['categories'] = $categoriesFetched;
+
+		$this->public_page_loader('my_account',$data);
+
+	}
+
+	public function cart(){
+
+		$categoryModel = new CategoryModel();
+
+		$data['categories'] = $categoryModel->findAll();
 	
+		$data['title'] = 'Cart';
+
+		$cartModel = new CartModel();
+
+		$productModel = new ProductModel();
+
+		$data['products'] = $productModel->findAll();
+
+		$data['cart_items'] = $cartModel->fetch_all_cart_items();
+
+		$this->public_page_loader('cart',$data);
+
+	}
+
+	public function customer_login(){
+
+		$session = session();
+
+		$role = $session->get('role');
+
+		if($role=='customer'){
+			return redirect()->to(site_url('my-account')); 
+		}
+			
 		$categoryModel = new CategoryModel();
 
 		$categoriesFetched = $categoryModel->findAll();

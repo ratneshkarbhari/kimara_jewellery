@@ -7,7 +7,7 @@
         
             <div class="row">
 
-                <div class="col-lg-6 col-md-12 col-sm-12">
+                <div class="col-lg-6 col-md-12 col-sm-12" style="margin-bottom: 5%;">
                 
                 
                     <img src="<?php echo site_url('assets/images/featured_image_product/'.$product['featured_image']); ?>" id="product-page-main-product-image" style="width: 100%; border: 1px solid darkgray;">
@@ -38,7 +38,7 @@
                                 </select>
 
                             </div>
-                            <div class="col-lg-4 col-md-6 col-sm12 form-group">
+                            <div class="col-lg-4 col-md-6 col-sm12 form-group" style="padding-left: 0;">
                             
                                 <label for="product-size">Size:</label>
 
@@ -51,7 +51,7 @@
 
                             </div>
                             <div class="col-lg-8 col-md-12 col-sm-12 form-group" style="padding-left: 0;">
-                                <label for="product-material">Quantity:</label>
+                                <label for="product-quantity">Quantity:</label>
 
                                 <select class="form-control" id="product-quantity">
                                     <?php for($i=1;$i<=5;$i++): ?>
@@ -60,15 +60,14 @@
                                 </select>
                             </div>
 
-
+                            <br>
                             <div class="col-lg-12 col-md-12 col-sm-12" style="padding:0;">
-                            <button type="button" class="btn btn-success">ADD to Cart</button>
-
+                                
+                                <p id="atc-success" class="text-success" style="color: darkgreen !important;"></p>
+                                <p id="atc-failure" class="text-danger"></p>
+                                        
+                                <button type="button" id="addToCartButton" class="btn btn-success" style="background-color: black; color:white;">ADD to Cart</button>
                             </div>
-
-                            
-
-
                         
                         </div>
 
@@ -94,3 +93,37 @@
     </section>
 
 </main>
+
+<script>
+    $("button#addToCartButton").click(function (e) { 
+        e.preventDefault();
+        let productMaterial = $("select#product-material").val();
+        let productSize = $("select#product-size").val();
+        let productQuantity = $("select#product-quantity").val();
+        $.ajax({
+            type: "POST",
+            url: "<?php echo site_url('add-to-cart-exe'); ?>",
+            data: {
+                product_id : '<?php echo $product['id']; ?>',
+                material : productMaterial,
+                size : productSize,
+                quantity : productQuantity
+            },
+            success: function (response) {
+                if(response=='success'){
+                    $("p#atc-success").html('Added to Cart Successfully');
+                    setTimeout(function() {
+                        $("p#atc-success").html('');
+                    }, 3000);
+
+                }else{
+                    $("p#atc-failure").html('Added to Cart Successfully');
+                    setTimeout(function() {
+                        $("p#atc-failure").html('');
+                    }, 3000);
+                }
+            }
+        });
+    });
+
+</script>
