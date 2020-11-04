@@ -3,14 +3,15 @@ div,h1,h2,h3,h4,h5,h6,span{
   font-family: 'Raleway', sans-serif;
 
 }
+
+.navbar-brand {
+  margin-right: 1rem;
+}
 table thead tr th{
   font-weight: 900;
 }
 main.page-content#customer-login{
   padding: 5% 0;
-}
-.larger-price-card{
-  font-size: 1.2rem;
 }
 
 
@@ -18,12 +19,20 @@ select{
   border: 1px solid black !important;
 }
 
-img#siteLogo{
-    margin-top: 1%;
-    width: 100%;
+.sidenav-link{
+  padding: 5%;
+  padding-left: 3%;
+  display: block;
+  border-bottom: 1px solid lightgray;
 }
-.larger-price-card{
-  font-size: 2rem;
+.sidenav-link:hover{
+  background-color: black;
+  color: #fff;
+}
+
+img#siteLogo{
+    margin-top: 7%;
+    width: 100%;
 }
 a.nav-link{
     font-size: 1.01rem;
@@ -48,13 +57,23 @@ a.nav-link{
 }
 
 .grey-bg{
-    background-color: lightgray;
+    background-color: #f1f1f1;
 }
 
 footer#site-footer{
   padding: 2% 0;
   background-color: #424242;;
 }
+
+/* div#searchBox,div#loginBox{
+  background-color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 300;
+  width: 50%;
+} */
 
 div.owl-nav button{
   position: absolute;
@@ -111,6 +130,7 @@ nav#mobileBottomNav{
   right: 0;
   z-index: 90009;
   background-color: white;
+  border-top: 1px solid darkgray;
 }
 div#sidenavMobileCloser{
   position: fixed;

@@ -1,7 +1,7 @@
 <main class="page-content" id="cart" style="padding: 5% 0;">
     <?php if(!empty($cart_items)): ?>
     <section id="cart">
-        <div class="container-fluid">
+        <div class="container-fluid text-center">
             <div class="table-responsive">
                 <table class="table">
                     <thead>
@@ -26,18 +26,18 @@
                             <td>
                                 <form method="post" action="<?php echo site_url('update-cart'); ?>" style="display: inline;">
                                 <input type="hidden" name="cart-item-id" value='<?php echo $cart_item['id']; ?>'>
-                                <input type="number" name="product-qty" value="<?php echo $cart_item['quantity']; ?>" min="1" id="product-qty-<?php echo $cart_item['id']; ?>">
+                                <input type="number" name="product-qty" style="width: 55px; text-align: center;" value="<?php echo $cart_item['quantity']; ?>" min="1" id="product-qty-<?php echo $cart_item['id']; ?>">
                             </td>
                             <td><?php if($cart_item['product_id']==$product['id']){
                                 echo $amount =$product['sale_price']*$cart_item['quantity'];
                                 $subtotal=$subtotal+$amount; 
                             } ?></td>
                             <td>
-                                <button type="submit" class="btn btn-primary">Update</button>
+                                <button style="margin-bottom: 3%;" type="submit" class="btn btn-primary">Update</button>
                             </form>
                             <form action="<?php echo site_url('delete-cart-item'); ?>" method="post" style="display: inline;">
                                 <input type="hidden" name="cart-item-id" value="<?php echo $cart_item['id']; ?>">
-                                <button type="submit" class="btn btn-danger">DELETE</button>
+                                <button style="margin-bottom: 3%;" type="submit" class="btn btn-danger">DELETE</button>
                             </form>
                             </td>
                         </tr>

@@ -16,7 +16,7 @@
         
                         <?php foreach($products as $product):  ?>
                     
-                        <div class="col-lg-4 col-md-6-sm-12 text-center">
+                        <div class="col-lg-4 col-md-6-sm-12 text-center" style="margin-bottom: 5%;">
                         
                             <a href="<?php echo site_url('product/'.$product['slug']); ?>">
                                 <div class="card">

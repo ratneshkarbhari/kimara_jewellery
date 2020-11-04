@@ -47,11 +47,11 @@
         </div>
     
     </section>
-    <section id="featured-products" class="regular-section d-sm-block d-md-block d-lg-none">
+    <section id="featured-products" class="regular-section d-sm-block d-md-block d-lg-none" style="padding-bottom: 5%;">
     
         <div class="container-fluid">
         
-            <h1 class="text-center section-title">Categories we Sell in</h1>
+            <h1 class="text-center section-title">Categories</h1>
 
             <div class="row" style="margin-top: 3%;">
                 
@@ -76,7 +76,7 @@
         </div>
 
     </section>
-    <section id="featured-products" class="regular-section grey-bg">
+    <section id="featured-products" class="regular-section grey-bg" style="padding-bottom: 15%;">
         <div class="container-fluid">
                     
             <h1 class="text-center section-title">Featured Products</h1>
@@ -86,7 +86,7 @@
 
                 <?php foreach($products as $product): if($product['featured']=='yes'): ?>
             
-                <div class="col-lg-3 col-md-6-sm-12 custom-half-grid text-center">
+                <div class="col-lg-3 col-md-6-sm-12 text-center" style="margin-bottom: 5%;">
                 
                     <a href="<?php echo site_url('product/'.$product['slug']); ?>">
                         <div class="card">
