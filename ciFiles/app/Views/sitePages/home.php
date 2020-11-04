@@ -22,7 +22,7 @@
     
         <div class="container-fluid">
         
-            <h1 class="text-center section-title">Categories we Sell in</h1>
+            <h1 class="text-center section-title">Categories</h1>
 
             <div class="row" style="margin-top: 3%;">
                 
