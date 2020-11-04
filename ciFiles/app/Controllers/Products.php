@@ -66,6 +66,14 @@ class Products extends BaseController
 
             $description = $this->request->getPost('description');
             $category = $this->request->getPost('category');
+            $price = $this->request->getPost('price');
+            $sale_price = $this->request->getPost('sale_price');
+            $materials = $this->request->getPost('materials');
+            $sizes = $this->request->getPost('sizes');
+            $stock_count = $this->request->getPost('stock_count');
+            $visibility = $this->request->getPost('visibility');
+            $featured = $this->request->getPost('featured');
+            
 
             // Featured Image Upload
 
@@ -115,7 +123,7 @@ class Products extends BaseController
 			}
 
     
-            $categoryData = array(
+            $productData = array(
                 'title' => $title,
                 'slug' => $slug,
                 'description' => $description,
@@ -123,16 +131,16 @@ class Products extends BaseController
                 'featured_image' => $featuredImageRandomName,
                 'gallery_images' => $galleryImageNames,
                 'gallery_videos' => $galleryVideoNames,
-                'sizes' => $this->request->getPost('sizes'),
-                'materials' => $this->request->getPost('materials'),
-                'featured' => $this->request->getPost('featured'),
-                'price' =>  $this->request->getPost('price'),
-                'sale_price' =>  $this->request->getPost('sale_price'),
-                'stock_count' => $this->request->getPost('stock_count'),
-                'visibility' => $this->request->getPost('visibility')
+                'sizes' => $sizes,
+                'materials' => $materials,
+                'featured' => $featured,
+                'price' =>  $price,
+                'sale_price' =>  $sale_price,
+                'stock_count' => $stock_count,
+                'visibility' => $visibility
             );
             
-            $response = $productModel->insert($categoryData);
+            $response = $productModel->insert($productData);
 
             if ($response) {
                 

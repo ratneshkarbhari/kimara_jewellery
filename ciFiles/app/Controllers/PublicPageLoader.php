@@ -45,6 +45,13 @@ class PublicPageLoader extends BaseController
 		$data['title'] = 'Admin Login';
 		$data['error'] = '';
 
+		$categoryModel = new CategoryModel();
+
+		$categoriesFetched = $categoryModel->findAll();
+
+
+		$data['categories'] = $categoriesFetched;
+
 		$this->public_page_loader('admin_login',$data);
 
 	}
@@ -86,6 +93,9 @@ class PublicPageLoader extends BaseController
 		$data['title'] = 'Shop';
 
 		$productModel = new ProductModel();
+		$categoryModel = new CategoryModel();
+
+		$data['categories'] = $categoryModel->findAll();
 
 		$data['product'] = $productModel->where('slug',$slug)->first();
 

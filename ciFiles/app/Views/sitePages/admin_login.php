@@ -40,3 +40,11 @@
     </div>
 
 </main>
+
+<style>
+
+header,footer{
+    display: none;
+}
+
+</style>
