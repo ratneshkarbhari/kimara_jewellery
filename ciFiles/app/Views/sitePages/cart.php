@@ -1,6 +1,6 @@
 <main class="page-content" id="cart" style="padding: 5% 0;">
     <section id="cart">
-        <div class="container">
+        <div class="container-fluid">
             
             <table class="table">
                 <thead>
