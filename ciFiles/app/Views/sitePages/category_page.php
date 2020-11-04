@@ -16,7 +16,7 @@
     
                     <?php  if(count($products_in_category)>0): foreach($products_in_category as $product):  ?>
                 
-                    <div class="col-lg-4 col-md-6-sm-12">
+                    <div class="col-lg-4 col-md-6-sm-12" style="margin-bottom: 3%;">
                     
                         <a href="<?php echo site_url('product/'.$product['slug']); ?>">
                             <div class="card">
