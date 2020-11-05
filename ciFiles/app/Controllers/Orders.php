@@ -54,7 +54,12 @@ class Orders extends BaseController
 
         $res = $orderModel->insert($orderObject);
 
-        
+ 
+        if ($res) {
+            exit('success');
+        }else {
+            exit('failure');
+        }
 
     }
 
