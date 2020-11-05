@@ -76,7 +76,7 @@
         </div>
 
     </section>
-    <section id="featured-products" class="regular-section grey-bg" style="padding-bottom: 15%;">
+    <section id="featured-products" class="regular-section grey-bg">
         <div class="container-fluid">
                     
             <h1 class="text-center section-title">Featured Products</h1>
@@ -86,7 +86,7 @@
 
                 <?php foreach($products as $product): if($product['featured']=='yes'): ?>
             
-                <div class="col-lg-3 col-md-6-sm-12 text-center" style="margin-bottom: 5%;">
+                <div class="col-lg-3 col-md-6-sm-12 text-center" style="margin-bottom: 2%;">
                 
                     <a href="<?php echo site_url('product/'.$product['slug']); ?>">
                         <div class="card">

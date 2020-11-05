@@ -42,17 +42,23 @@ $routes->get('category/(:any)','PublicPageLoader::category_page/$1');
 $routes->get('customer-login','PublicPageLoader::customer_login');
 $routes->get('my-account','PublicPageLoader::my_account');
 $routes->get('cart','PublicPageLoader::cart');
+$routes->get('cod-order','PublicPageLoader::cod_order');
 
 // cart routes
 $routes->post('add-to-cart-exe','Cart::add');
 $routes->post('update-cart','Cart::update');
 $routes->post('delete-cart-item','Cart::delete');
 
+
+// Order creation EndPoints
+$routes->post('create-order','Orders::create');
+
+
 // Auth Endpoints
 $routes->post('customer-login-api','Authentication::customer_login_api');
 $routes->post('user-login-exe','Authentication::login');
 $routes->post('customer-login-exe','Authentication::customer_login');
-
+$routes->get('logout','Authentication::logout');
 
 
 // Admin Dashboard

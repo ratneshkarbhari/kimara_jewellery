@@ -36,7 +36,7 @@ class PublicPageLoader extends BaseController
 
 		$categoriesFetched = $categoryModel->findAll();
 
-		$data['title'] = 'Customer Login';
+		$data['title'] = 'My Account';
 		$data['error'] = $data['success'] = '';
 
 		$data['categories'] = $categoriesFetched;

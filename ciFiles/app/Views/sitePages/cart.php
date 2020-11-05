@@ -118,8 +118,12 @@
                                 <input class="form-control" style='border: 1px solid;' type="text" name="orderContactNumber" id="contactNumber">
                             </div>
                             <div class="form-group">
-                                <label for="address">Address</label>
-                                <textarea style='border: 1px solid;' id="orderAddress" name="address" class="form-control"></textarea>
+                                <label for="shippingAddress">Shipping Address</label>
+                                <textarea style='border: 1px solid;' id="shippingAddress" name="shippingAddress" class="form-control"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="billingAddress">Billing Address</label>
+                                <textarea style='border: 1px solid;' id="billingAddress" name="billingAddress" class="form-control"></textarea>
                             </div>
                             <button class="btn btn-success btn-block" data-toggle="modal" data-target="#loginModal"  type="button" id="makePayment">
                             Make Payment
@@ -174,33 +178,33 @@ $("button#ajaxCustomerLoginButton").click(function (e) {
 $("button#makePayment").click(function (e) { 
     e.preventDefault();
     let orderContactNumber = $("input#orderContactNumber").val();
-    let orderAddress = $("textarea#orderAddress").val();
-    if(orderContactNumber==''||orderAddress==''){
-        $("p#orderPlacingError").html('Please enter both Contact Number and Address');
+    let shippingAddress = $("textarea#shippingAddress").val();
+    let billingAddress = $("textarea#billingAddress").val();
+    if(orderContactNumber==''||shippingAddress==''||billingAddress==''){
+        $("p#orderPlacingError").html('Please enter both Contact Number, Shipping and Billing Address');
     }else{
         var options = {
         "key": "rzp_test_looXFeOiWI0vw6", // Enter the Key ID generated from the Dashboard
-        "amount": '<?php echo $orderData['amount']; ?>', // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+        "amount": '<?php echo $orderData['amount']; ?>', 
         "currency": "INR",
         "name": "Kimara Jewellery",
-        "description": "Payment on Kimara Jewellery",
+        "description": 'Payment on Kimara Jewellery',
         "image": "<?php echo site_url('assets/images/newestlogo.png'); ?>",
-        "order_id": "<?php echo $orderData['id']; ?>", //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+        // "order_id": "<?php echo $orderData['id']; ?>", //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
         "handler": function (response){
 
-            location.href="<?php echo site_url('thank-you'); ?>"
-
+            // location.href="<?php echo site_url('thank-you'); ?>";
 
             $.ajax({
                 type: "POST",
-                url: "<?php echo site_url('save-transaction-add-purchase'); ?>",
+                url: "<?php echo site_url('create-order'); ?>",
                 data: {
-                    'razorpay_payment_id' : response.razorpay_payment_id,
-                    'razorpay_order_id' : response.razorpay_order_id,
-                    'razorpay_signature' : response.razorpay_signature,
                     'payee_customer_email' : '<?php echo $_SESSION['email']; ?>',
                     'payee_customer_name' : '<?php echo $_SESSION['first_name'].' '.$_SESSION['last_name']; ?>',
-                    'amount' : <?php echo $orderData['amount']; ?>
+                    'amount' : <?php echo $orderData['amount']; ?>,
+                    'shipping_address' : $("textarea#shippingAddress").val(),
+                    'billing_address' : $("textarea#billingAddress").val(),
+                    'contact_number' : $("input#contactNumber").val()
                 },
                 success: function (response) {
                     if (response=='success') {
@@ -213,7 +217,8 @@ $("button#makePayment").click(function (e) {
         },
         "prefill": {
             "name": "<?php echo $_SESSION['first_name']; ?>",
-            "email": "<?php echo $_SESSION['email']; ?>"
+            "email": "<?php echo $_SESSION['email']; ?>",
+            "contact": $("input#contactNumber").val()
         },
         "theme": {
             "color": "#000000"

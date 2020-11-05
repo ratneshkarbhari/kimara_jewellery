@@ -39,7 +39,7 @@ a.nav-link{
     color: #000 !important;
 }
 .regular-section{
-    padding: 5% 0;
+    padding: 2% 0;
 }
 
 @media only screen and (max-width: 600px) {
@@ -51,11 +51,16 @@ a.nav-link{
     }
     }
 
+.larger-price-card{
+  font-size: 1.1rem;
+}
 
 .section-title{
     margin-bottom: 3% !important;
 }
-
+.btn-success{
+  background-color: darkgreen !important;
+}
 .grey-bg{
     background-color: #f1f1f1;
 }
