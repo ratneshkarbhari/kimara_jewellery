@@ -1,4 +1,4 @@
-<main class="page-content" id="customer-login">
+<main class="page-content" id="customer-login" style="padding-top: 10vh !important;">
 
     <div class="container">
 
@@ -29,8 +29,8 @@
                     </div>
 
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="showPwd">
-                        <label class="form-check-label" for="showPwd">
+                        <input class="form-check-input" type="checkbox" id="showPwdCustomerLogin">
+                        <label class="form-check-label" for="showPwdCustomerLogin">
                             Show Password
                         </label>
                     </div><br>

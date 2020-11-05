@@ -113,6 +113,59 @@ class Authentication extends BaseController
         }
 
     }
+    public function customer_login_api()
+	{
+
+        $session = session();
+
+        $enteredEmail = $this->request->getPost('customer-email');
+
+        $enteredPassword = $this->request->getPost('customer-password');
+    
+        if(filter_var($enteredEmail, FILTER_VALIDATE_EMAIL)){
+
+            $authModel = new AuthModel();
+
+            $userData = $authModel->where('email',$enteredEmail)->where('role','customer')->first();
+            
+            if ($userData) {
+                
+                $passwordCorrect = password_verify($enteredPassword,$userData['password']);
+
+                if ($passwordCorrect) {
+                    
+                    $newdata = [
+                        'first_name'  => $userData['first_name'],
+                        'last_name'  => $userData['last_name'],
+                        'email'     => $userData['email'],
+                        'role' => $userData['role']
+                    ];
+                
+                    $session->set($newdata);                
+                    
+                    return ('login-success');
+
+                } else {
+
+                    return ('password-incorrect');
+
+                }
+                
+            } else {
+
+                return ('email-incorrect');
+                
+
+            }
+            
+
+        }else {
+
+            return ('email-invalid');
+            
+        }
+
+    }
 
     private function load_admin_login_error($errorMessage){
         $data['title'] = 'Admin Login';

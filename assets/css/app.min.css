@@ -158,6 +158,10 @@ a.dropdown-item{
   font-weight: 900 !important;
 }
 
+.page-content{
+  padding-top: 7vh !important;
+}
+
 @media (min-width: 1281px) {
   
     

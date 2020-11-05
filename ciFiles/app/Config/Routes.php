@@ -49,6 +49,7 @@ $routes->post('update-cart','Cart::update');
 $routes->post('delete-cart-item','Cart::delete');
 
 // Auth Endpoints
+$routes->post('customer-login-api','Authentication::customer_login_api');
 $routes->post('user-login-exe','Authentication::login');
 $routes->post('customer-login-exe','Authentication::customer_login');
 

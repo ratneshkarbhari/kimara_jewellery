@@ -1,8 +1,15 @@
 <?php namespace App\Controllers;
 
+require_once './vendor/autoload.php'; // change path as needed
+
+
+use Razorpay\Api\Api;
+
 use App\Models\ProductModel;
 use App\Models\CategoryModel;
 use App\Models\CartModel;
+
+
 
 class PublicPageLoader extends BaseController
 {
@@ -40,6 +47,7 @@ class PublicPageLoader extends BaseController
 
 	public function cart(){
 
+
 		$categoryModel = new CategoryModel();
 
 		$data['categories'] = $categoryModel->findAll();
@@ -50,9 +58,35 @@ class PublicPageLoader extends BaseController
 
 		$productModel = new ProductModel();
 
-		$data['products'] = $productModel->findAll();
+		$data['products'] = $products = $productModel->findAll();
 
-		$data['cart_items'] = $cartModel->fetch_all_cart_items();
+		$data['cart_items'] = $cart_items =  $cartModel->fetch_all_cart_items();
+
+		$session = session();
+
+		$role = session('role'); 
+
+		if($role=='customer'){
+			if(!empty($cart_items)){
+				$api = new Api('rzp_test_looXFeOiWI0vw6', 'zYQvID9bM68Qt5uikukVZdvz');
+	
+				$totalPayable = 0.00;
+	
+				foreach ($cart_items as $cart_item) {
+					foreach ($products as $product) {
+						if ($cart_item['product_id']==$product['id']) {
+							$amount = $cart_item['quantity']*$product['sale_price'];
+							$totalPayable=$totalPayable+$amount;
+						}
+					}
+				}
+	
+				$order  = $api->order->create(array('receipt' => rand(10000,9999), 'amount' => ($totalPayable*100), 'currency' => 'INR')); // Creates order
+			}
+			$data['orderData'] = $order;
+		}else {
+			$data['orderData'] = array();
+		}
 
 		$this->public_page_loader('cart',$data);
 

@@ -1,3 +1,5 @@
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
 <main class="page-content" id="cart" style="padding: 5% 0;">
     <?php if(!empty($cart_items)): ?>
     <section id="cart">
@@ -33,7 +35,7 @@
                                 $subtotal=$subtotal+$amount; 
                             } ?></td>
                             <td>
-                                <button style="margin-bottom: 3%;" type="submit" class="btn btn-primary">Update</button>
+                                <button style="margin-bottom: 5%;" type="submit" class="btn btn-primary">Update</button>
                             </form>
                             <form action="<?php echo site_url('delete-cart-item'); ?>" method="post" style="display: inline;">
                                 <input type="hidden" name="cart-item-id" value="<?php echo $cart_item['id']; ?>">
@@ -54,11 +56,76 @@
 
                     <br><br>
 
-                    <button class="btn btn-success btn-block" type="button" id="openLoginPopup">
+                    <?php         
+                    $session = session();
+
+                    $role = $session->get('role'); if($role!='customer'): ?>
+
+                    <button class="btn btn-success btn-block" data-toggle="modal" data-target="#loginModal"  type="button" id="openLoginPopup">
                     
                         Login to Proceed
                     
                     </button>
+
+                    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content text-left">
+                            
+                                <div class="modal-body">
+
+                                    <!-- <img style="width: 100%;" src="<?php echo site_url('assets/images/newestlogo.png'); ?>" id="logonew"> -->
+
+                                    <h4 class="text-center">Customer Login</h4>
+
+                                    <p id="loginErrorText" class="text-danger text-center"></p>
+                                    
+                                    <div class="form-group">
+                                    
+                                        <label for="customer-email">Email</label>
+                                        <input style="border: 1px solid black;" class="form-control" type="email" name="customer-email" id="customer-email">
+
+                                    </div>
+                                    <div class="form-group">
+                                    
+                                        <label for="customer-password">Password</label>
+                                        <input style="border: 1px solid black;" class="form-control" type="password" name="customer-password" id="customer-password">
+
+                                    </div>
+
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="showPwdCustomerLogin">
+                                        <label class="form-check-label" for="showPwdCustomerLogin">
+                                            Show Password
+                                        </label>
+                                    </div><br>
+
+                                   
+
+
+
+                                    <button type="button" id="ajaxCustomerLoginButton" class="btn btn-success">LOGIN</button>
+
+                                </div>
+                            
+                            </div>
+                        </div>
+                    </div>
+                    <?php else: ?>
+                        <div class="container-fluid text-left">
+                            <p id="orderPlacingError" class="text-danger text-center"></p>
+                            <div class="form-group">
+                                <label for="contactNumber">Contact Number</label>
+                                <input class="form-control" style='border: 1px solid;' type="text" name="orderContactNumber" id="contactNumber">
+                            </div>
+                            <div class="form-group">
+                                <label for="address">Address</label>
+                                <textarea style='border: 1px solid;' id="orderAddress" name="address" class="form-control"></textarea>
+                            </div>
+                            <button class="btn btn-success btn-block" data-toggle="modal" data-target="#loginModal"  type="button" id="makePayment">
+                            Make Payment
+                            </button>
+                        </div>
+                    <?php endif; ?>
                 
                 </div>
                 <div class="col-lg-4 col-md-12 col-sm-12"></div>
@@ -74,3 +141,87 @@
     </section>
     <?php endif; ?>
 </main>
+<script>
+// CustomerLogin Ajax
+$("button#ajaxCustomerLoginButton").click(function (e) { 
+    e.preventDefault();
+    let customerEmail = $("input#customer-email").val();
+    let customerPassword = $("input#customer-password").val();
+    if (customerEmail==''||customerPassword=='') {
+        $("p#loginErrorText").html('Please enter both email and Password');
+    } else {
+        $.ajax({
+            type: "POST",
+            url: "<?php echo site_url('customer-login-api'); ?>",
+            data: {
+                'customer-email' : customerEmail,
+                'customer-password' : customerPassword,
+            },
+            success: function (response) {
+                if(response=='login-success'){
+                    location.reload();
+                }else{
+                    setTimeout(function() {
+                        $("p#loginErrorText").html('The Email or Password entered is incorrect');
+                    }, 3000);
+                }
+            }
+        });
+    }
+});
+// Make PaymentAjax
+$("button#makePayment").click(function (e) { 
+    e.preventDefault();
+    let orderContactNumber = $("input#orderContactNumber").val();
+    let orderAddress = $("textarea#orderAddress").val();
+    if(orderContactNumber==''||orderAddress==''){
+        $("p#orderPlacingError").html('Please enter both Contact Number and Address');
+    }else{
+        var options = {
+        "key": "rzp_test_looXFeOiWI0vw6", // Enter the Key ID generated from the Dashboard
+        "amount": '<?php echo $orderData['amount']; ?>', // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+        "currency": "INR",
+        "name": "Kimara Jewellery",
+        "description": "Payment on Kimara Jewellery",
+        "image": "<?php echo site_url('assets/images/newestlogo.png'); ?>",
+        "order_id": "<?php echo $orderData['id']; ?>", //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+        "handler": function (response){
+
+            location.href="<?php echo site_url('thank-you'); ?>"
+
+
+            $.ajax({
+                type: "POST",
+                url: "<?php echo site_url('save-transaction-add-purchase'); ?>",
+                data: {
+                    'razorpay_payment_id' : response.razorpay_payment_id,
+                    'razorpay_order_id' : response.razorpay_order_id,
+                    'razorpay_signature' : response.razorpay_signature,
+                    'payee_customer_email' : '<?php echo $_SESSION['email']; ?>',
+                    'payee_customer_name' : '<?php echo $_SESSION['first_name'].' '.$_SESSION['last_name']; ?>',
+                    'amount' : <?php echo $orderData['amount']; ?>
+                },
+                success: function (response) {
+                    if (response=='success') {
+                        location.href="<?php echo site_url('thank-you'); ?>"
+                    }  
+                }
+            });
+
+        
+        },
+        "prefill": {
+            "name": "<?php echo $_SESSION['first_name']; ?>",
+            "email": "<?php echo $_SESSION['email']; ?>"
+        },
+        "theme": {
+            "color": "#000000"
+        }
+    };
+    var rzp1 = new Razorpay(options);
+    rzp1.open();
+    e.preventDefault();
+
+    }
+});
+</script>
