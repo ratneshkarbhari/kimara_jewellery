@@ -169,6 +169,7 @@ $("button#ajaxCustomerLoginButton").click(function (e) {
         });
     }
 });
+<?php if(isset($_SESSION['role'])&&$_SESSION['role']=='customer'): ?>
 // Make PaymentAjax
 $("button#makePayment").click(function (e) { 
     e.preventDefault();
@@ -224,4 +225,5 @@ $("button#makePayment").click(function (e) {
 
     }
 });
+<?php endif; ?>
 </script>
