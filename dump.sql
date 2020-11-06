@@ -2,7 +2,7 @@
 --
 -- Host: localhost    Database: kimaradb
 -- ------------------------------------------------------
--- Server version	8.0.22-0ubuntu0.20.10.2
+-- Server version	8.0.22-0ubuntu0.20.04.2
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -39,7 +39,7 @@ CREATE TABLE `cart` (
 
 LOCK TABLES `cart` WRITE;
 /*!40000 ALTER TABLE `cart` DISABLE KEYS */;
-INSERT INTO `cart` VALUES (13,8,'silver','small',6,'::1'),(14,9,'silver','small',1,'::1');
+INSERT INTO `cart` VALUES (13,8,'silver','small',6,'::1'),(14,9,'silver','small',2,'::1');
 /*!40000 ALTER TABLE `cart` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -94,7 +94,7 @@ CREATE TABLE `orders` (
   `shipping_address` longtext NOT NULL,
   `billing_address` longtext NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -103,7 +103,7 @@ CREATE TABLE `orders` (
 
 LOCK TABLES `orders` WRITE;
 /*!40000 ALTER TABLE `orders` DISABLE KEYS */;
-INSERT INTO `orders` VALUES (1,'5','[{\"product_id\":\"9\",\"quantity\":\"5\",\"material\":\"silver\",\"sie\":\"small\"}]',5000.00,'placed','Order is placed by payment made via RazorPay','','Ratnesh Karbhari','prepaid','','',''),(2,'5','[{\"product_id\":\"9\",\"quantity\":\"5\",\"material\":\"silver\",\"sie\":\"small\"}]',5000.00,'placed','Order is placed by payment made via RazorPay','','Ratnesh Karbhari','prepaid','','',''),(3,'5','[{\"product_id\":\"9\",\"quantity\":\"5\",\"material\":\"silver\",\"sie\":\"small\"}]',5000.00,'placed','Order is placed by payment made via RazorPay','','Ratnesh Karbhari','prepaid','','',''),(4,'5','[{\"product_id\":\"9\",\"quantity\":\"5\",\"material\":\"silver\",\"sie\":\"small\"}]',5000.00,'placed','Order is placed by payment made via RazorPay','','Ratnesh Karbhari','prepaid','','',''),(5,'5','[{\"product_id\":\"9\",\"quantity\":\"6\",\"material\":\"silver\",\"sie\":\"small\"},{\"product_id\":\"8\",\"quantity\":\"1\",\"material\":\"silver\",\"sie\":\"small\"}]',6500.00,'placed','Order is placed by payment made via RazorPay','','Ratnesh Karbhari','prepaid','','',''),(6,'5fa3ecd97967a','[{\"product_id\":\"8\",\"quantity\":\"6\",\"material\":\"silver\",\"sie\":\"small\"},{\"product_id\":\"9\",\"quantity\":\"1\",\"material\":\"silver\",\"sie\":\"small\"}]',4000.00,'placed','Order is placed by payment made via RazorPay','','Ratnesh Karbhari','prepaid','','',''),(7,'5fa3ee08a0396','[{\"product_id\":\"8\",\"quantity\":\"6\",\"material\":\"silver\",\"sie\":\"small\"},{\"product_id\":\"9\",\"quantity\":\"1\",\"material\":\"silver\",\"sie\":\"small\"}]',40.00,'placed','Order is placed by payment made via RazorPay','','Ratnesh Karbhari','prepaid','','','');
+INSERT INTO `orders` VALUES (1,'5','[{\"product_id\":\"9\",\"quantity\":\"5\",\"material\":\"silver\",\"sie\":\"small\"}]',5000.00,'placed','Order is placed by payment made via RazorPay','','Ratnesh Karbhari','prepaid','','',''),(2,'5','[{\"product_id\":\"9\",\"quantity\":\"5\",\"material\":\"silver\",\"sie\":\"small\"}]',5000.00,'placed','Order is placed by payment made via RazorPay','','Ratnesh Karbhari','prepaid','','',''),(3,'5','[{\"product_id\":\"9\",\"quantity\":\"5\",\"material\":\"silver\",\"sie\":\"small\"}]',5000.00,'placed','Order is placed by payment made via RazorPay','','Ratnesh Karbhari','prepaid','','',''),(4,'5','[{\"product_id\":\"9\",\"quantity\":\"5\",\"material\":\"silver\",\"sie\":\"small\"}]',5000.00,'placed','Order is placed by payment made via RazorPay','','Ratnesh Karbhari','prepaid','','',''),(5,'5','[{\"product_id\":\"9\",\"quantity\":\"6\",\"material\":\"silver\",\"sie\":\"small\"},{\"product_id\":\"8\",\"quantity\":\"1\",\"material\":\"silver\",\"sie\":\"small\"}]',6500.00,'placed','Order is placed by payment made via RazorPay','','Ratnesh Karbhari','prepaid','','',''),(6,'5fa3ecd97967a','[{\"product_id\":\"8\",\"quantity\":\"6\",\"material\":\"silver\",\"sie\":\"small\"},{\"product_id\":\"9\",\"quantity\":\"1\",\"material\":\"silver\",\"sie\":\"small\"}]',4000.00,'placed','Order is placed by payment made via RazorPay','','Ratnesh Karbhari','prepaid','','',''),(7,'5fa3ee08a0396','[{\"product_id\":\"8\",\"quantity\":\"6\",\"material\":\"silver\",\"sie\":\"small\"},{\"product_id\":\"9\",\"quantity\":\"1\",\"material\":\"silver\",\"sie\":\"small\"}]',40.00,'placed','Order is placed by payment made via RazorPay','','Ratnesh Karbhari','prepaid','','',''),(8,'5fa50e1a4981a','[{\"product_id\":\"8\",\"quantity\":\"6\",\"material\":\"silver\",\"sie\":\"small\"},{\"product_id\":\"9\",\"quantity\":\"2\",\"material\":\"silver\",\"sie\":\"small\"}]',5000.00,'placed','Order is placed by payment made via RazorPay','ratneshkarbhari7@gmail.com','Ratnesh Karbhari','prepaid','undefined','Vikhroli East','Vikhroli East'),(9,'5fa50e7a76d44','[{\"product_id\":\"8\",\"quantity\":\"6\",\"material\":\"silver\",\"sie\":\"small\"},{\"product_id\":\"9\",\"quantity\":\"2\",\"material\":\"silver\",\"sie\":\"small\"}]',5000.00,'placed','Order is placed by payment made via RazorPay','ratneshkarbhari7@gmail.com','Ratnesh Karbhari','prepaid','undefined','Vikhroli East','Vikhroli East'),(10,'5fa50ecc03954','[{\"product_id\":\"8\",\"quantity\":\"6\",\"material\":\"silver\",\"sie\":\"small\"},{\"product_id\":\"9\",\"quantity\":\"2\",\"material\":\"silver\",\"sie\":\"small\"}]',0.50,'placed','Order is placed by payment made via RazorPay','ratneshkarbhari7@gmail.com','Ratnesh Karbhari','prepaid','undefined','Vikhroli East','Vikhroli East'),(11,'5fa50ef90ef21','[{\"product_id\":\"8\",\"quantity\":\"6\",\"material\":\"silver\",\"sie\":\"small\"},{\"product_id\":\"9\",\"quantity\":\"2\",\"material\":\"silver\",\"sie\":\"small\"}]',50.00,'placed','Order is placed by payment made via RazorPay','ratneshkarbhari7@gmail.com','Ratnesh Karbhari','prepaid','undefined','Vikhroli East','vikroli East');
 /*!40000 ALTER TABLE `orders` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -185,4 +185,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-11-06 11:23:22
+-- Dump completed on 2020-11-06 14:28:12

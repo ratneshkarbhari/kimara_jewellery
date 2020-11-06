@@ -183,6 +183,9 @@ $("button#makePayment").click(function (e) {
     if(orderContactNumber==''||shippingAddress==''||billingAddress==''){
         $("p#orderPlacingError").html('Please enter both Contact Number, Shipping and Billing Address');
     }else{
+        localStorage.setItem('orderContactNumber', orderContactNumber);
+        localStorage.setItem('shippingAddress', shippingAddress);
+        localStorage.setItem('billingAddress', billingAddress);
         var options = {
         "key": "rzp_test_looXFeOiWI0vw6", // Enter the Key ID generated from the Dashboard
         "amount": '<?php echo $orderData['amount']; ?>', 
@@ -199,10 +202,10 @@ $("button#makePayment").click(function (e) {
                 data: {
                     'payee_customer_email' : '<?php echo $_SESSION['email']; ?>',
                     'payee_customer_name' : '<?php echo $_SESSION['first_name'].' '.$_SESSION['last_name']; ?>',
-                    'amount' : '<?php echo $orderData['amount']; ?>',
-                    'contact_number' : $("input#orderContactNumber").val(),
-                    'shipping_address' : $("textarea#shippingAddress").val(),
-                    'billing_address' : $("textarea#billingAddress").val(),
+                    'amount' : '<?php echo ($orderData['amount']/100); ?>',
+                    'contact_number' : localStorage.getItem('orderContactNumber'),
+                    'shipping_address' : localStorage.getItem('shippingAddress'),
+                    'billing_address' : localStorage.getItem('billingAddress'),
                 },
                 success: function (response) {
                     if (response=='success') {

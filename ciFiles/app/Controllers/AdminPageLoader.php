@@ -2,6 +2,7 @@
 
 use App\Models\CategoryModel;
 use App\Models\ProductModel;
+use App\Models\OrderModel;
 
 class AdminPageLoader extends BaseController
 {
@@ -24,6 +25,20 @@ class AdminPageLoader extends BaseController
         echo view('adminPages/'.$viewName,$data);
         echo view('templates/admin_footer',$data);
 
+    }
+
+    public function orders(){
+
+        $this->send_to_login();
+
+        $data['title'] = 'Orders';
+        $orderModel = new OrderModel();
+        $orders = $orderModel->findAll();
+
+        $data['orders'] = array_reverse($orders);
+
+        $this->admin_page_loader('orders',$data);
+        
     }
 
 	public function dashboard()
