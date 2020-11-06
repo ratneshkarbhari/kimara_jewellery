@@ -30,7 +30,7 @@ CREATE TABLE `cart` (
   `quantity` int NOT NULL,
   `ip_address` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -39,7 +39,7 @@ CREATE TABLE `cart` (
 
 LOCK TABLES `cart` WRITE;
 /*!40000 ALTER TABLE `cart` DISABLE KEYS */;
-INSERT INTO `cart` VALUES (9,8,'silver','small',10,'::1'),(11,9,'silver','small',1,'::1');
+INSERT INTO `cart` VALUES (13,8,'silver','small',6,'::1'),(14,9,'silver','small',1,'::1');
 /*!40000 ALTER TABLE `cart` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -82,16 +82,19 @@ DROP TABLE IF EXISTS `orders`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `orders` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `public_order_id` int NOT NULL,
+  `public_order_id` text NOT NULL,
   `products_qty_json` longtext NOT NULL,
   `amount_paid` decimal(10,2) NOT NULL,
   `status` varchar(50) NOT NULL,
   `status_details` longtext NOT NULL,
-  `customer_note` longtext NOT NULL,
-  `customer_id` int NOT NULL,
+  `customer_email` varchar(500) NOT NULL,
   `customer_name` longtext NOT NULL,
+  `mode` text NOT NULL,
+  `contact_number` text NOT NULL,
+  `shipping_address` longtext NOT NULL,
+  `billing_address` longtext NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -100,6 +103,7 @@ CREATE TABLE `orders` (
 
 LOCK TABLES `orders` WRITE;
 /*!40000 ALTER TABLE `orders` DISABLE KEYS */;
+INSERT INTO `orders` VALUES (1,'5','[{\"product_id\":\"9\",\"quantity\":\"5\",\"material\":\"silver\",\"sie\":\"small\"}]',5000.00,'placed','Order is placed by payment made via RazorPay','','Ratnesh Karbhari','prepaid','','',''),(2,'5','[{\"product_id\":\"9\",\"quantity\":\"5\",\"material\":\"silver\",\"sie\":\"small\"}]',5000.00,'placed','Order is placed by payment made via RazorPay','','Ratnesh Karbhari','prepaid','','',''),(3,'5','[{\"product_id\":\"9\",\"quantity\":\"5\",\"material\":\"silver\",\"sie\":\"small\"}]',5000.00,'placed','Order is placed by payment made via RazorPay','','Ratnesh Karbhari','prepaid','','',''),(4,'5','[{\"product_id\":\"9\",\"quantity\":\"5\",\"material\":\"silver\",\"sie\":\"small\"}]',5000.00,'placed','Order is placed by payment made via RazorPay','','Ratnesh Karbhari','prepaid','','',''),(5,'5','[{\"product_id\":\"9\",\"quantity\":\"6\",\"material\":\"silver\",\"sie\":\"small\"},{\"product_id\":\"8\",\"quantity\":\"1\",\"material\":\"silver\",\"sie\":\"small\"}]',6500.00,'placed','Order is placed by payment made via RazorPay','','Ratnesh Karbhari','prepaid','','',''),(6,'5fa3ecd97967a','[{\"product_id\":\"8\",\"quantity\":\"6\",\"material\":\"silver\",\"sie\":\"small\"},{\"product_id\":\"9\",\"quantity\":\"1\",\"material\":\"silver\",\"sie\":\"small\"}]',4000.00,'placed','Order is placed by payment made via RazorPay','','Ratnesh Karbhari','prepaid','','',''),(7,'5fa3ee08a0396','[{\"product_id\":\"8\",\"quantity\":\"6\",\"material\":\"silver\",\"sie\":\"small\"},{\"product_id\":\"9\",\"quantity\":\"1\",\"material\":\"silver\",\"sie\":\"small\"}]',40.00,'placed','Order is placed by payment made via RazorPay','','Ratnesh Karbhari','prepaid','','','');
 /*!40000 ALTER TABLE `orders` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -181,4 +185,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-11-04 17:54:02
+-- Dump completed on 2020-11-06 11:23:22

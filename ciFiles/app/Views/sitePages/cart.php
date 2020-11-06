@@ -192,28 +192,24 @@ $("button#makePayment").click(function (e) {
         "image": "<?php echo site_url('assets/images/newestlogo.png'); ?>",
         // "order_id": "<?php echo $orderData['id']; ?>", //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
         "handler": function (response){
-
-            // location.href="<?php echo site_url('thank-you'); ?>";
-
+            console.log(response);
             $.ajax({
                 type: "POST",
-                url: "<?php echo site_url('create-order'); ?>",
+                url: '<?php echo site_url('create-order'); ?>',
                 data: {
                     'payee_customer_email' : '<?php echo $_SESSION['email']; ?>',
                     'payee_customer_name' : '<?php echo $_SESSION['first_name'].' '.$_SESSION['last_name']; ?>',
-                    'amount' : <?php echo $orderData['amount']; ?>,
+                    'amount' : '<?php echo $orderData['amount']; ?>',
+                    'contact_number' : $("input#orderContactNumber").val(),
                     'shipping_address' : $("textarea#shippingAddress").val(),
                     'billing_address' : $("textarea#billingAddress").val(),
-                    'contact_number' : $("input#contactNumber").val()
                 },
                 success: function (response) {
                     if (response=='success') {
-                        location.href="<?php echo site_url('thank-you'); ?>"
-                    }  
+                        window.location.href = "<?php echo site_url('thank-you'); ?>";
+                    }
                 }
-            });
-
-        
+            });        
         },
         "prefill": {
             "name": "<?php echo $_SESSION['first_name']; ?>",

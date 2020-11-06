@@ -36,8 +36,10 @@ class Orders extends BaseController
 
         $items_qty_json = json_encode($itemsJsonObject);
 
+        $publicOrderId = uniqid();
+
         $orderObject = array(
-            'public_order_id' => uniqid(),
+            'public_order_id' => $publicOrderId,
             'products_qty_json' => $items_qty_json,
             'amount_paid' => $amount,
             'status' => 'placed',
