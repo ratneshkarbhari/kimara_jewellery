@@ -65,18 +65,15 @@
 
                             </div>
                             <div class="col-lg-4 col-md-12 col-sm-12"></div>
-                            
+                            <p id="atc-success" style="margin-bottom: 0;" class="col-lg-12 col-md-12 col-sm-12 text-success" style="color: darkgreen !important;"></p>
+                                <p id="atc-failure" class="col-lg-12 col-md-12 col-sm-12 text-danger"></p>
                             <div class="col-lg-4 col-md-6 col-sm-12" style="padding:0;">
                                 
-                                <p id="atc-success" class="text-success" style="color: darkgreen !important;"></p>
-                                <p id="atc-failure" class="text-danger"></p>
                                         
                                 <button type="button" id="addToCartButton" class="btn btn-success" style="background-color: black; color:white;">ADD to Cart</button>
                             </div>
                             <div class="col-lg-4 col-md-6 col-sm-12" style="padding:0;">
                                 
-                                <p id="atw-success" class="text-success" style="color: darkgreen !important;"></p>
-                                <p id="atw-failure" class="text-danger"></p>
                                 <?php $session = session(); if($session->role=='customer'): ?>
                                 <button type="button" id="addToWishlistButton" class="btn btn-primary" style="background-color: black; color:white;">ADD to Wishlist</button>
                                 <?php else: ?>

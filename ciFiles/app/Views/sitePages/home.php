@@ -60,12 +60,7 @@
     </section>
     <section id="featured-products" class="regular-section d-sm-block d-md-block d-lg-none" style="padding-bottom: 5%;">
 
-        <style>
-        main{
-            padding-bottom:15%;
-        }
         
-        </style>
     
         <div class="container-fluid">
         
@@ -183,6 +178,19 @@
 
             </div>
         
+        </div>
+    </section>
+    <section id="usp-section" class="regular-section" style="background-color: #9b870c; color: white;">
+        <div class="container">
+            <div class="row">
+                
+                <div class="col-lg-12 text-center col-md-12 col-sm-12">
+                
+
+                    <p style="font-size: 30px;"><img src="<?php echo site_url('assets/icons/truck.svg'); ?>" width="30px" height="30px"> 5 Day Delivery guaranteed</p>
+                
+                </div>
+            </div>
         </div>
     </section>
 </main>

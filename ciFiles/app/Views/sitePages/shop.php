@@ -1,10 +1,25 @@
+
 <main class="page-content" id="shop">
 
     <div class="container">
     
         <div class="row" style="margin: 5% 0;">
         
-            <div class="col-lg-3 col-md-12 col-sm-12"></div>
+            <div class="col-lg-3 col-md-12 col-sm-12">
+            
+            <h4 class="section-title">Filter Products</h4>
+            <br>
+            <h5>by categories</h5>
+            <?php foreach($categories as $category): ?>
+                <div class="form-check">
+                    <input class="form-check-input filter-ip" filter-type="category" type="checkbox" value="<?php echo $category['id']; ?>" id="category-<?php echo $category['id']; ?>">
+                    <label class="form-check-label" for="category-<?php echo $category['id']; ?>">
+                        <?php echo $category['title']; ?>
+                    </label>
+                </div>
+            <?php endforeach; ?>
+            
+            </div>
             <div class="col-lg-9 col-md-12 col-sm-12">
 
             <div class="container-fluid">
