@@ -107,7 +107,9 @@
     $("button#reduce-qty").click(function (e) { 
         e.preventDefault();
         let productQuantity = $("input#product-quantity").val();
-        $("input#product-quantity").val(parseInt(productQuantity)-parseInt(1));
+        if(parseInt(productQuantity)!=1){
+            $("input#product-quantity").val(parseInt(productQuantity)-parseInt(1));
+        }
     });
     $("button#addToCartButton").click(function (e) { 
         e.preventDefault();
