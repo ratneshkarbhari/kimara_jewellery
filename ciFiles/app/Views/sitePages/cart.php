@@ -1,7 +1,7 @@
 <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 
 <main class="page-content" id="cart" style="padding: 5% 0;">
-    <?php if(isset($orderData['amount'])): ?>
+    <?php if(count($cart_items)>0): ?>
     <section id="cart">
         <div class="container-fluid text-center">
             <div class="table-responsive">

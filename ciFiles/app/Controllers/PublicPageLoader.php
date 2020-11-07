@@ -130,6 +130,7 @@ class PublicPageLoader extends BaseController
 
 		$data['cart_items'] = $cart_items =  $cartModel->fetch_all_cart_items();
 
+
 		$session = session();
 
 		$role = session('role'); 
