@@ -59,18 +59,37 @@
                                     <?php endfor; ?>
                                 </select> -->
 
+
+
                                 <button class="btn" id="reduce-qty" type="button" style="border-radius: 0 !important; border: 1px solid gray; color: black; padding: 0.5% 2%; margin: 0 2%;">-</button><input type="number" id="product-quantity" style="width: 30px;" value="1" min="1" readonly><button class="btn" id="add-qty" type="button" style="border-radius: 0 !important; border: 1px solid gray; color: black; padding: 0.5% 2%; margin: 0 2%;">+</button>
 
                             </div>
-
-                            <br>
-                            <div class="col-lg-12 col-md-12 col-sm-12" style="padding:0;">
+                            <div class="col-lg-4 col-md-12 col-sm-12"></div>
+                            
+                            <div class="col-lg-4 col-md-6 col-sm-12" style="padding:0;">
                                 
                                 <p id="atc-success" class="text-success" style="color: darkgreen !important;"></p>
                                 <p id="atc-failure" class="text-danger"></p>
                                         
                                 <button type="button" id="addToCartButton" class="btn btn-success" style="background-color: black; color:white;">ADD to Cart</button>
                             </div>
+                            <div class="col-lg-4 col-md-6 col-sm-12" style="padding:0;">
+                                
+                                <p id="atw-success" class="text-success" style="color: darkgreen !important;"></p>
+                                <p id="atw-failure" class="text-danger"></p>
+                                <?php $session = session(); if($session->role=='customer'): ?>
+                                <button type="button" id="addToWishlistButton" class="btn btn-primary" style="background-color: black; color:white;">ADD to Wishlist</button>
+                                <?php else: ?>
+                                    <a type="button" id="addToWishlistButton" href="<?php echo site_url('my-account'); ?>" class="btn btn-primary" style="background-color: black; color:white;">ADD to Wishlist</a>
+                                <?php endif;  ?>
+                                <script>
+                                $("button#addToWishlistButton").click(function (e) { 
+                                    // 
+                                });
+                                </script>
+
+                            </div>
+                            <div class="col-lg-4 col-md-12 col-sm-12"></div>
                         
                         </div>
 
@@ -131,7 +150,7 @@
                     setTimeout(function() {
                         $("p#atc-success").html('');
                     }, 3000);
-
+                    location.reload();
                 }else{
                     $("p#atc-failure").html('Added to Cart Successfully');
                     setTimeout(function() {

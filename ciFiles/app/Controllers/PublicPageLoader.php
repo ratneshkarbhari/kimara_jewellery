@@ -19,6 +19,12 @@ class PublicPageLoader extends BaseController
 
 	private function public_page_loader($viewName,$data){
 
+		$cartModel = new CartModel();
+
+		$cart_items = $cartModel->fetch_all_cart_items();
+
+		$data['cart_item_count'] = count($cart_items);
+
 		echo view('templates/header',$data);
 		echo view('sitePages/'.$viewName,$data);
 		echo view('templates/footer',$data);
@@ -253,6 +259,8 @@ class PublicPageLoader extends BaseController
 
 		$this->public_page_loader('shop',$data);
 	}
+
+
 
 	public function universal_product_search(){
 		$query = $this->request->getPost('universal-search');

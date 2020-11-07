@@ -329,3 +329,126 @@ CRITICAL - 2020-11-07 15:13:52 --> Undefined variable: title
 #7 /var/www/html/kimara_jewellery/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
 #8 /var/www/html/kimara_jewellery/index.php(46): CodeIgniter\CodeIgniter->run()
 #9 {main}
+CRITICAL - 2020-11-07 15:39:46 --> Argument 2 passed to CodeIgniter\Database\BaseBuilder::like() must be of the type string, null given, called in /var/www/html/kimara_jewellery/ciFiles/vendor/codeigniter4/framework/system/Model.php on line 1818
+#0 /var/www/html/kimara_jewellery/ciFiles/vendor/codeigniter4/framework/system/Model.php(1818): CodeIgniter\Database\BaseBuilder->like()
+#1 /var/www/html/kimara_jewellery/ciFiles/app/Controllers/PublicPageLoader.php(260): CodeIgniter\Model->__call()
+#2 /var/www/html/kimara_jewellery/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\PublicPageLoader->universal_product_search()
+#3 /var/www/html/kimara_jewellery/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#4 /var/www/html/kimara_jewellery/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#5 /var/www/html/kimara_jewellery/index.php(46): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-11-07 15:59:13 --> syntax error, unexpected end of file
+#0 /var/www/html/kimara_jewellery/ciFiles/vendor/codeigniter4/framework/system/Common.php(1119): CodeIgniter\View\View->render()
+#1 /var/www/html/kimara_jewellery/ciFiles/app/Controllers/PublicPageLoader.php(23): view()
+#2 /var/www/html/kimara_jewellery/ciFiles/app/Controllers/PublicPageLoader.php(303): App\Controllers\PublicPageLoader->public_page_loader()
+#3 /var/www/html/kimara_jewellery/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\PublicPageLoader->product_page()
+#4 /var/www/html/kimara_jewellery/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#5 /var/www/html/kimara_jewellery/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#6 /var/www/html/kimara_jewellery/index.php(46): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2020-11-07 15:59:43 --> Undefined variable: _SESSION
+#0 /var/www/html/kimara_jewellery/ciFiles/app/Views/sitePages/product_page.php(80): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/kimara_jewellery/ciFiles/vendor/codeigniter4/framework/system/View/View.php(246): include('/var/www/html/k...')
+#2 /var/www/html/kimara_jewellery/ciFiles/vendor/codeigniter4/framework/system/Common.php(1119): CodeIgniter\View\View->render()
+#3 /var/www/html/kimara_jewellery/ciFiles/app/Controllers/PublicPageLoader.php(23): view()
+#4 /var/www/html/kimara_jewellery/ciFiles/app/Controllers/PublicPageLoader.php(303): App\Controllers\PublicPageLoader->public_page_loader()
+#5 /var/www/html/kimara_jewellery/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\PublicPageLoader->product_page()
+#6 /var/www/html/kimara_jewellery/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#7 /var/www/html/kimara_jewellery/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#8 /var/www/html/kimara_jewellery/index.php(46): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2020-11-07 16:00:23 --> Undefined variable: categories
+#0 /var/www/html/kimara_jewellery/ciFiles/app/Views/templates/header.php(50): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/kimara_jewellery/ciFiles/vendor/codeigniter4/framework/system/View/View.php(246): include('/var/www/html/k...')
+#2 /var/www/html/kimara_jewellery/ciFiles/vendor/codeigniter4/framework/system/Common.php(1119): CodeIgniter\View\View->render()
+#3 /var/www/html/kimara_jewellery/ciFiles/app/Controllers/Authentication.php(255): view()
+#4 /var/www/html/kimara_jewellery/ciFiles/app/Controllers/Authentication.php(109): App\Controllers\Authentication->load_customer_login_error()
+#5 /var/www/html/kimara_jewellery/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Authentication->customer_login()
+#6 /var/www/html/kimara_jewellery/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#7 /var/www/html/kimara_jewellery/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#8 /var/www/html/kimara_jewellery/index.php(46): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2020-11-07 16:00:59 --> Undefined variable: categories
+#0 /var/www/html/kimara_jewellery/ciFiles/app/Views/templates/header.php(50): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/kimara_jewellery/ciFiles/vendor/codeigniter4/framework/system/View/View.php(246): include('/var/www/html/k...')
+#2 /var/www/html/kimara_jewellery/ciFiles/vendor/codeigniter4/framework/system/Common.php(1119): CodeIgniter\View\View->render()
+#3 /var/www/html/kimara_jewellery/ciFiles/app/Controllers/Authentication.php(258): view()
+#4 /var/www/html/kimara_jewellery/ciFiles/app/Controllers/Authentication.php(112): App\Controllers\Authentication->load_customer_login_error()
+#5 /var/www/html/kimara_jewellery/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Authentication->customer_login()
+#6 /var/www/html/kimara_jewellery/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#7 /var/www/html/kimara_jewellery/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#8 /var/www/html/kimara_jewellery/index.php(46): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2020-11-07 16:01:04 --> Undefined variable: categories
+#0 /var/www/html/kimara_jewellery/ciFiles/app/Views/templates/header.php(50): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/kimara_jewellery/ciFiles/vendor/codeigniter4/framework/system/View/View.php(246): include('/var/www/html/k...')
+#2 /var/www/html/kimara_jewellery/ciFiles/vendor/codeigniter4/framework/system/Common.php(1119): CodeIgniter\View\View->render()
+#3 /var/www/html/kimara_jewellery/ciFiles/app/Controllers/Authentication.php(258): view()
+#4 /var/www/html/kimara_jewellery/ciFiles/app/Controllers/Authentication.php(112): App\Controllers\Authentication->load_customer_login_error()
+#5 /var/www/html/kimara_jewellery/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Authentication->customer_login()
+#6 /var/www/html/kimara_jewellery/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#7 /var/www/html/kimara_jewellery/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#8 /var/www/html/kimara_jewellery/index.php(46): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2020-11-07 16:01:41 --> Undefined variable: categories
+#0 /var/www/html/kimara_jewellery/ciFiles/app/Views/templates/header.php(50): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/kimara_jewellery/ciFiles/vendor/codeigniter4/framework/system/View/View.php(246): include('/var/www/html/k...')
+#2 /var/www/html/kimara_jewellery/ciFiles/vendor/codeigniter4/framework/system/Common.php(1119): CodeIgniter\View\View->render()
+#3 /var/www/html/kimara_jewellery/ciFiles/app/Controllers/Authentication.php(260): view()
+#4 /var/www/html/kimara_jewellery/ciFiles/app/Controllers/Authentication.php(114): App\Controllers\Authentication->load_customer_login_error()
+#5 /var/www/html/kimara_jewellery/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Authentication->customer_login()
+#6 /var/www/html/kimara_jewellery/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#7 /var/www/html/kimara_jewellery/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#8 /var/www/html/kimara_jewellery/index.php(46): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2020-11-07 16:03:43 --> Undefined variable: categories
+#0 /var/www/html/kimara_jewellery/ciFiles/app/Views/templates/header.php(50): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/kimara_jewellery/ciFiles/vendor/codeigniter4/framework/system/View/View.php(246): include('/var/www/html/k...')
+#2 /var/www/html/kimara_jewellery/ciFiles/vendor/codeigniter4/framework/system/Common.php(1119): CodeIgniter\View\View->render()
+#3 /var/www/html/kimara_jewellery/ciFiles/app/Controllers/Authentication.php(262): view()
+#4 /var/www/html/kimara_jewellery/ciFiles/app/Controllers/Authentication.php(116): App\Controllers\Authentication->load_customer_login_error()
+#5 /var/www/html/kimara_jewellery/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Authentication->customer_login()
+#6 /var/www/html/kimara_jewellery/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#7 /var/www/html/kimara_jewellery/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#8 /var/www/html/kimara_jewellery/index.php(46): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2020-11-07 16:03:48 --> Undefined variable: categories
+#0 /var/www/html/kimara_jewellery/ciFiles/app/Views/templates/header.php(50): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/kimara_jewellery/ciFiles/vendor/codeigniter4/framework/system/View/View.php(246): include('/var/www/html/k...')
+#2 /var/www/html/kimara_jewellery/ciFiles/vendor/codeigniter4/framework/system/Common.php(1119): CodeIgniter\View\View->render()
+#3 /var/www/html/kimara_jewellery/ciFiles/app/Controllers/Authentication.php(262): view()
+#4 /var/www/html/kimara_jewellery/ciFiles/app/Controllers/Authentication.php(116): App\Controllers\Authentication->load_customer_login_error()
+#5 /var/www/html/kimara_jewellery/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Authentication->customer_login()
+#6 /var/www/html/kimara_jewellery/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#7 /var/www/html/kimara_jewellery/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#8 /var/www/html/kimara_jewellery/index.php(46): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2020-11-07 16:04:23 --> Undefined variable: categories
+#0 /var/www/html/kimara_jewellery/ciFiles/app/Views/templates/header.php(50): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/kimara_jewellery/ciFiles/vendor/codeigniter4/framework/system/View/View.php(246): include('/var/www/html/k...')
+#2 /var/www/html/kimara_jewellery/ciFiles/vendor/codeigniter4/framework/system/Common.php(1119): CodeIgniter\View\View->render()
+#3 /var/www/html/kimara_jewellery/ciFiles/app/Controllers/Authentication.php(263): view()
+#4 /var/www/html/kimara_jewellery/ciFiles/app/Controllers/Authentication.php(117): App\Controllers\Authentication->load_customer_login_error()
+#5 /var/www/html/kimara_jewellery/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Authentication->customer_login()
+#6 /var/www/html/kimara_jewellery/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#7 /var/www/html/kimara_jewellery/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#8 /var/www/html/kimara_jewellery/index.php(46): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2020-11-07 16:04:44 --> Undefined variable: categories
+#0 /var/www/html/kimara_jewellery/ciFiles/app/Views/templates/header.php(50): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/kimara_jewellery/ciFiles/vendor/codeigniter4/framework/system/View/View.php(246): include('/var/www/html/k...')
+#2 /var/www/html/kimara_jewellery/ciFiles/vendor/codeigniter4/framework/system/Common.php(1119): CodeIgniter\View\View->render()
+#3 /var/www/html/kimara_jewellery/ciFiles/app/Controllers/Authentication.php(263): view()
+#4 /var/www/html/kimara_jewellery/ciFiles/app/Controllers/Authentication.php(117): App\Controllers\Authentication->load_customer_login_error()
+#5 /var/www/html/kimara_jewellery/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Authentication->customer_login()
+#6 /var/www/html/kimara_jewellery/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#7 /var/www/html/kimara_jewellery/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#8 /var/www/html/kimara_jewellery/index.php(46): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2020-11-07 16:06:44 --> Undefined variable: data
+#0 /var/www/html/kimara_jewellery/ciFiles/app/Controllers/Authentication.php(110): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/kimara_jewellery/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Authentication->customer_login()
+#2 /var/www/html/kimara_jewellery/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#3 /var/www/html/kimara_jewellery/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#4 /var/www/html/kimara_jewellery/index.php(46): CodeIgniter\CodeIgniter->run()
+#5 {main}

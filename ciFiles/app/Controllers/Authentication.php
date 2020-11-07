@@ -67,17 +67,19 @@ class Authentication extends BaseController
 
         $session = session();
 
-        $categoryModel = new CategoryModel();
 
         $enteredEmail = $this->request->getPost('customer-email');
 
         $enteredPassword = $this->request->getPost('customer-password');
+
     
         if(filter_var($enteredEmail, FILTER_VALIDATE_EMAIL)){
 
             $authModel = new AuthModel();
 
             $userData = $authModel->where('email',$enteredEmail)->where('role','customer')->first();
+
+
             
             if ($userData) {
                 
@@ -98,7 +100,6 @@ class Authentication extends BaseController
 
                 } else {
 
-                    $data['categories'] = $categoryModel->findAll();
 
                     $this->load_customer_login_error('The Password entered is incorrect');                    
 
@@ -114,8 +115,6 @@ class Authentication extends BaseController
 
         }else {
 
-
-            $data['categories'] = $categoryModel->findAll();
 
             $this->load_customer_login_error('Entered email invalid');
 
@@ -251,9 +250,11 @@ class Authentication extends BaseController
     private function load_customer_login_error($errorMessage){
         $data['title'] = 'Customer Login';
         $data['error'] = $errorMessage;
+        $categoryModel = new CategoryModel();
+        $data['categories'] = $categoryModel->findAll();
 
         echo view('templates/header',$data);
-        echo view('sitePages/custoer_login',$data);
+        echo view('sitePages/customer_login',$data);
         echo view('templates/footer',$data);
     }
 

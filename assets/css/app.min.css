@@ -167,7 +167,9 @@ a.dropdown-item{
   padding-top: 3vh !important;
   padding-bottom: 3vh !important;
 }
-
+.cart-count-circle{
+  border-radius: 50%;
+}
 .btn{
   border-radius: 30px !important;
 

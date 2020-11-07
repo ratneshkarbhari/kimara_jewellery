@@ -30,7 +30,15 @@
                     
                     <nav id="top-right-nav" class="ml-auto">
                     <a class="nav-link d-inline" href="<?php echo site_url('customer-login'); ?>"><img src="<?php echo site_url('assets/icons/user.svg'); ?>" width="30px" height="30px"></a>
-                    <a class="nav-link d-inline" href="<?php echo site_url('cart'); ?>"><img src="<?php echo site_url('assets/icons/shopping-bag.svg'); ?>" width="30px" height="30px"></a>
+                    <a class="nav-link d-inline" href="<?php echo site_url('cart'); ?>"><img src="<?php echo site_url('assets/icons/shopping-bag.svg'); ?>" width="30px" height="30px"><span class="cart-count-circle" style="position: absolute;
+    top: -4%;
+    background-color: black;
+    padding-left: 4%;
+    right: 25%;
+    font-size: 11px;
+    color: white;
+    font-weight: bolder;
+    padding: 4%;"><?php echo $cart_item_count; ?></span></a>
                     </nav>
                 </div>
             </div>
@@ -97,7 +105,7 @@
                                     
                     <div class="form-group container">
                         <label for="universalSearchField">Find What you Love</label>
-                        <input class="form-control" style="border: 1px solid; width: 100%;" placeholder="Search for Products you desire" type="search" name="universal_search_query" id="universalSearchField">                            
+                        <input class="form-control" style="border: 1px solid; width: 100%;" placeholder="Search for Products you desire" type="search" name="universal-search" id="universalSearchField">                            
                     </div>
 
                 </form>
