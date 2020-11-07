@@ -254,6 +254,17 @@ class PublicPageLoader extends BaseController
 		$this->public_page_loader('shop',$data);
 	}
 
+	public function universal_product_search(){
+		$query = $this->request->getPost('universal-search');
+		$productModel = new ProductModel();
+		$products = $productModel->like('title',$query)->findAll();
+		$data['products'] = $products;
+		$categoryModel = new CategoryModel();
+		$data['categories'] = $categoryModel->findAll();
+		$data['title'] = 'Search Results';
+		$this->public_page_loader('search_results',$data);
+	}
+
 	public function category_page($slug){
 
 		$categoryModel = new CategoryModel();

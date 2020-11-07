@@ -164,13 +164,13 @@ a.dropdown-item{
 }
 
 .page-content{
-  padding-top: 10vh !important;
-  padding-bottom: 10vh !important;
+  padding-top: 3vh !important;
+  padding-bottom: 3vh !important;
 }
 
 .btn{
   border-radius: 30px !important;
-  
+
 }
 
 @media (min-width: 1281px) {

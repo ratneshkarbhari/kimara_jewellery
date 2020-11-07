@@ -20,7 +20,7 @@
                     <a class="navbar-brand" href="<?php echo site_url(''); ?>"><img src="<?php echo site_url('assets/images/newestlogo.png'); ?>" id="siteLogo"></a>
                 </div>
                 <div class="col-lg-7">
-                    <form action="" class="d-inline" method="post">
+                    <form action="<?php echo site_url('universal-product-search'); ?>" class="d-inline" method="post">
                         <div class="form-group">
                         <input style="margin-top: 2%; border: 1px solid black;" placeholder="Find what you love" type="search" name="universal-search" id="universal-search" class="form-control">
                         </div>

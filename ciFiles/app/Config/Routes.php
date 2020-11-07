@@ -45,6 +45,7 @@ $routes->get('cart','PublicPageLoader::cart');
 $routes->get('cod-order','PublicPageLoader::cod_order');
 $routes->get('thank-you','PublicPageLoader::thank_you');
 $routes->get('order-details/(:any)','PublicPageLoader::order_details/$1');
+$routes->post('universal-product-search','PublicPageLoader::universal_product_search');
 
 // Customer Profile my account page section
 $routes->post('update-customer-profile','Authentication::update_customer_profile');

@@ -53,11 +53,14 @@
                             <div class="col-lg-8 col-md-12 col-sm-12 form-group" style="padding-left: 0;">
                                 <label for="product-quantity">Quantity:</label>
 
-                                <select class="form-control" id="product-quantity">
+                                <!-- <select class="form-control" id="product-quantity">
                                     <?php for($i=1;$i<=5;$i++): ?>
                                     <option value="<?php echo $i; ?>"><?php echo $i; ?></option>
                                     <?php endfor; ?>
-                                </select>
+                                </select> -->
+
+                                <button class="btn" id="reduce-qty" type="button" style="border-radius: 0 !important; border: 1px solid gray; color: black; padding: 0.5% 2%; margin: 0 2%;">-</button><input type="number" id="product-quantity" style="width: 30px;" value="1" min="1" readonly><button class="btn" id="add-qty" type="button" style="border-radius: 0 !important; border: 1px solid gray; color: black; padding: 0.5% 2%; margin: 0 2%;">+</button>
+
                             </div>
 
                             <br>
@@ -95,11 +98,22 @@
 </main>
 
 <script>
+    $("button#add-qty").click(function (e) { 
+        e.preventDefault();
+        let productQuantity = $("input#product-quantity").val();
+        $("input#product-quantity").val(parseInt(productQuantity)+parseInt(1));
+    });
+
+    $("button#reduce-qty").click(function (e) { 
+        e.preventDefault();
+        let productQuantity = $("input#product-quantity").val();
+        $("input#product-quantity").val(parseInt(productQuantity)-parseInt(1));
+    });
     $("button#addToCartButton").click(function (e) { 
         e.preventDefault();
         let productMaterial = $("select#product-material").val();
         let productSize = $("select#product-size").val();
-        let productQuantity = $("select#product-quantity").val();
+        let productQuantity = $("input#product-quantity").val();
         $.ajax({
             type: "POST",
             url: "<?php echo site_url('add-to-cart-exe'); ?>",
