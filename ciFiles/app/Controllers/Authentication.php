@@ -1,6 +1,7 @@
 <?php namespace App\Controllers;
 
 use App\Models\AuthModel;
+use App\Models\CategoryModel;
 
 
 class Authentication extends BaseController
@@ -114,10 +115,62 @@ class Authentication extends BaseController
 
     }
 
+    private function public_page_loader($viewName,$data){
+
+		echo view('templates/header',$data);
+		echo view('sitePages/'.$viewName,$data);
+		echo view('templates/footer',$data);
+
+	}
+
+
     public function logout(){
         $session = session();   
         $session->destroy();
         return redirect()->to(site_url('/')); 
+    }
+
+    public function update_customer_profile(){
+
+        $session = session();
+        $role = $session->get('role');
+        
+        if($role!='customer'){
+            return redirect()->to(site_url('customer-login')); 
+        }
+
+        $first_name = $this->request->getPost('first_name');
+        $last_name = $this->request->getPost('last_name');
+        $email = $this->request->getPost('email');
+        $contact_number = $this->request->getPost('mobile_number');
+
+        $authModel = new AuthModel();
+
+        $customerData = $authModel->find($this->request->getPost('cust_id'));
+
+        $customerData['first_name'] = $first_name;
+        $customerData['last_name'] = $last_name;
+        $customerData['email'] = $email;
+        $customerData['mobile_number'] = $contact_number;
+
+
+        $categoryModel = new CategoryModel();
+
+        $data['categories'] = $categoryModel->findAll();
+
+        $authModel->update($this->request->getPost('cust_id'),$customerData);
+
+        $session = session();
+
+        $session->set($customerData);
+
+        $data['title'] = 'My Account';
+        
+        $data['userdata'] = $customerData;
+
+        $this->public_page_loader('my_account',$data);
+
+        
     }
 
     public function customer_login_api()

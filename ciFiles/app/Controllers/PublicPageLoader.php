@@ -6,6 +6,7 @@ require_once './vendor/autoload.php'; // change path as needed
 use Razorpay\Api\Api;
 
 use App\Models\ProductModel;
+use App\Models\AuthModel;
 use App\Models\CategoryModel;
 use App\Models\CartModel;
 use App\Models\OrderModel;
@@ -35,6 +36,14 @@ class PublicPageLoader extends BaseController
 		}
 
 		$categoryModel = new CategoryModel();
+
+		$authModel = new AuthModel();
+
+		$loggedInEmail = $session->get('email');
+
+		$userData = $authModel->where('email',$loggedInEmail)->first();
+
+		$data['useradata'] = $userData;
 
 		$categoriesFetched = $categoryModel->findAll();
 

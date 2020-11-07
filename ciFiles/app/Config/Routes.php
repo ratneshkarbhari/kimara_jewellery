@@ -46,6 +46,9 @@ $routes->get('cod-order','PublicPageLoader::cod_order');
 $routes->get('thank-you','PublicPageLoader::thank_you');
 $routes->get('order-details/(:any)','PublicPageLoader::order_details/$1');
 
+// Customer Profile my account page section
+$routes->post('update-customer-profile','Authentication::update_customer_profile');
+
 // cart routes
 $routes->post('add-to-cart-exe','Cart::add');
 $routes->post('update-cart','Cart::update');
