@@ -27,7 +27,7 @@ class AdminPageLoader extends BaseController
 
     }
 
-    public function orders(){
+    public function all_orders(){
 
         $this->send_to_login();
 

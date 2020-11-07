@@ -43,6 +43,8 @@ $routes->get('customer-login','PublicPageLoader::customer_login');
 $routes->get('my-account','PublicPageLoader::my_account');
 $routes->get('cart','PublicPageLoader::cart');
 $routes->get('cod-order','PublicPageLoader::cod_order');
+$routes->get('thank-you','PublicPageLoader::thank_you');
+$routes->get('order-details/(:any)','PublicPageLoader::order_details/$1');
 
 // cart routes
 $routes->post('add-to-cart-exe','Cart::add');
@@ -50,9 +52,9 @@ $routes->post('update-cart','Cart::update');
 $routes->post('delete-cart-item','Cart::delete');
 
 
-// Order creation EndPoints
+// Order EndPoints
 $routes->post('create-order','Orders::create');
-
+$routes->post('update-order','Orders::update');
 
 // Auth Endpoints
 $routes->post('customer-login-api','Authentication::customer_login_api');
@@ -69,6 +71,7 @@ $routes->get('edit-category/(:any)','AdminPageLoader::edit_category/$1');
 $routes->get('manage-products','AdminPageLoader::products');
 $routes->get('add-product','AdminPageLoader::add_product');
 $routes->get('edit-product/(:any)','AdminPageLoader::edit_product/$1');
+$routes->get('manage-orders','AdminPageLoader::all_orders');
 
 // Category Routes
 $routes->post('add-category-exe','Categories::add');

@@ -9,10 +9,11 @@ class OrderModel extends Model
 
     protected $primaryKey = 'id';
 
-    protected $allowedFields = ['public_order_id','products_qty_json','amount_paid','status','status_details','customer_email','contact_number','customer_name','mode','shipping_address','billing_address'];
+    protected $allowedFields = ['public_order_id','products_qty_json','amount_paid','status','status_details','customer_email','contact_number','customer_name','mode','shipping_address','billing_address','date'];
 
     public function fetch_all_cart_items(){
         return $this->where('ip_address',$_SERVER['REMOTE_ADDR'])->findAll();
     }   
+
 
 }

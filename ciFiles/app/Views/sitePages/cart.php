@@ -1,7 +1,7 @@
 <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 
 <main class="page-content" id="cart" style="padding: 5% 0;">
-    <?php if(!empty($cart_items)): ?>
+    <?php if(isset($orderData['amount'])): ?>
     <section id="cart">
         <div class="container-fluid text-center">
             <div class="table-responsive">
@@ -173,11 +173,11 @@ $("button#ajaxCustomerLoginButton").click(function (e) {
         });
     }
 });
-<?php if(isset($_SESSION['role'])&&$_SESSION['role']=='customer'): ?>
+<?php if(isset($_SESSION['role'])&&$_SESSION['role']=='customer'&&isset($orderData['amount'])): ?>
 // Make PaymentAjax
 $("button#makePayment").click(function (e) { 
     e.preventDefault();
-    let orderContactNumber = $("input#orderContactNumber").val();
+    let orderContactNumber = $("input#contactNumber").val();
     let shippingAddress = $("textarea#shippingAddress").val();
     let billingAddress = $("textarea#billingAddress").val();
     if(orderContactNumber==''||shippingAddress==''||billingAddress==''){

@@ -164,7 +164,8 @@ a.dropdown-item{
 }
 
 .page-content{
-  padding-top: 7vh !important;
+  padding-top: 10vh !important;
+  padding-bottom: 10vh !important;
 }
 
 @media (min-width: 1281px) {

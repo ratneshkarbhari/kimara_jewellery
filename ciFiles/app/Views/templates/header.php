@@ -86,32 +86,59 @@
             <a href="#" id="sideNavOpenLink" class="nav-link"><img src="<?php echo site_url('assets/icons/menu.svg'); ?>" width="15px" height="15px"></a>
 
                 
-            <a class="navbar-brandx mr-auto" style="margin-left: 3%; width: 50%;" href="<?php echo site_url(''); ?>"><img style="width: 100%;" src="<?php echo site_url('assets/images/newestlogo.png'); ?>" id="logonew"></a>
+            <a class="navbar-brandx mr-auto ml-auto" style="margin-left: 3%; width: 60%; text-align: center;" href="<?php echo site_url('/'); ?>"><img style="width: 100%;" src="<?php echo site_url('assets/images/newestlogo.png'); ?>" id="logonew"></a>
             
-            <a class="nav-link" id="toggleSearchBar"  data-toggle="modal" data-target="#searchModal" href="#"><img src="<?php echo site_url('assets/icons/search.svg'); ?>" width="15px" height="15px"></a>
-            <div id="searchModal"  class="modal fade" tabindex="-1" aria-labelledby="searchModal" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <!-- <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Find What you Love</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div> -->
-                    <div class="modal-body">
-                        <form action="<?php echo site_url('universal-product-search'); ?>" class="d-inline" method="post">
-                                        
-                            <div class="form-group">
-                                <label for="universalSearchField">Find What you Love</label>
-                                <input class="form-control" style="border: 1px solid;" placeholder="Search for Products you desire" type="search" name="universal_search_query" id="universalSearchField">                            
-                            </div>
-                    
-                        </form>
+            <a class="nav-link" id="toggleSearchBar" href="#"><img src="<?php echo site_url('assets/icons/search.svg'); ?>" width="15px" height="15px"></a>
+            <div id="searchBox" class="container" style="padding: 5%;">
+                <form action="http://localhost/kimara_jewellery/universal-product-search" method="post">
+                                    
+                    <div class="form-group container">
+                        <label for="universalSearchField">Find What you Love</label>
+                        <input class="form-control" style="border: 1px solid; width: 100%;" placeholder="Search for Products you desire" type="search" name="universal_search_query" id="universalSearchField">                            
                     </div>
-                </div>
+
+                </form>
             </div>
+            <div id="searchBarBackdrop">
+            
             </div>
-            <a class="nav-link" href="<?php echo site_url('cart'); ?>"><img src="<?php echo site_url('assets/icons/shopping-bag.svg'); ?>" width="15px" height="15px"></a>
+            <style>
+            div#searchBox{
+                background-color: white;
+                z-index: 3000;
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                width: 100%;
+                display: none;
+            }
+            div#searchBarBackdrop{
+                background-color: black;
+                opacity: 0.5;
+                z-index: 2999;
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom:0;
+                width: 100%;
+                display: none;
+            }
+            </style>
+            <script>
+            $("a#toggleSearchBar").click(function (e) { 
+                e.preventDefault();
+                $("div#searchBox").css('display','block');
+                $("div#searchBarBackdrop").css('display','block');
+            });
+            $("div#searchBarBackdrop").click(function (e) { 
+                e.preventDefault();
+                $("div#searchBox").css('display','none');
+                $(this).css('display','none');
+            });
+            </script>
+            <!-- <a class="nav-link" href="<?php echo site_url('cart'); ?>"><img src="<?php echo site_url('assets/icons/shopping-bag.svg'); ?>" width="15px" height="15px"></a> -->
         </nav>
         <div id="sidenavMobileCloser"></div>
        <div id="sidenavMobile">

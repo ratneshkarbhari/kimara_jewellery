@@ -8,6 +8,8 @@ use Razorpay\Api\Api;
 use App\Models\ProductModel;
 use App\Models\CategoryModel;
 use App\Models\CartModel;
+use App\Models\OrderModel;
+
 
 
 
@@ -45,6 +47,63 @@ class PublicPageLoader extends BaseController
 
 	}
 
+	public function order_details($order_id){
+
+		$orderModel = new OrderModel();
+		$categoryModel = new CategoryModel();
+		$productModel = new ProductModel();
+
+		$orderData = $orderModel->where('public_order_id',$order_id)->first();
+
+		if ($orderData) {
+		
+			$data['title'] = 'Order Details';
+
+			$data['orderData'] = $orderData;
+			$data['categories'] = $categoryModel->findAll();
+			$productsOrdered = array();
+
+			$products_qty_obj = json_decode($orderData['products_qty_json'],TRUE);
+			
+			foreach($products_qty_obj as $ordered_item){
+				$productsOrdered[] = $productModel->find($ordered_item['product_id']); 
+			}
+
+			$data['ordered_products'] = $productsOrdered;
+		
+		} else {
+			
+			$data['title'] = 'Invalid Order ID';
+			$data['categories'] = $categoryModel->findAll();
+			
+		}
+
+		echo view('templates/header',$data);
+		echo view('sitePages/public_order_details',$data);
+		echo view('templates/footer',$data);
+		
+	}
+
+	public function thank_you(){
+
+		if(!isset($_COOKIE['latest_order_id'])){
+		
+			return redirect()->to(site_url('/'));
+
+		}else {
+
+			$session = session();
+			
+			$data['order_id'] = $_COOKIE['latest_order_id'];
+			$fname = $session->get('first_name');
+			$data['title'] = 'Thank You '.$fname;
+
+			echo view('sitePages/thank_you');
+
+		}
+
+	}
+
 	public function cart(){
 
 
@@ -66,7 +125,7 @@ class PublicPageLoader extends BaseController
 
 		$role = session('role'); 
 
-		if($role=='customer'){
+		if($role=='customer'&&!empty($cart_items)){
 			if(!empty($cart_items)){
 				$api = new Api('rzp_test_looXFeOiWI0vw6', 'zYQvID9bM68Qt5uikukVZdvz');
 	
