@@ -168,6 +168,11 @@ a.dropdown-item{
   padding-bottom: 10vh !important;
 }
 
+.btn{
+  border-radius: 30px !important;
+  
+}
+
 @media (min-width: 1281px) {
   
     
@@ -278,6 +283,9 @@ a.dropdown-item{
     /* a.navbar-brand{
         width: 50%;
     } */
+
+    
+
     div.owl-nav{
       display: none;
     }

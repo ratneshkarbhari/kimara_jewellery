@@ -63,6 +63,9 @@
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav ml-auto">
                                 <li class="nav-item">
+                                    <a class="nav-link" href="<?php echo site_url(''); ?>">Home</a>
+                                </li>
+                                <li class="nav-item">
                                     <a class="nav-link" href="<?php echo site_url('shop'); ?>">Shop</a>
                                 </li>
                                 <li class="nav-item">
@@ -79,7 +82,7 @@
             </div>
         </div>
     </header>
-    <header id="site-header-mobile" style="background-color: white; position: fixed; z-index: 9;" class="d-lg-block d-xl-none d-md-block d-sm-block" class="sticky-top">
+    <header id="site-header-mobile" style="background-color: white; -index: 9;" class="d-lg-block d-xl-none d-md-block d-sm-block" class="sticky-top">
         
         <nav class="navbar navbar-expand-lg navbar-light bg-light" id="mobilenav" style="padding: 0.5rem 0.7rem; border-bottom: 1px solid; box-shadow: 0px 0px 20px darkgray;">
 
