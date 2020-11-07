@@ -18,22 +18,16 @@
                         <p>Date: <?php echo $orderData['date']; ?></p>
 
                         <h4>Items Ordered:</h4>
-                        <?php $products_qty_obj = json_decode($orderData['products_qty_json'],TRUE);
 
-                        foreach($products_qty_obj as $ordered_item):
-                        
-                            foreach($ordered_products as $orderedPro):
+                        <?php $productQtyObj = json_decode($orderData['products_qty_json'],TRUE);  ?>
 
-                            if($ordered_item['product_id']==$orderedPro['id']):
+                        <?php foreach($productQtyObj as $ordered_item): foreach($ordered_products as $ordered_product): if($ordered_item['product_id']==$ordered_product['id']): ?>
+                            <h6><?php echo $ordered_product['title']; ?></h6>
+                            <p style="margin-bottom: 1%;">Material : <?php  echo ucfirst($ordered_item['material']); ?></p>
+                            <p style="margin-bottom: 1%;">Size : <?php  echo ucfirst($ordered_item['size']); ?></p>
+                            <p style="margin-bottom: 1%;">Quantity : <?php  echo ucfirst($ordered_item['quantity']); ?></p>
+                        <?php endif; endforeach; endforeach; ?>
 
-                        ?>
-
-                            <h5><?php echo $orderedPro['title']; ?></h5>
-
-                            <h5>Material : <?php echo ucfirst($ordered_item['material']); ?></h5>
-                            <h5>Material : <?php echo ucfirst($orderedPro['titlesize']); ?></h5>
-
-                            <?php endif; endforeach; endforeach; ?>
                     </div>
                 
                 </div>

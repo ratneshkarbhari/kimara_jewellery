@@ -30,7 +30,7 @@ CREATE TABLE `cart` (
   `quantity` int NOT NULL,
   `ip_address` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -94,7 +94,7 @@ CREATE TABLE `orders` (
   `billing_address` longtext NOT NULL,
   `date` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -103,7 +103,7 @@ CREATE TABLE `orders` (
 
 LOCK TABLES `orders` WRITE;
 /*!40000 ALTER TABLE `orders` DISABLE KEYS */;
-INSERT INTO `orders` VALUES (1,'5fa5410d150e8','[{\"product_id\":\"9\",\"quantity\":\"3\",\"material\":\"gold\",\"sie\":\"small\"},{\"product_id\":\"9\",\"quantity\":\"1\",\"material\":\"silver\",\"sie\":\"small\"}]',40.00,'placed','Order is placed by payment made via RazorPay','ratneshkarbhari7@gmail.com','Ratnesh Karbhari','prepaid','09137976398','Vikhroli East','Vikhroli East','11-06-2020'),(2,'5fa546eb9a33e','[{\"product_id\":\"9\",\"quantity\":\"3\",\"material\":\"silver\",\"sie\":\"small\"},{\"product_id\":\"8\",\"quantity\":\"2\",\"material\":\"rosegold\",\"sie\":\"small\"}]',40.00,'shipped','Your Order is shipped','ratneshkarbhari7@gmail.com','Ratnesh Karbhari','prepaid','09137976398','Vikhroli East, Mumbai','Kanjur East, Mumbai','11-06-2020');
+INSERT INTO `orders` VALUES (1,'5fa661af62a86','[{\"product_id\":\"9\",\"quantity\":\"4\",\"material\":\"silver\",\"size\":\"small\"}]',40.00,'placed','Order is placed by payment made via RazorPay','ratneshkarbhari7@gmail.com','Ratnesh Karbhari','prepaid','09137976398','Vikhroli East','Vikhroli East','11-07-2020');
 /*!40000 ALTER TABLE `orders` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -172,7 +172,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'Ratnesh','Karbhari','rkarbhari23@gmail.com','','','','','admin','$2y$10$AYXjG2FBvN8nM54JmCHV5OTUVLvnG7VnrrqmEf3v1/aZ5LaWIIVTa'),(2,'Ratnesh','Karbhari','ratneshkarbhari7@gmail.com','','','','','customer','$2y$10$PkiB//6UoRbc1LTeuezEtOYg4TMZKLX3GhZ//jU03mYtJbHL/0Idy');
+INSERT INTO `users` VALUES (1,'Ratnesh','Karbhari','rkarbhari23@gmail.com','','','','','admin','$2y$10$AYXjG2FBvN8nM54JmCHV5OTUVLvnG7VnrrqmEf3v1/aZ5LaWIIVTa'),(2,'Ratnesh','Karbhari','ratneshkarbhari7@gmail.com','09137976398','','','','customer','$2y$10$PkiB//6UoRbc1LTeuezEtOYg4TMZKLX3GhZ//jU03mYtJbHL/0Idy');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -185,4 +185,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-11-07 11:33:29
+-- Dump completed on 2020-11-07 19:51:15

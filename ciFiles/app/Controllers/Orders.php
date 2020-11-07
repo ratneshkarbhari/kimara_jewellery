@@ -40,7 +40,7 @@ class Orders extends BaseController
                 'product_id' => $cartItem['product_id'],
                 'quantity' => $cartItem['quantity'],
                 'material' => $cartItem['material'],
-                'sie' => $cartItem['size']
+                'size' => $cartItem['size']
             );
         }
 

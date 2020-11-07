@@ -2,6 +2,7 @@
 
 use App\Models\AuthModel;
 use App\Models\CategoryModel;
+use App\Models\OrderModel;
 
 
 class Authentication extends BaseController
@@ -66,6 +67,8 @@ class Authentication extends BaseController
 
         $session = session();
 
+        $categoryModel = new CategoryModel();
+
         $enteredEmail = $this->request->getPost('customer-email');
 
         $enteredPassword = $this->request->getPost('customer-password');
@@ -95,6 +98,8 @@ class Authentication extends BaseController
 
                 } else {
 
+                    $data['categories'] = $categoryModel->findAll();
+
                     $this->load_customer_login_error('The Password entered is incorrect');                    
 
                 }
@@ -108,6 +113,9 @@ class Authentication extends BaseController
             
 
         }else {
+
+
+            $data['categories'] = $categoryModel->findAll();
 
             $this->load_customer_login_error('Entered email invalid');
 
@@ -157,6 +165,11 @@ class Authentication extends BaseController
         $categoryModel = new CategoryModel();
 
         $data['categories'] = $categoryModel->findAll();
+
+        $orderModel = new OrderModel();
+
+		$data['orders'] =  $orderModel->where('customer_email',$session->get('email'))->findAll();
+
 
         $authModel->update($this->request->getPost('cust_id'),$customerData);
 

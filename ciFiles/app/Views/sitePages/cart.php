@@ -140,7 +140,7 @@
     <?php else: ?>
     <section id="empty-cart">
         <div class="container">
-            <h4>Your Cart is empty, head to the <a href="<?php echo site_url('shop'); ?>">Shop</a> and Add thins here.</h4>
+            <h4>Your Cart is empty, head to the <a href="<?php echo site_url('shop'); ?>">Shop</a> and Add things here.</h4>
         </div>
     </section>
     <?php endif; ?>

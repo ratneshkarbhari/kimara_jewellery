@@ -43,7 +43,7 @@ class PublicPageLoader extends BaseController
 
 		$userData = $authModel->where('email',$loggedInEmail)->first();
 
-		$data['useradata'] = $userData;
+		$data['userdata'] = $userData;
 
 		$categoriesFetched = $categoryModel->findAll();
 
