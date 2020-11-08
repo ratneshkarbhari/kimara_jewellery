@@ -61,7 +61,7 @@ CREATE TABLE `categories` (
   `parent` int NOT NULL,
   `visibility` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -70,6 +70,7 @@ CREATE TABLE `categories` (
 
 LOCK TABLES `categories` WRITE;
 /*!40000 ALTER TABLE `categories` DISABLE KEYS */;
+INSERT INTO `categories` VALUES (4,'Gorgeous Studs','gorgeous-studs','Gorgeous Studs','1604844860_388ad11bcc5482c6faf9.jpg','1604844860_4e0f8008a51332a48bb4.jpg','1604844860_14bd7b1a227cef6416f0.png',0,'visible'),(5,'Everyday wear Bracelets','everyday-wear-bracelets','Every Day wear bracelets','1604844966_6be7d40c82b38c603bd1.jpg','1604844966_f8cbb366eacce0cc6548.jpg','1604845772_b87f829425d840be5ff4.png',0,'visible');
 /*!40000 ALTER TABLE `categories` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -260,4 +261,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-11-08 19:06:19
+-- Dump completed on 2020-11-08 20:01:58
