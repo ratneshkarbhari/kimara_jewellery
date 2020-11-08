@@ -34,8 +34,6 @@
                             foreach($pcats as $pcat){
                                 if ($pcat['id']==$category['parent']) {
                                     echo $pcat['title'];
-                                }else {
-                                    echo 'Independent';
                                 }
                             }
                             

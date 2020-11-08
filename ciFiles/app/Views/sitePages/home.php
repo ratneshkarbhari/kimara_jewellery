@@ -4,7 +4,7 @@
         <div id="home-category-slider-mobile" class="owl-carousel text-center">
             <?php foreach($categories as $category): if($category['parent']==0): ?>
             <a href="<?php echo site_url('category/'.$category['slug']); ?>" target="_blank">
-                <img style="border-radius: 50%;" src="<?php echo site_url('assets/images/category_carousel/ring.png'); ?>" 
+                <img style="border-radius: 50%;" src="<?php echo site_url('assets/images/category_featured_images/'.$category['featured_image_circular']); ?>" 
                 class="w-100">
                 <small><?php echo $category['title']; ?></small>
             </a>

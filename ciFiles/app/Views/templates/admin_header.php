@@ -73,9 +73,20 @@
                 Products 
                 </a>
             </li>
+
             <li class="nav-item">
                 <a class="nav-link sidebar-link" href="<?php echo site_url('manage-orders'); ?>">
                 Orders 
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link sidebar-link" href="<?php echo site_url('manage-collections'); ?>">
+                Collections 
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link sidebar-link" href="<?php echo site_url('manage-sliders'); ?>">
+                Sliders 
                 </a>
             </li>
         </ul>

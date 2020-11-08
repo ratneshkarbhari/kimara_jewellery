@@ -71,6 +71,15 @@ class Categories extends BaseController
             $featuredImageRectRandomName = $featuredImageRect->getRandomName();
     
             $featuredImageRect->move('assets/images/category_featured_images', $featuredImageRectRandomName);
+
+            // Featured image circular
+
+            $featuredImageCircular = $this->request->getFile('featured_image_circular');
+
+            
+            $featuredImageCircularRandomName = $featuredImageCircular->getRandomName();
+    
+            $featuredImageCircular->move('assets/images/category_featured_images', $featuredImageCircularRandomName);
             
             // Featured Image Square
 
@@ -87,6 +96,7 @@ class Categories extends BaseController
                 'parent' => $parent,
                 'featured_image_rect' => $featuredImageRectRandomName,
                 'featured_image_square' => $featuredImageSquareRandomName,
+                'featured_image_circular' => $featuredImageCircularRandomName,
                 'visibility' => $this->request->getPost('visibility')
             );
             
@@ -259,6 +269,26 @@ class Categories extends BaseController
             }else {
                 $featuredImageSquareRandomName = $categoryData['featured_image_square'];
             }
+
+
+            $featuredImageCircular = $this->request->getFile('featured_image_circular');
+
+
+            if ($featuredImageCircular->isValid()) {
+
+                $prevFeaturedImgSquarePath = $featuredImageFolderPath.$categoryData['featured_image_rect'];
+
+                if (is_file($prevFeaturedImgSquarePath)) {
+                    unlink($prevFeaturedImgSquarePath);
+                }
+
+                $featuredImageCircularRandomName = $featuredImageCircular->getRandomName();
+    
+                $featuredImageCircular->move('assets/images/category_featured_images', $featuredImageCircularRandomName);
+                
+            }else {
+                $featuredImageCircularRandomName = $categoryData['featured_image_square'];
+            }
     
 
             
@@ -272,6 +302,7 @@ class Categories extends BaseController
                 'parent' => $parent,
                 'featured_image_rect' => $featuredImageRectRandomName,
                 'featured_image_square' => $featuredImageSquareRandomName,
+                'featured_image_circular' => $featuredImageCircularRandomName,
                 'visibility' => $this->request->getPost('visibility')
             );
             

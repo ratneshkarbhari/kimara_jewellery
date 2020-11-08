@@ -53,6 +53,12 @@
                 <input type="file" name="featured_image_square" id="featured_image_square" accept="image/*">
             </div>
             <br>
+            <img src="<?php echo site_url('assets/images/category_featured_images/'.$category['featured_image_circular']); ?>" style="width: 30%;">
+            <div class="form-group">
+                <label for="featured_image_circular">Featured Image Circular</label><br>
+                <input type="file" name="featured_image_circular" id="featured_image_circular" accept="image/*">
+            </div>
+            <br>
             <div class="form-group">
                 <label for="description">Description</label>
                 <textarea name="description" id="description" class="form-control"><?php echo $category['description']; ?></textarea>

@@ -9,7 +9,7 @@ class CategoryModel extends Model
 
     protected $primaryKey = 'id';
 
-    protected $allowedFields = ['title','slug','parent','featured_image_rect','featured_image_square','description','visibility'];
+    protected $allowedFields = ['title','slug','parent','featured_image_rect','featured_image_square','featured_image_circular','description','visibility'];
 
 
 }

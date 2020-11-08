@@ -30,7 +30,7 @@ CREATE TABLE `cart` (
   `quantity` int NOT NULL,
   `ip_address` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -39,6 +39,7 @@ CREATE TABLE `cart` (
 
 LOCK TABLES `cart` WRITE;
 /*!40000 ALTER TABLE `cart` DISABLE KEYS */;
+INSERT INTO `cart` VALUES (40,9,'silver','small',8,'::1');
 /*!40000 ALTER TABLE `cart` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -56,10 +57,11 @@ CREATE TABLE `categories` (
   `description` text NOT NULL,
   `featured_image_rect` varchar(500) NOT NULL,
   `featured_image_square` varchar(500) NOT NULL,
+  `featured_image_circular` varchar(500) NOT NULL,
   `parent` int NOT NULL,
   `visibility` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -68,8 +70,57 @@ CREATE TABLE `categories` (
 
 LOCK TABLES `categories` WRITE;
 /*!40000 ALTER TABLE `categories` DISABLE KEYS */;
-INSERT INTO `categories` VALUES (2,'Designs under 15K ','new-random-slug','Designs under 15K','1604458314_b0e773a1fe6d80697db2.jpg','1604249283_245e3d4e1e7e952f8eb6.jpg',0,'visible'),(3,'Gorgeous Studs','gorgeous-studs','Gorgeous Studs description','1604311461_dd45c6b595d40fea7b93.jpg','1604311461_ae3aa787ed2c13644cb9.jpg',0,'visible');
 /*!40000 ALTER TABLE `categories` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `collections`
+--
+
+DROP TABLE IF EXISTS `collections`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `collections` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `title` text NOT NULL,
+  `slug` varchar(500) NOT NULL,
+  `products` longtext NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `collections`
+--
+
+LOCK TABLES `collections` WRITE;
+/*!40000 ALTER TABLE `collections` DISABLE KEYS */;
+/*!40000 ALTER TABLE `collections` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `coupons`
+--
+
+DROP TABLE IF EXISTS `coupons`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `coupons` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `code` varchar(500) NOT NULL,
+  `type` varchar(100) NOT NULL DEFAULT 'percentage',
+  `value` decimal(10,2) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `coupons`
+--
+
+LOCK TABLES `coupons` WRITE;
+/*!40000 ALTER TABLE `coupons` DISABLE KEYS */;
+/*!40000 ALTER TABLE `coupons` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -140,8 +191,32 @@ CREATE TABLE `products` (
 
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
-INSERT INTO `products` VALUES (8,'Random Test Product 2','random-product-1','Random Product Description',2,10.00,5.00,'1604468903_3ada8ddb6a0dd7aee7ff.jpg','1604468903_4267ab0380e4d849c9de.jpg,1604468903_fdc363dbb5861a664a04.jpg,1604468903_a9aaed66761edbe73bf9.jpg','1604468700_545726f6aba59ec3aefe.jpg,1604468700_3c2f0615ee6a8f23ddd7.jpg,1604468700_d288dfb272f40ff743c0.jpg',1,'yes','visible','small,medium,large','silver,gold,rosegold'),(9,'Random Test Product 2','random-product-2','Product Description',3,20.00,10.00,'1604469243_997a9668fe6fd90c20d3.jpg','1604469243_f13753ce3cb951588d3b.jpg,1604469243_6a8b28ef23c42897c562.jpg','1604469243_1d439554724f9c5d4a7a.jpg,1604469243_f6030a7dd7b469cdac2b.jpg',1000,'yes','visible','small,medium,large','silver,gold,rosegold');
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `slides`
+--
+
+DROP TABLE IF EXISTS `slides`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `slides` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `desktop_image` varchar(500) NOT NULL,
+  `touch_image` varchar(500) NOT NULL,
+  `link` text NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `slides`
+--
+
+LOCK TABLES `slides` WRITE;
+/*!40000 ALTER TABLE `slides` DISABLE KEYS */;
+/*!40000 ALTER TABLE `slides` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -185,4 +260,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-11-07 19:51:15
+-- Dump completed on 2020-11-08 19:06:19

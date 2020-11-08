@@ -46,6 +46,11 @@
             </div>
             <br>
             <div class="form-group">
+                <label for="featured_image_circular">Featured Image Circular</label><br>
+                <input type="file" name="featured_image_circular" id="featured_image_circular" accept="image/*">
+            </div>
+            <br>
+            <div class="form-group">
                 <label for="description">Description</label>
                 <textarea name="description" id="description" class="form-control"></textarea>
             </div>
