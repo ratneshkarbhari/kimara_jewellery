@@ -70,7 +70,7 @@
                             <div class="col-lg-4 col-md-6 col-sm-12" style="padding:0;">
                                 
                                         
-                                <button type="button" id="addToCartButton" class="btn btn-success" style="background-color: black; color:white;">ADD to Cart</button>
+                                <button type="button" id="addToCartButton" class="btn btn-success" style="background-color: black; color:white; margin-bottom: 3%;">ADD to Cart</button>
                             </div>
                             <div class="col-lg-4 col-md-6 col-sm-12" style="padding:0;">
                                 

@@ -163,6 +163,7 @@
            <?php endif; endforeach; ?>
 
             <div id="other-links-menu" style="position: absolute; bottom:0; left: 0; right: 0;">
+                <a href="<?php echo site_url('/'); ?>" class="sidenav-link">Home</a>
                 <a href="<?php echo site_url('shop'); ?>" class="sidenav-link">Shop</a>
                 <a href="<?php echo site_url('about'); ?>" class="sidenav-link">About</a>
                 <a href="<?php echo site_url('contact'); ?>" class="sidenav-link">Contact</a>
