@@ -13,6 +13,14 @@
                 
                 
                     <img src="<?php echo site_url('assets/images/featured_image_product/'.$product['featured_image']); ?>" id="product-page-main-product-image" style="width: 100%; border: 1px solid darkgray;">
+
+                    <div id="product-gallery-box" margin-top: 2%;>
+                        <?php $gallery_images = explode(',',$product['gallery_images']); foreach($gallery_images as $gallery_image): ?>
+                            <a href="<?php echo site_url('assets/images/gallery_images_product/'.$gallery_image); ?>" data-lity>
+                                <img src="<?php echo site_url('assets/images/gallery_images_product/'.$gallery_image); ?>" width="100px" height="100px">
+                            </a>
+                        <?php endforeach; ?>
+                    </div>
                 
                 </div>
                 <div class="col-lg-6 col-md-12 col-sm-12">
@@ -66,13 +74,7 @@
                                 <button class="btn" id="reduce-qty" type="button" style="border-radius: 0 !important; border: 1px solid gray; color: black; padding: 0.5% 2%; margin: 0 2%; width: 50px; height: 50px; font-size: 20px;">-</button><input type="number" id="product-quantity" style="width: 50px; font-size: 15px; height: 49px; text-align: center;" value="1" min="1" readonly><button class="btn" id="add-qty" type="button" style="border-radius: 0 !important; border: 1px solid gray; color: black; padding: 0.5% 2%; width: 50px; height: 50px; font-size: 20px; margin: 0 2%;">+</button>
 
                             </div>
-                            <div class="col-lg-12 col-md-12 col-sm-12">
-                                <?php $gallery_images = explode(',',$product['gallery_images']); foreach($gallery_images as $gallery_image): ?>
-                                    <a href="<?php echo site_url('assets/images/gallery_images_product/'.$gallery_image); ?>" data-lity>
-                                        <img src="<?php echo site_url('assets/images/gallery_images_product/'.$gallery_image); ?>" width="100px" height="100px">
-                                    </a>
-                                <?php endforeach; ?>
-                            </div>
+                            
                             <div class="col-lg-4 col-md-12 col-sm-12"></div>
                             <p id="atc-success" style="margin-bottom: 0;" class="col-lg-12 col-md-12 col-sm-12 text-success" style="color: darkgreen !important;"></p>
                                 <p id="atc-failure" class="col-lg-12 col-md-12 col-sm-12 text-danger"></p>

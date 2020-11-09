@@ -61,7 +61,7 @@
                             <input type="email" class="input-text email email-newsletter form-control" placeholder="Your email letter">
                             <br>
                             <button class="btn btn-submit submit-newsletter btn-primary">SUBSCRIBE</button>
-                            <br>
+                            <br><br>
                         </div>
                     </div>
                 </div>
@@ -74,6 +74,9 @@
                             </li>
                             <li class="menu-item">
                                 <a href="<?php echo site_url('privacy-policy'); ?>">Privacy Policy</a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="<?php echo site_url('faqs'); ?>">FAQs</a>
                             </li>
                             <li class="menu-item">
                                 <a href="<?php echo site_url('about'); ?>">About</a>

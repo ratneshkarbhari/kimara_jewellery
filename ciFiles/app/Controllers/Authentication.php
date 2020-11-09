@@ -12,6 +12,7 @@ use PHPMailer\PHPMailer\SMTP;
 
 use App\Models\AuthModel;
 use App\Models\CategoryModel;
+use App\Models\CartModel;
 use App\Models\OrderModel;
 use App\Models\OtpModel;
 
@@ -254,6 +255,12 @@ class Authentication extends BaseController
     }
 
     private function public_page_loader($viewName,$data){
+
+        $cartModel = new CartModel();
+
+		$cart_items = $cartModel->fetch_all_cart_items();
+
+		$data['cart_item_count'] = count($cart_items);
 
 		echo view('templates/header',$data);
 		echo view('sitePages/'.$viewName,$data);

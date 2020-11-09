@@ -73,7 +73,7 @@
             <div class="row" style="margin-top: 3%;">
                 
                 <?php foreach($categories as $category): ?>
-                <div class="col-lg-4 d-md-6 d-sm-6 " style="margin-bottom: 3%;">
+                <div class="col-lg-4 d-md-6 d-sm-6 " style="margin-bottom: 3%; ">
                 
                     <a href="<?php echo site_url('category/'.$category['slug']); ?>">
                     
@@ -136,8 +136,8 @@
                     <div class="col-lg-12 col-md-12 col-sm-12">
 
                     <div class="row">
-                                <div class="col-lg-1 col-md-4 col-sm-4"></div>
-                                <div class="col-lg-10 col-md-4 col-sm-4">
+                                <div class="col-lg-3 col-md-4 col-sm-4"></div>
+                                <div class="col-lg-6 col-md-4 col-sm-4">
                                     <ul class="nav nav-pills nav-justified" id="pills-tab" role="tablist">
                                         <li class="nav-item" role="presentation">
                                             <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Best Sellers</a>
@@ -150,7 +150,7 @@
                                         </li>
                                     </ul>
                                 </div>
-                                <div class="col-lg-1 col-md-4 col-sm-4"></div>
+                                <div class="col-lg-3 col-md-4 col-sm-4"></div>
                             </div>
                             <div class="tab-content" id="pills-tabContent">
                                 <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab" style="padding-top: 3%;">
@@ -158,7 +158,7 @@
 
                                     <?php $bestSellerProducts = explode(',',$collections['best_sellers']['products']); foreach($bestSellerProducts as $bsPro): foreach($products as $product): if($product['id']==$bsPro): ?>
 
-                                        <div class="col-lg-3 col-md-6-sm-6 text-center custom-half-grid" style="margin-bottom: 2%;"> <a href="<?php echo site_url('product/'.$product['slug']); ?>"><div class="card"> <img src="<?php echo site_url('assets/images/featured_image_product/'.$product['featured_image']); ?>" class="card-img-top"><div class="card-body">                            <h6 class="product-title"><?php if(strlen($product['title'])>9){
+                                        <div class="col-lg-3 col-md-6-sm-6 text-center custom-half-grid" style="margin-bottom: 2%; padding: 5px;"> <a href="<?php echo site_url('product/'.$product['slug']); ?>"><div class="card"> <img src="<?php echo site_url('assets/images/featured_image_product/'.$product['featured_image']); ?>" class="card-img-top"><div class="card-body">                            <h6 class="product-title"><?php if(strlen($product['title'])>9){
                                         echo substr($product['title'],0,9).'...';
                                         }else {
                                         echo $product['title'];
@@ -175,7 +175,7 @@
                                         
                                         <?php $productsReverse = array_reverse($products); $counter = 0; foreach ($productsReverse as $product) : if($counter!=4): ?>
 
-                                            <div class="col-lg-3 col-md-6-sm-6 text-center custom-half-grid" style="margin-bottom: 2%;"> <a href="<?php echo site_url('product/'.$product['slug']); ?>"><div class="card"> <img src="<?php echo site_url('assets/images/featured_image_product/'.$product['featured_image']); ?>" class="card-img-top"><div class="card-body">                            <h6 class="product-title"><?php if(strlen($product['title'])>9){
+                                            <div class="col-lg-3 col-md-6-sm-6 text-center custom-half-grid" style="margin-bottom: 2%; padding: 5px;"> <a href="<?php echo site_url('product/'.$product['slug']); ?>"><div class="card"> <img src="<?php echo site_url('assets/images/featured_image_product/'.$product['featured_image']); ?>" class="card-img-top"><div class="card-body">                            <h6 class="product-title"><?php if(strlen($product['title'])>9){
                                             echo substr($product['title'],0,9).'...';
                                             }else {
                                             echo $product['title'];
@@ -192,7 +192,7 @@
                                     <?php $bestSellerProducts = explode(',',$collections['top_rated']['products']); foreach($bestSellerProducts as $bsPro): foreach($products as $product): if($product['id']==$bsPro): ?>
 
 
-                                        <div class="col-lg-3 col-md-6-sm-6 text-center custom-half-grid" style="margin-bottom: 2%;"> <a href="<?php echo site_url('product/'.$product['slug']); ?>"><div class="card"> <img src="<?php echo site_url('assets/images/featured_image_product/'.$product['featured_image']); ?>" class="card-img-top"><div class="card-body">                            <h6 class="product-title"><?php if(strlen($product['title'])>9){
+                                        <div class="col-lg-3 col-md-6-sm-6 text-center custom-half-grid" style="margin-bottom: 2%; padding: 5px;"> <a href="<?php echo site_url('product/'.$product['slug']); ?>"><div class="card"> <img src="<?php echo site_url('assets/images/featured_image_product/'.$product['featured_image']); ?>" class="card-img-top"><div class="card-body">                            <h6 class="product-title"><?php if(strlen($product['title'])>9){
                                         echo substr($product['title'],0,9).'...';
                                         }else {
                                         echo $product['title'];
@@ -208,7 +208,12 @@
                             </div>
                     
                     </div>
-                    <div class="col-lg-12 col-md-12 col-sm-12"></div>
+                    <div class="col-lg-12 col-md-12 col-sm-12">
+                    
+                    
+                    </div>
+
+                    
                     
                 </div>
             </div>
@@ -227,7 +232,7 @@
 
                 <?php foreach($products as $product): if($product['featured']=='yes'): ?>
             
-                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 text-center custom-half-grid" style="margin-bottom: 2%;">
+                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 text-center custom-half-grid" style="margin-bottom: 2%; padding: 5px;">
                 
                     <a href="<?php echo site_url('product/'.$product['slug']); ?>">
                         <div class="card">
