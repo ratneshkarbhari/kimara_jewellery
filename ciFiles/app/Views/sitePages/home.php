@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css" integrity="sha512-OTcub78R3msOCtY3Tc6FzeDJ8N9qvQn1Ph49ou13xgA9VsH9+LRxoFU6EqLhW4+PKRfU+/HReXmSZXHEkpYoOA==" crossorigin="anonymous" />
 <main class="page-container" id="home">
 
     <section id="home-slider-section" class="d-sm-block d-md-block d-lg-none" style="padding: 2% 0;">
@@ -13,7 +14,7 @@
     </section>
     
     <section id="home-slider-section" class="d-none d-lg-block">
-        <div id="home-hero-slider" class="owl-carousel">
+        <div id="home-hero-slider" class="owl-carousel owl-theme">
             <a href="https://www.facebook.com" target="_blank">
                 <img src="<?php echo site_url('assets/images/banners/kids_banner.webp'); ?>" class="w-100">
             </a>
@@ -27,7 +28,7 @@
         </div>
     </section>
     <section id="home-slider-section" class="d-sm-block d-md-block d-lg-none">
-        <div id="home-hero-slider-mobile" class="owl-carousel">
+        <div id="home-hero-slider-mobile" class="owl-carousel owl-theme">
             <a href="https://www.facebook.com" target="_blank">
                 <img src="<?php echo site_url('assets/images/banners/mb1.jpg'); ?>" 
                 class="w-100">
@@ -99,7 +100,7 @@
     
         <div class="container-fluid">
         
-            <h1 class="text-center section-title" style="font-size: 1.5rem !important;">Categories</h1>
+            <h1 class="text-center section-title" >Categories</h1>
 
             <div class="row" style="margin-top: 3%;">
                 
@@ -127,7 +128,7 @@
     <section id="product-collections" class="regular-section ">
         <div class="container-fluid">
 
-            <h1 class="text-center section-title" style="font-size: 1.5rem !important;">Collections</h1>
+            <h1 class="text-center section-title" >Collections</h1>
 
             <div class="container-fluid">
                 <div class="row">
@@ -225,7 +226,7 @@
     <section id="featured-products" class="regular-section grey-bg">
         <div class="container-fluid">
                     
-            <h1 class="text-center section-title" style="font-size: 1.5rem !important;">Featured Products</h1>
+            <h1 class="text-center section-title">Featured Products</h1>
 
                     
             <div class="row" syyle="margin-top: 3%;">
@@ -290,7 +291,7 @@
     max-height: 70vh;
 }
 h1.text-center.section-title{
-    font-size: 1.5 rem !important;
+    font-size: 24px !important;
 }
 a.nav-link.active{
     color: #fff !important;
