@@ -109,7 +109,7 @@ class Authentication extends BaseController
             'first_name' => $first_name,
             'last_name' => $last_name,
             'email' => $email,
-            'password' => $passwordSet,
+            'password' => password_hash($passwordSet,PASSWORD_DEFAULT),
             'mobile_number' => '',
             'role' => 'customer'
         );
