@@ -30,7 +30,7 @@ CREATE TABLE `cart` (
   `quantity` int NOT NULL,
   `ip_address` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=46 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=48 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -39,7 +39,6 @@ CREATE TABLE `cart` (
 
 LOCK TABLES `cart` WRITE;
 /*!40000 ALTER TABLE `cart` DISABLE KEYS */;
-INSERT INTO `cart` VALUES (45,10,'silver','small',2,'::1');
 /*!40000 ALTER TABLE `cart` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -70,7 +69,7 @@ CREATE TABLE `categories` (
 
 LOCK TABLES `categories` WRITE;
 /*!40000 ALTER TABLE `categories` DISABLE KEYS */;
-INSERT INTO `categories` VALUES (4,'Gorgeous Studs','gorgeous-studs','Gorgeous Studs','1604844860_388ad11bcc5482c6faf9.jpg','1604844860_4e0f8008a51332a48bb4.jpg','1604844860_14bd7b1a227cef6416f0.png',0,'visible'),(5,'Everyday wear Bracelets','everyday-wear-bracelets','Every Day wear bracelets','1604901572_f9f70a007f34eaf53b02.jpg','1604844966_f8cbb366eacce0cc6548.jpg','1604844966_f8cbb366eacce0cc6548.jpg',0,'visible');
+INSERT INTO `categories` VALUES (4,'Gorgeous Studs','gorgeous-studs','Gorgeous Studs','1604844860_388ad11bcc5482c6faf9.jpg','1604844860_4e0f8008a51332a48bb4.jpg','1604844860_14bd7b1a227cef6416f0.png',0,'visible'),(5,'Everyday wear Bracelets','everyday-wear-bracelets','Every Day wear bracelets','1604906123_29cb61534f16e18b2bd2.jpg','1604844966_f8cbb366eacce0cc6548.jpg','1604844966_f8cbb366eacce0cc6548.jpg',0,'visible');
 /*!40000 ALTER TABLE `categories` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -86,8 +85,10 @@ CREATE TABLE `collections` (
   `title` text NOT NULL,
   `slug` varchar(500) NOT NULL,
   `products` longtext NOT NULL,
+  `featured_image` varchar(500) NOT NULL,
+  `description` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -96,6 +97,7 @@ CREATE TABLE `collections` (
 
 LOCK TABLES `collections` WRITE;
 /*!40000 ALTER TABLE `collections` DISABLE KEYS */;
+INSERT INTO `collections` VALUES (4,'Best Sellers','best sellers collection','10,11','1604905146_843893bc6af4a30264f5.jpg','Best Sellers Collection'),(5,'Top Rated Collection','top rated collection','12,13','1604905188_6e8eb1320de9ffe2a71e.jpg','Top rated collection');
 /*!40000 ALTER TABLE `collections` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -206,8 +208,9 @@ CREATE TABLE `products` (
   `visibility` varchar(50) NOT NULL,
   `sizes` text NOT NULL,
   `materials` text NOT NULL,
+  `daily_deal` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -216,7 +219,7 @@ CREATE TABLE `products` (
 
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
-INSERT INTO `products` VALUES (10,'Gorgeous Studs Product','gorgeous-studs-product','Product Description',4,10.00,3.00,'1604860325_1d0829cb262cc979b60a.jpg','1604860325_e2a3386ddf3080a649c5.jpg,1604860325_7e8e184c23530b12ab9e.jpg','1604860325_a30034a31085b736ba17.jpg,1604860325_595ad8a45912f1bf43b3.jpg',1001,'yes','visible','small,medium,large','silver,gold,rosegold');
+INSERT INTO `products` VALUES (10,'Gorgeous Studs Product','gorgeous-studs-product','Product Description',4,10.00,3.00,'1604860325_1d0829cb262cc979b60a.jpg','1604860325_e2a3386ddf3080a649c5.jpg,1604860325_7e8e184c23530b12ab9e.jpg','1604860325_a30034a31085b736ba17.jpg,1604860325_595ad8a45912f1bf43b3.jpg',1001,'yes','visible','small,medium,large','silver,gold,rosegold','yes'),(11,'Everyday wear Bracelets Product','everyday-wear-bracelets','Product 2 Description',5,10.00,3.00,'1604903343_268aef789da04a4cf324.jpg','1604903343_019428b7eab04e9c8535.jpg,1604903343_ef201e504a3f08018c41.jpg','1604903343_c7cc324e16a8d43b05e9.jpg,1604903343_cfe90fc44025b360929f.jpg',1000,'yes','visible','small,medium,large','silver,gold,rosegold','yes'),(12,'Demo Product 3','demo-product-three','Demo Product 3 description',5,90.00,34.00,'1604905001_53b63297f4e8b94c4794.jpg','1604905001_ae99176b5813045c8bc2.jpg,1604905001_42ecd6d30a04d9a7f1a2.jpg','1604905001_2ea1e031a53cbc50575c.jpg,1604905001_504e9dbdf64e9292bc69.jpg',1000,'no','visible','small,medium,large','silver,gold,rosegold',''),(13,'Demo Product 4','demo-product-four','Demo product 4 description',4,56.00,24.00,'1604905053_ad99828e8db79d31beff.jpg','1604905053_dd856315a7425fd0ad19.jpg,1604905053_136861aef76f81c3aa50.jpg','1604905053_263abb84b823cbab3233.jpg,1604905053_118142e685b7e0a0ffdc.jpg',1000,'yes','visible','small,medium,large','silver,gold,rosegold','');
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -283,4 +286,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-11-09 11:30:46
+-- Dump completed on 2020-11-09 13:40:33
