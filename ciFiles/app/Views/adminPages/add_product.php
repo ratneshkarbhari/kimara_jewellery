@@ -41,6 +41,15 @@
                     <option value="yes">Yes</option>
                 </select>
             </div>
+
+            <div class="form-group">
+                <label>Daily Deal</label>
+                <br>
+                <select class="form-control" name="daily_deal">
+                    <option value="no">No</option>
+                    <option value="yes">Yes</option>
+                </select>
+            </div>
             
             
             <div class="form-group">

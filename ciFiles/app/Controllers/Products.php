@@ -145,7 +145,8 @@ class Products extends BaseController
                 'price' =>  $price,
                 'sale_price' =>  $sale_price,
                 'stock_count' => $stock_count,
-                'visibility' => $visibility
+                'visibility' => $visibility,
+                'daily_deal' => $this->request->getPost('daily_deal')
             );
             
             $response = $productModel->insert($productData);
@@ -326,7 +327,8 @@ class Products extends BaseController
                 'price' =>  $price,
                 'sale_price' =>  $sale_price,
                 'stock_count' => $stock_count,
-                'visibility' => $visibility
+                'visibility' => $visibility,
+                'daily_deal' => $this->request->getPost('daily_deal')
             );
             
 

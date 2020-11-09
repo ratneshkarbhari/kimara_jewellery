@@ -42,7 +42,29 @@
             </a>
         </div>
     </section>
-    <section id="featured-products" class="regular-section d-none d-lg-block">
+    <section id="daily-deals" class="regular-section">
+        <div class="container-fluid">
+        
+            <h1 class="text-center section-title">Daily Deals</h1>
+
+            <div class="owl-carousel text-center" id="daily-deals-carousel">
+                
+                <?php foreach ($products as $product): if($product['daily_deal']=='yes'): ?>
+            
+                    <a href="<?php echo site_url('product/'.$product['slug']); ?>"><div class="card"> <img src="<?php echo site_url('assets/images/featured_image_product/'.$product['featured_image']); ?>" class="card-img-top"><div class="card-body">                            <h6 class="product-title"><?php if(strlen($product['title'])>9){
+                                        echo substr($product['title'],0,9).'...';
+                                        }else {
+                                        echo $product['title'];
+                                        } ?></h6><span class="larger-price-card"> ₹ <?php echo $product['sale_price']; ?></span> | <del><span class="smaller-price-card"> ₹ <?php echo $product['price']; ?></span></del> <br><br><button class="btn btn-primary">BUY NOW</button></div></div> </a>
+
+
+                <?php endif; endforeach; ?>
+            
+            </div>
+
+        </div>
+    </section>
+    <section id="categories" class="regular-section d-none d-lg-block grey-bg">
     
         <div class="container-fluid">
         
@@ -71,7 +93,7 @@
         </div>
     
     </section>
-    <section id="featured-products" class="regular-section d-sm-block d-md-block d-lg-none" style="padding-bottom: 5%;">
+    <section id="categories-mobile" class="regular-section d-sm-block d-md-block d-lg-none grey-bg" style="padding-bottom: 5%;">
 
         
     
@@ -102,7 +124,7 @@
         </div>
 
     </section>
-    <section id="product-collections" class="regular-section grey-bg">
+    <section id="product-collections" class="regular-section ">
         <div class="container-fluid">
 
             <h1 class="text-center section-title" style="font-size: 1.5rem !important;">Collections</h1>
@@ -195,7 +217,7 @@
 
         </div>
     </section>
-    <section id="featured-products" class="regular-section">
+    <section id="featured-products" class="regular-section grey-bg">
         <div class="container-fluid">
                     
             <h1 class="text-center section-title" style="font-size: 1.5rem !important;">Featured Products</h1>

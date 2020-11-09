@@ -5,7 +5,7 @@
     
         <div class="row" style="margin: 5% 0;">
         
-            <div class="col-lg-3 col-md-12 col-sm-12">
+            <div class="col-lg-3 col-md-12 col-sm-12 d-none">
             
                 <h4 class="section-title">Filter Products</h4>
                 <br>
@@ -20,7 +20,7 @@
                 <?php endforeach; ?>
             
             </div>
-            <div class="col-lg-9 col-md-12 col-sm-12">
+            <div class="col-lg-12 col-md-12 col-sm-12">
 
             <div class="container-fluid">
                     
@@ -31,7 +31,7 @@
         
                         <?php foreach($products as $product):  ?>
                     
-                        <div class="col-lg-4 col-md-6-sm-12 text-center" style="margin-bottom: 5%;">
+                        <div class="col-lg-3 col-md-6-sm-12 text-center" style="margin-bottom: 5%;">
                         
                             <a href="<?php echo site_url('product/'.$product['slug']); ?>">
                                 <div class="card">

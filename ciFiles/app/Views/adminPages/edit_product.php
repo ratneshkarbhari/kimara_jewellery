@@ -47,6 +47,19 @@
                     } ?>>Yes</option>
                 </select>
             </div>
+
+            <div class="form-group">
+                <label>Daily Deal</label>
+                <br>
+                <select class="form-control" name="daily_deal">
+                    <option value="no" <?php if($product['daily_deal']=='no'){
+                        echo 'selected';
+                    } ?>>No</option>
+                    <option value="yes" <?php if($product['daily_deal']=='yes'){
+                        echo 'selected';
+                    } ?>>Yes</option>
+                </select>
+            </div>
             
             
             <div class="form-group">

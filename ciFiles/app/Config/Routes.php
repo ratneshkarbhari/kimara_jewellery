@@ -81,6 +81,8 @@ $routes->get('manage-orders','AdminPageLoader::all_orders');
 $routes->get('manage-collections','AdminPageLoader::all_collections');
 $routes->get('add-collection','AdminPageLoader::add_collection');
 
+
+
 // Collection Routs
 $routes->post('add-collection-exe','Collections::add');
 $routes->post('delete-collection-exe','Collections::delete');
