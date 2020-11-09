@@ -92,9 +92,9 @@
             </div>
         </div>
     </header>
-    <header id="site-header-mobile" style="background-color: white; -index: 9;" class="d-lg-block d-xl-none d-md-block d-sm-block" class="sticky-top">
+    <!-- <header id="site-header-mobile" style="background-color: white; z-index: 9;" class="" > -->
         
-        <nav class="navbar navbar-expand-lg navbar-light bg-light" id="mobilenav" style="padding: 0.5rem 0.7rem; border-bottom: 1px solid; box-shadow: 0px 0px 20px darkgray;">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top d-lg-block d-xl-none d-md-block d-sm-block" id="mobilenav" style="padding: 0.5rem 0.7rem; border-bottom: 1px solid; box-shadow: 0px 0px 20px darkgray;">
 
             <a href="#" id="sideNavOpenLink" class="nav-link"><img src="<?php echo site_url('assets/icons/menu.svg'); ?>" width="15px" height="15px"></a>
 
@@ -173,4 +173,4 @@
 
        </div>
        
-    </header>
+    <!-- </header> -->
