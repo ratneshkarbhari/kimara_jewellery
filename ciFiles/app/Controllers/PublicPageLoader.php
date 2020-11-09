@@ -9,6 +9,7 @@ use App\Models\ProductModel;
 use App\Models\AuthModel;
 use App\Models\CategoryModel;
 use App\Models\CartModel;
+use App\Models\CollectionModel;
 use App\Models\OrderModel;
 
 
@@ -218,8 +219,14 @@ class PublicPageLoader extends BaseController
 
 		$data['title'] = 'Tagline';
 
+		$collectionModel = new CollectionModel();
 		$categoryModel = new CategoryModel();
 		$productModel = new ProductModel();
+
+		$data['collections'] = array(
+			'best_sellers' => $collectionModel->find(4),
+			'top_rated' => $collectionModel->find(5)
+		);
 
 		$categoriesFetched = $categoryModel->findAll();
 		$productsFetched = $productModel->findAll();

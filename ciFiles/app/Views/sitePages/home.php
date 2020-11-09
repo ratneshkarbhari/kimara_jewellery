@@ -107,40 +107,85 @@
 
             <h1 class="text-center section-title" style="font-size: 1.5rem !important;">Collections</h1>
 
-            <div class="container">
+            <div class="container-fluid">
                 <div class="row">
                 
-                    <div class="col-lg4 col-md-12 col-sm-12"></div>
-                    <div class="col-lg4 col-md-12 col-sm-12">
-                    
-                        <div class="text-center">
-                            <ul class="nav nav-pills nav-justified" id="pills-tab" role="tablist">
-                                <li class="nav-item" role="presentation">
-                                    <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Best Sellers</a>
-                                </li>
-                                <li class="nav-item" role="presentation">
-                                    <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">New Arrivals</a>
-                                </li>
-                                <li class="nav-item" role="presentation">
-                                    <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Top Rated</a>
-                                </li>
-                            </ul>
+                    <div class="col-lg-12 col-md-12 col-sm-12"></div>
+                    <div class="col-lg-12 col-md-12 col-sm-12">
+
+                    <div class="row">
+                                <div class="col-lg-2 col-md-4 col-sm-4"></div>
+                                <div class="col-lg-8 col-md-4 col-sm-4">
+                                    <ul class="nav nav-pills nav-justified" id="pills-tab" role="tablist">
+                                        <li class="nav-item" role="presentation">
+                                            <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Best Sellers</a>
+                                        </li>
+                                        <li class="nav-item" role="presentation">
+                                            <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">New Arrivals</a>
+                                        </li>
+                                        <li class="nav-item" role="presentation">
+                                            <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Top Rated</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-lg-2 col-md-4 col-sm-4"></div>
+                            </div>
                             <div class="tab-content" id="pills-tabContent">
                                 <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab" style="padding-top: 3%;">
-                                    <div class="row" syyle="margin-top: 3%;"><div class="col-lg-3 col-md-6-sm-6 text-center custom-half-grid" style="margin-bottom: 2%;"> <a href="http://localhost/kimara_jewellery/product/random-product-1"><div class="card"> <img src="http://localhost/kimara_jewellery/assets/images/featured_image_product/1604468903_3ada8ddb6a0dd7aee7ff.jpg" class="card-img-top"><div class="card-body"><h6 class="product-title">Random Test Product 2</h6><span class="larger-price-card"> ₹ 5.00</span> | <del><span class="smaller-price-card"> ₹ 10.00</span></del> <br><br><button class="btn btn-primary">BUY NOW</button></div></div> </a></div><div class="col-lg-3 col-md-6-sm-6 text-center custom-half-grid" style="margin-bottom: 2%;"> <a href="http://localhost/kimara_jewellery/product/random-product-2"><div class="card"> <img src="http://localhost/kimara_jewellery/assets/images/featured_image_product/1604469243_997a9668fe6fd90c20d3.jpg" class="card-img-top"><div class="card-body"><h6 class="product-title">Random Test Product 2</h6><span class="larger-price-card"> ₹ 10.00</span> | <del><span class="smaller-price-card"> ₹ 20.00</span></del> <br><br><button class="btn btn-primary">BUY NOW</button></div></div> </a></div><div class="col-lg-3 col-md-6-sm-6 text-center custom-half-grid" style="margin-bottom: 2%;"> <a href="http://localhost/kimara_jewellery/product/random-product-1"><div class="card"> <img src="http://localhost/kimara_jewellery/assets/images/featured_image_product/1604468903_3ada8ddb6a0dd7aee7ff.jpg" class="card-img-top"><div class="card-body"><h6 class="product-title">Random Test Product 2</h6><span class="larger-price-card"> ₹ 5.00</span> | <del><span class="smaller-price-card"> ₹ 10.00</span></del> <br><br><button class="btn btn-primary">BUY NOW</button></div></div> </a></div><div class="col-lg-3 col-md-6-sm-6 text-center custom-half-grid" style="margin-bottom: 2%;"> <a href="http://localhost/kimara_jewellery/product/random-product-2"><div class="card"> <img src="http://localhost/kimara_jewellery/assets/images/featured_image_product/1604469243_997a9668fe6fd90c20d3.jpg" class="card-img-top"><div class="card-body"><h6 class="product-title">Random Test Product 2</h6><span class="larger-price-card"> ₹ 10.00</span> | <del><span class="smaller-price-card"> ₹ 20.00</span></del> <br><br><button class="btn btn-primary">BUY NOW</button></div></div> </a></div></div>
+                                    <div class="row" syyle="margin-top: 3%;">
+
+                                    <?php $bestSellerProducts = explode(',',$collections['best_sellers']['products']); foreach($bestSellerProducts as $bsPro): foreach($products as $product): if($product['id']==$bsPro): ?>
+
+                                        <div class="col-lg-3 col-md-6-sm-6 text-center custom-half-grid" style="margin-bottom: 2%;"> <a href="<?php echo site_url('product/'.$product['slug']); ?>"><div class="card"> <img src="<?php echo site_url('assets/images/featured_image_product/'.$product['featured_image']); ?>" class="card-img-top"><div class="card-body">                            <h6 class="product-title"><?php if(strlen($product['title'])>9){
+                                        echo substr($product['title'],0,9).'...';
+                                        }else {
+                                        echo $product['title'];
+                                        } ?></h6><span class="larger-price-card"> ₹ <?php echo $product['sale_price']; ?></span> | <del><span class="smaller-price-card"> ₹ <?php echo $product['price']; ?></span></del> <br><br><button class="btn btn-primary">BUY NOW</button></div></div> </a></div>
+
+
+                                    <?php endif; endforeach; endforeach; ?>
+
+
+                                    </div>
                                 </div>
                                 <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab" style="padding-top: 3%;">
-                                    <div class="row" syyle="margin-top: 3%;"><div class="col-lg-3 col-md-6-sm-6 text-center custom-half-grid" style="margin-bottom: 2%;"> <a href="http://localhost/kimara_jewellery/product/random-product-1"><div class="card"> <img src="http://localhost/kimara_jewellery/assets/images/featured_image_product/1604468903_3ada8ddb6a0dd7aee7ff.jpg" class="card-img-top"><div class="card-body"><h6 class="product-title">Random Test Product 2</h6><span class="larger-price-card"> ₹ 5.00</span> | <del><span class="smaller-price-card"> ₹ 10.00</span></del> <br><br><button class="btn btn-primary">BUY NOW</button></div></div> </a></div><div class="col-lg-3 col-md-6-sm-6 text-center custom-half-grid" style="margin-bottom: 2%;"> <a href="http://localhost/kimara_jewellery/product/random-product-2"><div class="card"> <img src="http://localhost/kimara_jewellery/assets/images/featured_image_product/1604469243_997a9668fe6fd90c20d3.jpg" class="card-img-top"><div class="card-body"><h6 class="product-title">Random Test Product 2</h6><span class="larger-price-card"> ₹ 10.00</span> | <del><span class="smaller-price-card"> ₹ 20.00</span></del> <br><br><button class="btn btn-primary">BUY NOW</button></div></div> </a></div><div class="col-lg-3 col-md-6-sm-6 text-center custom-half-grid" style="margin-bottom: 2%;"> <a href="http://localhost/kimara_jewellery/product/random-product-1"><div class="card"> <img src="http://localhost/kimara_jewellery/assets/images/featured_image_product/1604468903_3ada8ddb6a0dd7aee7ff.jpg" class="card-img-top"><div class="card-body"><h6 class="product-title">Random Test Product 2</h6><span class="larger-price-card"> ₹ 5.00</span> | <del><span class="smaller-price-card"> ₹ 10.00</span></del> <br><br><button class="btn btn-primary">BUY NOW</button></div></div> </a></div><div class="col-lg-3 col-md-6-sm-6 text-center custom-half-grid" style="margin-bottom: 2%;"> <a href="http://localhost/kimara_jewellery/product/random-product-2"><div class="card"> <img src="http://localhost/kimara_jewellery/assets/images/featured_image_product/1604469243_997a9668fe6fd90c20d3.jpg" class="card-img-top"><div class="card-body"><h6 class="product-title">Random Test Product 2</h6><span class="larger-price-card"> ₹ 10.00</span> | <del><span class="smaller-price-card"> ₹ 20.00</span></del> <br><br><button class="btn btn-primary">BUY NOW</button></div></div> </a></div></div>
+                                    <div class="row" syyle="margin-top: 3%;">
+                                        
+                                        <?php $productsReverse = array_reverse($products); $counter = 0; foreach ($productsReverse as $product) : if($counter!=4): ?>
+
+                                            <div class="col-lg-3 col-md-6-sm-6 text-center custom-half-grid" style="margin-bottom: 2%;"> <a href="<?php echo site_url('product/'.$product['slug']); ?>"><div class="card"> <img src="<?php echo site_url('assets/images/featured_image_product/'.$product['featured_image']); ?>" class="card-img-top"><div class="card-body">                            <h6 class="product-title"><?php if(strlen($product['title'])>9){
+                                            echo substr($product['title'],0,9).'...';
+                                            }else {
+                                            echo $product['title'];
+                                            } ?></h6><span class="larger-price-card"> ₹ <?php echo $product['sale_price']; ?></span> | <del><span class="smaller-price-card"> ₹ <?php echo $product['price']; ?></span></del> <br><br><button class="btn btn-primary">BUY NOW</button></div></div> </a></div>
+
+                                        <?php endif; endforeach ?>
+                                    
+                                    </div>
                                 </div>
                                 <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab" style="padding-top: 3%;">
                                 
-                                    <div class="row" syyle="margin-top: 3%;"><div class="col-lg-3 col-md-6-sm-6 text-center custom-half-grid" style="margin-bottom: 2%;"> <a href="http://localhost/kimara_jewellery/product/random-product-1"><div class="card"> <img src="http://localhost/kimara_jewellery/assets/images/featured_image_product/1604468903_3ada8ddb6a0dd7aee7ff.jpg" class="card-img-top"><div class="card-body"><h6 class="product-title">Random Test Product 2</h6><span class="larger-price-card"> ₹ 5.00</span> | <del><span class="smaller-price-card"> ₹ 10.00</span></del> <br><br><button class="btn btn-primary">BUY NOW</button></div></div> </a></div><div class="col-lg-3 col-md-6-sm-6 text-center custom-half-grid" style="margin-bottom: 2%;"> <a href="http://localhost/kimara_jewellery/product/random-product-2"><div class="card"> <img src="http://localhost/kimara_jewellery/assets/images/featured_image_product/1604469243_997a9668fe6fd90c20d3.jpg" class="card-img-top"><div class="card-body"><h6 class="product-title">Random Test Product 2</h6><span class="larger-price-card"> ₹ 10.00</span> | <del><span class="smaller-price-card"> ₹ 20.00</span></del> <br><br><button class="btn btn-primary">BUY NOW</button></div></div> </a></div><div class="col-lg-3 col-md-6-sm-6 text-center custom-half-grid" style="margin-bottom: 2%;"> <a href="http://localhost/kimara_jewellery/product/random-product-1"><div class="card"> <img src="http://localhost/kimara_jewellery/assets/images/featured_image_product/1604468903_3ada8ddb6a0dd7aee7ff.jpg" class="card-img-top"><div class="card-body"><h6 class="product-title">Random Test Product 2</h6><span class="larger-price-card"> ₹ 5.00</span> | <del><span class="smaller-price-card"> ₹ 10.00</span></del> <br><br><button class="btn btn-primary">BUY NOW</button></div></div> </a></div><div class="col-lg-3 col-md-6-sm-6 text-center custom-half-grid" style="margin-bottom: 2%;"> <a href="http://localhost/kimara_jewellery/product/random-product-2"><div class="card"> <img src="http://localhost/kimara_jewellery/assets/images/featured_image_product/1604469243_997a9668fe6fd90c20d3.jpg" class="card-img-top"><div class="card-body"><h6 class="product-title">Random Test Product 2</h6><span class="larger-price-card"> ₹ 10.00</span> | <del><span class="smaller-price-card"> ₹ 20.00</span></del> <br><br><button class="btn btn-primary">BUY NOW</button></div></div> </a></div></div>
+                                    <div class="row" syyle="margin-top: 3%;">
+                                    
+                                    <?php $bestSellerProducts = explode(',',$collections['top_rated']['products']); foreach($bestSellerProducts as $bsPro): foreach($products as $product): if($product['id']==$bsPro): ?>
+
+                                        <div class="col-lg-3 col-md-6-sm-6 text-center custom-half-grid" style="margin-bottom: 2%;"> <a href="<?php echo site_url('product/'.$product['slug']); ?>"><div class="card"> <img src="<?php echo site_url('assets/images/featured_image_product/'.$product['featured_image']); ?>" class="card-img-top"><div class="card-body">                            <h6 class="product-title"><?php if(strlen($product['title'])>9){
+                                        echo substr($product['title'],0,9).'...';
+                                        }else {
+                                        echo $product['title'];
+                                        } ?></h6><span class="larger-price-card"> ₹ <?php echo $product['sale_price']; ?></span> | <del><span class="smaller-price-card"> ₹ <?php echo $product['price']; ?></span></del> <br><br><button class="btn btn-primary">BUY NOW</button></div></div> </a></div>
+
+
+                                        <?php endif; endforeach; endforeach; ?>
+
+
+                                    </div>
                                 
                                 </div>
                             </div>
-                        </div>                    
+                    
                     </div>
-                    <div class="col-lg4 col-md-12 col-sm-12"></div>
+                    <div class="col-lg-12 col-md-12 col-sm-12"></div>
                     
                 </div>
             </div>

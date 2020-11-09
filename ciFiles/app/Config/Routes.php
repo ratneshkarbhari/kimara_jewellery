@@ -78,6 +78,13 @@ $routes->get('manage-products','AdminPageLoader::products');
 $routes->get('add-product','AdminPageLoader::add_product');
 $routes->get('edit-product/(:any)','AdminPageLoader::edit_product/$1');
 $routes->get('manage-orders','AdminPageLoader::all_orders');
+$routes->get('manage-collections','AdminPageLoader::all_collections');
+$routes->get('add-collection','AdminPageLoader::add_collection');
+
+// Collection Routs
+$routes->post('add-collection-exe','Collections::add');
+$routes->post('delete-collection-exe','Collections::delete');
+
 
 // Category Routes
 $routes->post('add-category-exe','Categories::add');

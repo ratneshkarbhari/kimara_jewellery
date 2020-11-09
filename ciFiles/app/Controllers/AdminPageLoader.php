@@ -2,6 +2,7 @@
 
 use App\Models\CategoryModel;
 use App\Models\ProductModel;
+use App\Models\CollectionModel;
 use App\Models\OrderModel;
 
 class AdminPageLoader extends BaseController
@@ -24,6 +25,37 @@ class AdminPageLoader extends BaseController
         echo view('templates/admin_header',$data);
         echo view('adminPages/'.$viewName,$data);
         echo view('templates/admin_footer',$data);
+
+    }
+
+
+    public function add_collection(){
+
+        $this->send_to_login();        
+
+        $data['title'] = 'Collections';
+        $productModel = new ProductModel();
+        $products = $productModel->findAll();
+        $data['products'] = $products;
+        $data['error'] = $data['success'] = '';
+
+        $this->admin_page_loader('add_collection',$data);        
+        
+
+    }
+
+    public function all_collections(){
+
+        $this->send_to_login();        
+    
+        $data['title'] = 'Collections';
+        $collectionModel = new CollectionModel();
+        $collections = $collectionModel->findAll();
+
+        $data['collections'] = array_reverse($collections);
+        $data['error'] = $data['success'] = '';
+
+        $this->admin_page_loader('collections',$data);        
 
     }
 
