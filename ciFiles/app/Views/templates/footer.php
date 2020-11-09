@@ -7,16 +7,19 @@
         <a class="nav-linkx w-20 d-inline-block text-center" href="<?php echo site_url('cart'); ?>"><span class="cart-count-circle" style="
     position: absolute;
     top: 4%;
+    width: 22px;
+    height: 22px;
+    line-height: 22px;    
+    font-size: 15px;
     background-color: black;
     padding-left: 0%;
     right: 33%;
     font-size: 12px;
     color: white;
     font-weight: bolder;
-    padding: 1%;
     padding-left: 2%;
     padding-right: 2%;
-    padding-bottom: 2%;
+    padding-bottom: 3%;
     "><?php echo $cart_item_count; ?></span><img src="<?php echo site_url('assets/icons/shopping-bag.svg'); ?>"  width="15px" height="15px"><br><small>Cart</small></a>
         <a class="nav-linkx w-20 d-inline-block text-center" href="<?php echo site_url('my-account'); ?>"><img src="<?php echo site_url('assets/icons/user.svg'); ?>"  width="15px" height="15px"><br><small>Account</small></a>
     </nav>

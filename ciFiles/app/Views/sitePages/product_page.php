@@ -1,7 +1,7 @@
 <main class="page-content" id="product-page">
 
 
-    <section id="product-details-section">
+    <section id="product-details-section" style="padding: 2% 0;">
     
         <div class="container">
         
@@ -61,7 +61,7 @@
 
 
 
-                                <button class="btn" id="reduce-qty" type="button" style="border-radius: 0 !important; border: 1px solid gray; color: black; padding: 0.5% 2%; margin: 0 2%;">-</button><input type="number" id="product-quantity" style="width: 30px;" value="1" min="1" readonly><button class="btn" id="add-qty" type="button" style="border-radius: 0 !important; border: 1px solid gray; color: black; padding: 0.5% 2%; margin: 0 2%;">+</button>
+                                <button class="btn" id="reduce-qty" type="button" style="border-radius: 0 !important; border: 1px solid gray; color: black; padding: 0.5% 2%; margin: 0 2%; width: 50px; height: 50px; font-size: 20px;">-</button><input type="number" id="product-quantity" style="width: 50px; font-size: 15px; height: 49px; text-align: center;" value="1" min="1" readonly><button class="btn" id="add-qty" type="button" style="border-radius: 0 !important; border: 1px solid gray; color: black; padding: 0.5% 2%; width: 50px; height: 50px; font-size: 20px; margin: 0 2%;">+</button>
 
                             </div>
                             <div class="col-lg-4 col-md-12 col-sm-12"></div>

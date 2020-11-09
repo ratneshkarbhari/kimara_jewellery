@@ -86,7 +86,7 @@
             <br>
             <div class="form-group">
                 <label for="stock_count">Stock Count</label>
-                <input class="form-control" type="number" min="1" value="1" name="stock_count" id="stock_count" value="<?php echo $product['stock_count']; ?>">
+                <input class="form-control" type="number" min="1" name="stock_count" id="stock_count" value="<?php echo $product['stock_count']; ?>">
             </div>
             <br>
             <?php $gallery_images = explode(',',$product['gallery_images']); foreach($gallery_images as $gal_img): ?>

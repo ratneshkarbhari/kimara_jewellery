@@ -39,6 +39,12 @@
                     <button type="submit" class="btn btn-success">LOGIN</button>
 
 
+
+                    <div class="text-center" style="margin-top: 15%;">
+                    
+                        <p>Dont have an Account? <a style="color: red;" href="<?php echo site_url('customer-registration'); ?>">Register Here</a></p>
+                    
+                    </div>
                 
                 
                 </form>

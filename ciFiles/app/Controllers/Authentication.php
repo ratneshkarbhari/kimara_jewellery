@@ -1,12 +1,143 @@
 <?php namespace App\Controllers;
 
+require_once ROOTPATH.'vendor/phpmailer/phpmailer/src/PHPMailer.php';
+require_once ROOTPATH.'vendor/phpmailer/phpmailer/src/Exception.php';
+require_once ROOTPATH.'vendor/phpmailer/phpmailer/src/SMTP.php';
+
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+use PHPMailer\PHPMailer\SMTP;
+
+
 use App\Models\AuthModel;
 use App\Models\CategoryModel;
 use App\Models\OrderModel;
+use App\Models\OtpModel;
 
 
 class Authentication extends BaseController
 {
+
+
+    public function get_email_verif_code(){
+        
+        $enteredEmail = $this->request->getPost('emailEntered');
+
+        $authModel = new AuthModel();
+
+        $customerExists = $authModel->where('role','customer')->where('email',$enteredEmail)->first();
+
+        if ($customerExists) {
+            return 'customer-already-exists';
+        }else {
+
+            $otpModel = new OtpModel();
+
+            $otpExists = $otpModel->otp_for_email($enteredEmail);
+
+            if($otpExists){
+
+                $emailVerifRandomCode = $otpExists['code'];
+
+            }else {
+
+                $emailVerifRandomCode = rand(100000,999999);
+
+                $otpArray = array(
+                    'code' => $emailVerifRandomCode,
+                    'email' => $enteredEmail
+                );
+
+                $otpModel->insert($otpArray);
+
+            }
+
+
+            $mail = new PHPMailer(true);
+
+            try {
+                //Server settings
+                $mail->SMTPDebug = SMTP::DEBUG_OFF;                      // Enable verbose debug output
+                $mail->isSMTP();                                            // Send using SMTP
+                $mail->Host       = 'smtp.gmail.com';                    // Set the SMTP server to send through
+                $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
+                $mail->Username   = 'codesevaco@gmail.com';                     // SMTP username
+                $mail->Password   = 'jaisadguru@47';                               // SMTP password
+                $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
+                $mail->Port       = 587;                                    // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
+            
+                //Recipients
+                $mail->setFrom('noreply@kimarajewellery.com', 'Kimara Jewellery Order Processing');
+                $mail->addAddress($enteredEmail, 'New Registration');     // Add a recipient
+    
+            
+                // Attachments
+                // $mail->addAttachment('/var/tmp/file.tar.gz');         // Add attachments
+                // $mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
+            
+                // Content
+                $mail->isHTML(true);                                  // Set email format to HTML
+                $mail->Subject = 'Email Verification Code';
+                $mail->Body    = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head> <meta name="viewport" content="width=device-width, initial-scale=1.0"/> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/> <title>Verify your email address</title> <style type="text/css" rel="stylesheet" media="all"> /* Base ------------------------------ */ *:not(br):not(tr):not(html){font-family: Arial, "Helvetica Neue", Helvetica, sans-serif; -webkit-box-sizing: border-box; box-sizing: border-box;}body{width: 100% !important; height: 100%; margin: 0; line-height: 1.4; background-color: #F5F7F9; color: #0a0a0a; -webkit-text-size-adjust: none;}a{color: #414EF9;}/* Layout ------------------------------ */ .email-wrapper{width: 100%; margin: 0; padding: 0; background-color: #F5F7F9;}.email-content{width: 100%; margin: 0; padding: 0;}/* Masthead ----------------------- */ .email-masthead{padding: 25px 0; text-align: center;}.email-masthead_logo{max-width: 400px; border: 0;}.email-masthead_name{font-size: 16px; font-weight: bold; color: #839197; text-decoration: none; text-shadow: 0 1px 0 white;}/* Body ------------------------------ */ .email-body{width: 100%; margin: 0; padding: 0; border-top: 1px solid #E7EAEC; border-bottom: 1px solid #E7EAEC; background-color: #FFFFFF;}.email-body_inner{width: 570px; margin: 0 auto; padding: 0;}.email-footer{width: 570px; margin: 0 auto; padding: 0; text-align: center;}.email-footer p{color: #839197;}.body-action{width: 100%; margin: 30px auto; padding: 0; text-align: center;}.body-sub{margin-top: 25px; padding-top: 25px; border-top: 1px solid #E7EAEC;}.content-cell{padding: 35px;}.align-right{text-align: right;}/* Type ------------------------------ */ h1{margin-top: 0; color: #292E31; font-size: 19px; font-weight: bold; text-align: left;}h2{margin-top: 0; color: #292E31; font-size: 16px; font-weight: bold; text-align: left;}h3{margin-top: 0; color: #292E31; font-size: 14px; font-weight: bold; text-align: left;}p{margin-top: 0; color: #839197; font-size: 16px; line-height: 1.5em; text-align: left;}p.sub{font-size: 12px;}p.center{text-align: center;}/* Buttons ------------------------------ */ .button{display: inline-block; width: 200px; background-color: #414EF9; border-radius: 3px; color: #ffffff; font-size: 15px; line-height: 45px; text-align: center; text-decoration: none; -webkit-text-size-adjust: none; mso-hide: all;}.button--green{background-color: #28DB67;}.button--red{background-color: #FF3665;}.button--blue{background-color: #414EF9;}/*Media Queries ------------------------------ */ @media only screen and (max-width: 600px){.email-body_inner, .email-footer{width: 100% !important;}}@media only screen and (max-width: 500px){.button{width: 100% !important;}}</style></head><body> <table class="email-wrapper" width="100%" cellpadding="0" cellspacing="0"> <tr> <td align="center"> <table class="email-content" width="100%" cellpadding="0" cellspacing="0"> <tr> <td class="email-masthead"> <a class="email-masthead_name">"Kimara Jewellery"</a> </td></tr><tr> <td class="email-body" width="100%"> <table class="email-body_inner" align="center" width="570" cellpadding="0" cellspacing="0"> <tr> <td class="content-cell"> <h1>Verify your email address</h1> <p>This is regarding your registration on Kimara Jewellery.</p><table class="body-action" align="center" width="100%" cellpadding="0" cellspacing="0"> <tr> <td align="center"> <div> <p>Here is your Email verification code: '.$emailVerifRandomCode.'. Provide it on our website to complete email verification.</p></div></td></tr></table> <p>Thanks,<br>The Kimara Jewellery Team</p><table class="body-sub"> <tr> <td> <p class="sub"></p></td></tr></table> </td></tr></table> </td></tr><tr> <td> <table class="email-footer" align="center" width="570" cellpadding="0" cellspacing="0"> <tr> <td class="content-cell"> <p class="sub center"> Kimara Jewellery. <br>Mumbai, India </p></td></tr></table> </td></tr></table> </td></tr></table></body></html>';
+            
+                $res = $mail->send();
+                
+                if ($res) {
+                    return 'email-send-success';
+                }else {
+                    return 'email-send-fail';
+                }
+
+            } catch (Exception $e) {
+                echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+            }
+            
+        }
+
+
+
+    }
+
+    public function create_customer_account(){
+        $first_name = $this->request->getPost('fname');
+        $last_name = $this->request->getPost('lname');
+        $email = $_COOKIE['email_verified'];
+        $passwordSet = $this->request->getPost('password');
+
+        $customerData = array(
+            'first_name' => $first_name,
+            'last_name' => $last_name,
+            'email' => $email,
+            'password' => $passwordSet,
+            'mobile_number' => '',
+            'role' => 'customer'
+        );
+
+        $authModel = new AuthModel();
+
+        $accountCreated = $authModel->insert($customerData);
+
+        if($accountCreated){
+            $session = session();
+            $session->set($customerData);
+            return 'account-created';
+        }
+
+    }
+
+    public function verify_email_exe(){
+        $enteredCode = $this->request->getPost('enteredCode');
+        $otpModel = new OtpModel();
+        $codeExists = $otpModel->otp_exists($enteredCode);
+        if ($codeExists) {
+            setcookie('email_verified',$codeExists['email']);
+            $otpModel->delete($codeExists['id']);
+            return 'otp-correct';
+        }else {
+            return 'code-incorrect';
+        }
+    }
 
 	public function login()
 	{

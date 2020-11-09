@@ -31,14 +31,16 @@
                     <nav id="top-right-nav" class="ml-auto">
                     <a class="nav-link d-inline" href="<?php echo site_url('customer-login'); ?>"><img src="<?php echo site_url('assets/icons/user.svg'); ?>" width="30px" height="30px"></a>
                     <a class="nav-link d-inline" href="<?php echo site_url('cart'); ?>"><img src="<?php echo site_url('assets/icons/shopping-bag.svg'); ?>" width="30px" height="30px"><span class="cart-count-circle" style="position: absolute;
-    top: -4%;
+    top: 3%;
+    width: 22px;
+    height: 22px;
+    line-height: 22px;    
+    font-size: 15px;
     background-color: black;
-    padding-left: 4%;
     right: 25%;
-    font-size: 11px;
     color: white;
     font-weight: bolder;
-    padding: 4%;"><?php echo $cart_item_count; ?></span></a>
+    padding-left: 4%;"><?php echo $cart_item_count; ?></span></a>
                     </nav>
                 </div>
             </div>

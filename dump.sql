@@ -30,7 +30,7 @@ CREATE TABLE `cart` (
   `quantity` int NOT NULL,
   `ip_address` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=46 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -39,7 +39,7 @@ CREATE TABLE `cart` (
 
 LOCK TABLES `cart` WRITE;
 /*!40000 ALTER TABLE `cart` DISABLE KEYS */;
-INSERT INTO `cart` VALUES (40,9,'silver','small',8,'::1');
+INSERT INTO `cart` VALUES (45,10,'silver','small',2,'::1');
 /*!40000 ALTER TABLE `cart` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -70,7 +70,7 @@ CREATE TABLE `categories` (
 
 LOCK TABLES `categories` WRITE;
 /*!40000 ALTER TABLE `categories` DISABLE KEYS */;
-INSERT INTO `categories` VALUES (4,'Gorgeous Studs','gorgeous-studs','Gorgeous Studs','1604844860_388ad11bcc5482c6faf9.jpg','1604844860_4e0f8008a51332a48bb4.jpg','1604844860_14bd7b1a227cef6416f0.png',0,'visible'),(5,'Everyday wear Bracelets','everyday-wear-bracelets','Every Day wear bracelets','1604844966_6be7d40c82b38c603bd1.jpg','1604844966_f8cbb366eacce0cc6548.jpg','1604845772_b87f829425d840be5ff4.png',0,'visible');
+INSERT INTO `categories` VALUES (4,'Gorgeous Studs','gorgeous-studs','Gorgeous Studs','1604844860_388ad11bcc5482c6faf9.jpg','1604844860_4e0f8008a51332a48bb4.jpg','1604844860_14bd7b1a227cef6416f0.png',0,'visible'),(5,'Everyday wear Bracelets','everyday-wear-bracelets','Every Day wear bracelets','1604901572_f9f70a007f34eaf53b02.jpg','1604844966_f8cbb366eacce0cc6548.jpg','1604844966_f8cbb366eacce0cc6548.jpg',0,'visible');
 /*!40000 ALTER TABLE `categories` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -160,6 +160,30 @@ INSERT INTO `orders` VALUES (1,'5fa661af62a86','[{\"product_id\":\"9\",\"quantit
 UNLOCK TABLES;
 
 --
+-- Table structure for table `otps`
+--
+
+DROP TABLE IF EXISTS `otps`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `otps` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `code` varchar(500) NOT NULL,
+  `email` varchar(500) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `otps`
+--
+
+LOCK TABLES `otps` WRITE;
+/*!40000 ALTER TABLE `otps` DISABLE KEYS */;
+/*!40000 ALTER TABLE `otps` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `products`
 --
 
@@ -183,7 +207,7 @@ CREATE TABLE `products` (
   `sizes` text NOT NULL,
   `materials` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -192,6 +216,7 @@ CREATE TABLE `products` (
 
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
+INSERT INTO `products` VALUES (10,'Gorgeous Studs Product','gorgeous-studs-product','Product Description',4,10.00,3.00,'1604860325_1d0829cb262cc979b60a.jpg','1604860325_e2a3386ddf3080a649c5.jpg,1604860325_7e8e184c23530b12ab9e.jpg','1604860325_a30034a31085b736ba17.jpg,1604860325_595ad8a45912f1bf43b3.jpg',1001,'yes','visible','small,medium,large','silver,gold,rosegold');
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -233,13 +258,10 @@ CREATE TABLE `users` (
   `last_name` text NOT NULL,
   `email` varchar(500) NOT NULL,
   `mobile_number` text NOT NULL,
-  `addresses_json` longtext NOT NULL,
-  `email_verified` varchar(50) NOT NULL,
-  `mobile_verified` varchar(50) NOT NULL,
   `role` varchar(50) NOT NULL,
   `password` varchar(500) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -248,7 +270,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'Ratnesh','Karbhari','rkarbhari23@gmail.com','','','','','admin','$2y$10$AYXjG2FBvN8nM54JmCHV5OTUVLvnG7VnrrqmEf3v1/aZ5LaWIIVTa'),(2,'Ratnesh','Karbhari','ratneshkarbhari7@gmail.com','09137976398','','','','customer','$2y$10$PkiB//6UoRbc1LTeuezEtOYg4TMZKLX3GhZ//jU03mYtJbHL/0Idy');
+INSERT INTO `users` VALUES (1,'Ratnesh','Karbhari','rkarbhari23@gmail.com','','admin','$2y$10$AYXjG2FBvN8nM54JmCHV5OTUVLvnG7VnrrqmEf3v1/aZ5LaWIIVTa'),(2,'Ratnesh','Karbhari','ratneshkarbhari7@gmail.com','09137976398','customer','$2y$10$PkiB//6UoRbc1LTeuezEtOYg4TMZKLX3GhZ//jU03mYtJbHL/0Idy'),(4,'Ratnesh','Karbhari','rkarbhari23@gmail.com','','customer','ratnesh@47');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -261,4 +283,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-11-08 20:01:58
+-- Dump completed on 2020-11-09 11:30:46

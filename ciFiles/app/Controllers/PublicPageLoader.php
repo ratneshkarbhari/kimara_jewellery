@@ -31,6 +31,30 @@ class PublicPageLoader extends BaseController
 
 	}
 
+	public function customer_registration(){
+
+
+		$session = session();
+
+		$role = $session->get('role');
+
+		if($role=='customer'){
+			return redirect()->to(site_url('my-account')); 
+		}
+			
+		$categoryModel = new CategoryModel();
+
+		$categoriesFetched = $categoryModel->findAll();
+
+		$data['title'] = 'Customer Registration';
+		$data['error'] = '';
+
+		$data['categories'] = $categoriesFetched;
+
+		$this->public_page_loader('customer_registration',$data);
+
+	}
+
 	public function my_account(){
 
 		$session = session();

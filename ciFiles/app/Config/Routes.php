@@ -46,7 +46,7 @@ $routes->get('cod-order','PublicPageLoader::cod_order');
 $routes->get('thank-you','PublicPageLoader::thank_you');
 $routes->get('order-details/(:any)','PublicPageLoader::order_details/$1');
 $routes->post('universal-product-search','PublicPageLoader::universal_product_search');
-
+$routes->get('customer-registration','PublicPageLoader::customer_registration');
 // Customer Profile my account page section
 $routes->post('update-customer-profile','Authentication::update_customer_profile');
 
@@ -65,7 +65,9 @@ $routes->post('customer-login-api','Authentication::customer_login_api');
 $routes->post('user-login-exe','Authentication::login');
 $routes->post('customer-login-exe','Authentication::customer_login');
 $routes->get('logout','Authentication::logout');
-
+$routes->post('get-email-verif-code','Authentication::get_email_verif_code');
+$routes->post('verify-email-exe','Authentication::verify_email_exe');
+$routes->post('create-customer-account-exe','Authentication::create_customer_account');
 
 // Admin Dashboard
 $routes->get('admin-dashboard','AdminPageLoader::dashboard');

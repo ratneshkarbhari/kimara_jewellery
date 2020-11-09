@@ -42,7 +42,7 @@ a.nav-link{
     padding: 2% 0;
 }
 
-@media only screen and (max-width: 600px) {
+@media (min-width: 400px) and (max-width: 600px) {
     .custom-half-grid{
     
             padding: none; display: inline; width: 49%;
@@ -61,6 +61,9 @@ a.nav-link{
 .btn-success{
   background-color: darkgreen !important;
 }
+.btn-primary{
+  background-color: #c09578 !important;
+}
 .grey-bg{
     background-color: #f1f1f1;
 }
@@ -70,15 +73,6 @@ footer#site-footer{
   background-color: #424242;;
 }
 
-/* div#searchBox,div#loginBox{
-  background-color: white;
-  position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  z-index: 300;
-  width: 50%;
-} */
 
 div.owl-nav button{
   position: absolute;
@@ -192,9 +186,6 @@ a.dropdown-item{
   
   @media (min-width: 1025px) and (max-width: 1280px) {
     
-    /* a.navbar-brand{
-        width: 30%;
-    } */
     nav#mobileBottomNav{
       display: none;
     }
