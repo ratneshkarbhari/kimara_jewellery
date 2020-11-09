@@ -12,15 +12,22 @@
                 <div class="col-lg-6 col-md-12 col-sm-12" style="margin-bottom: 5%;">
                 
                 
-                    <img src="<?php echo site_url('assets/images/featured_image_product/'.$product['featured_image']); ?>" id="product-page-main-product-image" style="width: 100%; border: 1px solid darkgray;">
+                    <img src="<?php echo site_url('assets/images/featured_image_product/'.$product['featured_image']); ?>" data-lity id="product-page-main-product-image" style="width: 100%; border: 1px solid darkgray; cursor: pointer;">
 
                     <div id="product-gallery-box" margin-top: 2%;>
                         <?php $gallery_images = explode(',',$product['gallery_images']); foreach($gallery_images as $gallery_image): ?>
-                            <a href="<?php echo site_url('assets/images/gallery_images_product/'.$gallery_image); ?>" data-lity>
-                                <img src="<?php echo site_url('assets/images/gallery_images_product/'.$gallery_image); ?>" width="100px" height="100px">
-                            </a>
+
+                            <img style="cursor: pointer;" srcset="<?php echo site_url('assets/images/gallery_images_product/'.$gallery_image); ?>" class="product-gallery-image" src="<?php echo site_url('assets/images/gallery_images_product/'.$gallery_image); ?>" width="100px" height="100px">
+
                         <?php endforeach; ?>
                     </div>
+                    
+                    <script>
+                    $(".product-gallery-image").click(function (e) { 
+                        e.preventDefault();
+                        $("img#product-page-main-product-image").attr('src',$(this).attr('srcset'));
+                    });
+                    </script>
                 
                 </div>
                 <div class="col-lg-6 col-md-12 col-sm-12">
