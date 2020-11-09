@@ -1,6 +1,6 @@
 <main class="page-content" id="shop">
 
-    <div class="container">
+    <div class="container-fluid" style="padding: 0;">
     
         <div class="row" style="margin: 5% 0;">
         
@@ -30,7 +30,7 @@
     
                     <?php  if(count($products_in_category)>0): foreach($products_in_category as $product):  ?>
                 
-                    <div class="col-lg-3 col-md-6-sm-12 text-center" style="margin-bottom: 3%;">
+                    <div class="col-lg-3 col-md-6-sm-12 text-center custom-half-grid" style="margin-bottom: 3%;">
                     
                         <a href="<?php echo site_url('product/'.$product['slug']); ?>">
                             <div class="card">
@@ -39,8 +39,11 @@
                             
                                 <div class="card-body">
                                 
-                                    <h6 class="product-title"><?php echo $product['title']; ?></h6>
-    
+                                <h6 class="product-title"><?php if(strlen($product['title'])>9){
+                                        echo substr($product['title'],0,9).'...';
+                                        }else {
+                                        echo $product['title'];
+                                        } ?></h6>    
                                     <?php if($product['sale_price']!=0.00): ?>
                                     <span class="larger-price-card"> ₹ <?php echo $product['sale_price']; ?></span> | <del><span class="smaller-price-card"> ₹ <?php echo $product['price']; ?></span></del>
                                     <?php else: ?>

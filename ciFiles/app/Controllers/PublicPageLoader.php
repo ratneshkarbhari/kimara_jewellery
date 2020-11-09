@@ -32,6 +32,38 @@ class PublicPageLoader extends BaseController
 
 	}
 
+	public function contact(){
+		$data['title'] = 'Contact';
+		$data['success'] = '';
+		$categoryModel = new CategoryModel();
+		$data['categories'] = $categoryModel->findAll();
+		$this->public_page_loader('contact',$data);
+	}
+	public function about(){
+		$data['title'] = 'About';
+		$categoryModel = new CategoryModel();
+		$data['categories'] = $categoryModel->findAll();
+		$this->public_page_loader('about',$data);
+	}
+	public function faqs(){
+		$data['title'] = 'FAQs';
+		$categoryModel = new CategoryModel();
+		$data['categories'] = $categoryModel->findAll();
+		$this->public_page_loader('faqs',$data);
+	}
+	public function pp(){
+		$data['title'] = 'Privacy Policy';
+		$categoryModel = new CategoryModel();
+		$data['categories'] = $categoryModel->findAll();
+		$this->public_page_loader('pp',$data);
+	}
+	public function tnc(){
+		$data['title'] = 'Terms and Conditions';
+		$categoryModel = new CategoryModel();
+		$data['categories'] = $categoryModel->findAll();
+		$this->public_page_loader('tnc',$data);
+	}
+
 	public function customer_registration(){
 
 

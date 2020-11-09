@@ -37,12 +37,17 @@ $routes->get('/', 'PublicPageLoader::home');
 // SitePages
 $routes->get('admin-login','PublicPageLoader::admin_login');
 $routes->get('shop','PublicPageLoader::shop');
+$routes->get('about','PublicPageLoader::about');
+$routes->get('contact','PublicPageLoader::contact');
 $routes->get('product/(:any)','PublicPageLoader::product_page/$1');
 $routes->get('category/(:any)','PublicPageLoader::category_page/$1');
 $routes->get('customer-login','PublicPageLoader::customer_login');
 $routes->get('my-account','PublicPageLoader::my_account');
 $routes->get('cart','PublicPageLoader::cart');
 $routes->get('cod-order','PublicPageLoader::cod_order');
+$routes->get('privacy-policy','PublicPageLoader::pp');
+$routes->get('terms-and-conditions','PublicPageLoader::tnc');
+$routes->get('faqs','PublicPageLoader::faqs');
 $routes->get('thank-you','PublicPageLoader::thank_you');
 $routes->get('order-details/(:any)','PublicPageLoader::order_details/$1');
 $routes->post('universal-product-search','PublicPageLoader::universal_product_search');

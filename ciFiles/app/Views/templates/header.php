@@ -156,7 +156,7 @@
         <div id="sidenavMobileCloser"></div>
        <div id="sidenavMobile">
            <div id="sidenavLogoBox" style="text-align: center;">
-           <img src="http://localhost/kimara_jewellery/assets/images/newestlogo.png" id="logonew" style="width: 70%; margin: 10% auto;">
+           <img src="<?php echo site_url('assets/images/newestlogo.png'); ?>" id="logonew" style="width: 70%; margin: 10% auto;">
            </div>
            <?php foreach($categories as $category): if($category['parent']==0):  ?>
 

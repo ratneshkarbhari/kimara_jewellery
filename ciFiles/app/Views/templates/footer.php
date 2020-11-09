@@ -25,11 +25,78 @@
     </nav>
 
 
-    <footer id="site-footer">
+    <footer id="site-footer" class="text-light">
     
         <div class="container">
+
+        <div class="row" style="padding: 3% 0;">
+                
+                <div class="box-footer col-xs-12 col-sm-4 col-md-4 col-lg-4 text-center">
+                    <div class="ysera-custommenu default">
+                        <h2 class="widgettitle">Quick Menu</h2>
+                        <ul class="menu">
+                            <li class="menu-item">
+                                <a href="<?php echo site_url('shop'); ?>">Shop</a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="<?php echo site_url('customer-login'); ?>">Login</a>
+                            </li>
+                            <?php foreach($categories as $category): if($category['parent']==0): ?>
+                            <li class="menu-item">
+                                <a href="<?php echo site_url('category/'.$category['slug']); ?>"><?php echo $category['title']; ?></a>
+                            </li>
+                            <?php endif; endforeach; ?>
+                        </ul>
+                    </div>
+                </div>
+                <div class="box-footer col-xs-12 col-sm-4 col-md-4 col-lg-4 text-center hidden-xs">
+                    <div class="ysera-newsletter style1">
+                        <div class="newsletter-head">
+                            <h3 class="title">Newsletter</h3>
+                        </div>
+                        <div class="newsletter-form-wrap">
+                            <div class="list">
+                                Sign up for our free video course and <br> urban garden inspiration
+                            </div>
+                            <input type="email" class="input-text email email-newsletter form-control" placeholder="Your email letter">
+                            <br>
+                            <button class="btn btn-submit submit-newsletter btn-primary">SUBSCRIBE</button>
+                            <br>
+                        </div>
+                    </div>
+                </div>
+                <div class="box-footer col-xs-12 col-sm-4 col-md-4 col-lg-4 text-center">
+                    <div class="ysera-custommenu default">
+                        <h2 class="widgettitle">Information</h2>
+                        <ul class="menu">
+                            <li class="menu-item">
+                                <a href="<?php echo site_url('terms-and-conditions'); ?>">Terms and Conditions</a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="<?php echo site_url('privacy-policy'); ?>">Privacy Policy</a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="<?php echo site_url('about'); ?>">About</a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="<?php echo site_url('contact'); ?>">Contact Us</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <style>
+                .menu-item a,h2.widgettitle,h3.title{
+                    color: white !important;
+                }
+                ul.menu{
+                    list-style: none;
+                    padding-left: 0;
+                }
+            </style>
         
-            <p class="text-center text-light" style="margin-bottom: 0;">&copy; Kimara Jewellery 2020 | All Rights Reserved</p>
+            <p class="text-center text-light" style="margin: 3% 0;">&copy; Kimara Jewellery 2020 | All Rights Reserved</p>
         
         </div>
     
