@@ -43,8 +43,8 @@
                         <?php foreach($slides as $slide): ?>
                         <tr>
                             <td><?php echo $slide['link']; ?></td>
-                            <td><?php echo site_url('assets/images/banners/'.$slide['image_desktop']); ?></td>
-                            <td><?php echo site_url('assets/images/banners/'.$slide['image_touch']); ?></td>
+                            <td><?php echo site_url('assets/images/banners/'.$slide['desktop_image']); ?></td>
+                            <td><?php echo site_url('assets/images/banners/'.$slide['touch_image']); ?></td>
                             <td>
                                 <form action="<?php echo site_url('delete-slide-exe'); ?>" style="display: inline;" method="post">
                                     <input type="hidden" name="id" value="<?php echo $slide['id']; ?>">

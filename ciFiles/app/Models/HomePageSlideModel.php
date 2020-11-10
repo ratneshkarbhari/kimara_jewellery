@@ -6,11 +6,11 @@ class HomePageSlideModel extends Model
 {
 
 
-    protected $table = "homepage_slides";
+    protected $table = "slides";
 
     protected $primaryKey = 'id';
 
-    protected $allowedFields = ['link','image_desktop','image_touch'];
+    protected $allowedFields = ['link','desktop_image','touch_image'];
 
 
 }

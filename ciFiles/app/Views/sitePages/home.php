@@ -15,32 +15,22 @@
     
     <section id="home-slider-section" class="d-none d-lg-block">
         <div id="home-hero-slider" class="owl-carousel owl-theme">
-            <a href="https://www.facebook.com" target="_blank">
-                <img src="<?php echo site_url('assets/images/banners/kids_banner.webp'); ?>" class="w-100">
+            <?php foreach($slides as $slide): ?>
+            <a href="<?php echo $slide['link'] ?>" target="_blank">
+                <img src="<?php echo site_url('assets/images/banners/'.$slide['desktop_image']); ?>" class="w-100">
             </a>
-            <a href="https://www.facebook.com" target="_blank">
-            <img src="<?php echo site_url('assets/images/banners/men_banner1.webp'); ?>" class="w-100">
-            </a>
-            <a href="https://www.facebook.com" target="_blank">
-                <img src="<?php echo site_url('assets/images/banners/manyavar_amitabh.jpg'); ?>" 
-                class="w-100">
-            </a>
+            <?php endforeach; ?>
         </div>
     </section>
     <section id="home-slider-section" class="d-sm-block d-md-block d-lg-none">
         <div id="home-hero-slider-mobile" class="owl-carousel owl-theme">
-            <a href="https://www.facebook.com" target="_blank">
-                <img src="<?php echo site_url('assets/images/banners/mb1.jpg'); ?>" 
-                class="w-100">
+
+            <?php foreach($slides as $slide): ?>
+            <a href="<?php echo $slide['link'] ?>" target="_blank">
+                <img src="<?php echo site_url('assets/images/banners/'.$slide['touch_image']); ?>" class="w-100">
             </a>
-            <a href="https://www.facebook.com" target="_blank">
-                <img src="<?php echo site_url('assets/images/banners/mb1.jpg'); ?>" 
-                class="w-100">
-            </a>
-            <a href="https://www.facebook.com" target="_blank">
-                <img src="<?php echo site_url('assets/images/banners/mb1.jpg'); ?>" 
-                class="w-100">
-            </a>
+            <?php endforeach; ?>
+
         </div>
     </section>
     <section id="static-banners" style="background-color: white !important;">

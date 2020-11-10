@@ -4,7 +4,7 @@ require_once './vendor/autoload.php'; // change path as needed
 
 
 use Razorpay\Api\Api;
-
+use App\Models\HomePageSlideModel;
 use App\Models\ProductModel;
 use App\Models\AuthModel;
 use App\Models\CategoryModel;
@@ -254,6 +254,12 @@ class PublicPageLoader extends BaseController
 		$collectionModel = new CollectionModel();
 		$categoryModel = new CategoryModel();
 		$productModel = new ProductModel();
+
+        $homePageSlideModel = new HomePageSlideModel();
+		$slides = $homePageSlideModel->findAll();
+		
+
+        $data['slides'] = $slides;
 
 		$data['collections'] = array(
 			'best_sellers' => $collectionModel->find(4),
