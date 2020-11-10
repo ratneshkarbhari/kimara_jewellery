@@ -2,9 +2,9 @@
 
 <main class="page-content" id="cart" style="padding: 5% 0;">
     <?php if(count($cart_items)>0): ?>
-    <section id="cart" class="d-none d-lg-block">
+    <section id="cart" >
         <div class="container-fluid text-center">
-            <div class="table-responsive">
+            <div class="table-responsive d-none d-lg-block">
                 <table class="table">
                     <thead>
                         <tr>
@@ -46,6 +46,29 @@
                         <?php endif; endforeach; endforeach; ?>
                     </tbody>
                 </table>
+            </div>
+            <div class="cart-items-container d-sm-block d-md-block d-lg-none">
+                <?php $subtotal = 0.00; ?>
+                <?php  foreach($cart_items as $cart_item): foreach($products as $product): if($cart_item['product_id']==$product['id']): ?>
+                <div class="card text-center" style="padding-bottom: 5%;">
+                    <form action="<?php echo site_url('delete-cart-item'); ?>" method="post" style="display: inline;">
+                        <input type="hidden" name="cart-item-id" value="<?php echo $cart_item['id']; ?>">
+                        <button style="margin-bottom: 3%;" type="submit" class="btn"><img src="<?php echo site_url('assets/icons/trash.svg'); ?>" width="30px" height="30px"></button>
+                    </form>
+                    <img src="<?php echo site_url('assets/images/featured_image_product/'.$product['featured_image']); ?>" class="w-100">
+                    <h6 class="product-title"><?php echo substr($product['title'],0,10); ?>...</h6>
+                    <p class="options"><?php echo ucfirst($cart_item['material']); ?>,<?php echo ucfirst ($cart_item['size']); ?></p>
+                    <div class="text-center">
+                    <form method="post" action="<?php echo site_url('update-cart'); ?>" style="display: inline;">
+                    <button class="btn" id="reduce-qty" type="button" style="border-radius: 0 !important; border: 1px solid gray; color: black; padding: 0.5% 2%; margin: 0 2%; width: 50px; height: 50px; font-size: 20px;">-</button><input type="number" name="product-qty" id="product-quantity" style="width: 50px; font-size: 15px; height: 49px; text-align: center;" value="<?php echo $cart_item['quantity']; ?>" min="1" readonly><button class="btn" id="add-qty" type="button" style="border-radius: 0 !important; border: 1px solid gray; color: black; padding: 0.5% 2%; width: 50px; height: 50px; font-size: 20px; margin: 0 2%;">+</button>
+                    <input type="hidden" name="cart-item-id" value='<?php echo $cart_item['id']; ?>'>
+
+                    <h5 class="text-center">₹ <?php echo $cart_item['quantity']*$product['sale_price']; ?></h5>
+
+                    <button style="margin-bottom: 5%; width: 50%; margin:0 auto;" type="submit" class="btn btn-primary">Update</button>
+                    </form>
+                </div>
+                <?php endif; endforeach; endforeach; ?>
             </div>
             <div class="row" style="margin-top: 5%; text-align: center;">
             
@@ -144,55 +167,6 @@
             </div>
         </div>
     </section>
-    <section id="cart-mobile" class="d-sm-block d-md-block d-lg-none">
-        <div class="container-fluid text-center">
-            <?php $subtotal = 0.00; ?>
-            <?php  foreach($cart_items as $cart_item): foreach($products as $product): if($cart_item['product_id']==$product['id']): ?>
-            <div class="card text-center" style="padding-bottom: 5%;">
-                <form action="<?php echo site_url('delete-cart-item'); ?>" method="post" style="display: inline;">
-                    <input type="hidden" name="cart-item-id" value="<?php echo $cart_item['id']; ?>">
-                    <button style="margin-bottom: 3%;" type="submit" class="btn"><img src="<?php echo site_url('assets/icons/trash.svg'); ?>" width="30px" height="30px"></button>
-                </form>
-                <img src="<?php echo site_url('assets/images/featured_image_product/'.$product['featured_image']); ?>" class="w-100">
-                <h6 class="product-title"><?php echo substr($product['title'],0,10); ?>...</h6>
-                <p class="options"><?php echo ucfirst($cart_item['material']); ?>,<?php echo ucfirst ($cart_item['size']); ?></p>
-                <div class="text-center">
-                <form method="post" action="<?php echo site_url('update-cart'); ?>" style="display: inline;">
-                <button class="btn" id="reduce-qty" type="button" style="border-radius: 0 !important; border: 1px solid gray; color: black; padding: 0.5% 2%; margin: 0 2%; width: 50px; height: 50px; font-size: 20px;">-</button><input type="number" name="product-qty" id="product-quantity" style="width: 50px; font-size: 15px; height: 49px; text-align: center;" value="<?php echo $cart_item['quantity']; ?>" min="1" readonly><button class="btn" id="add-qty" type="button" style="border-radius: 0 !important; border: 1px solid gray; color: black; padding: 0.5% 2%; width: 50px; height: 50px; font-size: 20px; margin: 0 2%;">+</button>
-                </div>
-                <br>
-                <input type="hidden" name="cart-item-id" value='<?php echo $cart_item['id']; ?>'>
-
-                <h5 class="text-center">₹ <?php echo $cart_item['quantity']*$product['sale_price']; ?></h5>
-
-                <button style="margin-bottom: 5%; width: 50%; margin:0 auto;" type="submit" class="btn btn-primary">Update</button>
-                </form>
-                <script>
-                $("button#add-qty").click(function (e) { 
-        e.preventDefault();
-        let productQuantity = $("input#product-quantity").val();
-        $("input#product-quantity").val(parseInt(productQuantity)+parseInt(1));
-    });
-
-    $("button#reduce-qty").click(function (e) { 
-        e.preventDefault();
-        let productQuantity = $("input#product-quantity").val();
-        if(parseInt(productQuantity)!=1){
-            $("input#product-quantity").val(parseInt(productQuantity)-parseInt(1));
-        }
-    });
-                </script>
-            </div>
-            <?php endif; endforeach; endforeach; ?>
-        </div>
-    </section>
-    <?php else: ?>
-    <section id="empty-cart">
-        <div class="container">
-            <h4>Your Cart is empty, head to the <a href="<?php echo site_url('shop'); ?>">Shop</a> and Add things here.</h4>
-        </div>
-    </section>
-    <?php endif; ?>
 </main>
 <script>
 // CustomerLogin Ajax
@@ -239,7 +213,7 @@ $("button#makePayment").click(function (e) {
         "key": "rzp_test_looXFeOiWI0vw6", // Enter the Key ID generated from the Dashboard
         "amount": '<?php echo $orderData['amount']; ?>', 
         "currency": "INR",
-        "name": "Kimara Jewellery",
+        "name": "Kimaara Jewellery",
         "description": 'Payment on Kimara Jewellery',
         "image": "<?php echo site_url('assets/images/newestlogo.png'); ?>",
         // "order_id": "<?php echo $orderData['id']; ?>", //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
@@ -278,5 +252,5 @@ $("button#makePayment").click(function (e) {
 
     }
 });
-<?php endif; ?>
+<?php endif; endif; ?>
 </script>

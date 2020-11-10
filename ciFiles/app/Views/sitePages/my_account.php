@@ -2,7 +2,7 @@
     <div class="container">
         <h3 class="page-title" style="margin-bottom: 5%;">My Account</h3>
         <div class="row">
-            <div class="col-lg-4 col-md-12 col-sm-12" style="padding: 3%; box-shadow: 0px 0px 20px lightgray;">
+            <div class="col-lg-4 col-md-12 col-sm-12" style="padding: 3%; margin-bottom: 5%; box-shadow: 0px 0px 20px lightgray;">
                 <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                 <a class="nav-link active" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="true">Edit Profile</a>
                 <a class="nav-link" id="v-pills-orders-tab" data-toggle="pill" href="#v-pills-orders" role="tab" aria-controls="v-pills-orders" aria-selected="false">Orders</a>
