@@ -61,6 +61,7 @@ $routes->post('update-cart','Cart::update');
 $routes->post('delete-cart-item','Cart::delete');
 
 
+
 // Order EndPoints
 $routes->post('create-order','Orders::create');
 $routes->post('update-order','Orders::update');
@@ -89,6 +90,7 @@ $routes->get('manage-homepage-slides','AdminPageLoader::homepage_slides');
 
 // Slides
 $routes->post('add-slide-exe','Slides::add');
+$routes->post('delete-slide-exe','Slides::delete');
 
 
 // Collection Routes

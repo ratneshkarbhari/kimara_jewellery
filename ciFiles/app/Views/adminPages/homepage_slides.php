@@ -7,18 +7,18 @@
     
         <p class="text-success"><?php echo $success; ?></p>
 
-        <form action="<?php echo site_url('add-slide-exe'); ?>" method="post">
+        <form enctype="multipart/form-data" action="<?php echo site_url('add-slide-exe'); ?>" method="post">
             <div class="form-group">
                 <label for="link">Link</label>
-                <input type="text" name="link" id="link">
+                <input class="form-control" type="text" name="link" id="link">
             </div>
             <div class="form-group">
                 <label for="desktop_image">Desktop Image</label>
-                <input type="file" name="desktop_image" id="desktop_image" accept="image/*">
+                <input class="form-control" type="file" name="desktop_image" id="desktop_image" accept="image/*">
             </div>
             <div class="form-group">
                 <label for="touch_image">Touch Image</label>
-                <input type="file" name="touch_image" id="touch_image" accept="image/*">
+                <input class="form-control" type="file" name="touch_image" id="touch_image" accept="image/*">
             </div>
             <button type="submit" class="btn btn-success">Add Slide</button>
         </form>

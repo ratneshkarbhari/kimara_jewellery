@@ -43,19 +43,21 @@
             </a>
         </div>
     </section>
-    <section id="static-banners">
+    <section id="static-banners" style="background-color: white !important;">
         <div class="container-fluid text-center">
             <div class="row">
-                <div class="col-lg-6 col-md-6 col-sm-12">
+                <div class="col-lg-1 col-md-1 col-sm-12"></div>
+                <div class="col-lg-5 col-md-5 col-sm-12" style="margin-bottom: 3% !important;">
                     <a href="<?php echo site_url(''); ?>">
                         <img src="<?php echo site_url('assets/images/smallbanner.png'); ?>" class="w-100">
                     </a>
                 </div>
-                <div class="col-lg-6 col-md-6 col-sm-12">
+                <div class="col-lg-5 col-md-5 col-sm-12" style="margin-bottom: 3% !important;">
                     <a href="<?php echo site_url(''); ?>">
                         <img src="<?php echo site_url('assets/images/smallbanner.png'); ?>" class="w-100">
                     </a>
                 </div>
+                <div class="col-lg-1 col-md-1 col-sm-12"></div>
             </div>
         </div>
     </section>

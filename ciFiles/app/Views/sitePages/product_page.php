@@ -40,7 +40,7 @@
                 </div>
                 <div class="col-lg-6 col-md-12 col-sm-12">
                 
-                    <h1 class="product-title"><?php echo $product['title']; ?></h1>
+                    <h1 class="product-title" style='font-size: 26px;text-transform:capitalize;'><?php echo $product['title']; ?></h1>
 
                     <?php if($product['sale_price']!=0.00): ?>
                         <span class="larger-price-card"> ₹ <?php echo $product['sale_price']; ?></span> | <del><span class="smaller-price-card"> ₹ <?php echo $product['price']; ?></span></del>

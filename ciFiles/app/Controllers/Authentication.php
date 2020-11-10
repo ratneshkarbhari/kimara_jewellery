@@ -380,6 +380,13 @@ class Authentication extends BaseController
     private function load_admin_login_error($errorMessage){
         $data['title'] = 'Admin Login';
         $data['error'] = $errorMessage;
+        $cartModel = new CartModel();
+        $categoryModel = new CategoryModel();
+
+        $cart_items = $cartModel->fetch_all_cart_items();
+        $data['categories'] =  $categories = $categoryModel->findAll();
+
+		$data['cart_item_count'] = count($cart_items);
 
         echo view('templates/header',$data);
         echo view('sitePages/admin_login',$data);

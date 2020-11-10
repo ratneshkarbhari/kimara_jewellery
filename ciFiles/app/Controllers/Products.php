@@ -80,9 +80,10 @@ class Products extends BaseController
             $featuredImage = $this->request->getFile('featured_image');
 
 			
-			$featuredImageRandomName = $featuredImage->getRandomName();
 
             if (! $featuredImage->hasMoved()) {
+                $featuredImageRandomName = $featuredImage->getRandomName();
+
                 $featuredImage->move('assets/images/featured_image_product', $featuredImageRandomName);
 
             }
