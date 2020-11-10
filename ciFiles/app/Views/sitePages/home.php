@@ -44,23 +44,15 @@
         </div>
     </section>
     <section id="static-banners">
-        <div class="container-fluid">
+        <div class="container-fluid text-center">
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-sm-12">
                     <div class="banner container-fluid">
                         <div class="item-banner style7 row">
-                            <div class="inner col-6 custom-half-grid" >
-                                <div class="banner-content" style="padding: 25% 0;">
-                                    <h3 class="title" style="color: black !important;">Happy Ever <br>After</h3>
-                                    <div class="description">
-                                        Adipiscing elit curabitur senectus sem
-                                    </div>
-                                    <br>
-                                    <a href="#" class="btn btn-primary">Shop now</a>
-                                </div>
-                            </div>
-                            <div class="col-6 custom-half-grid">
-                                <img src="http://ledthanhdat.vn/html/ysera/assets/images/product-item-22.jpg" class="w-100">
+                            <div class="inner col-12 custom-half-grid" >
+                                <a href="<?php echo site_url(''); ?>">
+                                    <img src="<?php echo site_url('assets/images/smallbanner.png'); ?>" class="W-100">
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -68,18 +60,10 @@
                 <div class="col-lg-6 col-md-6 col-sm-12">
                     <div class="banner container-fluid">
                         <div class="item-banner style7 row">
-                            <div class="inner col-6 custom-half-grid">
-                                <div class="banner-content" style="padding: 25% 0;">
-                                    <h3 class="title" style="color: black !important;">Happy Ever <br>After</h3>
-                                    <div class="description">
-                                        Adipiscing elit curabitur senectus sem
-                                    </div>
-                                    <br>
-                                    <a href="#" class="btn btn-primary">Shop now</a>
-                                </div>
-                            </div>
-                            <div class="col-6 custom-half-grid">
-                                <img src="http://ledthanhdat.vn/html/ysera/assets/images/product-item-22.jpg" class="w-100">
+                            <div class="inner col-12 custom-half-grid" >
+                                <a href="<?php echo site_url(''); ?>">
+                                    <img src="<?php echo site_url('assets/images/smallbanner.png'); ?>" class="W-100">
+                                </a>
                             </div>
                         </div>
                     </div>
