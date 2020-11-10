@@ -24,7 +24,7 @@
 
             <div class="container-fluid" style="padding: 0;">
                     
-                    <h1 class="section-title" id="filtered-title">ALL Products</h1>
+                    <h1 class="section-title text-center" id="filtered-title">ALL Products</h1>
         
                             
                     <div class="row" >

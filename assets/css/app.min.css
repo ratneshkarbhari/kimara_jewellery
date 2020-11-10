@@ -171,6 +171,9 @@ a.dropdown-item{
 a.nav-linkx.active:hover{
   text-decoration: none !important;
 }
+section#static-banners{
+  background-color: #f1f1f1 !important;
+}
 .section-title{
   margin-bottom: 3%;
 }

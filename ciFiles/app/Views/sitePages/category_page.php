@@ -23,7 +23,7 @@
 
             <div class="container-fluid">
                     
-                <h1 class="section-title" id="filtered-title">Products in <?php echo $focus_category['title']; ?></h1>
+                <h1 class="section-title text-center" id="filtered-title">Products in <?php echo $focus_category['title']; ?></h1>
     
                         
                 <div class="row" >

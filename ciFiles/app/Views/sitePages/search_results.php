@@ -22,7 +22,7 @@
 
             <div class="container-fluid">
                     
-                    <h1 class="section-title" id="filtered-title">Search Results</h1>
+                    <h1 class="section-title text-center" id="filtered-title">Search Results</h1>
         
                             
                     <div class="row" >

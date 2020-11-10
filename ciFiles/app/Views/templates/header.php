@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="<?php echo site_url('assets/css/bootstrap.min.css'); ?>">
     <link rel="stylesheet" href="<?php echo site_url('assets/css/owl.carousel.min.css'); ?>" >
     <link rel="stylesheet" href="<?php echo site_url('assets/css/owl.theme.default.min.css'); ?>" >
-    <link rel="stylesheet" href="<?php echo site_url('assets/css/app.min.css'); ?>">
+    <link rel="stylesheet" href="<?php echo site_url('assets/css/app.min.css?v=2.1'); ?>">
 </head>
 <body>
 <script src="<?php echo site_url('assets/js/jquery.min.js'); ?>"></script>
