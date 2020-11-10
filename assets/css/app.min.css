@@ -168,6 +168,29 @@ a.dropdown-item{
   border-radius: 30px !important;
 
 }
+a.nav-linkx.active:hover{
+  text-decoration: none !important;
+}
+.section-title{
+  margin-bottom: 3%;
+}
+.section-title:after{
+  content: ""; /* This is necessary for the pseudo element to work. */ 
+  display: block; /* This will put the pseudo element on its own line. */
+  margin: 0 auto; /* This will center the border. */
+  width: 12vw; /* Change this to whatever width you want. */
+  padding-top: 10px; /* This creates some space between the element and the border. */
+  border-bottom: 5px solid #c09578; /* This creates the border. Replace black with whatever color you want. */
+}
+
+a.nav-linkx.active:after{
+  content: ""; /* This is necessary for the pseudo element to work. */ 
+  display: block; /* This will put the pseudo element on its own line. */
+  margin: 0 auto; /* This will center the border. */
+  width: 70%; /* Change this to whatever width you want. */
+  padding-top: 10px; /* This creates some space between the element and the border. */
+  border-bottom: 5px solid #c09578; /* This creates the border. Replace black with whatever color you want. */
+}
 
 @media (min-width: 1281px) {
   
@@ -175,6 +198,10 @@ a.dropdown-item{
 
     nav#mobileBottomNav{
       display: none;
+    }
+
+    .section-title{
+      font-size: 30px !important;
     }
     
   }
@@ -188,6 +215,10 @@ a.dropdown-item{
     
     nav#mobileBottomNav{
       display: none;
+    }
+
+    .section-title{
+      font-size: 25px !important;
     }
     
   }
@@ -209,6 +240,10 @@ a.dropdown-item{
     .page-content{
       padding-bottom: 20% !important;
     }
+
+    .section-title{
+      font-size: 20px !important;
+    }
     
   }
   
@@ -227,6 +262,10 @@ a.dropdown-item{
     }
     div.owl-nav{
       display: none;
+    }
+
+    .section-title{
+      font-size: 15px !important;
     }
     
     .page-content{
@@ -253,6 +292,9 @@ a.dropdown-item{
       display: none;
     }
 
+    .section-title{
+      font-size: 12px !important;
+    }
     
     .page-content{
       padding-bottom: 20% !important;
@@ -279,6 +321,10 @@ a.dropdown-item{
 
     header#desktop{
       display: none;
+    }
+
+    .section-title{
+      font-size: 12px !important;
     }
 
     

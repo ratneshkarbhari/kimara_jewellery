@@ -85,10 +85,13 @@ $routes->get('edit-product/(:any)','AdminPageLoader::edit_product/$1');
 $routes->get('manage-orders','AdminPageLoader::all_orders');
 $routes->get('manage-collections','AdminPageLoader::all_collections');
 $routes->get('add-collection','AdminPageLoader::add_collection');
+$routes->get('manage-homepage-slides','AdminPageLoader::homepage_slides');
+
+// Slides
+$routes->post('add-slide-exe','Slides::add');
 
 
-
-// Collection Routs
+// Collection Routes
 $routes->post('add-collection-exe','Collections::add');
 $routes->post('delete-collection-exe','Collections::delete');
 

@@ -1,0 +1,5 @@
+CRITICAL - 2020-11-10 00:25:09 --> syntax error, unexpected '$routes' (T_VARIABLE)
+#0 /var/www/html/kimara_jewellery/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(364): CodeIgniter\CodeIgniter->tryToRouteIt()
+#1 /var/www/html/kimara_jewellery/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#2 /var/www/html/kimara_jewellery/index.php(46): CodeIgniter\CodeIgniter->run()
+#3 {main}

@@ -85,8 +85,8 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link sidebar-link" href="<?php echo site_url('manage-sliders'); ?>">
-                Sliders 
+                <a class="nav-link sidebar-link" href="<?php echo site_url('manage-homepage-slides'); ?>">
+                HomePage Slides
                 </a>
             </li>
         </ul>

@@ -48,7 +48,7 @@
         
             <h1 class="text-center section-title">Daily Deals</h1>
 
-            <div class="owl-carousel text-center" id="daily-deals-carousel">
+            <div class="owl-carousel text-center owl-theme" id="daily-deals-carousel">
                 
                 <?php foreach ($products as $product): if($product['daily_deal']=='yes'): ?>
             
@@ -290,9 +290,7 @@
     min-height: 70vh;
     max-height: 70vh;
 }
-h1.text-center.section-title{
-    font-size: 24px !important;
-}
+
 a.nav-link.active{
     color: #fff !important;
 }

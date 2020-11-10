@@ -4,6 +4,7 @@ use App\Models\CategoryModel;
 use App\Models\ProductModel;
 use App\Models\CollectionModel;
 use App\Models\OrderModel;
+use App\Models\HomePageSlideModel;
 
 class AdminPageLoader extends BaseController
 {
@@ -57,6 +58,19 @@ class AdminPageLoader extends BaseController
 
         $this->admin_page_loader('collections',$data);        
 
+    }
+
+    public function homepage_slides(){
+        $this->send_to_login();        
+    
+        $data['title'] = 'HomePage Slides';
+        $homePageSlideModel = new HomePageSlideModel();
+        $slides = $homePageSlideModel->findAll();
+
+        $data['slides'] = $slides;
+        $data['error'] = $data['success'] = '';
+
+        $this->admin_page_loader('homepage_slides',$data);
     }
 
     public function all_orders(){
