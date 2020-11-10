@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css" integrity="sha512-OTcub78R3msOCtY3Tc6FzeDJ8N9qvQn1Ph49ou13xgA9VsH9+LRxoFU6EqLhW4+PKRfU+/HReXmSZXHEkpYoOA==" crossorigin="anonymous" />
 <link rel="stylesheet" href="<?php echo site_url('assets/drift/drift-basic.min.css'); ?>">
 <script src="<?php echo site_url('assets/drift/Drift.min.js'); ?>"></script>
 <main class="page-content" id="product-page">
@@ -17,8 +18,8 @@
 
                     <script>
                     new Drift(document.querySelector("img#product-page-main-product-image"), {
-  paneContainer: document.querySelector("p")
-});
+                    paneContainer: document.querySelector("p")
+                    });
                     </script>
 
                     <div id="product-gallery-box" margin-top: 2%;>
@@ -101,7 +102,7 @@
                             <div class="col-lg-4 col-md-6 col-sm-12" style="padding:0;">
                                 
                                 <?php $session = session(); if($session->role=='customer'): ?>
-                                <button type="button" id="addToWishlistButton" class="btn btn-primary" style="background-color: black; color:white;">ADD to Wishlist</button>
+                                <button type="button" id="addToWishlistButton" class="btn btn-link" style="background-color: black; color:white;">ADD to Wishlist</button>
                                 <?php else: ?>
                                     <a type="button" id="addToWishlistButton" href="<?php echo site_url('my-account'); ?>" class="btn btn-primary" style="background-color: black; color:white;">ADD to Wishlist</a>
                                 <?php endif;  ?>
@@ -125,9 +126,8 @@
 
                     <div id="description-box" style="margin-top: 10%;">
                     
-                    <h3>Description</h3>
 
-                    <p class="product-description"><?php echo $product['description']; ?></p>
+                    <p class="product-description text-left"><?php echo $product['description']; ?></p>
                     </div>
 
                     
@@ -139,6 +139,21 @@
         
         </div>
     
+    </section>
+    <section id="related-products-section">
+        <div class="container">
+            <h1 class="text-center section-title">Related Products</h1>
+            <div class="owl-carousel owl-theme" id="related-products">
+                <?php foreach($related_products as $related_product): if($related_product['id']!=$product['id']): ?>
+                    <a href="<?php echo site_url('product/'.$related_product['slug']); ?>"><div class="card text-center"> <img src="<?php echo site_url('assets/images/featured_image_product/'.$related_product['featured_image']); ?>" class="card-img-top"><div class="card-body">                            
+                    <h6 class="related_product-title"><?php if(strlen($related_product['title'])>9){
+                    echo substr($related_product['title'],0,9).'...';
+                    }else {
+                    echo $related_product['title'];
+                    } ?></h6><span class="larger-price-card"> ₹ <?php echo $related_product['sale_price']; ?></span> | <del><span class="smaller-price-card"> ₹ <?php echo $related_product['price']; ?></span></del> <br><br><button class="btn btn-primary">BUY NOW</button></div></div> </a>
+                <?php endif; endforeach; ?>
+            </div>
+        </div>
     </section>
 
 </main>
