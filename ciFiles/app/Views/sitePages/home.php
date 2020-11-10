@@ -47,26 +47,14 @@
         <div class="container-fluid text-center">
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-sm-12">
-                    <div class="banner container-fluid">
-                        <div class="item-banner style7 row">
-                            <div class="inner col-12 custom-half-grid" >
-                                <a href="<?php echo site_url(''); ?>">
-                                    <img src="<?php echo site_url('assets/images/smallbanner.png'); ?>" class="W-100">
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+                    <a href="<?php echo site_url(''); ?>">
+                        <img src="<?php echo site_url('assets/images/smallbanner.png'); ?>" class="w-100">
+                    </a>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-12">
-                    <div class="banner container-fluid">
-                        <div class="item-banner style7 row">
-                            <div class="inner col-12 custom-half-grid" >
-                                <a href="<?php echo site_url(''); ?>">
-                                    <img src="<?php echo site_url('assets/images/smallbanner.png'); ?>" class="W-100">
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+                    <a href="<?php echo site_url(''); ?>">
+                        <img src="<?php echo site_url('assets/images/smallbanner.png'); ?>" class="w-100">
+                    </a>
                 </div>
             </div>
         </div>
