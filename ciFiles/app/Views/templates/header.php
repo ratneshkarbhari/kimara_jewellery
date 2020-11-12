@@ -103,7 +103,7 @@
             
             <a class="nav-link" id="toggleSearchBar" href="#"><img src="<?php echo site_url('assets/icons/search.svg'); ?>" width="15px" height="15px"></a>
             <div id="searchBox" class="container" style="padding: 5%;">
-                <form action="http://localhost/kimara_jewellery/universal-product-search" method="post">
+                <form action="<?php echo site_url('universal-product-search'); ?>" method="post">
                                     
                     <div class="form-group container">
                         <label for="universalSearchField">Find What you Love</label>
