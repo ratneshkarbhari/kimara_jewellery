@@ -1,8 +1,6 @@
-<div class="login-section section " style="margin-bottom: 3%;">
+<div class="login-section section" style="margin-bottom: 3%;">
     <div class="container">
-        <div id="top-header-my-account row card" style="padding: 5% 0; background-color: white;margin: 5% 0;">
-            <h1 style="background-color: white !important; color: black !important;" class="text-center"><?php echo $title; ?></h1>
-        </div>
+        
         <div class="login-section section container" style="margin-bottom: 3%;">
             <style>
                 input,textarea{
@@ -10,13 +8,30 @@
                 }
             </style>
             <div class="row">
-            
-                <div class="col-lg-6 col-md-12 col-sm-12">
 
-                <div class="  text-left" style="margin: 5% 0;">
-                        <h2><span class="color-blue" style="color: red;">SEND</span> A MESSAGE</h2>
+                <div class="col-lg-12 col-md-12 col-sm-12">
+
+                    <div class="text-left" style="margin: 5% 0;">
+                        <h2>CONTACT DETAILS</h2>
+                        <p>Ask Us. We will help you. Your questions and feedbacks are always welcome at kimaara.com.</p>
                     </div>
-                
+
+
+                    <h4 class="text-dark">08066040000, 7829000052</h4>
+                    <p>Call or whatsapp. Join in a conversation with one of our Jewelry Consultants to help you make the right decision. Communicate the way you prefer. Our service hours are from 8AM to 10PM on all days.</p>
+                    <h4 class="text-dark">hello@kimaara.com</h4>
+                    <p>Do you have any queries or questions? Send us an e-mail and we will reply to you as soon as possible</p>
+                    <h4 class="text-dark">Location:</h4>
+                    <p class="text-dark" style="font-size: 150%;">Mumbai, India</p>
+
+                </div>
+            
+                <div class="col-lg-12 col-md-12 col-sm-12">
+
+                    <div class="text-left" style="margin: 5% 0;">
+                        <h2>SEND A MESSAGE</h2>
+                    </div>
+                    
                     <form action="<?php echo site_url('contact-form-exe'); ?>" method="post">
                     
                         <p class="text-success"><?php echo $success; ?></p>
@@ -36,24 +51,12 @@
                             <textarea class="form-control" name="message" id="message"></textarea>
                         </div>
 
-                        <button type="submit" class="btn" style="background-color: red; color: white;">Send</button>
+                        <button type="submit" class="btn btn-primary">Send</button>
 
                     </form>
 
                 </div>
-                <div class="col-lg-6 col-md-12 col-sm-12">
-
-                <div class="  text-left" style="margin: 5% 0;">
-                        <h2><span class="color-blue" style="color: red;">CONTACT</span> DETAILS</h2>
-                    </div>
-
-
-                    <h2 class="text-dark">Email:</h2>
-                    <p class="text-dark" style="font-size: 150%;">hello@kimaara.com</p>
-                    <h2 class="text-dark">Location:</h2>
-                    <p class="text-dark" style="font-size: 150%;">Mumbai, India</p>
-
-                </div>
+                
             
             </div>
         </div>
