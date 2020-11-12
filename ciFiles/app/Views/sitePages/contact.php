@@ -12,8 +12,8 @@
                 <div class="col-lg-12 col-md-12 col-sm-12">
 
                     <div class="text-left" style="margin: 5% 0;">
-                        <h2 class="section-title">CONTACT DETAILS</h2>
-                        <p>Ask Us. We will help you. Your questions and feedbacks are always welcome at kimaara.com.</p>
+                        <h2 class="section-title text-center">CONTACT DETAILS</h2>
+                        <p class="text-center">Ask Us. We will help you. Your questions and feedbacks are always welcome at kimaara.com.</p>
                     </div>
 
 
