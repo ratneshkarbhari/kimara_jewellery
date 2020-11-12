@@ -19,7 +19,7 @@
 
                     <h4 class="text-dark">9022906690</h4>
                     <p>Call or whatsapp. Join in a conversation with one of our Jewelry Consultants to help you make the right decision. Communicate the way you prefer. Our service hours are from 8AM to 10PM on all days.</p>
-                    <p style="font-size: 1.25rem;" class="text-dark">kimaarasilver@gmail.com</p>
+                    <p style="font-size: 1.25rem; font-weight: 600;" class="text-dark">kimaarasilver@gmail.com</p>
                     <p>Do you have any queries or questions? Send us an e-mail and we will reply to you as soon as possible</p>
                     <h4 class="text-dark">Location:</h4>
                     <p class="text-dark" style="font-size: 150%;">Mumbai, India</p>
