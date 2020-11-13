@@ -4,7 +4,11 @@
         
         <a href="<?php echo site_url(''); ?>" class="nav-linkx w-20 d-inline-block text-center "><img src="<?php echo site_url('assets/icons/home.svg'); ?>" width="15px" height="15px"><br><small>Home</small></a>
         <a class="nav-linkx w-20 d-inline-block text-center" href="<?php echo site_url('my-account'); ?>"><img src="<?php echo site_url('assets/icons/heart.svg'); ?>" width="15px" height="15px"><br><small>Wishlist</small></a>
-        <a class="nav-linkx w-20 d-inline-block text-center" href="<?php echo site_url('cart'); ?>"><span class="cart-count-circle" style="
+        <a class="nav-linkx w-20 d-inline-block text-center" href="<?php if($cart_item_count>0){
+                        echo site_url('cart');
+                    }else {
+                        echo '#';
+                    }  ?>"><span class="cart-count-circle" style="
     position: absolute;
     top: 4%;
     width: 22px;

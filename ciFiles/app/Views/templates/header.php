@@ -30,7 +30,11 @@
                     
                     <nav id="top-right-nav" class="ml-auto">
                     <a class="nav-link d-inline" href="<?php echo site_url('customer-login'); ?>"><img src="<?php echo site_url('assets/icons/user.svg'); ?>" width="30px" height="30px"></a>
-                    <a class="nav-link d-inline" href="<?php echo site_url('cart'); ?>"><img src="<?php echo site_url('assets/icons/shopping-bag.svg'); ?>" width="30px" height="30px"><span class="cart-count-circle" style="position: absolute;
+                    <a class="nav-link d-inline" href="<?php if($cart_item_count>0){
+                        echo site_url('cart');
+                    }else {
+                        echo '#';
+                    }  ?>"><img src="<?php echo site_url('assets/icons/shopping-bag.svg'); ?>" width="30px" height="30px"><span class="cart-count-circle" style="position: absolute;
     top: 3%;
     width: 22px;
     height: 22px;
@@ -103,7 +107,7 @@
             
             <a class="nav-link" id="toggleSearchBar" href="#"><img src="<?php echo site_url('assets/icons/search.svg'); ?>" width="15px" height="15px"></a>
             <div id="searchBox" class="container" style="padding: 5%;">
-                <form action="<?php echo site_url('universal-product-search'); ?>" method="post">
+                <form action="<?php echo site_url('universal-product-search') ?>" method="post">
                                     
                     <div class="form-group container">
                         <label for="universalSearchField">Find What you Love</label>

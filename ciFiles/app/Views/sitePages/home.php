@@ -38,13 +38,13 @@
             <div class="row">
                 <div class="col-lg-1 col-md-1 col-sm-12"></div>
                 <div class="col-lg-5 col-md-5 col-sm-12" style="margin-bottom: 3% !important;">
-                    <a href="<?php echo site_url(''); ?>">
-                        <img src="<?php echo site_url('assets/images/smallbanner.png'); ?>" class="w-100">
+                    <a href="<?php echo site_url('shop'); ?>">
+                        <img src="<?php echo site_url('assets/images/b1.jpg'); ?>" class="w-100">
                     </a>
                 </div>
                 <div class="col-lg-5 col-md-5 col-sm-12" style="margin-bottom: 3% !important;">
-                    <a href="<?php echo site_url(''); ?>">
-                        <img src="<?php echo site_url('assets/images/smallbanner.png'); ?>" class="w-100">
+                    <a href="<?php echo site_url('shop'); ?>">
+                        <img src="<?php echo site_url('assets/images/b2.jpg'); ?>" class="w-100">
                     </a>
                 </div>
                 <div class="col-lg-1 col-md-1 col-sm-12"></div>

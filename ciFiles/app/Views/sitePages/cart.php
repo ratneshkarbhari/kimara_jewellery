@@ -84,7 +84,11 @@
                 <div class="col-lg-4 col-md-12 col-sm-12">
                 
                     <h5>Subtotal: <?php  echo '₹ '.$subtotal; ?></h5>
+                    <?php if($subtotal<10000): ?>
                     <h5>Shipping: <?php  echo '₹ '.$shipping= 125; ?></h5>
+                    <?php else: ?>
+                        <h5>Shipping: <?php  echo '₹ '.$shipping= 0; ?></h5>
+                    <?php endif; ?>
                     <h3>Payable: <?php  echo '₹ '.$payable = $shipping+$subtotal; ?></h3>
 
                     <br><br>
