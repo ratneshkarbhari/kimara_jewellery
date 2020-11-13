@@ -150,9 +150,7 @@ class PublicPageLoader extends BaseController
 			
 		}
 
-		echo view('templates/header',$data);
-		echo view('sitePages/public_order_details',$data);
-		echo view('templates/footer',$data);
+		$this->public_page_loader('public_order_details',$data);
 		
 	}
 

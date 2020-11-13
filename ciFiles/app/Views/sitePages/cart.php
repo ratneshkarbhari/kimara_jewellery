@@ -83,7 +83,9 @@
                 <div class="col-lg-4 col-md-12 col-sm-12"></div>
                 <div class="col-lg-4 col-md-12 col-sm-12">
                 
-                    <h3>Payable Total: <?php  echo '₹ '.$subtotal; ?></h3>
+                    <h5>Subtotal: <?php  echo '₹ '.$subtotal; ?></h5>
+                    <h5>Shipping: <?php  echo '₹ '.$shipping= 125; ?></h5>
+                    <h3>Payable: <?php  echo '₹ '.$payable = $shipping+$subtotal; ?></h3>
 
                     <br><br>
 
@@ -149,7 +151,7 @@
                         </div>
                     </div>
                     <?php else: ?>
-                        <div class="container-fluid text-left">
+                        <!-- <div class="container-fluid text-left">
                             <p id="orderPlacingError" class="text-danger text-center"></p>
                             <div class="form-group">
                                 <label for="contactNumber">Contact Number</label>
@@ -166,7 +168,64 @@
                             <button class="btn btn-success btn-block" data-toggle="modal" data-target="#loginModal"  type="button" id="makePayment">
                             Make Payment
                             </button>
+                        </div> -->
+                        
+                        <p id="orderPlacingError" class="text-danger"></p>
+
+                        <div class="form-group">
+                            <label for="contactNumber">Contact Number*</label>
+                            <input class="form-control" style='border: 1px solid;' type="text" name="orderContactNumber" id="contactNumber" required>
                         </div>
+                        <div class="form-group">
+                            <label for="shippingAddress">Shipping Address*</label>
+                            <textarea style='border: 1px solid;' id="shippingAddress" name="shippingAddress" class="form-control"></textarea required>
+                        </div>
+                        <div class="form-group">
+                            <label for="billingAddress">Billing Address*</label>
+                            <textarea style='border: 1px solid;' id="billingAddress" name="billingAddress" class="form-control"></textarea required>
+                        </div>
+                        <button class="btn btn-success btn-block" type="button" id="ccod">
+                        Place Order
+                        </button>
+                        
+                        <script>
+                        
+                            $("button#ccod").click(function (e) { 
+                                e.preventDefault();
+
+                                let orderContactNumber = $("input#contactNumber").val();
+                                let shippingAddress = $("textarea#shippingAddress").val();
+                                let billingAddress = $("textarea#billingAddress").val();
+                                if(orderContactNumber==''||shippingAddress==''||billingAddress==''){
+                                    
+                                    $("p#orderPlacingError").html('Please enter both Contact Number, Shipping and Billing Address');
+                                
+                                }else{
+
+                                    $.ajax({
+                                        type: "POST",
+                                        url: "<?php echo site_url('create-cod-order'); ?>",
+                                        data: {
+                                            'payee_customer_email' : '<?php echo $_SESSION['email']; ?>',
+                                            'payee_customer_name' : '<?php echo $_SESSION['first_name'].' '.$_SESSION['last_name']; ?>',
+                                            'amount' : '<?php echo ($orderData['amount']/100); ?>',
+                                            'contact_number' : localStorage.getItem('orderContactNumber'),
+                                            'shipping_address' : localStorage.getItem('shippingAddress'),
+                                            'billing_address' : localStorage.getItem('billingAddress'),                                            
+                                        },
+                                        success: function (response) {
+                                            if(response=='success'){
+                                                window.location.href = "<?php echo site_url('thank-you'); ?>";
+                                            }
+                                        }
+                                    });    
+
+                                }
+
+                            });
+
+                        </script>
+                       
                     <?php endif; ?>
                 
                 </div>

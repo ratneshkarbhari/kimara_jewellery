@@ -62,7 +62,8 @@ $routes->post('delete-cart-item','Cart::delete');
 
 
 
-// Order EndPoints
+// Order EndPoint
+$routes->post('create-cod-order','Orders::create_cod_order');
 $routes->post('create-order','Orders::create');
 $routes->post('update-order','Orders::update');
 

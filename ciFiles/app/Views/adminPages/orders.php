@@ -38,6 +38,7 @@
                                                 <p>Mobile Number: <?php echo $order['contact_number']; ?></p>
                                                 <p>Email: <?php echo $order['customer_email']; ?></p>
                                                 <p>Date: <?php echo $order['date']; ?></p>
+                                                <p>Complete Order Details:  <a href="<?php echo site_url('order-details/'.$order['public_order_id']); ?>" target="_blank">Click here</a></p>
                                                 <form action="<?php echo site_url('update-order'); ?>" method="post">
                                                     <input type="hidden" name="order_id" value="<?php echo $order['public_order_id']; ?>">
                                                     <div class="form-group">

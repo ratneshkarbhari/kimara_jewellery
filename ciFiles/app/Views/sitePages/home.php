@@ -286,7 +286,7 @@
                 <div class="col-lg-12 text-center col-md-12 col-sm-12">
                 
 
-                    <p style="font-size: 30px;"><img src="<?php echo site_url('assets/icons/truck.svg'); ?>" width="30px" height="30px"> 5 Day Delivery guaranteed</p>
+                    <p style="font-size: 30px;"><img src="<?php echo site_url('assets/icons/truck.svg'); ?>" width="30px" height="30px"> Free Shipping for Order above ₹ 10,000</p>
                 
                 </div>
             </div>
