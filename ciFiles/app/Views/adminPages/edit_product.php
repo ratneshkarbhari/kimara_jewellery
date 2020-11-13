@@ -17,6 +17,10 @@
                 <label for="slug">Slug</label>
                 <input class="form-control" type="text" name="slug" value="<?php echo $product['slug']; ?>" id="slug">
             </div>
+            <div class="form-group">
+                <label for="sku">SKU</label>
+                <input class="form-control" type="text" name="sku" id="sku" value="<?php echo $product['sku']; ?>">
+            </div>
 
             <div class="container-fluid">
             
@@ -58,6 +62,21 @@
                     <option value="yes" <?php if($product['daily_deal']=='yes'){
                         echo 'selected';
                     } ?>>Yes</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Collection</label>
+                <br>
+                <select class="form-control" name="collection">
+                    <option value="best-sellers" <?php if($product['collection']=='best-sellers'){
+                        echo 'selected';
+                    } ?>>Best Sellers</option>
+                    <option value="top-rated" <?php if($product['collection']=='top-rated'){
+                        echo 'selected';
+                    } ?>>Top Rated</option>
+                    <option value="none" <?php if($product['collection']=='none'){
+                        echo 'selected';
+                    } ?>>None</option>
                 </select>
             </div>
             

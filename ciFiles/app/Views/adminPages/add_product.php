@@ -15,6 +15,10 @@
                 <label for="slug">Slug</label>
                 <input class="form-control" type="text" name="slug" id="slug">
             </div>
+            <div class="form-group">
+                <label for="sku">SKU</label>
+                <input class="form-control" type="text" name="sku" id="sku">
+            </div>
 
             <div class="container-fluid">
             
@@ -48,6 +52,15 @@
                 <select class="form-control" name="daily_deal">
                     <option value="no">No</option>
                     <option value="yes">Yes</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Collection</label>
+                <br>
+                <select class="form-control" name="collection">
+                    <option value="best-sellers">Best Sellers</option>
+                    <option value="top-rated">Top Rated</option>
+                    <option value="none">None</option>
                 </select>
             </div>
             
