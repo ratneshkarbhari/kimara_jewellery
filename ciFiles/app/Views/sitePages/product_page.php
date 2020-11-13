@@ -51,8 +51,10 @@
 
                     <div class="container-fluid">
                     
-                        <div class="row">
+                        <div class="row" style='margin-top: 5%;'>
                         
+                            <?php if($product['materials']!=''): ?>
+
                             <div  class="col-lg-4 col-md-6 col-sm12 form-group" style="padding-left: 0;">
                             
                                 <label for="product-material">Material:</label>
@@ -64,6 +66,10 @@
                                 </select>
 
                             </div>
+                            <?php else: ?>
+                                <input type="hidden" value="default" id="product-material">
+                            <?php endif; ?>
+                            <?php if($product['sizes']!=''): ?>
                             <div class="col-lg-4 col-md-6 col-sm12 form-group" style="padding-left: 0;">
                             
                                 <label for="product-size">Size:</label>
@@ -76,6 +82,10 @@
                                 </select>
 
                             </div>
+                            <?php else: ?>
+                            <input type="hidden" name="product-size" value="default">
+                            <?php endif; ?>
+                            
                             <div class="col-lg-8 col-md-12 col-sm-12 form-group" style="padding-left: 0;">
                                 <label for="product-quantity">Quantity:</label>
 
@@ -174,8 +184,13 @@
     });
     $("button#addToCartButton").click(function (e) { 
         e.preventDefault();
-        let productMaterial = $("select#product-material").val();
+        <?php if($product['sizes']==''&&$product['materials']==''): ?>
+        let productMaterial = 'default';
+        let productSize = 'default';
+        <?php else: ?>
+            let productMaterial = $("select#product-material").val();
         let productSize = $("select#product-size").val();
+        <?php endif; ?>
         let productQuantity = $("input#product-quantity").val();
         $.ajax({
             type: "POST",
