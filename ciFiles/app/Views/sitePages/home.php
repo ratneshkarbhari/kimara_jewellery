@@ -165,7 +165,7 @@
                             <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab" style="padding-top: 3%;">
                                 <div class="row" syyle="margin-top: 3%;">
 
-                                <?php foreach($products as $product): if($product['collection']=='best-sellers'): ?>
+                                <?php $bsProducts = array_rand($products,5); foreach($bsProducts as $product): ?>
 
                                     <div class="col-lg-3 col-md-6-sm-6 text-center custom-half-grid" style="margin-bottom: 2%; padding: 5px;"> <a href="<?php echo site_url('product/'.$product['slug']); ?>"><div class="card"> <img src="<?php echo site_url('assets/images/featured_image_product/'.$product['featured_image']); ?>" class="card-img-top"><div class="card-body">                            <h6 class="product-title"><?php if(strlen($product['title'])>9){
                                     echo substr($product['title'],0,9).'...';
@@ -174,7 +174,7 @@
                                     } ?></h6><span class="larger-price-card"> ₹ <?php echo $product['sale_price']; ?></span> | <del><span class="smaller-price-card"> ₹ <?php echo $product['price']; ?></span></del> <br><br><button class="btn btn-primary">BUY NOW</button></div></div> </a></div>
 
 
-                                <?php endif; endforeach;?>
+                                <?php  endforeach;?>
 
 
                                 </div>
@@ -198,7 +198,7 @@
                             
                                 <div class="row" syyle="margin-top: 3%;">
                                 
-                                <?php foreach($products as $product): if($product['collection']=='top-rated'): ?>
+                                <?php $topProds = array_rand($products,5); foreach($topProds as $product): ?>
 
 
                                     <div class="col-lg-3 col-md-6-sm-6 text-center custom-half-grid" style="margin-bottom: 2%; padding: 5px;"> <a href="<?php echo site_url('product/'.$product['slug']); ?>"><div class="card"> <img src="<?php echo site_url('assets/images/featured_image_product/'.$product['featured_image']); ?>" class="card-img-top"><div class="card-body">                            <h6 class="product-title"><?php if(strlen($product['title'])>9){
@@ -208,7 +208,7 @@
                                     } ?></h6><span class="larger-price-card"> ₹ <?php echo $product['sale_price']; ?></span> | <del><span class="smaller-price-card"> ₹ <?php echo $product['price']; ?></span></del> <br><br><button class="btn btn-primary">BUY NOW</button></div></div> </a></div>
 
 
-                                    <?php endif; endforeach; ?>
+                                    <?php  endforeach; ?>
 
 
                                 </div>

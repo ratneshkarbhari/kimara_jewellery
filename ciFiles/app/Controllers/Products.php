@@ -147,9 +147,7 @@ class Products extends BaseController
                 'sale_price' =>  $sale_price,
                 'stock_count' => $stock_count,
                 'visibility' => $visibility,
-                'daily_deal' => $this->request->getPost('daily_deal'),
-                'sku' => $this->request->getPost('sku'),
-                'collection' => $this->request->getPost('collection')
+                'daily_deal' => $this->request->getPost('daily_deal')
             );
             
             $response = $productModel->insert($productData);
@@ -328,9 +326,7 @@ class Products extends BaseController
                 'sale_price' =>  $sale_price,
                 'stock_count' => $stock_count,
                 'visibility' => $visibility,
-                'daily_deal' => $this->request->getPost('daily_deal'),
-                'sku' => $this->request->getPost('sku'),
-                'collection' => $this->request->getPost('collection')
+                'daily_deal' => $this->request->getPost('daily_deal')
             );
             
             $response = $productModel->update($this->request->getPost('id'),$productData);
