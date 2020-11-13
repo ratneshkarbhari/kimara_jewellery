@@ -198,7 +198,7 @@
                             
                                 <div class="row" syyle="margin-top: 3%;">
                                 
-                                <?php foreach($bestSellerProducts as $bsPro): if($product['collection']=='top-rated'): ?>
+                                <?php foreach($products as $product): if($product['collection']=='top-rated'): ?>
 
 
                                     <div class="col-lg-3 col-md-6-sm-6 text-center custom-half-grid" style="margin-bottom: 2%; padding: 5px;"> <a href="<?php echo site_url('product/'.$product['slug']); ?>"><div class="card"> <img src="<?php echo site_url('assets/images/featured_image_product/'.$product['featured_image']); ?>" class="card-img-top"><div class="card-body">                            <h6 class="product-title"><?php if(strlen($product['title'])>9){
