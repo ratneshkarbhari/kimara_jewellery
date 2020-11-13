@@ -187,12 +187,12 @@ class Orders extends BaseController
             //Server settings
             $mail->SMTPDebug = SMTP::DEBUG_OFF;                      // Enable verbose debug output
             $mail->isSMTP();                                            // Send using SMTP
-            $mail->Host       = 'smtp.gmail.com';                    // Set the SMTP server to send through
+            $mail->Host       = 'mail.kimaara.com';                    // Set the SMTP server to send through
             $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
-            $mail->Username   = 'codesevaco@gmail.com';                     // SMTP username
-            $mail->Password   = 'jaisadguru@47';                               // SMTP password
+            $mail->Username   = 'emailverification@kimaara.com';                     // SMTP username
+            $mail->Password   = 'ratnesh@47';                               // SMTP password
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
-            $mail->Port       = 587;                                    // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
+            $mail->Port       = 465;                                   // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
         
             //Recipients
             $mail->setFrom('noreply@Kimaarajewellery.com', 'Kimaara Jewellery Order Processing');
