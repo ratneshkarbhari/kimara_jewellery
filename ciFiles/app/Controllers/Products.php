@@ -192,9 +192,6 @@ class Products extends BaseController
 
         $this->send_to_login();
 
-
-    
-
         $productModel = new ProductModel();
 
         $productFocus = $productModel->find($this->request->getPost('id'));
