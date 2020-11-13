@@ -336,7 +336,6 @@ class Products extends BaseController
                 'collection' => $this->request->getPost('collection')
             );
             
-
             $response = $productModel->update($this->request->getPost('id'),$productData);
 
             if ($response) {
