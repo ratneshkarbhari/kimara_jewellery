@@ -60,7 +60,7 @@
                         </div>
                         <div class="newsletter-form-wrap">
                             <div class="list">
-                                Sign up for our free video course and <br> urban garden inspiration
+                                Sign up for fresh info about our offers and products
                             </div>
                             <input type="email" class="input-text email email-newsletter form-control" placeholder="Your email letter">
                             <br>
