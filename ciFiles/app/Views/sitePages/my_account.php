@@ -60,8 +60,20 @@
                     </form>
                 </div>
                 <div class="tab-pane fade" id="v-pills-orders" role="tabpanel" aria-labelledby="v-pills-orders-tab">
-                                        
+                    
 
+
+                    <?php if(count($orders)>0): foreach($orders as $order): ?>
+
+                        <h4>Click on Order to see details:</h4>
+
+                        <a style="color: #c09578 !important;" href="<?php echo site_url('order-details/'.$order['public_order_id']); ?>"><h4><?php echo $order['public_order_id']; ?></h4></a>
+
+                    <?php endforeach; else: ?>
+
+                        <h4>Your have no past Orders <a style="color: #c09578 !important;" href="<?php echo site_url('shop'); ?>">go back to the shop</a> and get a lil something for you.</h4>
+
+                    <?php endif; ?>
                     
                 </div>
                 <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">...</div>

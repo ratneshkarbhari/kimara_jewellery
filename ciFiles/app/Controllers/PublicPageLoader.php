@@ -102,6 +102,10 @@ class PublicPageLoader extends BaseController
 
 		$authModel = new AuthModel();
 
+		$orderModel = new OrderModel();
+
+
+
 		$loggedInEmail = $session->get('email');
 
 		$userData = $authModel->where('email',$loggedInEmail)->first();
@@ -109,6 +113,10 @@ class PublicPageLoader extends BaseController
 		$data['userdata'] = $userData;
 
 		$categoriesFetched = $categoryModel->findAll();
+
+		$customerOrders = $orderModel->where('customer_email',$session->email)->findAll();
+
+		$data['orders'] = $customerOrders;
 
 		$data['title'] = 'My Account';
 		$data['error'] = $data['success'] = '';
