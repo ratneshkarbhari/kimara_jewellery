@@ -80,6 +80,7 @@ class Authentication extends BaseController
 
             //Recipients
             $mail->setFrom('emailverification@kimaara.com', 'Email Verification Dept.');
+            $mail->addAddress($enteredEmail);               // Name is optional
             $mail->addReplyTo('noreply@kimaara.com', 'Email Verification');
             
             // Content
