@@ -89,13 +89,46 @@
                             <div class="col-lg-4 col-md-6 col-sm-6" style="padding:0; margin-bottom: 3%;">
                                 
                                 <?php $session = session(); if($session->role=='customer'): ?>
-                                <button type="button" id="addToWishlistButton"style=" font-size: 16px;"> <img src="<?php echo site_url('assets/icons/heart.svg'); ?>" width="16px" height="16px"> Add to Wishlist</button>
+                                <a href="#" type="button" id="addToWishlistButton"style=" font-size: 16px;"> <img src="<?php echo site_url('assets/icons/heart.svg'); ?>" width="16px" height="16px"> Add to Wishlist</a>
                                 <?php else: ?>
                                     <a type="button" id="addToWishlistButton" href="<?php echo site_url('my-account'); ?>" style=" font-size: 16px;"> <img src="<?php echo site_url('assets/icons/heart.svg'); ?>" width="16px" height="16px"> Add to Wishlist</a>
                                 <?php endif;  ?>
                                 <script>
-                                $("button#addToWishlistButton").click(function (e) { 
-                                    // 
+                                $("a#addToWishlistButton").click(function (e) { 
+
+                                    <?php if($product['sizes']==''&&$product['materials']==''): ?>
+                                    let productMaterial = 'default';
+                                    let productSize = 'default';
+                                    <?php else: ?>
+                                        let productMaterial = $("select#product-material").val();
+                                    let productSize = $("select#product-size").val();
+                                    <?php endif; ?>
+                                    let product_id = '<?php echo $product['id']; ?>';
+                                    let customer_id = '<?php echo $_SESSION['id']; ?>'
+                                    $.ajax({
+                                        type: "POST",
+                                        url: "<?php echo site_url('add-to-wishlist-exe'); ?>",
+                                        data: {
+                                        product_id : product_id,
+                                            customer_id : product_id,
+                                            material : productMaterial,
+                                            size : productSize,
+                                        },
+                                        success: function (response) {
+                                            if(response=='success'){
+                                                $("p#atc-success").html('Added to Cart Successfully');
+                                                setTimeout(function() {
+                                                    $("p#atc-success").html('');
+                                                }, 3000);
+                                                location.reload();
+                                            }else{
+                                                $("p#atc-failure").html('Added to Cart Successfully');
+                                                setTimeout(function() {
+                                                    $("p#atc-failure").html('');
+                                                }, 3000);
+                                            }
+                                        }
+                                    })
                                 });
                                 </script>
 
@@ -110,7 +143,7 @@
                             <p id="atc-success" style="margin-bottom: 0;" class="col-lg-12 col-md-12 col-sm-12 text-success" style="color: darkgreen !important;"></p>
                                 <p id="atc-failure" class="col-lg-12 col-md-12 col-sm-12 text-danger"></p>
                             
-                            <div class="col-lg-4 col-md-12 col-sm-12 form-group" style="padding-left: 0;">
+                            <div class="col-lg-4 col-md-6 col-sm-6 form-group custom-half-grid" style="padding-left: 0;">
                                 <!-- <label for="product-quantity">Quantity:</label> -->
 
                                 <!-- <select class="form-control" id="product-quantity">
@@ -126,7 +159,7 @@
                             </div>
                             
 
-                            <div class="col-lg-4 col-md-6 col-sm-12" style="padding:0;">
+                            <div class="col-lg-4 col-md-6 col-sm-6 custom-half-grid" style="padding:0;">
                                 
                                         
                                 <button type="button" id="addToCartButton" class="btn btn-primary" style="background-color: black; color:white; margin-bottom: 3%;">Add to Cart</button>

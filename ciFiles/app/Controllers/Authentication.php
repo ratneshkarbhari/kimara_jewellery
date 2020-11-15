@@ -125,8 +125,13 @@ class Authentication extends BaseController
         $accountCreated = $authModel->insert($customerData);
 
         if($accountCreated){
+
+            $customerDataNew = $authModel->where('email',$email)->where('role','customer')->first();
+
+            $customerDataNew['password'] = '';
+
             $session = session();
-            $session->set($customerData);
+            $session->set($customerDataNew);
             return 'account-created';
         }
 
@@ -225,6 +230,7 @@ class Authentication extends BaseController
                 if ($passwordCorrect) {
                     
                     $newdata = [
+                        'id' => $userData['id'],
                         'first_name'  => $userData['first_name'],
                         'last_name'  => $userData['last_name'],
                         'email'     => $userData['email'],

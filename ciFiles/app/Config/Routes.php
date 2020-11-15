@@ -76,6 +76,10 @@ $routes->post('get-email-verif-code','Authentication::get_email_verif_code');
 $routes->post('verify-email-exe','Authentication::verify_email_exe');
 $routes->post('create-customer-account-exe','Authentication::create_customer_account');
 
+// Wishlist
+$routes->post('add-to-wishlist-exe','Wishlist:add');
+
+
 // Admin Dashboard
 $routes->get('admin-dashboard','AdminPageLoader::dashboard');
 $routes->get('manage-categories','AdminPageLoader::categories');
