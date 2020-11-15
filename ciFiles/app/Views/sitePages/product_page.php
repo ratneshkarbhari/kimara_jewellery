@@ -85,9 +85,33 @@
                             <?php else: ?>
                             <input type="hidden" name="product-size" value="default">
                             <?php endif; ?>
+
+                            <div class="col-lg-4 col-md-6 col-sm-6" style="padding:0; margin-bottom: 3%;">
+                                
+                                <?php $session = session(); if($session->role=='customer'): ?>
+                                <button type="button" id="addToWishlistButton"style=" font-size: 16px;"> <img src="<?php echo site_url('assets/icons/heart.svg'); ?>" width="16px" height="16px"> Add to Wishlist</button>
+                                <?php else: ?>
+                                    <a type="button" id="addToWishlistButton" href="<?php echo site_url('my-account'); ?>" style=" font-size: 16px;"> <img src="<?php echo site_url('assets/icons/heart.svg'); ?>" width="16px" height="16px"> Add to Wishlist</a>
+                                <?php endif;  ?>
+                                <script>
+                                $("button#addToWishlistButton").click(function (e) { 
+                                    // 
+                                });
+                                </script>
+
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-sm-6" style="padding:0; margin-bottom: 3%;">
+                                
+                                <a href="#" data-toggle="modal" data-target="#sizeChartModal" style="font-size: 16px;"> <img src="<?php echo site_url('assets/icons/sliders.svg'); ?>" width="16px" height="16px"> See Size Chart</a>
+
+                            </div>
+                            <div class="col-lg-4 col-md-12 col-sm-12"></div>
+
+                            <p id="atc-success" style="margin-bottom: 0;" class="col-lg-12 col-md-12 col-sm-12 text-success" style="color: darkgreen !important;"></p>
+                                <p id="atc-failure" class="col-lg-12 col-md-12 col-sm-12 text-danger"></p>
                             
-                            <div class="col-lg-8 col-md-12 col-sm-12 form-group" style="padding-left: 0;">
-                                <label for="product-quantity">Quantity:</label>
+                            <div class="col-lg-4 col-md-12 col-sm-12 form-group" style="padding-left: 0;">
+                                <!-- <label for="product-quantity">Quantity:</label> -->
 
                                 <!-- <select class="form-control" id="product-quantity">
                                     <?php for($i=1;$i<=5;$i++): ?>
@@ -97,48 +121,34 @@
 
 
 
-                                <button class="btn" id="reduce-qty" type="button" style="border-radius: 0 !important; border: 1px solid gray; color: black; padding: 0.5% 2%; margin: 0 2%; width: 50px; height: 50px; font-size: 20px;">-</button><input type="number" id="product-quantity" style="width: 50px; font-size: 15px; height: 49px; text-align: center;" value="1" min="1" readonly><button class="btn" id="add-qty" type="button" style="border-radius: 0 !important; border: 1px solid gray; color: black; padding: 0.5% 2%; width: 50px; height: 50px; font-size: 20px; margin: 0 2%;">+</button>
+                                <button class="btn" id="reduce-qty" type="button" style="border-radius: 0 !important; border: 1px solid gray; color: black; padding: 0.5% 2%; margin: 0%; width: 50px; height: 50px; font-size: 20px;">-</button><input type="number" id="product-quantity" style="width: 50px; font-size: 15px; height: 50px; text-align: center;" value="1" min="1" readonly><button class="btn" id="add-qty" type="button" style="border-radius: 0 !important; border: 1px solid gray; color: black; padding: 0.5% 2%; width: 50px; height: 50px; font-size: 20px; margin: 0%;">+</button>
 
                             </div>
                             
-                            <div class="col-lg-4 col-md-12 col-sm-12"></div>
-                            <p id="atc-success" style="margin-bottom: 0;" class="col-lg-12 col-md-12 col-sm-12 text-success" style="color: darkgreen !important;"></p>
-                                <p id="atc-failure" class="col-lg-12 col-md-12 col-sm-12 text-danger"></p>
+
                             <div class="col-lg-4 col-md-6 col-sm-12" style="padding:0;">
                                 
                                         
-                                <button type="button" id="addToCartButton" class="btn btn-success" style="background-color: black; color:white; margin-bottom: 3%;">ADD to Cart</button>
+                                <button type="button" id="addToCartButton" class="btn btn-primary" style="background-color: black; color:white; margin-bottom: 3%;">Add to Cart</button>
                             </div>
-                            <div class="col-lg-4 col-md-6 col-sm-12" style="padding:0;">
-                                
-                                <?php $session = session(); if($session->role=='customer'): ?>
-                                <button type="button" id="addToWishlistButton" class="btn btn-link" style="background-color: black; color:white;">ADD to Wishlist</button>
-                                <?php else: ?>
-                                    <a type="button" id="addToWishlistButton" href="<?php echo site_url('my-account'); ?>" class="btn btn-primary" style="background-color: black; color:white;">ADD to Wishlist</a>
-                                <?php endif;  ?>
-                                <script>
-                                $("button#addToWishlistButton").click(function (e) { 
-                                    // 
-                                });
-                                </script>
 
-                            </div>
+
                             <div class="col-lg-4 col-md-12 col-sm-12"></div>
 
-                            <div class="col-lg-12 col-md-12 col-sm-12 text-left" style="margin-top: 5%;">
+                            <div class="col-lg-12 col-md-12 col-sm-12 text-left" style="margin-top: 5%; padding-left: 0;">
                                 <a style="font-size: 22px;" href="https://api.whatsapp.com/send?phone=919022906690&text=<?php echo urlencode('I am interested in '.site_url('product/'.$product['slug'])); ?>">Connect with <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/1200px-WhatsApp.svg.png" width="50px" height="50px"></a>
                             </div>
+                            <div id="description-box" class="col-lg-12 col-md-12 col-sm-12" style="margin-top: 10%;">
+                                <p class="product-description text-left"><?php echo $product['description']; ?></p>
+                            </div>
+
                         
                         </div>
 
                     
                     </div>
 
-                    <div id="description-box" style="margin-top: 10%;">
-                    
 
-                    <p class="product-description text-left"><?php echo $product['description']; ?></p>
-                    </div>
 
                     
                 

@@ -52,7 +52,11 @@ a.nav-link{
     }
 
 .larger-price-card{
-  font-size: 1.1rem;
+  font-size: 22px;
+  color: #000 !important;
+}
+.smaller-price-card{
+  font-size: 18px;
 }
 
 .section-title{
