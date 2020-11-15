@@ -77,24 +77,6 @@ footer#site-footer{
   background-color: #424242;;
 }
 
-
-div.owl-nav button{
-  position: absolute;
-  top: 33%;
-}
-div.owl-nav button.owl-prev{
-  left: 5%;
-}
-div.owl-nav button.owl-next{
-  right: 5%;
-}
-
-div.owl-nav button span{
-  font-size: 5rem;
-  color: #ffffff;
-  background-color: #000000;
-} 
-
 /* 
   ##Device = Desktops
   ##Screen = 1281px to higher resolution desktops
