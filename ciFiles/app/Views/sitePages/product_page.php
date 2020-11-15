@@ -148,7 +148,7 @@
                             <p id="atc-success" style="margin-bottom: 0;" class="col-lg-12 col-md-12 col-sm-12 text-success" style="color: darkgreen !important;"></p>
                                 <p id="atc-failure" class="col-lg-12 col-md-12 col-sm-12 text-danger"></p>
                             
-                            <div class="col-lg-4 col-md-6 col-sm-6 form-group custom-half-grid" style="padding-left: 0;">
+                            <div class="col-lg-12 col-md-12 col-sm-12 form-group " style="padding-left: 0;">
                                 <!-- <label for="product-quantity">Quantity:</label> -->
 
                                 <!-- <select class="form-control" id="product-quantity">
@@ -164,17 +164,16 @@
                             </div>
                             
 
-                            <div class="col-lg-4 col-md-6 col-sm-6 custom-half-grid" style="padding:0;">
+                            <div class="col-lg-6 col-md-6 col-sm-6 custom-half-grid" style="padding:0;">
                                 
                                         
                                 <button type="button" id="addToCartButton" class="btn btn-primary" style="background-color: black; color:white; margin-bottom: 3%;">Add to Cart</button>
                             </div>
 
 
-                            <div class="col-lg-4 col-md-12 col-sm-12"></div>
 
-                            <div class="col-lg-12 col-md-12 col-sm-12 text-left" style="margin-top: 5%; padding-left: 0;">
-                                <a style="font-size: 22px;" href="https://api.whatsapp.com/send?phone=919022906690&text=<?php echo urlencode('I am interested in '.site_url('product/'.$product['slug'])); ?>">Connect with <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/1200px-WhatsApp.svg.png" width="50px" height="50px"></a>
+                            <div class="col-lg-6 col-md-6 col-sm-6 text-left custom-half-grid" style="padding-left: 0;">
+                                <a style="font-size: 19px;" href="https://api.whatsapp.com/send?phone=919022906690&text=<?php echo urlencode('I am interested in '.site_url('product/'.$product['slug'])); ?>">Connect with <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/1200px-WhatsApp.svg.png" width="20px" height="20px"></a>
                             </div>
                             <div id="description-box" class="col-lg-12 col-md-12 col-sm-12" style="margin-top: 10%;">
                                 <p class="product-description text-left"><?php echo $product['description']; ?></p>
