@@ -153,7 +153,7 @@
                             <p id="atx-success" style="margin-bottom: 0;" class="col-lg-12 col-md-12 col-sm-12 text-success" style="color: darkgreen !important;"></p>
                                 <p id="atx-failure" class="col-lg-12 col-md-12 col-sm-12 text-danger"></p>
 
-                                <a href="#" data-toggle="modal" data-target="#sizeChartModal" style="font-size: 16px;"> <img src="<?php echo site_url('assets/icons/sliders.svg'); ?>" width="16px" height="16px"> See Size Chart</a>
+                                <a href="#" data-toggle="modal" data-target="#sizeChartModal" style="font-size: 16px;" class="d-none"> <img src="<?php echo site_url('assets/icons/sliders.svg'); ?>" width="16px" height="16px"> See Size Chart</a>
 
                             </div>
                             <div class="col-lg-4 col-md-12 col-sm-12"></div>
