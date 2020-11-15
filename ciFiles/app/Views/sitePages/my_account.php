@@ -62,18 +62,86 @@
                 <div class="tab-pane fade" id="v-pills-orders" role="tabpanel" aria-labelledby="v-pills-orders-tab">
                     
 
+                    <h4>Click on Order to see details:</h4>
+    
 
-                    <?php if(count($orders)>0): foreach($orders as $order): ?>
 
-                        <h4>Click on Order to see details:</h4>
+                        <div class="table-responsive">
+                        
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                    
+                                        <td>Order ID</td>
+                                        <td>Date Placed</td>
+                                        <td>Status</td>
+                                        <td>View More</td>
+                                    
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php if(count($orders)>0): foreach($orders as $order): $productQtyObj = json_decode($order['products_qty_json'],TRUE);   ?>
+
+                                    <tr>
+                                        <td><?php echo $order['public_order_id']; ?></td>
+                                        <td><?php echo $order['date']; ?></td>
+                                        <td><?php echo $order['status']; ?></td>
+                                        <td>
+                                            <a href="#" data-toggle="modal" data-target="#orderDetail-<?php echo $order['public_order_id']; ?>" style="color: #c09578;">View More</a>
+                                            <div class="modal fade" id="orderDetail-<?php echo $order['public_order_id']; ?>">
+                                            
+                                                <div class="modal-dialog">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" id="exampleModalLabel">Order Id: <?php echo $order['public_order_id']; ?></h5>
+                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                            </button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <h5>Date: <?php echo $order['date']; ?></h5>
+                                                            <h5>Status: <?php echo $order['status']; ?></h5>
+
+                                                            <h4>Items:</h4>
+                                                            <?php foreach($productQtyObj as $productQtyItem): foreach($products as $product): if($product['id']==$productQtyItem['product_id']): ?>
+                                                                <h6><?php echo $product['title']; ?></h6>
+                                                                <p>Quantity: <?php echo $productQtyItem['quantity']; ?></p>
+                                                                <?php if($productQtyItem['size']!='default'){
+                                                                    echo $productQtyItem['size'].',';
+                                                                } ?><?php if($productQtyItem['material']!='default'){
+                                                                    echo $productQtyItem['material'];
+                                                                } ?>
+                                                            <?php endif; endforeach; endforeach; ?>
+                                                        </div>
+                                                        <!-- <div class="modal-footer">
+                                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                            <button type="button" class="btn btn-primary">Save changes</button>
+                                                        </div> -->
+                                                    </div>
+                                                </div>
+
+                                            
+                                            </div>
+                                        </td>
+                                    </tr>    
+
+                                    <?php endforeach; else: ?>
+
+                                    <h4>Your have no past Orders <a style="color: #c09578 !important;" href="<?php echo site_url('shop'); ?>">go back to the shop</a> and get a lil something for you.</h4>
+
+                                    <?php endif; ?>
+                                
+                                </tbody>
+
+                            </table>
+
+                        </div>
+
+
 
                         <a style="color: #c09578 !important;" href="<?php echo site_url('order-details/'.$order['public_order_id']); ?>"><h4><?php echo $order['public_order_id']; ?></h4></a>
 
-                    <?php endforeach; else: ?>
-
-                        <h4>Your have no past Orders <a style="color: #c09578 !important;" href="<?php echo site_url('shop'); ?>">go back to the shop</a> and get a lil something for you.</h4>
-
-                    <?php endif; ?>
+    
                     
                 </div>
                 <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">...</div>

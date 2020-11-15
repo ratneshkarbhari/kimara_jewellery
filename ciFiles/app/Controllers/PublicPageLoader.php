@@ -123,6 +123,10 @@ class PublicPageLoader extends BaseController
 
 		$data['categories'] = $categoriesFetched;
 
+		$productModel = new ProductModel();
+
+		$data['products'] = $productModel->findAll();
+
 		$this->public_page_loader('my_account',$data);
 
 	}
