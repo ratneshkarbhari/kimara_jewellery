@@ -87,7 +87,8 @@
                             <?php endif; ?>
 
                             <div class="col-lg-4 col-md-6 col-sm-6 custom-half-grid" style="padding:0; margin-bottom: 3%;">
-                                
+                            <p id="atw-success" style="margin-bottom: 0;" class="col-lg-12 col-md-12 col-sm-12 text-success" style="color: darkgreen !important;"></p>
+                                <p id="atw-failure" class="col-lg-12 col-md-12 col-sm-12 text-danger"></p>
                                 <?php $session = session(); if($session->role=='customer'): ?>
                                     <p id="atw-success" style="margin-bottom: 0;" class="col-lg-12 col-md-12 col-sm-12 text-success" style="color: darkgreen !important;"></p>
                                 <p id="atw-failure" class="col-lg-12 col-md-12 col-sm-12 text-danger"></p>
