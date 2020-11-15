@@ -12,17 +12,27 @@
 
                 <div class="col-lg-6 col-md-12 col-sm-12" style="margin-bottom: 5%;">
                 
-                
-                    <img src="<?php echo site_url('assets/images/featured_image_product/'.$product['featured_image']); ?>" data-zoom="<?php echo site_url('assets/images/featured_image_product/'.$product['featured_image']); ?>" id="product-page-main-product-image" style="width: 100%; border: 1px solid darkgray; cursor: pointer;">
-                    <p></p>
+
+                    
+                    <div id="previewPane"><img src="<?php echo site_url('assets/images/featured_image_product/'.$product['featured_image']); ?>" data-zoom="<?php echo site_url('assets/images/featured_image_product/'.$product['featured_image']); ?>" id="product-page-main-product-image" style="width: 100%; border: 1px solid darkgray; cursor: pointer;"></div>
 
                     <script>
-                    new Drift(document.querySelector("img#product-page-main-product-image"), {
-                    paneContainer: document.querySelector("p")
-                    });
+                        var options = {inlineContainer: document.body,
+                            // Which trigger attribute to pull the ZoomPane image source from.
+                            sourceAttribute: 'data-zoom',
+                            // How much to magnify the trigger by in the ZoomPane.
+                            // (e.g., `zoomFactor: 3` will result in a 900 px wide ZoomPane image
+                            // if the trigger is displayed at 300 px wide)
+                            zoomFactor: 3,
+                            // A DOM element to append the non-inline ZoomPane to.
+                            // Required if `inlinePane !== true`.
+                            inlinePane: true
+                        };
+
+                        new Drift(document.querySelector('img#product-page-main-product-image'), options);
                     </script>
 
-                    <div id="product-gallery-box" class="owl-carousel" margin-top: 2%;>
+                    <div id="product-gallery-box" class="owl-carousel" style='margin-top: 5%;'>
                         <?php $gallery_images = explode(',',$product['gallery_images']); foreach($gallery_images as $gallery_image): ?>
 
                             <img style="cursor: pointer;" srcset="<?php echo site_url('assets/images/gallery_images_product/'.$gallery_image); ?>" class="product-gallery-image" src="<?php echo site_url('assets/images/gallery_images_product/'.$gallery_image); ?>">

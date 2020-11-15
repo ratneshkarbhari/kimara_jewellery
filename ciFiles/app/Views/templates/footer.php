@@ -62,10 +62,40 @@
                             <div class="list">
                                 Sign up for fresh info about our offers and products
                             </div>
-                            <input type="email" class="input-text email email-newsletter form-control" placeholder="Your email letter">
+                            <p id="nl-sub-error" class="text-light"></p>
+                            <input type="email" id="nlSubEmail" class="input-text email email-newsletter form-control" placeholder="Your email letter">
                             <br>
-                            <button class="btn btn-submit submit-newsletter btn-primary">SUBSCRIBE</button>
+                            <button class="btn btn-submit submit-newsletter btn-primary" type="button" id="nlSubButton">SUBSCRIBE</button>
                             <br><br>
+
+                            <script>
+                                $("button#nlSubButton").click(function (e) { 
+                                    e.preventDefault();
+                                    let nlSubEmail =  $("input#nlSubEmail").val();
+                                    if(nlSubEmail==''){
+                                        $("p#nl-sub-error").html('Please enter your Email to get latest products and offers in your inbox');
+                                    }else{
+                                        $.ajax({
+                                            type: "POST",
+                                            url: "<?php echo site_url('add-email-subscriber'); ?>",
+                                            data: {
+                                                'nlSubEmail' :  nlSubEmail
+                                            },
+                                            success: function (response) {
+                                                if(response=='invalid-email'){
+
+                                                    $("p#nl-sub-error").html('Please Provide a Valid Email');
+
+                                                }else if(response=='nl-add-success'){
+                                                    window.location.href = "<?php echo site_url('nl-sub-thank-you') ?>";
+                                                }
+                                            }
+                                        });
+                                    }
+                                    
+                                });
+                            </script>
+
                         </div>
                     </div>
                 </div>

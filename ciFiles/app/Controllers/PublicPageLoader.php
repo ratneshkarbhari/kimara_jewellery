@@ -127,6 +127,14 @@ class PublicPageLoader extends BaseController
 
 	}
 
+	public function nl_sub_thank_you(){
+		$categoryModel = new CategoryModel();
+		$categoriesFetched = $categoryModel->findAll();
+		$data['categories'] = $categoriesFetched;
+		$data['title'] = 'Thanks for subscribing to email Newsletter';
+		echo view('sitePages/thank_you_nl',$data);
+	}
+
 	public function order_details($order_id){
 
 		$orderModel = new OrderModel();

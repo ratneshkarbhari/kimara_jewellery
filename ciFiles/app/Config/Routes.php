@@ -69,7 +69,7 @@ $routes->post('update-order','Orders::update');
 
 // Auth Endpoints
 $routes->post('customer-login-api','Authentication::customer_login_api');
-$routes->post('user-login-exe','Authentication::login');
+$routes->post('user-logi-exe','Authentication::login');
 $routes->post('customer-login-exe','Authentication::customer_login');
 $routes->get('logout','Authentication::logout');
 $routes->post('get-email-verif-code','Authentication::get_email_verif_code');
@@ -79,7 +79,9 @@ $routes->post('create-customer-account-exe','Authentication::create_customer_acc
 // Wishlist
 $routes->post('add-to-wishlist-exe','Wishlist:add');
 
-
+// Newsletter
+$routes->post('add-email-subscriber','NewsLetter::nl_subscription_send_email');
+$routes->get('nl-sub-thank-you','PublicPageLoader::nl_sub_thank_you');
 
 // Admin Dashboard
 $routes->get('admin-dashboard','AdminPageLoader::dashboard');
