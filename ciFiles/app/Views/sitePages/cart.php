@@ -9,8 +9,8 @@
                     <thead>
                         <tr>
                             <th scope="col">Product Title</th>
-                            <th scope="col">Material</th>
-                            <th scope="col">Size</th>
+                            <!-- <th scope="col">Material</th>
+                            <th scope="col">Size</th> -->
                             <th scope="col">Price (₹)</th>
                             <th scope="col">Quantity</th>
                             <th scope="col">Total (₹)</th>
@@ -21,9 +21,10 @@
                         <?php $subtotal = 0.00; ?>
                         <?php  foreach($cart_items as $cart_item): foreach($products as $product): if($cart_item['product_id']==$product['id']): ?>
                         <tr>
-                            <td><?php echo $product['title']; ?></td>
-                            <td><?php echo ucfirst($cart_item['material']); ?></td>
-                            <td><?php echo ucfirst($cart_item['size']); ?></td>
+                            <td><?php echo $product['title']; ?>
+                            <?php if($cart_item['material']!='default'){echo $cart_item['material'].',';} ?><?php if($cart_item['size']!='default'){echo $cart_item['size'];} ?>
+                            </td>
+
                             <td><?php echo $product['sale_price']; ?></td>
                             <td>
                                 <form method="post" action="<?php echo site_url('update-cart'); ?>" style="display: inline;">
@@ -55,15 +56,15 @@
                         <input type="hidden" name="cart-item-id" value="<?php echo $cart_item['id']; ?>">
                         <button style="margin-bottom: 3%;" type="submit" class="btn"><img src="<?php echo site_url('assets/icons/trash.svg'); ?>" width="30px" height="30px"></button>
                     </form>
-                    <img src="<?php echo site_url('assets/images/featured_image_product/'.$product['featured_image']); ?>" class="w-50" style="margin: 0 auto;">
-                    <h6 class="product-title"><?php echo substr($product['title'],0,10); ?>...</h6>
-                    <p class="options"><?php echo ucfirst($cart_item['material']); ?>,<?php echo ucfirst ($cart_item['size']); ?></p>
+                    <img src="<?php echo site_url('assets/images/featured_image_product/'.$product['featured_image']); ?>" class="w-50" style="margin: 5% auto;">
+                    <h6 class="product-title"><?php echo $product['title']; ?>...</h6>
+                    <p class="options"><?php if($cart_item['material']!='default'){echo ucfirst($cart_item['material'].',');}  ?><?php if($cart_item['size']!='default'){echo ucfirst($cart_item['size'].',');}  ?></p>
                     <div class="text-center">
-                    <form method="post" action="<?php echo site_url('update-cart'); ?>" style="display: inline;">
+                    <form method="post" action="<?php echo site_url('update-cart'); ?>" style="display: inline; margin: 5% 0;">
                     <button class="btn" id="reduce-qty" type="button" style="border-radius: 0 !important; border: 1px solid gray; color: black; padding: 0.5% 2%; margin: 0 2%; width: 50px; height: 50px; font-size: 20px;">-</button><input type="number" name="product-qty" id="product-quantity" style="width: 50px; font-size: 15px; height: 49px; text-align: center;" value="<?php echo $cart_item['quantity']; ?>" min="1" readonly><button class="btn" id="add-qty" type="button" style="border-radius: 0 !important; border: 1px solid gray; color: black; padding: 0.5% 2%; width: 50px; height: 50px; font-size: 20px; margin: 0 2%;">+</button>
                     <input type="hidden" name="cart-item-id" value='<?php echo $cart_item['id']; ?>'>
 
-                    <h5 class="text-center">₹ <?php echo $itemPrice = $cart_item['quantity']*$product['sale_price']; ?></h5>
+                    <h5 class="text-center" style="margin: 5% 0;">₹ <?php echo $itemPrice = $cart_item['quantity']*$product['sale_price']; ?></h5>
 
                     <button style="margin-bottom: 5%; width: 50%; margin:0 auto;" type="submit" class="btn btn-primary">Update</button>
                     </form>
