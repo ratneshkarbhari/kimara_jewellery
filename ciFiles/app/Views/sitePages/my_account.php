@@ -139,7 +139,7 @@
 
 
 
-                        <a style="color: #c09578 !important;" href="<?php echo site_url('order-details/'.$order['public_order_id']); ?>"><h4><?php echo $order['public_order_id']; ?></h4></a>
+                        <!-- <a style="color: #c09578 !important;" href="<?php echo site_url('order-details/'.$order['public_order_id']); ?>"><h4><?php echo $order['public_order_id']; ?></h4></a> -->
 
     
                     

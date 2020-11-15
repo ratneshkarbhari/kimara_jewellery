@@ -107,6 +107,7 @@
                                     <a type="button" id="addToWishlistButton" href="<?php echo site_url('my-account'); ?>" style=" font-size: 16px;"> <img src="<?php echo site_url('assets/icons/heart.svg'); ?>" width="16px" height="16px"> Add to Wishlist</a>
                                 <?php endif;  ?>
                                 <script>
+                                <?php if($_SESSION['role']=='customer'): ?>
                                 $("a#addToWishlistButton").click(function (e) { 
 
                                     <?php if($product['sizes']==''&&$product['materials']==''): ?>
@@ -143,6 +144,7 @@
                                         }
                                     })
                                 });
+                                <?php endif; ?>
                                 </script>
 
                             </div>
