@@ -28,7 +28,11 @@ class Wishlist extends BaseController
                 'size' => $size
             );
 
-            $wishListModel->insert($arrayToInsert);
+            $res = $wishListModel->insert($arrayToInsert);
+
+            if($res){
+                exit('add-to-wishlist-success');
+            }
 
         }
 

@@ -22,10 +22,10 @@
                     });
                     </script>
 
-                    <div id="product-gallery-box" margin-top: 2%;>
+                    <div id="product-gallery-box" class="owl-carousel" margin-top: 2%;>
                         <?php $gallery_images = explode(',',$product['gallery_images']); foreach($gallery_images as $gallery_image): ?>
 
-                            <img style="cursor: pointer;" srcset="<?php echo site_url('assets/images/gallery_images_product/'.$gallery_image); ?>" class="product-gallery-image" src="<?php echo site_url('assets/images/gallery_images_product/'.$gallery_image); ?>" width="100px" height="100px">
+                            <img style="cursor: pointer;" srcset="<?php echo site_url('assets/images/gallery_images_product/'.$gallery_image); ?>" class="product-gallery-image" src="<?php echo site_url('assets/images/gallery_images_product/'.$gallery_image); ?>">
 
                         <?php endforeach; ?>
                     </div>
