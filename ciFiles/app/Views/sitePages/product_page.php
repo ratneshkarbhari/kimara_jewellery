@@ -16,22 +16,6 @@
                     
                     <div id="previewPane"><img src="<?php echo site_url('assets/images/featured_image_product/'.$product['featured_image']); ?>" data-zoom="<?php echo site_url('assets/images/featured_image_product/'.$product['featured_image']); ?>" id="product-page-main-product-image" style="width: 100%; border: 1px solid darkgray; cursor: pointer;"></div>
 
-                    <script>
-                        var options = {inlineContainer: document.body,
-                            // Which trigger attribute to pull the ZoomPane image source from.
-                            sourceAttribute: 'data-zoom',
-                            // How much to magnify the trigger by in the ZoomPane.
-                            // (e.g., `zoomFactor: 3` will result in a 900 px wide ZoomPane image
-                            // if the trigger is displayed at 300 px wide)
-                            zoomFactor: 3,
-                            // A DOM element to append the non-inline ZoomPane to.
-                            // Required if `inlinePane !== true`.
-                            inlinePane: true
-                        };
-
-                        new Drift(document.querySelector('img#product-page-main-product-image'), options);
-                    </script>
-
                     <div id="product-gallery-box" class="owl-carousel" style='margin-top: 5%;'>
                         <?php $gallery_images = explode(',',$product['gallery_images']); foreach($gallery_images as $gallery_image): ?>
 
@@ -49,7 +33,7 @@
                     </script>
                 
                 </div>
-                <div class="col-lg-6 col-md-12 col-sm-12">
+                <div class="col-lg-6 col-md-12 col-sm-12" id='product-details'>
                 
                     <h1 class="product-title" style='font-size: 26px;text-transform:capitalize;'><?php echo $product['title']; ?></h1>
 
@@ -107,7 +91,7 @@
                                     <a type="button" id="addToWishlistButton" href="<?php echo site_url('my-account'); ?>" style=" font-size: 16px;"> <img src="<?php echo site_url('assets/icons/heart.svg'); ?>" width="16px" height="16px"> Add to Wishlist</a>
                                 <?php endif;  ?>
                                 <script>
-                                <?php if($_SESSION['role']=='customer'): ?>
+                                <?php if(isset($_SESSION['role'])&&$_SESSION['role']=='customer'): ?>
                                 $("a#addToWishlistButton").click(function (e) { 
 
                                     <?php if($product['sizes']==''&&$product['materials']==''): ?>
@@ -279,3 +263,26 @@
     });
 
 </script>
+
+<script>
+                        var options = {
+                            inlinePane: true,
+                            // Which trigger attribute to pull the ZoomPane image source from.
+                            sourceAttribute: 'data-zoom',
+                            containInline: true,
+                            // How much to magnify the trigger by in the ZoomPane.
+                            // (e.g., `zoomFactor: 3` will result in a 900 px wide ZoomPane image
+                            // if the trigger is displayed at 300 px wide)
+                            zoomFactor: 2,
+                            inlinePane: 900,
+                            
+                            paneContainer: document.querySelector('#product-details'),
+                            containInline: true,
+                           
+                            // A DOM element to append the non-inline ZoomPane to.
+                            // Required if `inlinePane !== true`.
+                        };
+
+                        new Drift(document.querySelector('img#product-page-main-product-image'), options);
+                    </script>
+
