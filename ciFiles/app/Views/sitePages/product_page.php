@@ -86,7 +86,7 @@
                             <input type="hidden" name="product-size" value="default">
                             <?php endif; ?>
 
-                            <div class="col-lg-4 col-md-6 col-sm-6" style="padding:0; margin-bottom: 3%;">
+                            <div class="col-lg-4 col-md-6 col-sm-6 custom-half-grid" style="padding:0; margin-bottom: 3%;">
                                 
                                 <?php $session = session(); if($session->role=='customer'): ?>
                                 <a href="#" type="button" id="addToWishlistButton"style=" font-size: 16px;"> <img src="<?php echo site_url('assets/icons/heart.svg'); ?>" width="16px" height="16px"> Add to Wishlist</a>
@@ -133,7 +133,7 @@
                                 </script>
 
                             </div>
-                            <div class="col-lg-4 col-md-6 col-sm-6" style="padding:0; margin-bottom: 3%;">
+                            <div class="col-lg-4 col-md-6 col-sm-6 custom-half-grid" style="padding:0; margin-bottom: 3%;">
                                 
                                 <a href="#" data-toggle="modal" data-target="#sizeChartModal" style="font-size: 16px;"> <img src="<?php echo site_url('assets/icons/sliders.svg'); ?>" width="16px" height="16px"> See Size Chart</a>
 
