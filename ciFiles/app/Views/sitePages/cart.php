@@ -298,7 +298,7 @@ $("button#makePayment").click(function (e) {
         localStorage.setItem('shippingAddress', shippingAddress);
         localStorage.setItem('billingAddress', billingAddress);
         var options = {
-        "key": "rzp_test_looXFeOiWI0vw6", // Enter the Key ID generated from the Dashboard
+        "key": "rzp_live_u5KGjme6VZlvYo", // Enter the Key ID generated from the Dashboard
         "amount": '<?php echo $orderData['amount']; ?>', 
         "currency": "INR",
         "name": "Kimaara Jewellery",
