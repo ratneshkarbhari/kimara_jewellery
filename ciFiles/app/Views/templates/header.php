@@ -6,8 +6,6 @@
     <title><?php echo $title; ?> | Kimara Jewellery</title>
     <link rel="stylesheet" href="<?php echo site_url('assets/css/normalize.min.css'); ?>">
     <link rel="stylesheet" href="<?php echo site_url('assets/css/bootstrap.min.css'); ?>">
-    <link rel="stylesheet" href="<?php echo site_url('assets/css/owl.carousel.min.css'); ?>" >
-    <link rel="stylesheet" href="<?php echo site_url('assets/css/owl.theme.default.min.css'); ?>" >
     <link rel="stylesheet" href="<?php echo site_url('assets/css/app.min.css?v=2.1'); ?>">
 </head>
 <body>

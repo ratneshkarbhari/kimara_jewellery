@@ -54,20 +54,17 @@ class PublicPageLoader extends BaseController
 	}
 	public function faqs(){
 		$data['title'] = 'FAQs';
-		$categoryModel = new CategoryModel();
-		$data['categories'] = $categoryModel->findAll();
+
 		$this->public_page_loader('faqs',$data);
 	}
 	public function pp(){
 		$data['title'] = 'Privacy Policy';
-		$categoryModel = new CategoryModel();
-		$data['categories'] = $categoryModel->findAll();
+
 		$this->public_page_loader('pp',$data);
 	}
 	public function tnc(){
 		$data['title'] = 'Terms and Conditions';
-		$categoryModel = new CategoryModel();
-		$data['categories'] = $categoryModel->findAll();
+
 		$this->public_page_loader('tnc',$data);
 	}
 
@@ -82,14 +79,10 @@ class PublicPageLoader extends BaseController
 			return redirect()->to(site_url('my-account')); 
 		}
 			
-		$categoryModel = new CategoryModel();
-
-		$categoriesFetched = $categoryModel->findAll();
 
 		$data['title'] = 'Customer Registration';
 		$data['error'] = '';
 
-		$data['categories'] = $categoriesFetched;
 
 		$this->public_page_loader('customer_registration',$data);
 
@@ -105,7 +98,6 @@ class PublicPageLoader extends BaseController
 			return redirect()->to(site_url('customer-login')); 
 		}
 
-		$categoryModel = new CategoryModel();
 
 		$authModel = new AuthModel();
 
@@ -119,7 +111,6 @@ class PublicPageLoader extends BaseController
 
 		$data['userdata'] = $userData;
 
-		$categoriesFetched = $categoryModel->findAll();
 
 		$customerOrders = $orderModel->where('customer_email',$session->email)->findAll();
 
@@ -128,20 +119,21 @@ class PublicPageLoader extends BaseController
 		$data['title'] = 'My Account';
 		$data['error'] = $data['success'] = '';
 
-		$data['categories'] = $categoriesFetched;
 
-		$productModel = new ProductModel();
-
-		$data['products'] = $productModel->findAll();
+		if(!$cache->get('products')){
+			$productModel = new ProductModel();
+			$productsFetched = $productModel->findAll();	
+			$cache->save('products',$productsFetched,24*60*60);
+			$data['products'] = $cache->get('products');
+		}else {
+			$data['products'] = $cache->get('products');
+		}
 
 		$this->public_page_loader('my_account',$data);
 
 	}
 
 	public function nl_sub_thank_you(){
-		$categoryModel = new CategoryModel();
-		$categoriesFetched = $categoryModel->findAll();
-		$data['categories'] = $categoriesFetched;
 		$data['title'] = 'Thanks for subscribing to email Newsletter';
 		echo view('sitePages/thank_you_nl',$data);
 	}
@@ -149,7 +141,6 @@ class PublicPageLoader extends BaseController
 	public function order_details($order_id){
 
 		$orderModel = new OrderModel();
-		$categoryModel = new CategoryModel();
 		$productModel = new ProductModel();
 
 		$orderData = $orderModel->where('public_order_id',$order_id)->first();
@@ -159,7 +150,6 @@ class PublicPageLoader extends BaseController
 			$data['title'] = 'Order Details';
 
 			$data['orderData'] = $orderData;
-			$data['categories'] = $categoryModel->findAll();
 			$productsOrdered = array();
 
 			$products_qty_obj = json_decode($orderData['products_qty_json'],TRUE);
@@ -173,7 +163,6 @@ class PublicPageLoader extends BaseController
 		} else {
 			
 			$data['title'] = 'Invalid Order ID';
-			$data['categories'] = $categoryModel->findAll();
 			
 		}
 
@@ -204,17 +193,19 @@ class PublicPageLoader extends BaseController
 	public function cart(){
 
 
-		$categoryModel = new CategoryModel();
-
-		$data['categories'] = $categoryModel->findAll();
 	
 		$data['title'] = 'Cart';
 
 		$cartModel = new CartModel();
 
-		$productModel = new ProductModel();
-
-		$data['products'] = $products = $productModel->findAll();
+		if(!$cache->get('products')){
+			$productModel = new ProductModel();
+			$productsFetched = $productModel->findAll();	
+			$cache->save('products',$productsFetched,24*60*60);
+			$data['products'] = $cache->get('products');
+		}else {
+			$data['products'] = $cache->get('products');
+		}
 
 		$data['cart_items'] = $cart_items =  $cartModel->fetch_all_cart_items();
 
@@ -259,14 +250,10 @@ class PublicPageLoader extends BaseController
 			return redirect()->to(site_url('my-account')); 
 		}
 			
-		$categoryModel = new CategoryModel();
-
-		$categoriesFetched = $categoryModel->findAll();
 
 		$data['title'] = 'Customer Login';
 		$data['error'] = '';
 
-		$data['categories'] = $categoriesFetched;
 
 		$this->public_page_loader('customer_login',$data);
 		
@@ -318,13 +305,6 @@ class PublicPageLoader extends BaseController
 		$data['title'] = 'Admin Login';
 		$data['error'] = '';
 
-		$categoryModel = new CategoryModel();
-
-		$categoriesFetched = $categoryModel->findAll();
-
-
-		$data['categories'] = $categoriesFetched;
-
 		$this->public_page_loader('admin_login',$data);
 
 	}
@@ -346,13 +326,14 @@ class PublicPageLoader extends BaseController
 
 		$data['title'] = 'Shop';
 
-		$productModel = new ProductModel();
-		$categoryModel = new CategoryModel();
-
-
-		$data['categories'] = $categoryModel->findAll();
-
-		$data['products'] = $productModel->findAll();
+		if(!$cache->get('products')){
+			$productModel = new ProductModel();
+			$productsFetched = $productModel->findAll();	
+			$cache->save('products',$productsFetched,24*60*60);
+			$data['products'] = $cache->get('products');
+		}else {
+			$data['products'] = $cache->get('products');
+		}
 
 		$this->public_page_loader('shop',$data);
 	}
