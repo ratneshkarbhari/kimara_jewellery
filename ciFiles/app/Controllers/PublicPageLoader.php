@@ -48,6 +48,10 @@ class PublicPageLoader extends BaseController
 		$data['success'] = '';
 		$this->public_page_loader('contact',$data);
 	}
+	public function forgot_password(){
+		$data['title'] = 'Forgot Password';
+		$this->public_page_loader('forgot_password',$data);
+	}
 	public function about(){
 		$data['title'] = 'About';
 		$this->public_page_loader('about',$data);
@@ -118,6 +122,8 @@ class PublicPageLoader extends BaseController
 
 		$data['title'] = 'My Account';
 		$data['error'] = $data['success'] = '';
+
+		$cache = \Config\Services::cache();
 
 
 		if(!$cache->get('products')){

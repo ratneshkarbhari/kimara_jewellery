@@ -76,6 +76,8 @@ $routes->get('logout','Authentication::logout');
 $routes->post('get-email-verif-code','Authentication::get_email_verif_code');
 $routes->post('verify-email-exe','Authentication::verify_email_exe');
 $routes->post('create-customer-account-exe','Authentication::create_customer_account');
+$routes->post('get-email-verif-code-pw-reset','Authentication::get_email_verif_code_pw_reset');
+$routes->post('reset-customer-password','Authentication::reset_customer_password');
 
 // Wishlist
 $routes->post('add-to-wishlist-exe','Wishlist:add');
