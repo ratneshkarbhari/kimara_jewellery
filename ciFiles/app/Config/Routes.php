@@ -70,7 +70,7 @@ $routes->post('update-order','Orders::update');
 
 // Auth Endpoints
 $routes->post('customer-login-api','Authentication::customer_login_api');
-$routes->post('user-logi-exe','Authentication::login');
+$routes->post('user-login-exe','Authentication::login');
 $routes->post('customer-login-exe','Authentication::customer_login');
 $routes->get('logout','Authentication::logout');
 $routes->post('get-email-verif-code','Authentication::get_email_verif_code');
