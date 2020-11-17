@@ -42,6 +42,7 @@ $routes->get('contact','PublicPageLoader::contact');
 $routes->get('product/(:any)','PublicPageLoader::product_page/$1');
 $routes->get('category/(:any)','PublicPageLoader::category_page/$1');
 $routes->get('customer-login','PublicPageLoader::customer_login');
+$routes->get('forgot-password','PublicPageLoader::forgot_password');
 $routes->get('my-account','PublicPageLoader::my_account');
 $routes->get('cart','PublicPageLoader::cart');
 $routes->get('cod-order','PublicPageLoader::cod_order');

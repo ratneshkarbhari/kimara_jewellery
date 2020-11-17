@@ -22,9 +22,20 @@ class PublicPageLoader extends BaseController
 
 		$cartModel = new CartModel();
 
-		$cart_items = $cartModel->fetch_all_cart_items();
+		$cache = \Config\Services::cache();
 
+		if(!$cache->get('foo')){
+			$categoryModel = new CategoryModel();
+			$categoriesFetched = $categoryModel->findAll();	
+			$cache->save('categories',$categoriesFetched,24*60*60);
+			$data['categories'] = $cache->get('categories');
+		}else {
+			$data['categories'] = $cache->get('categories');
+		}
+
+		$cart_items = $cartModel->fetch_all_cart_items();
 		$data['cart_item_count'] = count($cart_items);
+
 
 		echo view('templates/header',$data);
 		echo view('sitePages/'.$viewName,$data);
@@ -35,14 +46,10 @@ class PublicPageLoader extends BaseController
 	public function contact(){
 		$data['title'] = 'Contact';
 		$data['success'] = '';
-		$categoryModel = new CategoryModel();
-		$data['categories'] = $categoryModel->findAll();
 		$this->public_page_loader('contact',$data);
 	}
 	public function about(){
 		$data['title'] = 'About';
-		$categoryModel = new CategoryModel();
-		$data['categories'] = $categoryModel->findAll();
 		$this->public_page_loader('about',$data);
 	}
 	public function faqs(){

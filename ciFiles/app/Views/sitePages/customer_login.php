@@ -23,7 +23,8 @@
                     </div>
                     <div class="form-group">
                     
-                        <label for="customer-password">Password</label>
+                        <label for="customer-password">Password</label><small style="position: absolute; right: 5%;"><a class="text-danger" href="<?php echo 
+                         site_url('forgot-password'); ?>">Forgot Password ?</a></small>
                         <input style="border: 1px solid black;" class="form-control" type="password" name="customer-password" id="customer-password">
 
                     </div>
