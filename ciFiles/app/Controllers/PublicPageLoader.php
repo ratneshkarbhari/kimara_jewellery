@@ -24,7 +24,7 @@ class PublicPageLoader extends BaseController
 
 		$cache = \Config\Services::cache();
 
-		if(!$cache->get('foo')){
+		if(!$cache->get('categories')){
 			$categoryModel = new CategoryModel();
 			$categoriesFetched = $categoryModel->findAll();	
 			$cache->save('categories',$categoriesFetched,24*60*60);
@@ -277,8 +277,6 @@ class PublicPageLoader extends BaseController
 		$data['title'] = 'Tagline';
 
 		$collectionModel = new CollectionModel();
-		$categoryModel = new CategoryModel();
-		$productModel = new ProductModel();
 
         $homePageSlideModel = new HomePageSlideModel();
 		$slides = $homePageSlideModel->findAll();
@@ -291,12 +289,17 @@ class PublicPageLoader extends BaseController
 			'top_rated' => $collectionModel->find(5)
 		);
 
-		$categoriesFetched = $categoryModel->findAll();
-		$productsFetched = $productModel->findAll();
 
+		$cache = \Config\Services::cache();
 
-		$data['categories'] = $categoriesFetched;
-		$data['products'] = $productsFetched;
+		if(!$cache->get('products')){
+			$productModel = new ProductModel();
+			$productsFetched = $productModel->findAll();	
+			$cache->save('products',$productsFetched,24*60*60);
+			$data['products'] = $cache->get('products');
+		}else {
+			$data['products'] = $cache->get('products');
+		}
 
 		$this->public_page_loader('home',$data);
 
