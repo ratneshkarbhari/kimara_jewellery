@@ -127,3 +127,4 @@ nb-configuration.xml
 
 ciFiles/app/Config/App.php
 ciFiles/app/Config/Database.php
+.htaccess
