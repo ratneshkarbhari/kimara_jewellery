@@ -156,7 +156,7 @@
                         </div>
                     </div>
                     <?php else: ?>
-                        <!-- <div class="container-fluid text-left">
+                        <div class="container-fluid text-left">
                             <p id="orderPlacingError" class="text-danger text-center"></p>
                             <div class="form-group">
                                 <label for="contactNumber">Contact Number</label>
@@ -173,10 +173,10 @@
                             <button class="btn btn-success btn-block" data-toggle="modal" data-target="#loginModal"  type="button" id="makePayment">
                             Make Payment
                             </button>
-                        </div> -->
+                        </div>
                         
-                        <p id="orderPlacingError" class="text-danger"></p>
-
+     
+<!-- 
                         <div class="form-group">
                             <label for="contactNumber">Contact Number*</label>
                             <input class="form-control" style='border: 1px solid;' type="text" name="orderContactNumber" id="contactNumber" required>
@@ -191,7 +191,7 @@
                         </div>
                         <button class="btn btn-success btn-block" type="button" id="ccod">
                         Place Order
-                        </button>
+                        </button> -->
                         
                         <script>
                         

@@ -90,46 +90,48 @@
                                 <?php else: ?>
                                     <a type="button" id="addToWishlistButton" href="<?php echo site_url('my-account'); ?>" style=" font-size: 16px;"> <img src="<?php echo site_url('assets/icons/heart.svg'); ?>" width="16px" height="16px"> Add to Wishlist</a>
                                 <?php endif;  ?>
-                                <script>
-                                <?php if(isset($_SESSION['role'])&&$_SESSION['role']=='customer'): ?>
-                                $("a#addToWishlistButton").click(function (e) { 
+                                <?php if(isset($_SESSION['role'])&&$_SESSION['role']=='customer'&&isset($_SESSION['id'])): ?>
 
-                                    <?php if($product['sizes']==''&&$product['materials']==''): ?>
-                                    let productMaterial = 'default';
-                                    let productSize = 'default';
-                                    <?php else: ?>
-                                        let productMaterial = $("select#product-material").val();
-                                    let productSize = $("select#product-size").val();
-                                    <?php endif; ?>
-                                    let product_id = '<?php echo $product['id']; ?>';
-                                    let customer_id = '<?php echo $_SESSION['id']; ?>'
-                                    $.ajax({
-                                        type: "POST",
-                                        url: "<?php echo site_url('add-to-wishlist-exe'); ?>",
-                                        data: {
-                                        product_id : product_id,
-                                            customer_id : product_id,
-                                            material : productMaterial,
-                                            size : productSize,
-                                        },
-                                        success: function (response) {
-                                            if(response=='add-to-wishlist-success'){
-                                                $("p#atw-success").html('Added to Wishlist Successfully');
-                                                setTimeout(function() {
-                                                    $("p#atw-success").html('');
-                                                }, 3000);
-                                                location.reload();
-                                            }else{
-                                                $("p#atw-failure").html('Added to Cart Successfully');
-                                                setTimeout(function() {
-                                                    $("p#atw-failure").html('');
-                                                }, 3000);
+                                <script>
+                                    $("a#addToWishlistButton").click(function (e) { 
+
+                                        <?php if($product['sizes']==''&&$product['materials']==''): ?>
+                                        let productMaterial = 'default';
+                                        let productSize = 'default';
+                                        <?php else: ?>
+                                            let productMaterial = $("select#product-material").val();
+                                        let productSize = $("select#product-size").val();
+                                        <?php endif; ?>
+                                        let product_id = '<?php echo $product['id']; ?>';
+                                        let customer_id = '<?php echo $_SESSION['id']; ?>'
+                                        $.ajax({
+                                            type: "POST",
+                                            url: "<?php echo site_url('add-to-wishlist-exe'); ?>",
+                                            data: {
+                                            product_id : product_id,
+                                                customer_id : product_id,
+                                                material : productMaterial,
+                                                size : productSize,
+                                            },
+                                            success: function (response) {
+                                                if(response=='add-to-wishlist-success'){
+                                                    $("p#atw-success").html('Added to Wishlist Successfully');
+                                                    setTimeout(function() {
+                                                        $("p#atw-success").html('');
+                                                    }, 3000);
+                                                    location.reload();
+                                                }else{
+                                                    $("p#atw-failure").html('Added to Cart Successfully');
+                                                    setTimeout(function() {
+                                                        $("p#atw-failure").html('');
+                                                    }, 3000);
+                                                }
                                             }
-                                        }
-                                    })
-                                });
-                                <?php endif; ?>
+                                        })
+                                    });
                                 </script>
+
+                                <?php endif; ?>
 
                             </div>
                             <div class="col-lg-4 col-md-6 col-sm-6 custom-half-grid" style="padding:0; margin-bottom: 3%;">
