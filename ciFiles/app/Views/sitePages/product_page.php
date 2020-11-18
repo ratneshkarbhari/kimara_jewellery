@@ -87,7 +87,7 @@
                                 <?php $session = session(); if($session->role=='customer'): ?>
                                     <p id="atw-success" style="margin-bottom: 0;" class="col-lg-12 col-md-12 col-sm-12 text-success" style="color: darkgreen !important;"></p>
                                     <p id="atw-failure" class="col-lg-12 col-md-12 col-sm-12 text-danger"></p>
-                                <button href="#" type="button" id="addToWishlistButton" style=" font-size: 16px;" class="btn btn-link btn-block"> <img src="<?php echo site_url('assets/icons/heart.svg'); ?>" width="16px" height="16px"> Add to Wishlist</button>
+                                <button href="#" type="button" id="addToWishlistButton" style=" font-size: 16px; padding-left: 1%; padding-right: 1%;" class="btn btn-link"> <img src="<?php echo site_url('assets/icons/heart.svg'); ?>" width="16px" height="16px"> Add to Wishlist</button>
                                 <?php else: ?>
                                     <a  id="addToWishlistButton" href="<?php echo site_url('my-account'); ?>" style=" font-size: 16px;"> <img src="<?php echo site_url('assets/icons/heart.svg'); ?>" width="16px" height="16px"> Add to Wishlist</a>
                                 <?php endif;  ?>
