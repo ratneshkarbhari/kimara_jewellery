@@ -16,6 +16,10 @@
                         <p>Mobile Number: <?php echo $orderData['contact_number']; ?></p>
                         <p>Email: <?php echo $orderData['customer_email']; ?></p>
                         <p>Date: <?php echo $orderData['date']; ?></p>
+                        <p>Shipping Address:</p>
+                        <p><?php echo $orderData['shipping_address']; ?></p>
+                        <p>Billing Address:</p>
+                        <p><?php echo $orderData['billing_address']; ?></p>
 
                         <h4>Items Ordered:</h4>
 

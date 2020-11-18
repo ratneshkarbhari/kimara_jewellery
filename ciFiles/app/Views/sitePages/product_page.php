@@ -1,8 +1,8 @@
 <link rel="stylesheet" href="<?php echo site_url('assets/css/owl.carousel.min.css'); ?>" >
     <link rel="stylesheet" href="<?php echo site_url('assets/css/owl.theme.default.min.css'); ?>" >
 
-<link rel="stylesheet" href="<?php echo site_url('assets/drift/drift-basic.min.css'); ?>">
-<script src="<?php echo site_url('assets/drift/Drift.min.js'); ?>"></script>
+<script src="https://cdn.jsdelivr.net/gh/igorlino/elevatezoom-plus@1.2.3/src/jquery.ez-plus.js"></script>
+
 <main class="page-content" id="product-page">
 
 
@@ -16,7 +16,7 @@
                 
 
                     
-                    <div id="previewPane"><img src="<?php echo site_url('assets/images/featured_image_product/'.$product['featured_image']); ?>" data-zoom="<?php echo site_url('assets/images/featured_image_product/'.$product['featured_image']); ?>" id="product-page-main-product-image" style="width: 100%; border: 1px solid darkgray; cursor: pointer;"></div>
+                    <div id="previewPane"><img src="<?php echo site_url('assets/images/featured_image_product/'.$product['featured_image']); ?>" data-zoom-image="<?php echo site_url('assets/images/featured_image_product/'.$product['featured_image']); ?>" id="product-page-main-product-image" style="width: 100%; border: 1px solid darkgray; cursor: pointer;"></div>
 
                     <div id="product-gallery-box" class="owl-carousel" style='margin-top: 5%;'>
                         <?php $gallery_images = explode(',',$product['gallery_images']); foreach($gallery_images as $gallery_image): ?>
@@ -30,7 +30,7 @@
                     $(".product-gallery-image").click(function (e) { 
                         e.preventDefault();
                         $("img#product-page-main-product-image").attr('src',$(this).attr('srcset'));
-                        $("img#product-page-main-product-image").attr('data-zoom',$(this).attr('srcset'));
+                        $("img#product-page-main-product-image").attr('data-zoom-image',$(this).attr('srcset'));
                     });
                     </script>
                 
@@ -267,26 +267,9 @@
     });
 
 </script>
-
 <script>
-                        var options = {
-                            inlinePane: true,
-                            // Which trigger attribute to pull the ZoomPane image source from.
-                            sourceAttribute: 'data-zoom',
-                            containInline: true,
-                            // How much to magnify the trigger by in the ZoomPane.
-                            // (e.g., `zoomFactor: 3` will result in a 900 px wide ZoomPane image
-                            // if the trigger is displayed at 300 px wide)
-                            zoomFactor: 2,
-                            inlinePane: 900,
-                            
-                            paneContainer: document.querySelector('#product-details'),
-                            containInline: true,
-                           
-                            // A DOM element to append the non-inline ZoomPane to.
-                            // Required if `inlinePane !== true`.
-                        };
-
-                        new Drift(document.querySelector('img#product-page-main-product-image'), options);
-                    </script>
-
+    $('img#product-page-main-product-image').ezPlus({
+    zoomType: 'inner',
+    cursor: 'crosshair'
+});
+</script>

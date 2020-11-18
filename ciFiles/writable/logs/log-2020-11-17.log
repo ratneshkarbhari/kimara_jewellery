@@ -26,3 +26,17 @@ CRITICAL - 2020-11-17 04:26:57 --> Undefined variable: cache
 #3 /var/www/html/kimara_jewellery/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
 #4 /var/www/html/kimara_jewellery/index.php(46): CodeIgniter\CodeIgniter->run()
 #5 {main}
+CRITICAL - 2020-11-17 22:59:35 --> Undefined variable: cache
+#0 /var/www/html/kimara_jewellery/ciFiles/app/Controllers/PublicPageLoader.php(207): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/kimara_jewellery/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\PublicPageLoader->cart()
+#2 /var/www/html/kimara_jewellery/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#3 /var/www/html/kimara_jewellery/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#4 /var/www/html/kimara_jewellery/index.php(46): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-11-17 23:07:08 --> Undefined variable: cache
+#0 /var/www/html/kimara_jewellery/ciFiles/app/Controllers/PublicPageLoader.php(336): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/kimara_jewellery/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\PublicPageLoader->shop()
+#2 /var/www/html/kimara_jewellery/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#3 /var/www/html/kimara_jewellery/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#4 /var/www/html/kimara_jewellery/index.php(46): CodeIgniter\CodeIgniter->run()
+#5 {main}

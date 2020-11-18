@@ -198,6 +198,7 @@ class PublicPageLoader extends BaseController
 
 	public function cart(){
 
+		$cache = \Config\Services::cache();
 
 	
 		$data['title'] = 'Cart';
@@ -329,6 +330,9 @@ class PublicPageLoader extends BaseController
 
 
 	public function shop(){
+
+		$cache = \Config\Services::cache();
+
 
 		$data['title'] = 'Shop';
 
