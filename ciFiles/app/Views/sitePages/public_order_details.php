@@ -27,6 +27,7 @@
 
                         <?php foreach($productQtyObj as $ordered_item): foreach($ordered_products as $ordered_product): if($ordered_item['product_id']==$ordered_product['id']): ?>
                             <h6><?php echo $ordered_product['title']; ?></h6>
+                            <h6>SKU: <?php echo $ordered_product['sku']; ?></h6>
                             <p style="margin-bottom: 1%;">Material : <?php  echo ucfirst($ordered_item['material']); ?></p>
                             <p style="margin-bottom: 1%;">Size : <?php  echo ucfirst($ordered_item['size']); ?></p>
                             <p style="margin-bottom: 1%;">Quantity : <?php  echo ucfirst($ordered_item['quantity']); ?></p>
