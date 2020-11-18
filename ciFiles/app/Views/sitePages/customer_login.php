@@ -23,8 +23,7 @@
                     </div>
                     <div class="form-group">
                     
-                        <label for="customer-password">Password</label><small style="position: absolute; right: 5%;"><a class="text-danger" href="<?php echo 
-                         site_url('forgot-password'); ?>">Forgot Password ?</a></small>
+                        <label for="customer-password">Password</label>
                         <input style="border: 1px solid black;" class="form-control" type="password" name="customer-password" id="customer-password">
 
                     </div>
@@ -33,7 +32,8 @@
                         <input class="form-check-input" type="checkbox" id="showPwdCustomerLogin">
                         <label class="form-check-label" for="showPwdCustomerLogin">
                             Show Password
-                        </label>
+                        </label> | <small><a class="text-danger" href="<?php echo 
+                         site_url('forgot-password'); ?>">Forgot Password ?</a></small>
                     </div><br>
 
 
