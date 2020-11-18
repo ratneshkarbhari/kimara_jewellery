@@ -6,7 +6,7 @@
                 <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                 <a class="nav-link active" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="true">Edit Profile</a>
                 <a class="nav-link" id="v-pills-orders-tab" data-toggle="pill" href="#v-pills-orders" role="tab" aria-controls="v-pills-orders" aria-selected="false">Orders</a>
-                <!-- <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Address</a> -->
+                <a class="nav-link" id="v-pills-wishlist-tab" data-toggle="pill" href="#v-pills-wishlist" role="tab" aria-controls="v-pills-wishlist" aria-selected="false">Wishlist</a>
                 <!-- <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Settings</a> -->
                 <a class="nav-link" id="logoutLink" href="<?php echo site_url('logout'); ?>">Logout</a>
                 <style>
@@ -19,51 +19,135 @@
             </div>
             <div class="col-lg-8 col-md-12 col-sm-12">
                 <div class="tab-content" id="v-pills-tabContent">
-                <div class="tab-pane fade show active" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-home-tab">
-                    <form action="<?php echo site_url('update-customer-profile'); ?>" method="post">
-                        <input type="hidden" name="cust_id" value="<?php echo $userdata['id']; ?>">
-                        <div class="container-fluid" style="padding: 0;">
-                            <div class="row">
-                                <div class="col-lg-6 col-md-12 col-sm-12">
-                                    <div class="form-group">
-                                        <label for="first_name">First Name</label>
-                                        <input class="form-control" type="text" name="first_name" id="first_name" value='<?php echo $_SESSION['first_name']; ?>'>
+                    <div class="tab-pane fade show active" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-home-tab">
+                        <form action="<?php echo site_url('update-customer-profile'); ?>" method="post">
+                            <input type="hidden" name="cust_id" value="<?php echo $userdata['id']; ?>">
+                            <div class="container-fluid" style="padding: 0;">
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-12 col-sm-12">
+                                        <div class="form-group">
+                                            <label for="first_name">First Name</label>
+                                            <input class="form-control" type="text" name="first_name" id="first_name" value='<?php echo $_SESSION['first_name']; ?>'>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-lg-6 col-md-12 col-sm-12">
-                                    <div class="form-group">
-                                        <label for="last_name">Last Name</label>
-                                        <input class="form-control" type="text"  name="last_name" value='<?php echo $_SESSION['last_name']; ?>' id="last_name">
+                                    <div class="col-lg-6 col-md-12 col-sm-12">
+                                        <div class="form-group">
+                                            <label for="last_name">Last Name</label>
+                                            <input class="form-control" type="text"  name="last_name" value='<?php echo $_SESSION['last_name']; ?>' id="last_name">
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-lg-6 col-md-12 col-sm-12">
-                                    <div class="form-group">
-                                        <label for="email">Email</label>
-                                        <input class="form-control" type="email" name="email" value='<?php echo $_SESSION['email']; ?>' id="email" readonly>
+                                    <div class="col-lg-6 col-md-12 col-sm-12">
+                                        <div class="form-group">
+                                            <label for="email">Email</label>
+                                            <input class="form-control" type="email" name="email" value='<?php echo $_SESSION['email']; ?>' id="email" readonly>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-lg-6 col-md-12 col-sm-12">
-                                    <div class="form-group">
-                                        <label for="mobile_number">Mobile Number</label>
-                                        <input class="form-control" type="text" name="mobile_number" value="<?php if(isset($_SESSION['mobile_number'])){
-                                            echo $_SESSION['mobile_number'];
-                                        } ?>" id="mobile_number">
+                                    <div class="col-lg-6 col-md-12 col-sm-12">
+                                        <div class="form-group">
+                                            <label for="mobile_number">Mobile Number</label>
+                                            <input class="form-control" type="text" name="mobile_number" value="<?php if(isset($_SESSION['mobile_number'])){
+                                                echo $_SESSION['mobile_number'];
+                                            } ?>" id="mobile_number">
+                                        </div>
                                     </div>
-                                </div>
-                                
-                                <div class="form-group col-lg-12 col-sm-12 col-md-12">
-                                    <button class="btn btn-block text-light" type="submit" style="background-color: darkgreen;">Update Profile</button>
+                                    
+                                    <div class="form-group col-lg-12 col-sm-12 col-md-12">
+                                        <button class="btn btn-block text-light" type="submit" style="background-color: darkgreen;">Update Profile</button>
 
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </form>
-                </div>
-                <div class="tab-pane fade" id="v-pills-orders" role="tabpanel" aria-labelledby="v-pills-orders-tab">
-                    
+                        </form>
+                    </div>
+                    <div class="tab-pane fade" id="v-pills-orders" role="tabpanel" aria-labelledby="v-pills-orders-tab">
+                        
 
-                    <h4>Click on Order to see details:</h4>
-    
+                        <h4>Click on Order to see details:</h4>
+        
+
+
+                            <div class="table-responsive">
+                            
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                        
+                                            <td>Order ID</td>
+                                            <td>Date Placed</td>
+                                            <td>Status</td>
+                                            <td>View More</td>
+                                        
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php if(count($orders)>0): foreach($orders as $order): $productQtyObj = json_decode($order['products_qty_json'],TRUE);   ?>
+
+                                        <tr>
+                                            <td><?php echo $order['public_order_id']; ?></td>
+                                            <td><?php echo $order['date']; ?></td>
+                                            <td><?php echo $order['status']; ?></td>
+                                            <td>
+                                                <a href="#" data-toggle="modal" data-target="#orderDetail-<?php echo $order['public_order_id']; ?>" style="color: #c09578;">View More</a>
+                                                <div class="modal fade" id="orderDetail-<?php echo $order['public_order_id']; ?>">
+                                                
+                                                    <div class="modal-dialog">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title" id="exampleModalLabel">Order Id: <?php echo $order['public_order_id']; ?></h5>
+                                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                <span aria-hidden="true">&times;</span>
+                                                                </button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <h5>Date: <?php echo $order['date']; ?></h5>
+                                                                <h5>Status: <?php echo $order['status']; ?></h5>
+
+                                                                <h4>Items:</h4>
+                                                                <?php foreach($productQtyObj as $productQtyItem): foreach($products as $product): if($product['id']==$productQtyItem['product_id']): ?>
+                                                                    <h6><?php echo $product['title']; ?></h6>
+                                                                    <p>Quantity: <?php echo $productQtyItem['quantity']; ?></p>
+                                                                    <?php if($productQtyItem['size']!='default'){
+                                                                        echo $productQtyItem['size'].',';
+                                                                    } ?><?php if($productQtyItem['material']!='default'){
+                                                                        echo $productQtyItem['material'];
+                                                                    } ?>
+                                                                <?php endif; endforeach; endforeach; ?>
+                                                            </div>
+                                                            <!-- <div class="modal-footer">
+                                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                                <button type="button" class="btn btn-primary">Save changes</button>
+                                                            </div> -->
+                                                        </div>
+                                                    </div>
+
+                                                
+                                                </div>
+                                            </td>
+                                        </tr>    
+
+                                        <?php endforeach; else: ?>
+
+                                        <h4>Your have no past Orders <a style="color: #c09578 !important;" href="<?php echo site_url('shop'); ?>">go back to the shop</a> and get a lil something for you.</h4>
+
+                                        <?php endif; ?>
+                                    
+                                    </tbody>
+
+                                </table>
+
+                            </div>
+
+
+
+                            <!-- <a style="color: #c09578 !important;" href="<?php echo site_url('order-details/'.$order['public_order_id']); ?>"><h4><?php echo $order['public_order_id']; ?></h4></a> -->
+
+        
+                        
+                    </div>
+                    <div class="tab-pane fade" id="v-pills-wishlist" role="tabpanel" aria-labelledby="v-pills-wishlist-tab">
+                        
+
+        
 
 
                         <div class="table-responsive">
@@ -72,62 +156,61 @@
                                 <thead>
                                     <tr>
                                     
-                                        <td>Order ID</td>
-                                        <td>Date Placed</td>
-                                        <td>Status</td>
-                                        <td>View More</td>
+                                        <td>Product</td>
+                                        <td>Actions</td>
                                     
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <?php if(count($orders)>0): foreach($orders as $order): $productQtyObj = json_decode($order['products_qty_json'],TRUE);   ?>
+                                    <?php if(!empty($wishlist_items)):  foreach($wishlist_items as $wishlist_item): foreach($products as $product): if($wishlist_item['pid']==$product['id']):   ?>
 
                                     <tr>
-                                        <td><?php echo $order['public_order_id']; ?></td>
-                                        <td><?php echo $order['date']; ?></td>
-                                        <td><?php echo $order['status']; ?></td>
+
                                         <td>
-                                            <a href="#" data-toggle="modal" data-target="#orderDetail-<?php echo $order['public_order_id']; ?>" style="color: #c09578;">View More</a>
-                                            <div class="modal fade" id="orderDetail-<?php echo $order['public_order_id']; ?>">
-                                            
-                                                <div class="modal-dialog">
-                                                    <div class="modal-content">
-                                                        <div class="modal-header">
-                                                            <h5 class="modal-title" id="exampleModalLabel">Order Id: <?php echo $order['public_order_id']; ?></h5>
-                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                            <span aria-hidden="true">&times;</span>
-                                                            </button>
-                                                        </div>
-                                                        <div class="modal-body">
-                                                            <h5>Date: <?php echo $order['date']; ?></h5>
-                                                            <h5>Status: <?php echo $order['status']; ?></h5>
-
-                                                            <h4>Items:</h4>
-                                                            <?php foreach($productQtyObj as $productQtyItem): foreach($products as $product): if($product['id']==$productQtyItem['product_id']): ?>
-                                                                <h6><?php echo $product['title']; ?></h6>
-                                                                <p>Quantity: <?php echo $productQtyItem['quantity']; ?></p>
-                                                                <?php if($productQtyItem['size']!='default'){
-                                                                    echo $productQtyItem['size'].',';
-                                                                } ?><?php if($productQtyItem['material']!='default'){
-                                                                    echo $productQtyItem['material'];
-                                                                } ?>
-                                                            <?php endif; endforeach; endforeach; ?>
-                                                        </div>
-                                                        <!-- <div class="modal-footer">
-                                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                                            <button type="button" class="btn btn-primary">Save changes</button>
-                                                        </div> -->
-                                                    </div>
-                                                </div>
-
-                                            
-                                            </div>
+                                            <h4><?php echo $product['title']; ?></h4>
+                                            <small><?php echo ucfirst($wishlist_item['material']).','.ucfirst($wishlist_item['size']); ?></small>
                                         </td>
+                                        <td>
+                                            <button type="button" id="addToCartButton" class="btn btn-primary" style="background-color: black; color:white; margin-bottom: 3%;">Add to Cart</button>
+                                            <script>
+                                                $("button#addToCartButton").click(function (e) { 
+                                                e.preventDefault();
+                                                <?php if($product['sizes']==''&&$product['materials']==''): ?>
+                                                let productMaterial = 'default';
+                                                let productSize = 'default';
+                                                <?php else: ?>
+                                                    let productMaterial = '<?php echo $wishlist_item['material']; ?>';
+                                                    let productSize = '<?php echo $wishlist_item['size']; ?>';
+                                                <?php endif; ?>
+                                                let productQuantity = parseInt(1);
+                                                $.ajax({
+                                                    type: "POST",
+                                                    url: "<?php echo site_url('add-to-cart-exe'); ?>",
+                                                    data: {
+                                                        product_id : '<?php echo $product['id']; ?>',
+                                                        material : productMaterial,
+                                                        size : productSize,
+                                                        quantity : productQuantity
+                                                    },
+                                                    success: function (response) {
+                                                        if(response=='success'){
+                                                            window.location.href = "<?php echo site_url('cart'); ?>";
+                                                        }
+                                                    }
+                                                });
+                                            });
+                                            </script>
+                                            <form action="<?php echo site_url('delete-from-wishlist'); ?>" class="d-inline" method="post">
+                                                <input type="hidden" name="wlid" value="<?php echo $wishlist_item['id']; ?>">
+                                                <button type="submit" class="btn btn-danger">Delete</button>
+                                            </form>
+                                        </td>
+                                        
                                     </tr>    
 
-                                    <?php endforeach; else: ?>
+                                    <?php endif; endforeach; endforeach; else: ?>
 
-                                    <h4>Your have no past Orders <a style="color: #c09578 !important;" href="<?php echo site_url('shop'); ?>">go back to the shop</a> and get a lil something for you.</h4>
+                                    <h4>Your have no Items in wishlist <a style="color: #c09578 !important;" href="<?php echo site_url('shop'); ?>">go back to the shop</a> and get a lil something for you.</h4>
 
                                     <?php endif; ?>
                                 
@@ -139,11 +222,9 @@
 
 
 
-                        <!-- <a style="color: #c09578 !important;" href="<?php echo site_url('order-details/'.$order['public_order_id']); ?>"><h4><?php echo $order['public_order_id']; ?></h4></a> -->
-
-    
-                    
-                </div>
+        
+                        
+                    </div>
                 <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">...</div>
                 <!-- <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">...</div>
                 </div> -->

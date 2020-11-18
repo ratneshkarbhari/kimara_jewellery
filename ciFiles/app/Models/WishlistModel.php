@@ -2,14 +2,14 @@
 
 use CodeIgniter\Model;
 
-class ProductModel extends Model
+class WishlistModel extends Model
 {
 
     protected $table = "wishlist";
 
     protected $primaryKey = 'id';
 
-    protected $allowedFields = ['customer_id','product_id','material','size'];
+    protected $allowedFields = ['cid','pid','material','size'];
 
 
 }

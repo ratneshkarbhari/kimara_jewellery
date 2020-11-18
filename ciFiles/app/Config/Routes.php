@@ -80,7 +80,8 @@ $routes->post('get-email-verif-code-pw-reset','Authentication::get_email_verif_c
 $routes->post('reset-customer-password','Authentication::reset_customer_password');
 
 // Wishlist
-$routes->post('add-to-wishlist-exe','Wishlist:add');
+$routes->post('add-to-wishlist-exe','Wishlist::add');
+$routes->post('delete-from-wishlist','Wishlist::delete');
 
 // Newsletter
 $routes->post('add-email-subscriber','NewsLetter::nl_subscription_send_email');

@@ -5,6 +5,7 @@ require_once './vendor/autoload.php'; // change path as needed
 
 use Razorpay\Api\Api;
 use App\Models\HomePageSlideModel;
+use App\Models\WishlistModel;
 use App\Models\ProductModel;
 use App\Models\AuthModel;
 use App\Models\CategoryModel;
@@ -107,6 +108,7 @@ class PublicPageLoader extends BaseController
 
 		$orderModel = new OrderModel();
 
+		$wishlistModel = new WishlistModel();
 
 
 		$loggedInEmail = $session->get('email');
@@ -125,6 +127,7 @@ class PublicPageLoader extends BaseController
 
 		$cache = \Config\Services::cache();
 
+		$data['wishlist_items'] = $wishlistModel->where('cid',$session->id)->findAll();
 
 		if(!$cache->get('products')){
 			$productModel = new ProductModel();
@@ -209,9 +212,9 @@ class PublicPageLoader extends BaseController
 			$productModel = new ProductModel();
 			$productsFetched = $productModel->findAll();	
 			$cache->save('products',$productsFetched,24*60*60);
-			$data['products'] = $cache->get('products');
+			$data['products'] = $products= $cache->get('products');
 		}else {
-			$data['products'] = $cache->get('products');
+			$data['products'] = $products = $cache->get('products');
 		}
 
 		$data['cart_items'] = $cart_items =  $cartModel->fetch_all_cart_items();

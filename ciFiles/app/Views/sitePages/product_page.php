@@ -82,20 +82,19 @@
                             <input type="hidden" name="product-size" value="default">
                             <?php endif; ?>
 
-                            <div class="col-lg-4 col-md-6 col-sm-6 custom-half-grid" style="padding:0; margin-bottom: 3%;">
-                            <p id="atw-success" style="margin-bottom: 0;" class="col-lg-12 col-md-12 col-sm-12 text-success" style="color: darkgreen !important;"></p>
-                                <p id="atw-failure" class="col-lg-12 col-md-12 col-sm-12 text-danger"></p>
+                            <div class="col-lg-6 col-md-6 col-sm-6 custom-half-grid" style="padding:0; margin-bottom: 3%;">
+                            
                                 <?php $session = session(); if($session->role=='customer'): ?>
                                     <p id="atw-success" style="margin-bottom: 0;" class="col-lg-12 col-md-12 col-sm-12 text-success" style="color: darkgreen !important;"></p>
-                                <p id="atw-failure" class="col-lg-12 col-md-12 col-sm-12 text-danger"></p>
-                                <a href="#" type="button" id="addToWishlistButton"style=" font-size: 16px;"> <img src="<?php echo site_url('assets/icons/heart.svg'); ?>" width="16px" height="16px"> Add to Wishlist</a>
+                                    <p id="atw-failure" class="col-lg-12 col-md-12 col-sm-12 text-danger"></p>
+                                <button href="#" type="button" id="addToWishlistButton" style=" font-size: 16px;" class="btn btn-link btn-block"> <img src="<?php echo site_url('assets/icons/heart.svg'); ?>" width="16px" height="16px"> Add to Wishlist</button>
                                 <?php else: ?>
-                                    <a type="button" id="addToWishlistButton" href="<?php echo site_url('my-account'); ?>" style=" font-size: 16px;"> <img src="<?php echo site_url('assets/icons/heart.svg'); ?>" width="16px" height="16px"> Add to Wishlist</a>
+                                    <a  id="addToWishlistButton" href="<?php echo site_url('my-account'); ?>" style=" font-size: 16px;"> <img src="<?php echo site_url('assets/icons/heart.svg'); ?>" width="16px" height="16px"> Add to Wishlist</a>
                                 <?php endif;  ?>
                                 <?php if(isset($_SESSION['role'])&&$_SESSION['role']=='customer'&&isset($_SESSION['id'])): ?>
 
                                 <script>
-                                    $("a#addToWishlistButton").click(function (e) { 
+                                    $("button#addToWishlistButton").click(function (e) { 
 
                                         <?php if($product['sizes']==''&&$product['materials']==''): ?>
                                         let productMaterial = 'default';
@@ -110,8 +109,8 @@
                                             type: "POST",
                                             url: "<?php echo site_url('add-to-wishlist-exe'); ?>",
                                             data: {
-                                            product_id : product_id,
-                                                customer_id : product_id,
+                                                product_id : product_id,
+                                                customer_id : '<?php echo $_SESSION['id']; ?>',
                                                 material : productMaterial,
                                                 size : productSize,
                                             },
@@ -121,9 +120,8 @@
                                                     setTimeout(function() {
                                                         $("p#atw-success").html('');
                                                     }, 3000);
-                                                    location.reload();
-                                                }else{
-                                                    $("p#atw-failure").html('Added to Cart Successfully');
+                                                }else if(response=='already-in-wishlist'){
+                                                    $("p#atw-failure").html('Already in Wishlist');
                                                     setTimeout(function() {
                                                         $("p#atw-failure").html('');
                                                     }, 3000);
@@ -136,7 +134,7 @@
                                 <?php endif; ?>
 
                             </div>
-                            <div class="col-lg-4 col-md-6 col-sm-6 custom-half-grid" style="padding:0; margin-bottom: 3%;">
+                            <div class="col-lg-6 col-md-6 col-sm-6 custom-half-grid" style="padding:0; margin-bottom: 3%;">
                             
                             <p id="atx-success" style="margin-bottom: 0;" class="col-lg-12 col-md-12 col-sm-12 text-success" style="color: darkgreen !important;"></p>
                                 <p id="atx-failure" class="col-lg-12 col-md-12 col-sm-12 text-danger"></p>
@@ -144,7 +142,7 @@
                                 <a href="#" data-toggle="modal" data-target="#sizeChartModal" style="font-size: 16px;" class="d-none"> <img src="<?php echo site_url('assets/icons/sliders.svg'); ?>" width="16px" height="16px"> See Size Chart</a>
 
                             </div>
-                            <div class="col-lg-4 col-md-12 col-sm-12"></div>
+                            <!-- <div class="col-lg-4 col-md-12 col-sm-12"></div> -->
 
                             <p id="atc-success" style="margin-bottom: 0;" class="col-lg-12 col-md-12 col-sm-12 text-success" style="color: darkgreen !important;"></p>
                                 <p id="atc-failure" class="col-lg-12 col-md-12 col-sm-12 text-danger"></p>

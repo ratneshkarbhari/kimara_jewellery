@@ -13,20 +13,22 @@ class Wishlist extends BaseController
         $material = $this->request->getPost('material');
         $size = $this->request->getPost('size');
 
-        $exists = $this->check_if_exists($customer_id,$product_id,$material,$size);
+        $wishListModel = new WishlistModel();
+
+        $exists = $wishListModel->where('cid',$customer_id)->where('pid',$product_id)->where('material',$material)->where('size',$size)->first();
 
         if($exists){
             exit('already-in-wishlist');
         }else{
 
-            $wishListModel = new WishlistModel();
 
             $arrayToInsert = array(
-                'customer_id' => $customer_id,
-                'product_id' => $product_id,
+                'cid' => $customer_id,
+                'pid' => $product_id,
                 'material' => $material,
                 'size' => $size
             );
+
 
             $res = $wishListModel->insert($arrayToInsert);
 
@@ -34,16 +36,25 @@ class Wishlist extends BaseController
                 exit('add-to-wishlist-success');
             }
 
+
+
+
         }
 
 
     }
 
-    private function check_if_exists($customer_id,$product_id,$material,$size){
+    public function delete(){
+        
+        $session = session();
+        if($session->role!='customer'){
+            return redirect()->to(site_url('customer-login')); 
+        }
+        $wlid = $this->request->getPost('wlid');
         $wishListModel = new WishlistModel();
-
-        return $wishListModel->where('customer_id',$customer_id)->where('product_id',$product_id)->where('material',$material)->where('size',$size)->first();
-
+        $deleted = $wishListModel->delete($wlid);
+        return redirect()->to(site_url('my-account')); 
+    
     }
 
 }
