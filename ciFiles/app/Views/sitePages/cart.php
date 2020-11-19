@@ -85,10 +85,21 @@
                 <div class="col-lg-4 col-md-12 col-sm-12">
                 
                     <h5>Subtotal: <?php  echo '₹ '.$subtotal; ?></h5>
-                    <?php if($subtotal<10000): ?>
-                    <h5>Shipping: <?php  echo '₹ '.$shipping= 125; ?></h5>
+                    <div class="form-group">
+                        <label for="Select your Shipping Zone"></label>
+                        <select class="form-control" name="location" id="location">
+                            <option value="india" <?php if($_COOKIE['location']=='india'){echo 'selected';} ?>>India</option>
+                            <option value="row" <?php if($_COOKIE['location']=='row'){echo 'selected';} ?>>Rest of the World</option>
+                        </select>
+                    </div>
+                    <h6>Current Shipping Zone: <?php if($_COOKIE['location']=='india'){echo ucfirst($_COOKIE['location']);}else {
+                        echo 'Rest of the World';
+                    }  ?></h6>
+                    <?php if($subtotal<$shipping_rates['free_shipping_threshold']): ?>
+                    <?php $shipping = $shipping_rates[$_COOKIE['location']]; ?>
+                    <h5>Shipping: <?php  echo '₹ '.$shipping; ?></h5>
                     <?php else: ?>
-                        <h5>Shipping: <?php  echo '₹ '.$shipping= 0; ?></h5>
+                        <h5>Shipping: <?php  echo '₹ '.$shipping; ?></h5>
                     <?php endif; ?>
                     <h3>Payable: <?php  echo '₹ '.$payable = $shipping+$subtotal; ?></h3>
 
@@ -160,15 +171,16 @@
                             <p id="orderPlacingError" class="text-danger text-center"></p>
                             <div class="form-group">
                                 <label for="contactNumber">Contact Number</label>
-                                <input class="form-control" style='border: 1px solid;' type="text" name="orderContactNumber" id="contactNumber">
+                                <input class="form-control" style='border: 1px solid;' type="text" name="orderContactNumber" id="contactNumber"  autocomplete="off">
                             </div>
+
                             <div class="form-group">
                                 <label for="shippingAddress">Shipping Address</label>
-                                <textarea style='border: 1px solid;' id="shippingAddress" name="shippingAddress" class="form-control"></textarea>
+                                <textarea style='border: 1px solid;' id="shippingAddress" name="shippingAddress" class="form-control"  autocomplete="off"></textarea>
                             </div>
                             <div class="form-group">
                                 <label for="billingAddress">Billing Address</label>
-                                <textarea style='border: 1px solid;' id="billingAddress" name="billingAddress" class="form-control"></textarea>
+                                <textarea style='border: 1px solid;' id="billingAddress" name="billingAddress" class="form-control"  autocomplete="off"></textarea>
                             </div>
                             <button class="btn btn-success btn-block" data-toggle="modal" data-target="#loginModal"  type="button" id="makePayment">
                             Make Payment
@@ -341,4 +353,20 @@ $("button#makePayment").click(function (e) {
     }
 });
 <?php endif; endif; ?>
+</script>
+<script>
+$("select#location").change(function (e) {
+    e.preventDefault();
+    let location = $(this).val();
+    $.ajax({
+        type: "POST",
+        url: "<?php echo site_url('set-location-cookie'); ?>",
+        data: {
+            'location' : location
+        },
+        success: function (response) {
+            window.location.reload();
+        }
+    });
+})
 </script>

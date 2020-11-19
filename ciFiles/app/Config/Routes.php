@@ -88,6 +88,7 @@ $routes->post('add-email-subscriber','NewsLetter::nl_subscription_send_email');
 $routes->get('nl-sub-thank-you','PublicPageLoader::nl_sub_thank_you');
 
 // Admin Dashboard
+$routes->get('update-shipping-rates','AdminPageLoader::update_shipping_rates');
 $routes->get('admin-dashboard','AdminPageLoader::dashboard');
 $routes->get('manage-categories','AdminPageLoader::categories');
 $routes->get('add-category','AdminPageLoader::add_category');
@@ -104,6 +105,9 @@ $routes->get('manage-homepage-slides','AdminPageLoader::homepage_slides');
 $routes->post('add-slide-exe','Slides::add');
 $routes->post('delete-slide-exe','Slides::delete');
 
+// Shipping rates
+$routes->post('update-shipping-rates','ShippingRates::update');
+$routes->post('set-location-cookie','ShippingRates::set_location_cookie');
 
 // Collection Routes
 $routes->post('add-collection-exe','Collections::add');

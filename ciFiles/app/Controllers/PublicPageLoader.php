@@ -6,6 +6,7 @@ require_once './vendor/autoload.php'; // change path as needed
 use Razorpay\Api\Api;
 use App\Models\HomePageSlideModel;
 use App\Models\WishlistModel;
+use App\Models\ShippingRateModel;
 use App\Models\ProductModel;
 use App\Models\AuthModel;
 use App\Models\CategoryModel;
@@ -33,6 +34,8 @@ class PublicPageLoader extends BaseController
 		}else {
 			$data['categories'] = $cache->get('categories');
 		}
+
+		setcookie('location','india',time()+(24*60*60));
 
 		$cart_items = $cartModel->fetch_all_cart_items();
 		$data['cart_item_count'] = count($cart_items);
@@ -238,13 +241,22 @@ class PublicPageLoader extends BaseController
 						}
 					}
 				}
+				$shippingRateModel = new ShippingRateModel();
+
+				$data['shipping_rates'] = $shippingRateModel->first();
+
+				$totalPayable = $totalPayable+$data['shipping_rates'][$_COOKIE['location']];
 	
 				$order  = $api->order->create(array('receipt' => rand(10000,9999), 'amount' => ($totalPayable*100), 'currency' => 'INR')); // Creates order
 			}
 			$data['orderData'] = $order;
+
 		}else {
 			$data['orderData'] = array();
 		}
+
+
+
 
 		$this->public_page_loader('cart',$data);
 

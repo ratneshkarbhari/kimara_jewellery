@@ -49,3 +49,29 @@ CRITICAL - 2020-11-18 00:51:09 --> Undefined index: pid
 #7 /var/www/html/kimara_jewellery/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
 #8 /var/www/html/kimara_jewellery/index.php(46): CodeIgniter\CodeIgniter->run()
 #9 {main}
+CRITICAL - 2020-11-18 04:21:14 --> SMTP Error: The following recipients failed: kimaarasilver@gmail.com: Verification failed for <orderprocessing@kimaara.com>
+No Such User Here
+Sender verify failed
+
+#0 /var/www/html/kimara_jewellery/ciFiles/vendor/phpmailer/phpmailer/src/PHPMailer.php(1601): PHPMailer\PHPMailer\PHPMailer->smtpSend()
+#1 /var/www/html/kimara_jewellery/ciFiles/vendor/phpmailer/phpmailer/src/PHPMailer.php(1437): PHPMailer\PHPMailer\PHPMailer->postSend()
+#2 /var/www/html/kimara_jewellery/ciFiles/app/Controllers/Orders.php(246): PHPMailer\PHPMailer\PHPMailer->send()
+#3 /var/www/html/kimara_jewellery/ciFiles/app/Controllers/Orders.php(73): App\Controllers\Orders->send_order_created_email()
+#4 /var/www/html/kimara_jewellery/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Orders->create()
+#5 /var/www/html/kimara_jewellery/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#6 /var/www/html/kimara_jewellery/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#7 /var/www/html/kimara_jewellery/index.php(46): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-11-18 04:24:52 --> SMTP Error: The following recipients failed: kimaarasilver@gmail.com: Verification failed for <orderprocessing@kimaara.com>
+No Such User Here
+Sender verify failed
+
+#0 /var/www/html/kimara_jewellery/ciFiles/vendor/phpmailer/phpmailer/src/PHPMailer.php(1601): PHPMailer\PHPMailer\PHPMailer->smtpSend()
+#1 /var/www/html/kimara_jewellery/ciFiles/vendor/phpmailer/phpmailer/src/PHPMailer.php(1437): PHPMailer\PHPMailer\PHPMailer->postSend()
+#2 /var/www/html/kimara_jewellery/ciFiles/app/Controllers/Orders.php(246): PHPMailer\PHPMailer\PHPMailer->send()
+#3 /var/www/html/kimara_jewellery/ciFiles/app/Controllers/Orders.php(73): App\Controllers\Orders->send_order_created_email()
+#4 /var/www/html/kimara_jewellery/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Orders->create()
+#5 /var/www/html/kimara_jewellery/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#6 /var/www/html/kimara_jewellery/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#7 /var/www/html/kimara_jewellery/index.php(46): CodeIgniter\CodeIgniter->run()
+#8 {main}

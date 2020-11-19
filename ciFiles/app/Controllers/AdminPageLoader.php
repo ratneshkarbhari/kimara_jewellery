@@ -1,6 +1,7 @@
 <?php namespace App\Controllers;
 
 use App\Models\CategoryModel;
+use App\Models\ShippingRateModel;
 use App\Models\ProductModel;
 use App\Models\CollectionModel;
 use App\Models\OrderModel;
@@ -20,6 +21,7 @@ class AdminPageLoader extends BaseController
         }
 
     }
+    
 
     private function admin_page_loader($viewName,$data){
 
@@ -29,6 +31,17 @@ class AdminPageLoader extends BaseController
 
     }
 
+
+    public function update_shipping_rates(){
+
+        $this->send_to_login();
+
+        $data['title'] = 'Update Shipping Rates';
+        $shippingRateModel = new ShippingRateModel();
+        $data['shipping_rates'] = $shippingRateModel->first();
+        $this->admin_page_loader('update_shipping_rates',$data);        
+
+    }
 
     public function add_collection(){
 
