@@ -208,6 +208,7 @@ class PublicPageLoader extends BaseController
 
 		$cartModel = new CartModel();
 
+
 		if(!$cache->get('products')){
 			$productModel = new ProductModel();
 			$productsFetched = $productModel->findAll();	
@@ -238,8 +239,14 @@ class PublicPageLoader extends BaseController
 						}
 					}
 				}
+
+				if($totalPayable<10000.00){
+					$shipping = 125.00;
+				}else {
+					$shipping = 0.00;
+				}
 	
-				$order  = $api->order->create(array('receipt' => rand(10000,9999), 'amount' => ($totalPayable*100), 'currency' => 'INR')); // Creates order
+				$order  = $api->order->create(array('receipt' => rand(10000,9999), 'amount' => (($totalPayable+$shipping)*100), 'currency' => 'INR')); // Creates order
 			}
 			$data['orderData'] = $order;
 		}else {
