@@ -241,11 +241,12 @@ class PublicPageLoader extends BaseController
 						}
 					}
 				}
+
 				$shippingRateModel = new ShippingRateModel();
 
-				$data['shipping_rates'] = $shippingRateModel->first();
+				$data['shipping_rates'] = $shipping_rates =  $shippingRateModel->first();
 
-				$totalPayable = $totalPayable+$data['shipping_rates'][$_COOKIE['location']];
+				$totalPayable = $totalPayable+$shipping_rates;
 	
 				$order  = $api->order->create(array('receipt' => rand(10000,9999), 'amount' => ($totalPayable*100), 'currency' => 'INR')); // Creates order
 			}
@@ -255,7 +256,7 @@ class PublicPageLoader extends BaseController
 			$data['orderData'] = array();
 		}
 
-
+		
 
 
 		$this->public_page_loader('cart',$data);

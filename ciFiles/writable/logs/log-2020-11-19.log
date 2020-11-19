@@ -154,3 +154,14 @@ CRITICAL - 2020-11-19 04:49:49 --> Use of undefined constant els - assumed 'els'
 #7 /var/www/html/kimara_jewellery/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
 #8 /var/www/html/kimara_jewellery/index.php(46): CodeIgniter\CodeIgniter->run()
 #9 {main}
+CRITICAL - 2020-11-19 06:01:37 --> Undefined index: location
+#0 /var/www/html/kimara_jewellery/ciFiles/app/Views/sitePages/cart.php(91): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/kimara_jewellery/ciFiles/vendor/codeigniter4/framework/system/View/View.php(246): include('/var/www/html/k...')
+#2 /var/www/html/kimara_jewellery/ciFiles/vendor/codeigniter4/framework/system/Common.php(1119): CodeIgniter\View\View->render()
+#3 /var/www/html/kimara_jewellery/ciFiles/app/Controllers/PublicPageLoader.php(45): view()
+#4 /var/www/html/kimara_jewellery/ciFiles/app/Controllers/PublicPageLoader.php(262): App\Controllers\PublicPageLoader->public_page_loader()
+#5 /var/www/html/kimara_jewellery/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\PublicPageLoader->cart()
+#6 /var/www/html/kimara_jewellery/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#7 /var/www/html/kimara_jewellery/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#8 /var/www/html/kimara_jewellery/index.php(46): CodeIgniter\CodeIgniter->run()
+#9 {main}
