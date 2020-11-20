@@ -16,12 +16,15 @@
                 
 
                     
-                    <div id="previewPane"><img src="<?php echo site_url('assets/images/featured_image_product/'.$product['featured_image']); ?>" data-zoom-image="<?php echo site_url('assets/images/featured_image_product/'.$product['featured_image']); ?>" id="product-page-main-product-image" style="width: 100%; border: 1px solid darkgray; cursor: pointer;"></div>
+                <div id="previewPane"><img src="<?php echo site_url('assets/images/featured_image_product/'.$product['featured_image']); ?>" data-zoom-image="<?php echo site_url('assets/images/featured_image_product/'.$product['featured_image']); ?>" id="product-page-main-product-image" style="width: 100%; border: 1px solid darkgray; cursor: pointer;"></div>
+                    <br>
 
-                    <div id="product-gallery-box" class="owl-carousel" style='margin-top: 5%;'>
+                    <div id="gallery_01" class="owl-carouselx" style='margin-top: 5%;'>
                         <?php $gallery_images = explode(',',$product['gallery_images']); foreach($gallery_images as $gallery_image): ?>
 
-                            <img style="cursor: pointer;" srcset="<?php echo site_url('assets/images/gallery_images_product/'.$gallery_image); ?>" class="product-gallery-image" src="<?php echo site_url('assets/images/gallery_images_product/'.$gallery_image); ?>">
+                            <a href="#" data-image="<?php echo site_url('assets/images/gallery_images_product/'.$gallery_image); ?>" data-zoom-image="<?php echo site_url('assets/images/gallery_images_product/'.$gallery_image); ?>">
+                                <img style="cursor: pointer;" src="<?php echo site_url('assets/images/gallery_images_product/'.$gallery_image); ?>" class="product-gallery-imagex" width="100px" height="100px">
+                            </a>
 
                         <?php endforeach; ?>
                     </div>
@@ -268,6 +271,6 @@
 <script>
     $('img#product-page-main-product-image').ezPlus({
     zoomType: 'inner',
-    cursor: 'crosshair'
+    gallery: 'gallery_01', cursor: 'pointer'
 });
 </script>

@@ -133,7 +133,7 @@
                 }
             </style>
         
-            <p class="text-center text-light" style="margin: 3% 0;">&copy; Kimara Jewellery 2020 | All Rights Reserved</p>
+            <p class="text-center text-light" style="margin: 3% 0;">&copy; Kimaara 2020 | All Rights Reserved</p>
         
         </div>
     
