@@ -236,7 +236,8 @@ class PublicPageLoader extends BaseController
 
 		if($role=='customer'&&!empty($cart_items)){
 			if(!empty($cart_items)){
-				$api = new Api('rzp_live_u5KGjme6VZlvYo', 'dR3h6yH6SmxQWQkJgDlc7M23');
+				// $api = new Api('rzp_live_u5KGjme6VZlvYo', 'dR3h6yH6SmxQWQkJgDlc7M23');
+				$api = new Api('rzp_test_f9AFe5VqZFjZN0', 'tfe4A9CY6Ax7aCYO5uRMyjRM');
 	
 				$totalPayable = 0.00;
 	
