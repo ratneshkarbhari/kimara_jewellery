@@ -160,11 +160,15 @@
            <div id="sidenavLogoBox" style="text-align: center;">
            <img src="<?php echo site_url('assets/images/newestlogo.png'); ?>" id="logonew" style="width: 70%; margin: 10% auto;">
            </div>
+           <div id="sidenavCatBox" style="overflow: auto;
+    max-height: 900px;
+    height: 300px;">
            <?php foreach($categories as $category): if($category['parent']==0):  ?>
 
-            <a href="<?php echo site_url('category/'.$category['slug']); ?>" class="sidenav-link"><?php echo $category['title']; ?></a>
+                <a href="<?php echo site_url('category/'.$category['slug']); ?>" class="sidenav-link"><?php echo $category['title']; ?></a>
 
            <?php endif; endforeach; ?>
+           </div>
 
             <div id="other-links-menu" style="position: absolute; bottom:0; left: 0; right: 0;">
                 <a href="<?php echo site_url('/'); ?>" class="sidenav-link">Home</a>
