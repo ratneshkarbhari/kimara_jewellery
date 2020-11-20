@@ -12,6 +12,7 @@ use App\Models\CategoryModel;
 use App\Models\CartModel;
 use App\Models\CollectionModel;
 use App\Models\OrderModel;
+use App\Models\ShippingRateModel;
 
 
 
@@ -37,6 +38,9 @@ class PublicPageLoader extends BaseController
 		$cart_items = $cartModel->fetch_all_cart_items();
 		$data['cart_item_count'] = count($cart_items);
 
+		if(!isset($_COOKIE['location'])){
+			setcookie('location','india',time()+(24*3600));
+		}
 
 		echo view('templates/header',$data);
 		echo view('sitePages/'.$viewName,$data);
@@ -220,6 +224,11 @@ class PublicPageLoader extends BaseController
 
 		$data['cart_items'] = $cart_items =  $cartModel->fetch_all_cart_items();
 
+		$shippingRateModel = new ShippingRateModel();
+
+		$shipping_rates = $shippingRateModel->first();
+
+		$data['shipping_rates'] = $shipping_rates;
 
 		$session = session();
 
@@ -240,18 +249,25 @@ class PublicPageLoader extends BaseController
 					}
 				}
 
-				if($totalPayable<10000.00){
-					$shipping = 125.00;
+		
+				if($totalPayable<$shipping_rates['free_shipping_threshold']){
+					$shipping = $shipping_rates[$_COOKIE['location']];
 				}else {
 					$shipping = 0.00;
 				}
-	
+
+
 				$order  = $api->order->create(array('receipt' => rand(10000,9999), 'amount' => (($totalPayable+$shipping)*100), 'currency' => 'INR')); // Creates order
 			}
+
 			$data['orderData'] = $order;
+
 		}else {
 			$data['orderData'] = array();
 		}
+
+
+
 
 		$this->public_page_loader('cart',$data);
 

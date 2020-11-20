@@ -86,9 +86,33 @@
                 
                     <h5>Subtotal: <?php  echo '₹ '.$subtotal; ?></h5>
                     <?php if($subtotal<10000): ?>
-                    <h5>Shipping: <?php  echo '₹ '.$shipping= 125; ?></h5>
+                    <label for="location">You are browsing from:</label>
+                    <select name="location" id="location" class="form-control">
+                        <option value="india" <?php if($_COOKIE['location']=='india'){echo 'selected';} ?>>India</option>
+                        <option value="row" <?php if($_COOKIE['location']=='row'){echo 'selected';} ?>>Rest of World</option>
+                    </select>
+                    <br>
+                    <script>
+                        $("select#location").change(function (e) { 
+                            e.preventDefault();
+                            let location = $(this).val();
+                            $.ajax({
+                                type: "POST",
+                                url: '<?php echo site_url('set-location-cookie'); ?>',
+                                data: {
+                                    'location' : location
+                                },
+                                success: function (response) {
+                                    
+                                    window.location.reload();
+                                    
+                                }
+                            });
+                        });
+                    </script>
+                    <h5>Shipping: <?php  echo '₹ '.$shipping = $shipping_rates[$_COOKIE['location']]; ?></h5>
                     <?php else: ?>
-                        <h5>Shipping: <?php  echo '₹ '.$shipping= 0; ?></h5>
+                        <h5>Shipping: <?php  echo '₹ '.$shipping = 0.00; ?></h5>
                     <?php endif; ?>
                     <h3>Payable: <?php  echo '₹ '.$payable = $shipping+$subtotal; ?></h3>
 
