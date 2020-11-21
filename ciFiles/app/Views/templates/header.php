@@ -163,11 +163,11 @@
            <img src="<?php echo site_url('assets/images/newestlogo.png'); ?>" id="logonew" style="width: 70%; margin: 10% auto;">
            </div>
            <div id="sidenavCatBox" >
-           <?php foreach($categories as $category): if($category['parent']==0):  ?>
+           <?php $sidenavCats = $catsByPos['sidenav']; $sidenavCatsArray = explode(',',$sidenavCats); foreach($categories as $category): if($category['parent']==0): if(in_array($category['id'],$sidenavCatsArray)):  ?>
 
                 <a href="<?php echo site_url('category/'.$category['slug']); ?>" class="sidenav-link"><?php echo $category['title']; ?></a>
 
-           <?php endif; endforeach; ?>
+           <?php endif; endif; endforeach; ?>
            </div>
 
             <div id="other-links-menu" style="position: absolute; margin-top: 20%; left: 0; right: 0;">

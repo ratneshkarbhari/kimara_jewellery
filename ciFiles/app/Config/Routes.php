@@ -64,7 +64,8 @@ $routes->post('add-to-cart-exe','Cart::add');
 $routes->post('update-cart','Cart::update');
 $routes->post('delete-cart-item','Cart::delete');
 
-
+// Category Positions
+$routes->post('update-category-positions','CategoryPositions::update');
 
 // Order EndPoint
 $routes->post('create-cod-order','Orders::create_cod_order');
@@ -103,6 +104,7 @@ $routes->get('manage-orders','AdminPageLoader::all_orders');
 $routes->get('manage-collections','AdminPageLoader::all_collections');
 $routes->get('add-collection','AdminPageLoader::add_collection');
 $routes->get('manage-homepage-slides','AdminPageLoader::homepage_slides');
+$routes->get('category-position-mgt','AdminPageLoader::category_position_mgt');
 
 // Slides
 $routes->post('add-slide-exe','Slides::add');

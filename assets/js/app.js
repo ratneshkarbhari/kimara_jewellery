@@ -84,7 +84,7 @@ $("div#home-category-slider-mobile").owlCarousel({
         }
     },
     margin: 5,
-    loop:true,
+    loop:false
 });
 
 $("div#daily-deals-carousel,div#related-products").owlCarousel({

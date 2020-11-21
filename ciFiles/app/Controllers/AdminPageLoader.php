@@ -6,6 +6,7 @@ use App\Models\ProductModel;
 use App\Models\CollectionModel;
 use App\Models\OrderModel;
 use App\Models\HomePageSlideModel;
+use App\Models\CategoryPositionModel;
 
 class AdminPageLoader extends BaseController
 {
@@ -40,6 +41,22 @@ class AdminPageLoader extends BaseController
         $shippingRateModel = new ShippingRateModel();
         $data['shipping_rates'] = $shippingRateModel->first();
         $this->admin_page_loader('update_shipping_rates',$data);        
+
+    }
+
+    public function category_position_mgt(){
+
+        $categoryModel = new CategoryModel();
+
+        $data['categories'] = $categoryModel->findAll();
+
+        $data['title'] = 'Category Position Model';
+
+        $categoryPositionModel = new CategoryPositionModel();
+
+        $data['category_positions'] = $categoryPositionModel->first();
+
+        $this->admin_page_loader('update_category_positions',$data);
 
     }
 

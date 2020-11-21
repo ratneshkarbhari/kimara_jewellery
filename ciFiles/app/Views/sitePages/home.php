@@ -4,13 +4,13 @@
 
     <section id="home-slider-section" class="d-sm-block d-md-block d-lg-none" style="padding: 2% 0;">
         <div id="home-category-slider-mobile" class="owl-carousel text-center">
-            <?php foreach($categories as $category): if($category['parent']==0): ?>
+            <?php $igFeedCats = $catsByPos['ig_feed']; $igFeedCatsArray = explode(',',$igFeedCats); foreach($categories as $category): if($category['parent']==0): if(in_array($category['id'],$igFeedCatsArray)): ?>
             <a href="<?php echo site_url('category/'.$category['slug']); ?>" target="_blank">
                 <img style="border-radius: 50%;" src="<?php echo site_url('assets/images/category_featured_images/'.$category['featured_image_circular']); ?>" 
                 class="w-100">
                 <small><?php echo $category['title']; ?></small>
             </a>
-            <?php endif; endforeach; ?>
+            <?php endif; endif; endforeach; ?>
         </div>
     </section>
     
@@ -82,7 +82,7 @@
 
             <div class="row" style="margin-top: 3%;">
                 
-                <?php foreach($categories as $category): ?>
+                <?php $hpcategories = $catsByPos['homepage']; $hpcategoriesArray = explode(',',$hpcategories); foreach($categories as $category): if(in_array($category['id'],$hpcategoriesArray)): ?>
                 <div class="col-lg-4 d-md-6 d-sm-6 " style="margin-bottom: 3%; ">
                 
                     <a href="<?php echo site_url('category/'.$category['slug']); ?>">
@@ -96,7 +96,7 @@
                     </a>
                 
                 </div>
-                <?php endforeach; ?>
+                <?php endif; endforeach; ?>
                 
             </div>
         
@@ -113,7 +113,7 @@
 
             <div class="row" style="margin-top: 3%;">
                 
-                <?php foreach($categories as $category): ?>
+                <?php $hpcategories = $catsByPos['homepage']; $hpcategoriesArray = explode(',',$hpcategories); foreach($categories as $category): if(in_array($category['id'],$hpcategoriesArray)): ?>
                 <div class="col-lg-4 d-md-6 d-sm-6 custom-half-grid" style="margin-bottom: 3%;">
                 
                     <a href="<?php echo site_url('category/'.$category['slug']); ?>">
@@ -127,7 +127,7 @@
                     </a>
                 
                 </div>
-                <?php endforeach; ?>
+                <?php endif; endforeach; ?>
                 
             </div>
         

@@ -13,7 +13,7 @@ use App\Models\CartModel;
 use App\Models\CollectionModel;
 use App\Models\OrderModel;
 use App\Models\ShippingRateModel;
-
+use App\Models\CategoryPositionModel;
 
 
 
@@ -34,6 +34,17 @@ class PublicPageLoader extends BaseController
 		}else {
 			$data['categories'] = $cache->get('categories');
 		}
+
+		if(!$cache->get('catsByPos')){
+			$catPosModel = new CategoryPositionModel();
+			$catsByPos = $catPosModel->first();;	
+			$cache->save('catsByPos',$catsByPos,24*60*60);
+			$data['catsByPos'] = $cache->get('catsByPos');
+		}else {
+			$data['catsByPos'] = $cache->get('catsByPos');
+		}
+
+
 
 		$cart_items = $cartModel->fetch_all_cart_items();
 		$data['cart_item_count'] = count($cart_items);
