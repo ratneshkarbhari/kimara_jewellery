@@ -33,6 +33,8 @@ $routes->setAutoRoute(true);
 $routes->get('not-found', 'PublicPageLoader::not_found');
 $routes->get('/', 'PublicPageLoader::home');
 
+// Cache flush
+$routes->get('flush-cache','PublicPageLoader::flush_cache');
 
 // SitePages
 $routes->get('admin-login','PublicPageLoader::admin_login');
@@ -53,6 +55,7 @@ $routes->get('thank-you','PublicPageLoader::thank_you');
 $routes->get('order-details/(:any)','PublicPageLoader::order_details/$1');
 $routes->post('universal-product-search','PublicPageLoader::universal_product_search');
 $routes->get('customer-registration','PublicPageLoader::customer_registration');
+
 // Customer Profile my account page section
 $routes->post('update-customer-profile','Authentication::update_customer_profile');
 

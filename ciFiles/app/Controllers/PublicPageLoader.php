@@ -203,6 +203,14 @@ class PublicPageLoader extends BaseController
 
 	}
 
+	public function flush_cache(){
+
+		$cache->clean();
+
+		return redirect()->to(site_url('admin-dashboard'));
+
+	}
+
 	public function cart(){
 
 		$cache = \Config\Services::cache();
@@ -266,9 +274,6 @@ class PublicPageLoader extends BaseController
 		}else {
 			$data['orderData'] = array();
 		}
-
-
-
 
 		$this->public_page_loader('cart',$data);
 
