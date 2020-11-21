@@ -89,12 +89,13 @@
                 HomePage Slides
                 </a>
             </li>
+
+            <li class="nav-item"><a href="<?php echo site_url('update-shipping-rates'); ?>" class="nav-link sidebar-link">Shipping Rates</a></li>
             <li class="nav-item">
                 <a class="nav-link sidebar-link" href="<?php echo site_url('flush-cache'); ?>">
                 Flush Cache
                 </a>
             </li>
-            <li class="nav-item"><a href="<?php echo site_url('update-shipping-rates'); ?>" class="nav-link sidebar-link">Shipping Rates</a></li>
         </ul>
 
         <!-- <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">

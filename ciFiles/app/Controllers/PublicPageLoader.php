@@ -205,6 +205,8 @@ class PublicPageLoader extends BaseController
 
 	public function flush_cache(){
 
+		$cache = \Config\Services::cache();
+
 		$cache->clean();
 
 		return redirect()->to(site_url('admin-dashboard'));
