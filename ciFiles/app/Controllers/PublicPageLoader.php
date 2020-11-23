@@ -440,6 +440,7 @@ class PublicPageLoader extends BaseController
 
 		$data['related_products'] = $productModel->where('category',$data['product']['category'])->findAll();
 
+
 		$this->public_page_loader('product_page',$data);
 
 	}

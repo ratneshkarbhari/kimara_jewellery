@@ -1,5 +1,6 @@
 <script src="https://cdn.jsdelivr.net/gh/igorlino/elevatezoom-plus@1.2.3/src/jquery.ez-plus.js"></script>
-
+<link rel="stylesheet" href="<?php echo site_url('assets/css/owl.carousel.min.css'); ?>" >
+    <link rel="stylesheet" href="<?php echo site_url('assets/css/owl.theme.default.min.css'); ?>" >
 <main class="page-content" id="product-page">
 
 
