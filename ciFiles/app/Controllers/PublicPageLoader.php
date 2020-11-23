@@ -313,7 +313,7 @@ class PublicPageLoader extends BaseController
 
 	public function home(){
 
-		$data['title'] = 'Tagline';
+		$data['title'] = 'Buy Sterling Silver Jewellery Online';
 
 		$collectionModel = new CollectionModel();
 
