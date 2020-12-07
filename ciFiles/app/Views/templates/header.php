@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="<?php echo site_url('assets/css/normalize.min.css'); ?>">
     <link rel="stylesheet" href="<?php echo site_url('assets/css/bootstrap.min.css'); ?>">
     <link rel="stylesheet" href="<?php echo site_url('assets/css/app.min.css?v=2.1'); ?>">
+    <link rel="icon" href="<?php echo site_url('favicon.png'); ?>" type="image/png"/>
 </head>
 <body>
 <script src="<?php echo site_url('assets/js/jquery.min.js'); ?>"></script>
