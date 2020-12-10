@@ -84,6 +84,55 @@
                 <div class="col-lg-4 col-md-12 col-sm-12"></div>
                 <div class="col-lg-4 col-md-12 col-sm-12">
                 
+                    <h5>Use a Coupon code:</h5>
+                    
+                    <p class='text-danger' id="couponErrorCode"></p>
+                    <input class="form-control" type="text" value="<?php if (isset($_COOKIE['coupon'])) {
+                        echo $_COOKIE['coupon'];
+                    } ?>" id="couponCodeField">
+                    <br>
+                    <?php if(isset($_COOKIE['coupon'])): $subtotal = $subtotal-($subtotal*($percentage_discount/100)) ?>
+                    <button type="button" class="btn btn-danger" id="removeCoupon">Remove</button>
+                    <script>
+                    $("button#removeCoupon").click(function (e) { 
+                        e.preventDefault();
+                            $.ajax({
+                                type: "POST",
+                                url: "<?php echo site_url('unset-coupon-cookie'); ?>",
+                                
+                                success: function (response) {
+                                    window.location.reload();
+                                }
+                            });
+                        });
+                    </script>
+                    <br>
+                    <?php else: ?>
+                    <button type="button" class="btn btn-success btn-block" id="applyCoupon">Apply</button>
+                    <script>
+                        $("button#applyCoupon").click(function (e) { 
+                            e.preventDefault();
+                            let couPonCode = $("input#couponCodeField").val();
+                            if (couPonCode=='') {
+                                $("p#couponErrorCode").html('Please enter a Coupon code')
+                            }else{
+                                $.ajax({
+                                    type: "POST",
+                                    url: "<?php echo site_url('set-coupon-cookie'); ?>",
+                                    data: {
+                                        'code' : couPonCode
+                                    },
+                                    success: function (response) {
+                                        window.location.reload();
+                                    }
+                                });
+                            }
+                        });
+                    </script>
+                    <br>
+                    <?php endif; ?>
+                    <br>
+                    
                     <h5>Subtotal: <?php  echo '₹ '.$subtotal; ?></h5>
                     <?php if($subtotal<10000): ?>
                     <label for="location">You are browsing from:</label>

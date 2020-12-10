@@ -79,6 +79,21 @@ class Coupons extends BaseController
 
     }
 
+    public function set_coupon_cookie(){
+        $code = $this->request->getPost('code');
+        $couponModel = new CouponModel();
+        $couponData = $couponModel->where('code',$code)->first();
+        if ($couponData) {
+            setcookie('coupon',$couponData['code'],time()+90000000000);
+        }
+        exit(TRUE);
+    }
+
+    public function unset_coupon_cookie(){
+        setcookie('coupon','',time()-90000000000);
+        exit(TRUE);
+    }
+
     public function delete(){
     
         $this->send_to_login();

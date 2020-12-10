@@ -14,6 +14,7 @@ use App\Models\CollectionModel;
 use App\Models\OrderModel;
 use App\Models\ShippingRateModel;
 use App\Models\CategoryPositionModel;
+use App\Models\CouponModel;
 
 
 
@@ -233,6 +234,7 @@ class PublicPageLoader extends BaseController
 
 		$cartModel = new CartModel();
 
+		$couponModel = new CouponModel();
 
 		if(!$cache->get('products')){
 			$productModel = new ProductModel();
@@ -278,14 +280,25 @@ class PublicPageLoader extends BaseController
 					$shipping = 0.00;
 				}
 
+				$payableWithShipping = $totalPayable+$shipping;
 
-				$order  = $api->order->create(array('receipt' => rand(10000,9999), 'amount' => (($totalPayable+$shipping)*100), 'currency' => 'INR')); // Creates order
+				if (isset($_COOKIE['coupon'])) {
+					$couponDetails = $couponModel->where('code',$_COOKIE['code'])->first();
+					$payableWithShipping = $payableWithShipping - ($payableWithShipping*($couponDetails['percentage_discount']/100));
+				}
+
+				$order  = $api->order->create(array('receipt' => rand(10000,9999), 'amount' => (($payableWithShipping)*100), 'currency' => 'INR')); // Creates order
 			}
 
 			$data['orderData'] = $order;
 
 		}else {
 			$data['orderData'] = array();
+		}
+
+		if (isset($_COOKIE['coupon'])) {
+			$couponDetails = $couponModel->where('code',$_COOKIE['coupon'])->first();
+			$data['percentage_discount'] = $couponDetails['percentage_discount'];
 		}
 
 		$this->public_page_loader('cart',$data);

@@ -95,6 +95,8 @@ $routes->get('nl-sub-thank-you','PublicPageLoader::nl_sub_thank_you');
 $routes->post('create-coupon-exe','Coupons::add');
 $routes->post('update-coupon','Coupons::update');
 $routes->post('delete-coupon','Coupons::delete');
+$routes->post('set-coupon-cookie','Coupons::set_coupon_cookie');
+$routes->post('unset-coupon-cookie','Coupons::unset_coupon_cookie');
 
 // Admin Dashboard
 $routes->get('edit-coupon/(:any)','AdminPageLoader::edit_coupon/$1');
