@@ -1,0 +1,100 @@
+CRITICAL - 2020-12-10 00:28:27 --> Undefined variable: coupons
+#0 /var/www/html/kimaara/ciFiles/app/Views/adminPages/coupons_mgt.php(37): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/View/View.php(246): include('/var/www/html/k...')
+#2 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/Common.php(1119): CodeIgniter\View\View->render()
+#3 /var/www/html/kimaara/ciFiles/app/Controllers/AdminPageLoader.php(31): view()
+#4 /var/www/html/kimaara/ciFiles/app/Controllers/AdminPageLoader.php(41): App\Controllers\AdminPageLoader->admin_page_loader()
+#5 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\AdminPageLoader->coupons_mgt()
+#6 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#7 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#8 /var/www/html/kimaara/index.php(46): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2020-12-10 01:05:49 --> Invalid file: adminPages/add_coupon-page.php
+#0 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/View/View.php(228): CodeIgniter\Exceptions\FrameworkException::forInvalidFile()
+#1 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/Common.php(1119): CodeIgniter\View\View->render()
+#2 /var/www/html/kimaara/ciFiles/app/Controllers/AdminPageLoader.php(31): view()
+#3 /var/www/html/kimaara/ciFiles/app/Controllers/AdminPageLoader.php(41): App\Controllers\AdminPageLoader->admin_page_loader()
+#4 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\AdminPageLoader->add_coupon()
+#5 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#6 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#7 /var/www/html/kimaara/index.php(46): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-12-10 04:12:23 --> Undefined property: App\Controllers\Coupons::$reques
+#0 /var/www/html/kimaara/ciFiles/app/Controllers/Coupons.php(42): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Coupons->add()
+#2 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#3 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#4 /var/www/html/kimaara/index.php(46): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-12-10 04:12:40 --> Class 'App\Models\CouponModel' not found
+#0 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Coupons->add()
+#1 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#2 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#3 /var/www/html/kimaara/index.php(46): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-12-10 04:16:18 --> Unknown column 'description' in 'field list'
+#0 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(331): mysqli->query()
+#1 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/Database/BaseConnection.php(741): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/Database/BaseConnection.php(669): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(2249): CodeIgniter\Database\BaseConnection->query()
+#4 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/Model.php(755): CodeIgniter\Database\BaseBuilder->insert()
+#5 /var/www/html/kimaara/ciFiles/app/Controllers/Coupons.php(65): CodeIgniter\Model->insert()
+#6 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Coupons->add()
+#7 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#8 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#9 /var/www/html/kimaara/index.php(46): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2020-12-10 04:21:47 --> Undefined variable: slides
+#0 /var/www/html/kimaara/ciFiles/app/Views/adminPages/coupons_mgt.php(24): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/View/View.php(246): include('/var/www/html/k...')
+#2 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/Common.php(1119): CodeIgniter\View\View->render()
+#3 /var/www/html/kimaara/ciFiles/app/Controllers/AdminPageLoader.php(32): view()
+#4 /var/www/html/kimaara/ciFiles/app/Controllers/AdminPageLoader.php(51): App\Controllers\AdminPageLoader->admin_page_loader()
+#5 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\AdminPageLoader->coupons_mgt()
+#6 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#7 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#8 /var/www/html/kimaara/index.php(46): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2020-12-10 04:23:17 --> Undefined variable: slide
+#0 /var/www/html/kimaara/ciFiles/app/Views/adminPages/coupons_mgt.php(32): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/View/View.php(246): include('/var/www/html/k...')
+#2 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/Common.php(1119): CodeIgniter\View\View->render()
+#3 /var/www/html/kimaara/ciFiles/app/Controllers/AdminPageLoader.php(32): view()
+#4 /var/www/html/kimaara/ciFiles/app/Controllers/AdminPageLoader.php(51): App\Controllers\AdminPageLoader->admin_page_loader()
+#5 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\AdminPageLoader->coupons_mgt()
+#6 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#7 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#8 /var/www/html/kimaara/index.php(46): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2020-12-10 04:48:58 --> Too few arguments to function App\Controllers\AdminPageLoader::edit_coupon(), 0 passed in /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php on line 918 and exactly 1 expected
+#0 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\AdminPageLoader->edit_coupon()
+#1 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#2 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#3 /var/www/html/kimaara/index.php(46): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-12-10 04:49:11 --> Too few arguments to function App\Controllers\AdminPageLoader::edit_coupon(), 0 passed in /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php on line 918 and exactly 1 expected
+#0 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\AdminPageLoader->edit_coupon()
+#1 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#2 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#3 /var/www/html/kimaara/index.php(46): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-12-10 04:49:54 --> Too few arguments to function App\Controllers\AdminPageLoader::edit_coupon(), 0 passed in /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php on line 918 and exactly 1 expected
+#0 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\AdminPageLoader->edit_coupon()
+#1 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#2 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#3 /var/www/html/kimaara/index.php(46): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-12-10 04:50:21 --> Undefined variable: categoryModel
+#0 /var/www/html/kimaara/ciFiles/app/Controllers/AdminPageLoader.php(47): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\AdminPageLoader->edit_coupon()
+#2 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#3 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#4 /var/www/html/kimaara/index.php(46): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-12-10 04:54:04 --> Undefined variable: focus_coupon
+#0 /var/www/html/kimaara/ciFiles/app/Controllers/Coupons.php(115): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Coupons->update()
+#2 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#3 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#4 /var/www/html/kimaara/index.php(46): CodeIgniter\CodeIgniter->run()
+#5 {main}

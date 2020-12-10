@@ -20,6 +20,7 @@
                     <thead>
                         <tr>
                             <td style="font-size: 1.2rem; font-weight: 500;">Title</td>
+                            <td style="font-size: 1.2rem; font-weight: 500;">SKU</td>
                             <td style="font-size: 1.2rem; font-weight: 500;">Category</td>
                             <td style="font-size: 1.2rem; font-weight: 500;">Description</td>
                             <td style="font-size: 1.2rem; font-weight: 500;">Actions</td>
@@ -29,17 +30,14 @@
                         <?php foreach($products as $product): ?>
                         <tr>
                             <td><?php echo $product['title']; ?></td>
+                            <td><?php echo $product['sku']; ?></td>
                             <td><?php  
                             
                             foreach($categories as $category){
-                                if ($category['id']==$product['category']) {
+                                if ($product['category']==$category['id']) {
                                     echo $category['title'];
-                                break;
-                                }else {
-                                    echo 'Independent';
                                 }
                             }
-                            
                             ?></td>
                             <td><?php echo $product['description']; ?></td>
                             <td>

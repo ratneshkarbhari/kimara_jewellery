@@ -91,12 +91,17 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link sidebar-link" href="<?php echo site_url('category-position-mgt'); ?>">
-                Category Position Mgt.
+                Category Pos. Mgt.
                 </a>
             </li>
             <li class="nav-item">
               <a href="<?php echo site_url('update-shipping-rates'); ?>" class="nav-link sidebar-link">
               Shipping Rates
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="<?php echo site_url('coupons-mgt'); ?>" class="nav-link sidebar-link">
+              Coupon Management
               </a>
             </li>
             <li class="nav-item">

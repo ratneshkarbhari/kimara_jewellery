@@ -7,6 +7,7 @@ use App\Models\CollectionModel;
 use App\Models\OrderModel;
 use App\Models\HomePageSlideModel;
 use App\Models\CategoryPositionModel;
+use App\Models\CouponModel;
 
 class AdminPageLoader extends BaseController
 {
@@ -22,6 +23,7 @@ class AdminPageLoader extends BaseController
         }
 
     }
+
     
 
     private function admin_page_loader($viewName,$data){
@@ -31,6 +33,33 @@ class AdminPageLoader extends BaseController
         echo view('templates/admin_footer',$data);
 
     }
+
+
+    public function add_coupon(){
+        $this->send_to_login();
+        $data['title']  = 'Add Coupon';
+        $data['success'] = $data['error'] = '';
+        $this->admin_page_loader('add_coupon_page',$data);               
+    }
+
+    public function edit_coupon($code){
+        $couponModel = new CouponModel();
+        $focus_coupon = $couponModel->where('code',$code)->first();
+        $data['focus_coupon'] = $focus_coupon;
+        $data['title'] = 'Editing '.$focus_coupon['title'];
+        $data['success'] = $data['error'] = '';
+        $this->admin_page_loader('edit_coupon',$data);        
+    }
+
+    public function coupons_mgt(){
+        $this->send_to_login();
+        $data['title']  = 'Coupons Management';
+        $data['success'] = $data['error'] = '';
+        $couponModel = new CouponModel();
+        $data['coupons'] = $couponModel->findAll();
+        $this->admin_page_loader('coupons_mgt',$data);       
+    }
+
 
 
     public function update_shipping_rates(){

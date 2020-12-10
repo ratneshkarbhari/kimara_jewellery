@@ -91,7 +91,15 @@ $routes->post('delete-from-wishlist','Wishlist::delete');
 $routes->post('add-email-subscriber','NewsLetter::nl_subscription_send_email');
 $routes->get('nl-sub-thank-you','PublicPageLoader::nl_sub_thank_you');
 
+// Coupons
+$routes->post('create-coupon-exe','Coupons::add');
+$routes->post('update-coupon','Coupons::update');
+$routes->post('delete-coupon','Coupons::delete');
+
 // Admin Dashboard
+$routes->get('edit-coupon/(:any)','AdminPageLoader::edit_coupon/$1');
+$routes->get('add-coupon','AdminPageLoader::add_coupon');
+$routes->get('coupons-mgt','AdminPageLoader::coupons_mgt');
 $routes->get('update-shipping-rates','AdminPageLoader::update_shipping_rates');
 $routes->get('admin-dashboard','AdminPageLoader::dashboard');
 $routes->get('manage-categories','AdminPageLoader::categories');

@@ -45,11 +45,11 @@
                             <li class="menu-item">
                                 <a href="<?php echo site_url('customer-login'); ?>">Login</a>
                             </li>
-                            <?php foreach($categories as $category): if($category['parent']==0): ?>
+                            <?php $count = 0; foreach($categories as $category): if($category['parent']==0): if ($count<6): ?>
                             <li class="menu-item">
                                 <a href="<?php echo site_url('category/'.$category['slug']); ?>"><?php echo $category['title']; ?></a>
                             </li>
-                            <?php endif; endforeach; ?>
+                            <?php endif; endif; $count++; endforeach; ?>
                         </ul>
                     </div>
                 </div>
