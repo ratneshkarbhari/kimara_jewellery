@@ -1,0 +1,40 @@
+CRITICAL - 2020-11-27 02:08:25 --> The original file is not a valid file.
+#0 /home2/kimaa3l6/public_html/ciFiles/vendor/codeigniter4/framework/system/HTTP/Files/UploadedFile.php(172): CodeIgniter\HTTP\Exceptions\HTTPException::forInvalidFile()
+#1 /home2/kimaa3l6/public_html/ciFiles/app/Controllers/Products.php(87): CodeIgniter\HTTP\Files\UploadedFile->move('assets/images/f...', '1606464505_0b88...')
+#2 /home2/kimaa3l6/public_html/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Products->add()
+#3 /home2/kimaa3l6/public_html/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+#4 /home2/kimaa3l6/public_html/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /home2/kimaa3l6/public_html/index.php(46): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-11-27 02:35:52 --> The original file is not a valid file.
+#0 /home2/kimaa3l6/public_html/ciFiles/vendor/codeigniter4/framework/system/HTTP/Files/UploadedFile.php(172): CodeIgniter\HTTP\Exceptions\HTTPException::forInvalidFile()
+#1 /home2/kimaa3l6/public_html/ciFiles/app/Controllers/Products.php(87): CodeIgniter\HTTP\Files\UploadedFile->move('assets/images/f...', '1606466152_02bf...')
+#2 /home2/kimaa3l6/public_html/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Products->add()
+#3 /home2/kimaa3l6/public_html/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+#4 /home2/kimaa3l6/public_html/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /home2/kimaa3l6/public_html/index.php(46): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-11-27 03:28:42 --> The original file is not a valid file.
+#0 /home2/kimaa3l6/public_html/ciFiles/vendor/codeigniter4/framework/system/HTTP/Files/UploadedFile.php(172): CodeIgniter\HTTP\Exceptions\HTTPException::forInvalidFile()
+#1 /home2/kimaa3l6/public_html/ciFiles/app/Controllers/Products.php(87): CodeIgniter\HTTP\Files\UploadedFile->move('assets/images/f...', '1606469322_a6be...')
+#2 /home2/kimaa3l6/public_html/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Products->add()
+#3 /home2/kimaa3l6/public_html/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+#4 /home2/kimaa3l6/public_html/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /home2/kimaa3l6/public_html/index.php(46): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-11-27 03:36:21 --> The original file is not a valid file.
+#0 /home2/kimaa3l6/public_html/ciFiles/vendor/codeigniter4/framework/system/HTTP/Files/UploadedFile.php(172): CodeIgniter\HTTP\Exceptions\HTTPException::forInvalidFile()
+#1 /home2/kimaa3l6/public_html/ciFiles/app/Controllers/Products.php(87): CodeIgniter\HTTP\Files\UploadedFile->move('assets/images/f...', '1606469781_0aca...')
+#2 /home2/kimaa3l6/public_html/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Products->add()
+#3 /home2/kimaa3l6/public_html/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+#4 /home2/kimaa3l6/public_html/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /home2/kimaa3l6/public_html/index.php(46): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-11-27 04:17:44 --> The original file is not a valid file.
+#0 /home2/kimaa3l6/public_html/ciFiles/vendor/codeigniter4/framework/system/HTTP/Files/UploadedFile.php(172): CodeIgniter\HTTP\Exceptions\HTTPException::forInvalidFile()
+#1 /home2/kimaa3l6/public_html/ciFiles/app/Controllers/Products.php(101): CodeIgniter\HTTP\Files\UploadedFile->move('assets/images/g...', '1606472264_0755...')
+#2 /home2/kimaa3l6/public_html/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Products->add()
+#3 /home2/kimaa3l6/public_html/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+#4 /home2/kimaa3l6/public_html/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /home2/kimaa3l6/public_html/index.php(46): CodeIgniter\CodeIgniter->run()
+#6 {main}

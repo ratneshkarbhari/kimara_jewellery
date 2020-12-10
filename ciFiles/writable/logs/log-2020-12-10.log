@@ -149,3 +149,42 @@ CRITICAL - 2020-12-10 06:13:26 --> Undefined index: code
 #3 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
 #4 /var/www/html/kimaara/index.php(46): CodeIgniter\CodeIgniter->run()
 #5 {main}
+CRITICAL - 2020-12-10 07:09:25 --> The original file is not a valid file.
+#0 /home2/kimaa3l6/public_html/ciFiles/vendor/codeigniter4/framework/system/HTTP/Files/UploadedFile.php(172): CodeIgniter\HTTP\Exceptions\HTTPException::forInvalidFile()
+#1 /home2/kimaa3l6/public_html/ciFiles/app/Controllers/Products.php(101): CodeIgniter\HTTP\Files\UploadedFile->move('assets/images/g...', '1607605765_3df0...')
+#2 /home2/kimaa3l6/public_html/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Products->add()
+#3 /home2/kimaa3l6/public_html/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+#4 /home2/kimaa3l6/public_html/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /home2/kimaa3l6/public_html/index.php(46): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-12-10 07:19:44 --> The api key provided by you has expired and cannot be used. Please use correct key and secret.
+#0 /home2/kimaa3l6/public_html/vendor/razorpay/razorpay/src/Request.php(109): Razorpay\Api\Request->processError(Array, 401, Object(Requests_Response))
+#1 /home2/kimaa3l6/public_html/vendor/razorpay/razorpay/src/Request.php(58): Razorpay\Api\Request->checkErrors(Object(Requests_Response))
+#2 /home2/kimaa3l6/public_html/vendor/razorpay/razorpay/src/Entity.php(86): Razorpay\Api\Request->request('POST', 'https://api.raz...', Array)
+#3 /home2/kimaa3l6/public_html/vendor/razorpay/razorpay/src/Entity.php(15): Razorpay\Api\Entity->request('POST', 'orders/', Array)
+#4 /home2/kimaa3l6/public_html/vendor/razorpay/razorpay/src/Order.php(12): Razorpay\Api\Entity->create(Array)
+#5 /home2/kimaa3l6/public_html/ciFiles/app/Controllers/PublicPageLoader.php(290): Razorpay\Api\Order->create(Array)
+#6 /home2/kimaa3l6/public_html/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\PublicPageLoader->cart()
+#7 /home2/kimaa3l6/public_html/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PublicPageLoader))
+#8 /home2/kimaa3l6/public_html/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /home2/kimaa3l6/public_html/index.php(46): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2020-12-10 07:20:54 --> Undefined index: code
+#0 /home2/kimaa3l6/public_html/ciFiles/app/Controllers/PublicPageLoader.php(286): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', '/home2/kimaa3l6...', 286, Array)
+#1 /home2/kimaa3l6/public_html/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\PublicPageLoader->cart()
+#2 /home2/kimaa3l6/public_html/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PublicPageLoader))
+#3 /home2/kimaa3l6/public_html/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /home2/kimaa3l6/public_html/index.php(46): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-12-10 07:21:22 --> The api key provided by you has expired and cannot be used. Please use correct key and secret.
+#0 /home2/kimaa3l6/public_html/vendor/razorpay/razorpay/src/Request.php(109): Razorpay\Api\Request->processError(Array, 401, Object(Requests_Response))
+#1 /home2/kimaa3l6/public_html/vendor/razorpay/razorpay/src/Request.php(58): Razorpay\Api\Request->checkErrors(Object(Requests_Response))
+#2 /home2/kimaa3l6/public_html/vendor/razorpay/razorpay/src/Entity.php(86): Razorpay\Api\Request->request('POST', 'https://api.raz...', Array)
+#3 /home2/kimaa3l6/public_html/vendor/razorpay/razorpay/src/Entity.php(15): Razorpay\Api\Entity->request('POST', 'orders/', Array)
+#4 /home2/kimaa3l6/public_html/vendor/razorpay/razorpay/src/Order.php(12): Razorpay\Api\Entity->create(Array)
+#5 /home2/kimaa3l6/public_html/ciFiles/app/Controllers/PublicPageLoader.php(290): Razorpay\Api\Order->create(Array)
+#6 /home2/kimaa3l6/public_html/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\PublicPageLoader->cart()
+#7 /home2/kimaa3l6/public_html/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PublicPageLoader))
+#8 /home2/kimaa3l6/public_html/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /home2/kimaa3l6/public_html/index.php(46): CodeIgniter\CodeIgniter->run()
+#10 {main}

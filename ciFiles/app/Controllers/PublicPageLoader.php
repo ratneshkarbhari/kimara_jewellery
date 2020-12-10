@@ -260,7 +260,7 @@ class PublicPageLoader extends BaseController
 		if($role=='customer'&&!empty($cart_items)){
 			if(!empty($cart_items)){
 				$api = new Api('rzp_live_u5KGjme6VZlvYo', 'dR3h6yH6SmxQWQkJgDlc7M23');
-				// $api = new Api('rzp_test_f9AFe5VqZFjZN0', 'tfe4A9CY6Ax7aCYO5uRMyjRM');
+				// $api = new Api('rzp_test_mlYXTmYaM1BGAt', 'EyHBhRQFsgaxhaKvlWPan9ds');
 	
 				$totalPayable = 0.00;
 	
@@ -272,6 +272,12 @@ class PublicPageLoader extends BaseController
 						}
 					}
 				}
+				
+								if (isset($_COOKIE['coupon'])) {
+					$couponDetails = $couponModel->where('code',$_COOKIE['coupon'])->first();
+					$totalPayable = $totalPayable - ($totalPayable*($couponDetails['percentage_discount']/100));
+				}
+
 
 		
 				if($totalPayable<$shipping_rates['free_shipping_threshold']){
@@ -282,10 +288,6 @@ class PublicPageLoader extends BaseController
 
 				$payableWithShipping = $totalPayable+$shipping;
 
-				if (isset($_COOKIE['coupon'])) {
-					$couponDetails = $couponModel->where('code',$_COOKIE['code'])->first();
-					$payableWithShipping = $payableWithShipping - ($payableWithShipping*($couponDetails['percentage_discount']/100));
-				}
 
 				$order  = $api->order->create(array('receipt' => rand(10000,9999), 'amount' => (($payableWithShipping)*100), 'currency' => 'INR')); // Creates order
 			}
