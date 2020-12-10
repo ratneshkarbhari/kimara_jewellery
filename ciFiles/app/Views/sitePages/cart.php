@@ -92,7 +92,7 @@
                     } ?>" id="couponCodeField">
                     <br>
                     <?php if(isset($_COOKIE['coupon'])): $subtotal = $subtotal-($subtotal*($percentage_discount/100)) ?>
-                    <button type="button" class="btn btn-danger" id="removeCoupon">Remove</button>
+                    <button type="button" class="btn btn-danger btn-block" id="removeCoupon">Remove</button>
                     <script>
                     $("button#removeCoupon").click(function (e) { 
                         e.preventDefault();

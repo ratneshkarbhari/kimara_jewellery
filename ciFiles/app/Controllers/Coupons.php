@@ -82,7 +82,7 @@ class Coupons extends BaseController
     public function set_coupon_cookie(){
         $code = $this->request->getPost('code');
         $couponModel = new CouponModel();
-        $couponData = $couponModel->where('code',$code)->first();
+        $couponData = $couponModel->where('code',$code)->where('status','active')->first();
         if ($couponData) {
             setcookie('coupon',$couponData['code'],time()+90000000000);
         }
