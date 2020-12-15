@@ -1,4 +1,3 @@
-<?php print_r($_SESSION); ?>
 <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4 page-content">
 
     <div class="container">
@@ -47,7 +46,7 @@
 
         <?php elseif($_SESSION['approved']=='no'): ?>
 
-            <h4>Your Account is not yet approved please check.</h4>
+            <h4>Your Account is not yet approved, wait for the approval process it will be completed shortly.</h4>
 
 
             
