@@ -196,7 +196,7 @@
 
                     <div class="text-center" style="margin-top: 15%;">
                     
-                        <p>Already have an Account? <a style="color: red;" href="<?php echo site_url('customer-login'); ?>">Login Here</a></p>
+                        <p>Already have an Account? <a style="color: red;" href="<?php echo site_url('vendor-login'); ?>">Login Here</a></p>
                     
                     </div>
                 
