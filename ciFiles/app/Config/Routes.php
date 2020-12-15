@@ -76,7 +76,7 @@ $routes->post('update-order','Orders::update');
 
 
 // Vendor Dashboard Endpoints
-$routes->post('vendor-dashboard','VendorPageLoader::dashboard');
+$routes->get('vendor-dashboard','VendorPageLoader::dashboard');
 
 // Auth Endpoints
 $routes->post('vendor-login-exe','Authentication::vendor_login_exe');
