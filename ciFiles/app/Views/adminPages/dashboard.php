@@ -10,7 +10,7 @@
 
             <h4>Your Account is not yet approved please check.</h4>
 
-        <?php else: ?>
+        <?php elseif($_SESSION['approved']==''): ?>
 
             <div class="row text-center" style="margin: 3% 0;">
         
