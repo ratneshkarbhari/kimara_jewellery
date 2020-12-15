@@ -227,7 +227,7 @@ class Authentication extends BaseController
             'email' => $email,
             'password' => password_hash($passwordSet,PASSWORD_DEFAULT),
             'mobile_number' => '',
-            'role' => 'customer',
+            'role' => 'vendor',
             'adhaar' => '',
             'pan' => '',
             'approved' => 'no'

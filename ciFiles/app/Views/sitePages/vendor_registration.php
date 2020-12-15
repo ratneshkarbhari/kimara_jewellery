@@ -6,8 +6,6 @@
         
             <div class="col-lg-3 col-md-12 col-sm-12"></div>
             <div class="col-lg-6 col-md-12 col-sm-12">
-
-                <?php print_r($_SESSION); ?>
             
                 <h2 class="text-center"><?php echo $title; ?></h2>
 
