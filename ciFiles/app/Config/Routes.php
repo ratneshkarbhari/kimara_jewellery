@@ -74,7 +74,12 @@ $routes->post('create-cod-order','Orders::create_cod_order');
 $routes->post('create-order','Orders::create');
 $routes->post('update-order','Orders::update');
 
+
+// Vendor Dashboard Endpoints
+$routes->post('vendor-dashboard','VendorPageLoader::dashboard');
+
 // Auth Endpoints
+$routes->post('vendor-login-exe','Authentication::vendor_login_exe');
 $routes->post('create-vendor-account-exe','Authentication::create_vendor_account');
 $routes->post('customer-login-api','Authentication::customer_login_api');
 $routes->post('user-login-exe','Authentication::login');

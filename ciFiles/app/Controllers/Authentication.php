@@ -215,6 +215,65 @@ class Authentication extends BaseController
 
     }
 
+    public function vendor_login_exe(){
+        $session = session();
+
+
+        $enteredEmail = $this->request->getPost('vendor-email');
+
+        $enteredPassword = $this->request->getPost('vendor-password');
+
+    
+        if(filter_var($enteredEmail, FILTER_VALIDATE_EMAIL)){
+
+            $authModel = new AuthModel();
+
+            $userData = $authModel->where('email',$enteredEmail)->where('role','vendor')->first();
+
+
+            
+            if ($userData) {
+                
+                $passwordCorrect = password_verify($enteredPassword,$userData['password']);
+
+                if ($passwordCorrect) {
+                    
+                    $newdata = [
+                        'id' => $userData['id'],
+                        'first_name'  => $userData['first_name'],
+                        'last_name'  => $userData['last_name'],
+                        'email'     => $userData['email'],
+                        'role' => $userData['role'],
+                        'approved' => $userData['approved']
+                    ];
+                
+                    $session->set($newdata);                
+                    
+                    return redirect()->to(site_url('vendor-dashboard')); 
+
+                } else {
+
+
+                    $this->load_vendor_login_error('The Password entered is incorrect');                    
+
+                }
+                
+            } else {
+
+                $this->load_vendor_login_error('A customer with ths email is not found');
+                
+
+            }
+            
+
+        }else {
+
+
+            $this->load_customer_login_error('Entered email invalid');
+
+        }
+    }
+
     public function create_vendor_account(){
         $first_name = $this->request->getPost('fname');
         $last_name = $this->request->getPost('lname');
@@ -542,6 +601,22 @@ class Authentication extends BaseController
 
         echo view('templates/header',$data);
         echo view('sitePages/customer_login',$data);
+        echo view('templates/footer',$data);
+    }
+    private function load_vendor_login_error($errorMessage){
+        $data['title'] = 'Vendor Login';
+        $data['error'] = $errorMessage;
+        $categoryModel = new CategoryModel();
+        $data['categories'] = $categoryModel->findAll();
+
+        $cartModel = new CartModel();
+
+        $cart_items = $cartModel->fetch_all_cart_items();		
+        $data['cart_item_count'] = count($cart_items);
+
+
+        echo view('templates/header',$data);
+        echo view('sitePages/vendor_login',$data);
         echo view('templates/footer',$data);
     }
 

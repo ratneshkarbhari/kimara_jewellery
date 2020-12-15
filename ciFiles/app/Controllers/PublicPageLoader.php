@@ -396,6 +396,23 @@ class PublicPageLoader extends BaseController
 
 	}
 
+	public function vendor_login(){
+
+		$session = session();
+
+		$role = $session->get('role');
+
+		if($role=='vendor'){
+			return redirect()->to(site_url('vendor-dashboard')); 
+		}
+		
+		$data['title'] = 'vendor Login';
+		$data['error'] = '';
+
+		$this->public_page_loader('vendor_login',$data);
+
+	}
+
 	public function not_found()
 	{
 		
