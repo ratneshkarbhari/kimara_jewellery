@@ -6,7 +6,7 @@
 
     <h3 class="page-title"><?php echo $title; ?></h3>
 
-    
+<?php print_r($_SESSION); ?>    
 
     <div class="row text-center" style="margin: 3% 0;">
     
