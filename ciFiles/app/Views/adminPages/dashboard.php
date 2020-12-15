@@ -6,11 +6,7 @@
 
     <h3 class="page-title"><?php echo $title; ?></h3>
     
-        <?php if($_SESSION['approved']!='yes'): ?>
-
-            <h4>Your Account is not yet approved please check.</h4>
-
-        <?php elseif($_SESSION['approved']==''): ?>
+        <?php if($_SESSION['approved']=='yes'): ?>
 
             <div class="row text-center" style="margin: 3% 0;">
         
@@ -48,6 +44,13 @@
                 </div>
             
             </div>
+
+        <?php elseif($_SESSION['approved']==''): ?>
+
+            <h4>Your Account is not yet approved please check.</h4>
+
+
+            
 
 
         <?php endif; ?>
