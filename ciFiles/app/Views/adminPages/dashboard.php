@@ -1,4 +1,4 @@
-
+<?php print_r($_SESSION); ?>
 <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4 page-content">
 
     <div class="container">
