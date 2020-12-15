@@ -69,12 +69,12 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link sidebar-link" href="<?php echo site_url('manage-products'); ?>">
+                <a class="nav-link sidebar-link" href="<?php echo site_url('manage-productsx'); ?>">
                 Products 
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link sidebar-link" href="<?php echo site_url('sales'); ?>">
+                <a class="nav-link sidebar-link" href="<?php echo site_url('salesx'); ?>">
                 Sales 
                 </a>
             </li>
