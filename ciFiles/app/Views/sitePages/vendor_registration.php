@@ -171,7 +171,7 @@
                                         },
                                         success: function (response) {
                                             if (response=='account-created') {
-                                                location.reload();
+                                                window.location.replace("<?php echo site_url('vendor-dashboard'); ?>");
                                             }else{
                                                 $("p#registration-error").html('Account cant be created');
                                             }

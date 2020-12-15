@@ -96,7 +96,7 @@ class PublicPageLoader extends BaseController
 		$role = $session->get('role');
 
 		if($role=='vendor'){
-			return redirect()->to(site_url('vendor-registration')); 
+			return redirect()->to(site_url('vendor-dashboard')); 
 		}
 			
 
