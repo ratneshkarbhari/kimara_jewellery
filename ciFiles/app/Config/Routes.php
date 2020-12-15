@@ -55,6 +55,8 @@ $routes->get('thank-you','PublicPageLoader::thank_you');
 $routes->get('order-details/(:any)','PublicPageLoader::order_details/$1');
 $routes->post('universal-product-search','PublicPageLoader::universal_product_search');
 $routes->get('customer-registration','PublicPageLoader::customer_registration');
+$routes->get('vendor-registration','PublicPageLoader::vendor_registration');
+$routes->get('vendor-login','PublicPageLoader::vendor_login');
 
 // Customer Profile my account page section
 $routes->post('update-customer-profile','Authentication::update_customer_profile');
@@ -73,6 +75,7 @@ $routes->post('create-order','Orders::create');
 $routes->post('update-order','Orders::update');
 
 // Auth Endpoints
+$routes->post('create-vendor-account-exe','Authentication::create_vendor_account');
 $routes->post('customer-login-api','Authentication::customer_login_api');
 $routes->post('user-login-exe','Authentication::login');
 $routes->post('customer-login-exe','Authentication::customer_login');

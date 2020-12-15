@@ -89,6 +89,26 @@ class PublicPageLoader extends BaseController
 		$this->public_page_loader('tnc',$data);
 	}
 
+	public function vendor_registration(){
+	
+		$session = session();
+
+		$role = $session->get('role');
+
+		if($role=='vendor'){
+			return redirect()->to(site_url('vendor-registration')); 
+		}
+			
+
+		$data['title'] = 'Vendor Registration';
+		$data['error'] = '';
+
+
+		$this->public_page_loader('vendor_registration',$data);
+
+			
+	}
+
 	public function customer_registration(){
 
 

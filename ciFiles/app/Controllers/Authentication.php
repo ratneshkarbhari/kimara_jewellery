@@ -192,7 +192,10 @@ class Authentication extends BaseController
             'email' => $email,
             'password' => password_hash($passwordSet,PASSWORD_DEFAULT),
             'mobile_number' => '',
-            'role' => 'customer'
+            'role' => 'customer',
+            'adhaar' => '',
+            'pan' => '',
+            'approved' => 'no'
         );
 
         $authModel = new AuthModel();
@@ -207,6 +210,41 @@ class Authentication extends BaseController
 
             $session = session();
             $session->set($customerDataNew);
+            return 'account-created';
+        }
+
+    }
+
+    public function create_vendor_account(){
+        $first_name = $this->request->getPost('fname');
+        $last_name = $this->request->getPost('lname');
+        $email = $_COOKIE['email_verified'];
+        $passwordSet = $this->request->getPost('password');
+
+        $customerData = array(
+            'first_name' => $first_name,
+            'last_name' => $last_name,
+            'email' => $email,
+            'password' => password_hash($passwordSet,PASSWORD_DEFAULT),
+            'mobile_number' => '',
+            'role' => 'customer',
+            'adhaar' => '',
+            'pan' => '',
+            'approved' => 'no'
+        );
+
+        $authModel = new AuthModel();
+
+        $accountCreated = $authModel->insert($customerData);
+
+        if($accountCreated){
+
+            $vendorDataNew = $authModel->where('email',$email)->where('role','vendor')->first();
+
+            $vendorDataNew['password'] = '';
+
+            $session = session();
+            $session->set($vendorDataNew);
             return 'account-created';
         }
 
