@@ -105,6 +105,11 @@
               </a>
             </li>
             <li class="nav-item">
+              <a href="<?php echo site_url('vendors-mgt'); ?>" class="nav-link sidebar-link">
+              Vendor Mgt.
+              </a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link sidebar-link" href="<?php echo site_url('flush-cache'); ?>">
                 Flush Cache
                 </a>

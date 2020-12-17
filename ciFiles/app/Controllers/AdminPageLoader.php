@@ -24,14 +24,19 @@ class AdminPageLoader extends BaseController
 
     }
 
-    
-
     private function admin_page_loader($viewName,$data){
 
         echo view('templates/admin_header',$data);
         echo view('adminPages/'.$viewName,$data);
         echo view('templates/admin_footer',$data);
 
+    }
+
+
+    public function vendor_mgt(){
+        $this->send_to_login();
+        $data['title'] = 'Vendor Mgt';
+        $this->admin_page_loader('vendor_mgt',$data);
     }
 
 

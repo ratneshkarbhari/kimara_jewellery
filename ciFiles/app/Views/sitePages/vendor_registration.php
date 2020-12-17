@@ -172,6 +172,8 @@
                                         success: function (response) {
                                             if (response=='account-created') {
                                                 window.location.replace("<?php echo site_url('vendor-dashboard'); ?>");
+                                            }else if(response=='account-exists-for-email'){
+                                                $("p#registration-error").html('Vendor Account already exists for this email');
                                             }else{
                                                 $("p#registration-error").html('Account cant be created');
                                             }

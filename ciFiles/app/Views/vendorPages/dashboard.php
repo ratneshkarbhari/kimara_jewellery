@@ -52,8 +52,20 @@
             
 
 
+        <?php elseif($_SESSION['approved']=='not-submitted'): ?>
+            <form action="<?php echo site_url("submit-vendor-for-approval"); ?>" enctype="multipart/form-data" method="post">
+                <input type="hidden" name="vendor_user_id" value="<?php echo $_SESSION['id']; ?>">
+                <div class="form-group">
+                    <label for="adhaar_image">Adhaar Card Image</label>
+                    <input type="file" name="adhaar_image" accept="image/*" id="adhaar_image">
+                </div>
+                <div class="form-group">
+                    <label for="pan_image">Pan Card Image</label>
+                    <input accept="image/*" type="file" name="pan_image" id="pan_image">
+                </div>
+                <button type="submit" class="btn btn-success">Submit</button>
+            </form>
         <?php endif; ?>
-    
     </div>
 
 </main>

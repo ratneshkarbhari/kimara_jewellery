@@ -12,6 +12,7 @@ use PHPMailer\PHPMailer\SMTP;
 
 use App\Models\AuthModel;
 use App\Models\CategoryModel;
+use App\Models\VendorApprovalModel;
 use App\Models\CartModel;
 use App\Models\OrderModel;
 use App\Models\OtpModel;
@@ -289,22 +290,81 @@ class Authentication extends BaseController
             'role' => 'vendor',
             'adhaar' => '',
             'pan' => '',
-            'approved' => 'no'
+            'approved' => 'not-submitted'
         );
 
         $authModel = new AuthModel();
 
-        $accountCreated = $authModel->insert($customerData);
+        $vendor_exists = $authModel->where('role','vendor')->where('email',$email)->first();
 
-        if($accountCreated){
+        if ($vendor_exists) {
 
-            $vendorDataNew = $authModel->where('email',$email)->where('role','vendor')->first();
+            return 'account-exists-for-email';
+            
+        } else {
+            
+            $accountCreated = $authModel->insert($customerData);
 
-            $vendorDataNew['password'] = '';
+            if($accountCreated){
 
-            $session = session();
-            $session->set($vendorDataNew);
-            return 'account-created';
+                $vendorDataNew = $authModel->where('email',$email)->where('role','vendor')->first();
+
+                $vendorDataNew['password'] = '';
+
+                $session = session();
+                $session->set($vendorDataNew);
+                return 'account-created';
+            }
+            
+        }
+    }
+
+    public function submit_vendor_for_approval(){
+
+        $adhaarImage = $this->request->getFile('adhaar_image');
+
+
+        if (! $adhaarImage->hasMoved()) {
+
+            $adhaarImageRandomName = $adhaarImage->getRandomName();
+
+            $adhaarImage->move('assets/vendor_docs', $adhaarImageRandomName);
+
+        }
+
+        $panImage = $this->request->getFile('pan_image');
+
+        if (! $panImage->hasMoved()) {
+
+            $panImageRandomName = $panImage->getRandomName();
+
+            $panImage->move('assets/vendor_docs', $panImageRandomName);
+
+        }
+
+        $user_id = $this->request->getPost('vendor_user_id');
+        $vendorData = $authModel->find($user_id);
+        $vendorDataJson = json_encode($vendorData);
+
+        $dataToInsert = array(
+            'vendor_data' => $vendorDataJson,
+            'adhaar_image' => $adhaarImageRandomName,
+            'pan_image' => $panImageRandomName
+        );
+
+        $vendorApprovalModel = new VendorApprovalModel();
+        $authModel = new AuthModel();
+
+        $created = $vendorApprovalModel->insert($dataToInsert);
+
+        if ($created) {
+
+            $updated = $authModel->whereIn('id', $vendorData['id'])->set(['approved' => 'no'])->update();
+            
+            if ($updated) {
+                return redirect()->to(site_url('vendor-dashboard')); 
+            }
+
         }
 
     }

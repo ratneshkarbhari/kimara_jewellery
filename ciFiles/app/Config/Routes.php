@@ -79,6 +79,7 @@ $routes->post('update-order','Orders::update');
 $routes->get('vendor-dashboard','VendorPageLoader::dashboard');
 
 // Auth Endpoints
+$routes->post('submit-vendor-for-approval','Authentication::submit_vendor_for_approval');
 $routes->post('vendor-login-exe','Authentication::vendor_login_exe');
 $routes->post('create-vendor-account-exe','Authentication::create_vendor_account');
 $routes->post('customer-login-api','Authentication::customer_login_api');
@@ -107,6 +108,7 @@ $routes->post('set-coupon-cookie','Coupons::set_coupon_cookie');
 $routes->post('unset-coupon-cookie','Coupons::unset_coupon_cookie');
 
 // Admin Dashboard
+$routes->get('vendors-mgt','AdminPageLoader::vendor_mgt');
 $routes->get('edit-coupon/(:any)','AdminPageLoader::edit_coupon/$1');
 $routes->get('add-coupon','AdminPageLoader::add_coupon');
 $routes->get('coupons-mgt','AdminPageLoader::coupons_mgt');
