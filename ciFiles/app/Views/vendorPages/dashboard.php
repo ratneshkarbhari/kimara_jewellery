@@ -53,7 +53,7 @@
 
 
         <?php elseif($_SESSION['approved']=='not-submitted'): ?>
-            <h4>Submit Documents for Approval</h4>
+            <h4 style="margin: 3% 0;">Submit Documents for Approval</h4>
             <form action="<?php echo site_url("submit-vendor-for-approval"); ?>" enctype="multipart/form-data" method="post">
                 <input type="hidden" name="vendor_user_id" value="<?php echo $_SESSION['id']; ?>">
                 <div class="form-group">
