@@ -342,6 +342,9 @@ class Authentication extends BaseController
 
         }
 
+        $authModel = new AuthModel();
+
+
         $user_id = $this->request->getPost('vendor_user_id');
         $vendorData = $authModel->find($user_id);
         $vendorDataJson = json_encode($vendorData);
@@ -353,7 +356,6 @@ class Authentication extends BaseController
         );
 
         $vendorApprovalModel = new VendorApprovalModel();
-        $authModel = new AuthModel();
 
         $created = $vendorApprovalModel->insert($dataToInsert);
 
