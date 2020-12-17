@@ -361,7 +361,7 @@ class Authentication extends BaseController
 
         if ($created) {
 
-            $updated = $authModel->whereIn('id', $vendorData['id'])->set(['approved' => 'no'])->update();
+            $updated = $authModel->where('id', $vendorData['id'])->set(['approved' => 'no'])->update();
             
             if ($updated) {
                 return redirect()->to(site_url('vendor-dashboard')); 
