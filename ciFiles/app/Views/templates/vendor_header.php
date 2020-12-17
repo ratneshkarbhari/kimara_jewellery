@@ -63,6 +63,7 @@
                 Dashboard 
                 </a>
             </li>
+            <?php if($_SESSION['approved']=='yes'): ?>
             <li class="nav-item">
                 <a class="nav-link sidebar-link" href="<?php echo site_url('manage-account'); ?>">
                 Account 
@@ -82,7 +83,8 @@
                 <a class="nav-link sidebar-link" href="<?php echo site_url('alloted-coupons'); ?>">
                 Your Coupons 
                 </a>
-            </li>
+            </li>            
+            <?php endif; ?>
         </ul>
 
         <!-- <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
