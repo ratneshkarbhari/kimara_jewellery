@@ -1,0 +1,22 @@
+CRITICAL - 2020-12-13 07:38:50 --> Undefined index: location
+#0 /home2/kimaa3l6/public_html/ciFiles/app/Views/sitePages/cart.php(140): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', '/home2/kimaa3l6...', 140, Array)
+#1 /home2/kimaa3l6/public_html/ciFiles/vendor/codeigniter4/framework/system/View/View.php(246): include('/home2/kimaa3l6...')
+#2 /home2/kimaa3l6/public_html/ciFiles/vendor/codeigniter4/framework/system/Common.php(1119): CodeIgniter\View\View->render('sitePages/cart', Array, true)
+#3 /home2/kimaa3l6/public_html/ciFiles/app/Controllers/PublicPageLoader.php(58): view('sitePages/cart', Array)
+#4 /home2/kimaa3l6/public_html/ciFiles/app/Controllers/PublicPageLoader.php(306): App\Controllers\PublicPageLoader->public_page_loader('cart', Array)
+#5 /home2/kimaa3l6/public_html/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\PublicPageLoader->cart()
+#6 /home2/kimaa3l6/public_html/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PublicPageLoader))
+#7 /home2/kimaa3l6/public_html/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /home2/kimaa3l6/public_html/index.php(46): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2020-12-13 11:31:37 --> unlink(/home2/kimaa3l6/public_html/ciFiles/writable/cache/categories): No such file or directory
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'unlink(/home2/k...', '/home2/kimaa3l6...', 328, Array)
+#1 /home2/kimaa3l6/public_html/ciFiles/vendor/codeigniter4/framework/system/Cache/Handlers/FileHandler.php(328): unlink('/home2/kimaa3l6...')
+#2 /home2/kimaa3l6/public_html/ciFiles/vendor/codeigniter4/framework/system/Cache/Handlers/FileHandler.php(108): CodeIgniter\Cache\Handlers\FileHandler->getItem('categories')
+#3 /home2/kimaa3l6/public_html/ciFiles/app/Controllers/PublicPageLoader.php(30): CodeIgniter\Cache\Handlers\FileHandler->get('categories')
+#4 /home2/kimaa3l6/public_html/ciFiles/app/Controllers/PublicPageLoader.php(358): App\Controllers\PublicPageLoader->public_page_loader('home', Array)
+#5 /home2/kimaa3l6/public_html/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\PublicPageLoader->home()
+#6 /home2/kimaa3l6/public_html/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PublicPageLoader))
+#7 /home2/kimaa3l6/public_html/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /home2/kimaa3l6/public_html/index.php(46): CodeIgniter\CodeIgniter->run()
+#9 {main}

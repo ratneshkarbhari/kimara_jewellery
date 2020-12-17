@@ -13,6 +13,15 @@
 <script src="<?php echo site_url('assets/js/jquery.min.js'); ?>"></script>
 <script src="<?php echo site_url('assets/js/feather.min.js'); ?>"></script>
     <header id="desktop" class="sticky-top">
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5HJTYVW80C"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-5HJTYVW80C');
+</script>
         <div class="container">
             <div class="row">
                 <div class="col-lg-3">
