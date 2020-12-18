@@ -406,7 +406,7 @@ class PublicPageLoader extends BaseController
 			return redirect()->to(site_url('vendor-dashboard')); 
 		}
 		
-		$data['title'] = 'vendor Login';
+		$data['title'] = 'Vendor Login';
 		$data['error'] = '';
 
 		$this->public_page_loader('vendor_login',$data);

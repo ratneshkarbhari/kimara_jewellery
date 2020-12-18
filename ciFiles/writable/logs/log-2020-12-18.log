@@ -1,0 +1,22 @@
+CRITICAL - 2020-12-18 00:35:17 --> Undefined index: contact_number
+#0 C:\xampp\htdocs\kimaara\ciFiles\app\Views\adminPages\vendor_mgt.php(34): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 34, Array)
+#1 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\View\View.php(246): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\Common.php(1119): CodeIgniter\View\View->render('adminPages/vend...', Array, true)
+#3 C:\xampp\htdocs\kimaara\ciFiles\app\Controllers\AdminPageLoader.php(27): view('adminPages/vend...', Array)
+#4 C:\xampp\htdocs\kimaara\ciFiles\app\Controllers\AdminPageLoader.php(46): App\Controllers\AdminPageLoader->admin_page_loader('vendor_mgt', Array)
+#5 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(918): App\Controllers\AdminPageLoader->vendor_mgt()
+#6 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminPageLoader))
+#7 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\kimaara\index.php(46): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2020-12-18 00:35:34 --> Undefined index: phone_number
+#0 C:\xampp\htdocs\kimaara\ciFiles\app\Views\adminPages\vendor_mgt.php(34): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 34, Array)
+#1 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\View\View.php(246): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\Common.php(1119): CodeIgniter\View\View->render('adminPages/vend...', Array, true)
+#3 C:\xampp\htdocs\kimaara\ciFiles\app\Controllers\AdminPageLoader.php(27): view('adminPages/vend...', Array)
+#4 C:\xampp\htdocs\kimaara\ciFiles\app\Controllers\AdminPageLoader.php(46): App\Controllers\AdminPageLoader->admin_page_loader('vendor_mgt', Array)
+#5 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(918): App\Controllers\AdminPageLoader->vendor_mgt()
+#6 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminPageLoader))
+#7 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\kimaara\index.php(46): CodeIgniter\CodeIgniter->run()
+#9 {main}
