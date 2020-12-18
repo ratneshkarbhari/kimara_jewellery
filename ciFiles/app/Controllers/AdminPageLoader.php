@@ -8,19 +8,16 @@ use App\Models\OrderModel;
 use App\Models\HomePageSlideModel;
 use App\Models\CategoryPositionModel;
 use App\Models\CouponModel;
+use App\Models\VendorApprovalModel;
+use Config\Services; 
+
 
 class AdminPageLoader extends BaseController
 {
 
     private function send_to_login(){
 
-        $session = session();
-
-		$role = $session->get('role');
-
-		if($role!='admin'){
-			return redirect()->to(site_url('admin-login')); 
-        }
+        
 
     }
 
@@ -34,14 +31,33 @@ class AdminPageLoader extends BaseController
 
 
     public function vendor_mgt(){
-        $this->send_to_login();
+        $session = session();
+
+        
+        $role = $session->get('role');
+        
+
+		if($role!='admin'){
+			return redirect()->to(site_url('admin-login')); 
+        }
+        $vendorModel = new VendorApprovalModel();
+        $data['vendor_requests'] = $vendorModel->findAll(); 
         $data['title'] = 'Vendor Mgt';
         $this->admin_page_loader('vendor_mgt',$data);
     }
 
+    
 
     public function add_coupon(){
-        $this->send_to_login();
+        $session = session();
+
+        
+        $role = $session->get('role');
+        
+
+		if($role!='admin'){
+			return redirect()->to(site_url('admin-login')); 
+        }
         $data['title']  = 'Add Coupon';
         $data['success'] = $data['error'] = '';
         $this->admin_page_loader('add_coupon_page',$data);               
@@ -57,7 +73,15 @@ class AdminPageLoader extends BaseController
     }
 
     public function coupons_mgt(){
-        $this->send_to_login();
+        $session = session();
+
+        
+        $role = $session->get('role');
+        
+
+		if($role!='admin'){
+			return redirect()->to(site_url('admin-login')); 
+        }
         $data['title']  = 'Coupons Management';
         $data['success'] = $data['error'] = '';
         $couponModel = new CouponModel();
@@ -69,7 +93,15 @@ class AdminPageLoader extends BaseController
 
     public function update_shipping_rates(){
 
-        $this->send_to_login();
+        $session = session();
+
+        
+        $role = $session->get('role');
+        
+
+		if($role!='admin'){
+			return redirect()->to(site_url('admin-login')); 
+        }
 
         $data['title'] = 'Update Shipping Rates';
         $shippingRateModel = new ShippingRateModel();
@@ -96,7 +128,15 @@ class AdminPageLoader extends BaseController
 
     public function add_collection(){
 
-        $this->send_to_login();        
+        $session = session();
+
+        
+        $role = $session->get('role');
+        
+
+		if($role!='admin'){
+			return redirect()->to(site_url('admin-login')); 
+        }        
 
         $data['title'] = 'Collections';
         $productModel = new ProductModel();
@@ -111,7 +151,15 @@ class AdminPageLoader extends BaseController
 
     public function all_collections(){
 
-        $this->send_to_login();        
+        $session = session();
+
+        
+        $role = $session->get('role');
+        
+
+		if($role!='admin'){
+			return redirect()->to(site_url('admin-login')); 
+        }        
     
         $data['title'] = 'Collections';
         $collectionModel = new CollectionModel();
@@ -125,7 +173,15 @@ class AdminPageLoader extends BaseController
     }
 
     public function homepage_slides(){
-        $this->send_to_login();        
+        $session = session();
+
+        
+        $role = $session->get('role');
+        
+
+		if($role!='admin'){
+			return redirect()->to(site_url('admin-login')); 
+        }        
     
         $data['title'] = 'HomePage Slides';
         $homePageSlideModel = new HomePageSlideModel();
@@ -139,7 +195,15 @@ class AdminPageLoader extends BaseController
 
     public function all_orders(){
 
-        $this->send_to_login();
+        $session = session();
+
+        
+        $role = $session->get('role');
+        
+
+		if($role!='admin'){
+			return redirect()->to(site_url('admin-login')); 
+        }
 
         $data['title'] = 'Orders';
         $orderModel = new OrderModel();
@@ -154,7 +218,15 @@ class AdminPageLoader extends BaseController
 	public function dashboard()
 	{
 
-        $this->send_to_login();
+        $session = session();
+
+        
+        $role = $session->get('role');
+        
+
+		if($role!='admin'){
+			return redirect()->to(site_url('admin-login')); 
+        }
         
         $data['title'] = 'Admin Dashboard';
         
@@ -165,7 +237,15 @@ class AdminPageLoader extends BaseController
     public function categories()
 	{
 
-        $this->send_to_login();
+        $session = session();
+
+        
+        $role = $session->get('role');
+        
+
+		if($role!='admin'){
+			return redirect()->to(site_url('admin-login')); 
+        }
         
         $data['title'] = 'Manage Categories';
 
@@ -182,7 +262,15 @@ class AdminPageLoader extends BaseController
     public function add_category()
 	{
 
-        $this->send_to_login();
+        $session = session();
+
+        
+        $role = $session->get('role');
+        
+
+		if($role!='admin'){
+			return redirect()->to(site_url('admin-login')); 
+        }
         
         $data['title'] = 'Add Category';
 
@@ -199,7 +287,15 @@ class AdminPageLoader extends BaseController
     public function edit_category($slug)
 	{
 
-        $this->send_to_login();
+        $session = session();
+
+        
+        $role = $session->get('role');
+        
+
+		if($role!='admin'){
+			return redirect()->to(site_url('admin-login')); 
+        }
 
         $data['title'] = 'Edit Category';
 
@@ -217,7 +313,15 @@ class AdminPageLoader extends BaseController
 
     public function products(){
  
-        $this->send_to_login();
+        $session = session();
+
+        
+        $role = $session->get('role');
+        
+
+		if($role!='admin'){
+			return redirect()->to(site_url('admin-login')); 
+        }
         
         $data['title'] = 'Manage Products';
 
@@ -234,7 +338,15 @@ class AdminPageLoader extends BaseController
     }
 
     public function add_product(){
-        $this->send_to_login();
+        $session = session();
+
+        
+        $role = $session->get('role');
+        
+
+		if($role!='admin'){
+			return redirect()->to(site_url('admin-login')); 
+        }
         
         $data['title'] = 'Add Product';
 
@@ -249,7 +361,15 @@ class AdminPageLoader extends BaseController
 
     public function edit_product($slug){
 
-        $this->send_to_login();
+        $session = session();
+
+        
+        $role = $session->get('role');
+        
+
+		if($role!='admin'){
+			return redirect()->to(site_url('admin-login')); 
+        }
 
         $data['title'] = 'Edit Product';
 

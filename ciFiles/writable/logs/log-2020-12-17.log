@@ -1,0 +1,38 @@
+CRITICAL - 2020-12-17 23:45:31 --> syntax error, unexpected 'var' (T_VAR)
+#0 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\Autoloader\Autoloader.php(296): CodeIgniter\Autoloader\Autoloader->requireFile('C:\\xampp\\htdocs...')
+#1 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\Autoloader\Autoloader.php(258): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers...')
+#2 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers...')
+#3 [internal function]: spl_autoload_call('App\\Controllers...')
+#4 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(869): class_exists('\\App\\Controller...', true)
+#5 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(394): CodeIgniter\CodeIgniter->startController()
+#6 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\kimaara\index.php(46): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-12-17 23:50:56 --> Function name must be a string
+#0 C:\xampp\htdocs\kimaara\ciFiles\app\Controllers\AdminPageLoader.php(164): App\Controllers\AdminPageLoader->send_to_login()
+#1 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(918): App\Controllers\AdminPageLoader->dashboard()
+#2 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminPageLoader))
+#3 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\kimaara\index.php(46): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-12-17 23:51:00 --> Function name must be a string
+#0 C:\xampp\htdocs\kimaara\ciFiles\app\Controllers\AdminPageLoader.php(164): App\Controllers\AdminPageLoader->send_to_login()
+#1 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(918): App\Controllers\AdminPageLoader->dashboard()
+#2 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminPageLoader))
+#3 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\kimaara\index.php(46): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-12-17 23:51:27 --> Function name must be a string
+#0 C:\xampp\htdocs\kimaara\ciFiles\app\Controllers\AdminPageLoader.php(164): App\Controllers\AdminPageLoader->send_to_login()
+#1 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(918): App\Controllers\AdminPageLoader->dashboard()
+#2 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminPageLoader))
+#3 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\kimaara\index.php(46): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-12-17 23:51:30 --> Function name must be a string
+#0 C:\xampp\htdocs\kimaara\ciFiles\app\Controllers\AdminPageLoader.php(164): App\Controllers\AdminPageLoader->send_to_login()
+#1 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(918): App\Controllers\AdminPageLoader->dashboard()
+#2 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminPageLoader))
+#3 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\kimaara\index.php(46): CodeIgniter\CodeIgniter->run()
+#5 {main}

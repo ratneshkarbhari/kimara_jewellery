@@ -27,14 +27,16 @@
                     </tr>
                 </thead>
                 <tbody>
+                    <?php foreach($vendor_requests as $v_req): $vendor_request_data = json_decode($v_req['vendor_data'],TRUE); ?>
                     <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td><?php echo $vendor_request_data['first_name'].' '.$vendor_request_data['last_name']; ?></td>
+                        <td><?php echo $vendor_request_data['email']; ?></td>
+                        <td><?php echo $vendor_request_data['contact_number']; ?></td>
                         <td></td>
                         <td></td>
                         <td></td>
                     </tr>
+                    <?php endforeach; ?>
                 </tbody>
             </table>
         </div>

@@ -347,6 +347,7 @@ class Authentication extends BaseController
 
         $user_id = $this->request->getPost('vendor_user_id');
         $vendorData = $authModel->find($user_id);
+        $vendorData['mobile_number'] = $this->request->getPost('contact_number');
         $vendorDataJson = json_encode($vendorData);
 
         $dataToInsert = array(
@@ -363,6 +364,10 @@ class Authentication extends BaseController
 
             $updated = $authModel->where('id', $vendorData['id'])->set(['approved' => 'no'])->update();
             
+            $session = session();
+
+            
+
             if ($updated) {
                 return redirect()->to(site_url('vendor-dashboard')); 
             }
@@ -530,7 +535,7 @@ class Authentication extends BaseController
     public function logout(){
         $session = session();   
         $session->destroy();
-        return redirect()->to(site_url('/')); 
+        return redirect()->to(site_url('')); 
     }
 
     public function update_customer_profile(){

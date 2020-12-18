@@ -57,6 +57,10 @@
             <form action="<?php echo site_url("submit-vendor-for-approval"); ?>" enctype="multipart/form-data" method="post">
                 <input type="hidden" name="vendor_user_id" value="<?php echo $_SESSION['id']; ?>">
                 <div class="form-group">
+                    <label for="contact_number">Contact Number</label>
+                    <input type="text" name="contact_number" class="form-control" style="border: 1px solid black;" id="contact_number">
+                </div>
+                <div class="form-group">
                     <label for="adhaar_image">Adhaar Card Image</label>
                     <input type="file" name="adhaar_image" accept="image/*" id="adhaar_image">
                 </div>
