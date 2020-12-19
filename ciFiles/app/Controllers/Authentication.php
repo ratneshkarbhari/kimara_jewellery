@@ -245,6 +245,7 @@ class Authentication extends BaseController
                         'last_name'  => $userData['last_name'],
                         'email'     => $userData['email'],
                         'role' => $userData['role'],
+                        'mobile_number' => $userData['mobile_number'],
                         'approved' => $userData['approved']
                     ];
                 
@@ -339,11 +340,41 @@ class Authentication extends BaseController
 
         $authModel = new AuthModel();
 
-        $authModel->where('id',$vendor_data['id'])->set(['approved' => 'yes'])->update();
+        $authModel->where('id',$vendor_data['id'])->set(['approved' => 'yes','adhaar'=>$vendor_request['adhaar_image'],'pan'=>$vendor_request['pan_image']])->update();
 
         $vendorApprovalModel->delete($vendor_request_id);
 
         return redirect()->to(site_url('vendors-mgt'));         
+
+    }
+
+    public function update_vendor_profile_by_admin(){
+
+        $session = session();
+
+        $role = $session->get('role');
+
+		if($role!='admin'){
+			return redirect()->to(site_url('admin-login')); 
+        }
+
+        $first_name = $this->request->getPost("first_name");
+        $last_name = $this->request->getPost("last_name");
+        $email = $this->request->getPost("email");
+        $mobile_number = $this->request->getPost("mobile_number");
+
+        $arrayData = array(
+            'first_name' => $first_name,
+            'last_name' => $last_name,
+            'email' => $email,
+            'mobile_number' => $mobile_number
+        );
+
+        $authModel = new AuthModel();
+
+        $updated = $authModel->update($this->request->getPost("vendor_id"),$arrayData);
+        
+        return redirect()->to(site_url('edit-vendor-details/'.$this->request->getPost("vendor_id"))); 
 
     }
 
@@ -420,13 +451,15 @@ class Authentication extends BaseController
         $first_name = $this->request->getPost("first_name");
         $last_name = $this->request->getPost("last_name");
         $email = $this->request->getPost("email");
+        $mobile_number = $this->request->getPost("mobile_number");
 
         if($vendor_id!=''&&$first_name!=''&&$last_name!=''&&$email!=''){
             $vendor_data = $authModel->find($vendor_id);
         
             $vendor_data['first_name'] = $first_name;
             $vendor_data['last_name'] = $last_name;
-            $vendor_data['email'] = $email;    
+            $vendor_data['email'] = $email;
+            $vendor_data['mobile_number'] = $mobile_number;    
         
             $updated = $authModel->update($vendor_data['id'],$vendor_data);
 

@@ -64,6 +64,10 @@
                 <label for="email">Email</label>
                 <input value="<?php echo $_SESSION["email"]; ?>" class="form-control" type="email" name="email" id="email">
             </div>
+            <div class="form-group">
+                <label for="mobile_number">Mobile Number</label>
+                <input value="<?php echo $_SESSION["mobile_number"]; ?>" class="form-control" type="text" name="mobile_number" id="mobile_number">
+            </div>
 
             <button type="submit" class="btn btn-success">Update Account</button>
         

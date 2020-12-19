@@ -49,6 +49,27 @@ class AdminPageLoader extends BaseController
         $this->admin_page_loader('vendor_mgt',$data);
     }
 
+    public function edit_vendor($id){
+        
+        $session = session();
+
+        
+        $role = $session->get('role');
+        
+
+		if($role!='admin'){
+			return redirect()->to(site_url('admin-login')); 
+        }
+
+        $authModel = new AuthModel();
+
+        $data['title'] = 'Edit Vendor';
+        $data["vendor_data"] = $vendorData = $authModel->find($id);
+        $data['success'] = $data['error'] = '';
+
+        $this->admin_page_loader("edit_vendor",$data);
+        
+    }
     
 
     public function add_coupon(){

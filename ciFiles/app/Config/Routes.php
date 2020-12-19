@@ -61,6 +61,9 @@ $routes->get('vendor-login','PublicPageLoader::vendor_login');
 // Customer Profile my account page section
 $routes->post('update-customer-profile','Authentication::update_customer_profile');
 
+// Vendor update
+$routes->post("update-vendor-data",'Authentication::update_vendor_profile_by_admin');
+
 // cart routes
 $routes->post('add-to-cart-exe','Cart::add');
 $routes->post('update-cart','Cart::update');
@@ -79,6 +82,7 @@ $routes->post('update-order','Orders::update');
 $routes->get('vendor-dashboard','VendorPageLoader::dashboard');
 $routes->get('manage-account-vendor','VendorPageLoader::manage_account');
 $routes->get('manage-store-vendor','VendorPageLoader::manage_store');
+$routes->get("manage-store-vendor",'VendorPageLoader::manage_store');
 
 // Vendor feature routes
 $routes->post('update-vendor-profile','Authentication::update_vendor_profile');
@@ -88,7 +92,7 @@ $routes->post("update-vendor-password","Authentication::update_vendor_pwd");
 $routes->post('approve-vendor-exe','Authentication::approve_vendor_exe');
 $routes->post('submit-vendor-for-approval','Authentication::submit_vendor_for_approval');
 $routes->post('vendor-login-exe','Authentication::vendor_login_exe');
-$routes->post('create-vendor-account-exe','Authentication::create_vendor_account');
+$routes->post('create-endor-account-exe','Authentication::create_vendor_account');
 $routes->post('customer-login-api','Authentication::customer_login_api');
 $routes->post('user-login-exe','Authentication::login');
 $routes->post('customer-login-exe','Authentication::customer_login');
@@ -115,6 +119,7 @@ $routes->post('set-coupon-cookie','Coupons::set_coupon_cookie');
 $routes->post('unset-coupon-cookie','Coupons::unset_coupon_cookie');
 
 // Admin Dashboard
+$routes->get("edit-vendor-details/(:any)",'AdminPageLoader::edit_vendor/$1');
 $routes->get('vendors-mgt','AdminPageLoader::vendor_mgt');
 $routes->get('edit-coupon/(:any)','AdminPageLoader::edit_coupon/$1');
 $routes->get('add-coupon','AdminPageLoader::add_coupon');

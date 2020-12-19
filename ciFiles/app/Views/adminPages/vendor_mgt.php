@@ -32,7 +32,8 @@
                         <td><?php echo $av['email']; ?></td>
                         <td><?php echo $av['mobile_number']; ?></td>
                         <td>
-                        
+                            <a href="<?php echo site_url('edit-vendor-details/'.$av['id']); ?>" class="btn btn-primary">Edit</a>
+                            
                         </td>
                     </tr>
                     <?php endforeach; ?>
