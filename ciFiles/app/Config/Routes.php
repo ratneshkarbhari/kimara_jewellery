@@ -78,9 +78,11 @@ $routes->post('update-order','Orders::update');
 // Vendor Dashboard Endpoints
 $routes->get('vendor-dashboard','VendorPageLoader::dashboard');
 $routes->get('manage-account-vendor','VendorPageLoader::manage_account');
+$routes->get('manage-store-vendor','VendorPageLoader::manage_store');
 
 // Vendor feature routes
 $routes->post('update-vendor-profile','Authentication::update_vendor_profile');
+$routes->post("update-vendor-password","Authentication::update_vendor_pwd");
 
 // Auth Endpoints
 $routes->post('approve-vendor-exe','Authentication::approve_vendor_exe');

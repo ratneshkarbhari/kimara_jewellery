@@ -347,6 +347,63 @@ class Authentication extends BaseController
 
     }
 
+    private function vendor_page_loader($viewName,$data){
+
+        echo view('templates/vendor_header',$data);
+        echo view('vendorPages/'.$viewName,$data);
+        echo view('templates/vendor_footer',$data);
+
+    }
+
+    public function update_vendor_pwd(){
+
+        $session = session();
+
+        $role = $session->role;
+
+        if($role!='vendor'){
+            return redirect()->to(site_url('vendor-login')); 
+        }
+
+        $authModel = new AuthModel();
+
+        $vendor_id = $this->request->getPost("vendor_id");
+
+        $vendorData = $authModel->find($vendor_id);
+
+        if (password_verify($this->request->getPost("current_pwd"),$vendorData["password"])) {
+            
+            if($this->request->getPost("new_pwd")==$this->request->getPost("repeat_new_pwd")){
+
+                $vendorData["password"] = password_hash($this->request->getPost("new_pwd"),PASSWORD_DEFAULT);
+
+                $updated = $authModel->update($vendorData["id"],$vendorData);
+
+                if ($updated) {
+
+                    $data['title'] = 'Manage Account';
+                    $data['error'] = ""; $data['success'] = 'Password updated successfully';
+                    
+                    $this->vendor_page_loader('manage_account',$data);
+                    
+                }
+
+            }else {
+                $data['title'] = 'Manage Account';
+                $data['success'] = ""; $data['error'] = 'New Password repeated doesnt match';
+                
+                $this->vendor_page_loader('manage_account',$data);
+            }
+
+        }else {
+            $data['title'] = 'Manage Account';
+            $data['success'] = ""; $data['error'] = 'Current Password is incorrect';
+            
+            $this->vendor_page_loader('manage_account',$data);
+        }
+
+    }
+
     public function update_vendor_profile(){
 
         $session = session();
