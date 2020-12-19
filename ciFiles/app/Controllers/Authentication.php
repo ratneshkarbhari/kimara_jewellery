@@ -319,7 +319,110 @@ class Authentication extends BaseController
         }
     }
 
+    public function approve_vendor_exe(){
+
+        $session = session();
+
+        $role = $session->role;
+
+        if($role!='admin'){
+            return redirect()->to(site_url('admin-login')); 
+        }
+
+        $vendor_request_id = $this->request->getPost('vendor_request_id');
+
+        $vendorApprovalModel = new VendorApprovalModel();
+
+        $vendor_request = $vendorApprovalModel->find($vendor_request_id);
+
+        $vendor_data = json_decode($vendor_request['vendor_data'],TRUE);
+
+        $authModel = new AuthModel();
+
+        $authModel->where('id',$vendor_data['id'])->set(['approved' => 'yes'])->update();
+
+        $vendorApprovalModel->delete($vendor_request_id);
+
+        return redirect()->to(site_url('vendors-mgt'));         
+
+    }
+
+    public function update_vendor_profile(){
+
+        $session = session();
+
+        $role = $session->role;
+
+        if($role!='vendor'){
+            return redirect()->to(site_url('vendor-login')); 
+        }
+
+        $authModel = new AuthModel();
+
+        $vendor_id = $this->request->getPost("vendor_id");
+        $first_name = $this->request->getPost("first_name");
+        $last_name = $this->request->getPost("last_name");
+        $email = $this->request->getPost("email");
+
+        if($vendor_id!=''&&$first_name!=''&&$last_name!=''&&$email!=''){
+            $vendor_data = $authModel->find($vendor_id);
+        
+            $vendor_data['first_name'] = $first_name;
+            $vendor_data['last_name'] = $last_name;
+            $vendor_data['email'] = $email;    
+        
+            $updated = $authModel->update($vendor_data['id'],$vendor_data);
+
+            $session->set($vendor_data);
+
+            if ($updated) {
+                return redirect()->to(site_url('manage-account-vendor'));
+            }
+            
+        }else {
+            return redirect()->to(site_url('manage-account-vendor'));
+        }
+        
+        
+    }
+
+    public function reject_vendor_exe(){
+
+        $session = session();
+
+        $role = $session->role;
+
+        if($role!='admin'){
+            return redirect()->to(site_url('admin-login')); 
+        }
+
+        $vendor_request_id = $this->request->getPost('vendor_request_id');
+
+        $vendorApprovalModel = new VendorApprovalModel();
+
+        $vendor_request = $vendorApprovalModel->find($vendor_request_id);
+
+        $vendor_data = json_decode($vendor_request['vendor_data'],TRUE);
+
+        $authModel = new AuthModel();
+
+        $authModel->where('id',$vendor_data['id'])->set(['approved' => 'rejected'])->update();
+
+        $vendorApprovalModel->delete($vendor_request_id);
+
+        return redirect()->to(site_url('vendors-mgt'));         
+
+    }
+
     public function submit_vendor_for_approval(){
+
+        $session = session();
+
+        $role = $session->role;
+
+        if($role!='vendor'){
+            return redirect()->to(site_url('vendor-login')); 
+        }
 
         $adhaarImage = $this->request->getFile('adhaar_image');
 

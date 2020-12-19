@@ -20,3 +20,37 @@ CRITICAL - 2020-12-18 00:35:34 --> Undefined index: phone_number
 #7 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
 #8 C:\xampp\htdocs\kimaara\index.php(46): CodeIgniter\CodeIgniter->run()
 #9 {main}
+CRITICAL - 2020-12-18 22:21:31 --> Class 'App\Controllers\AuthModel' not found
+#0 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(918): App\Controllers\AdminPageLoader->vendor_mgt()
+#1 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminPageLoader))
+#2 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\kimaara\index.php(46): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-12-18 22:28:19 --> Call to undefined method App\Controllers\VendorPageLoader::send_to_login()
+#0 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(918): App\Controllers\VendorPageLoader->dashboard()
+#1 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\VendorPageLoader))
+#2 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\kimaara\index.php(46): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-12-18 22:41:40 --> Undefined variable: success
+#0 C:\xampp\htdocs\kimaara\ciFiles\app\Views\vendorPages\manage_account.php(7): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 7, Array)
+#1 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\View\View.php(246): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\Common.php(1119): CodeIgniter\View\View->render('vendorPages/man...', Array, true)
+#3 C:\xampp\htdocs\kimaara\ciFiles\app\Controllers\VendorPageLoader.php(12): view('vendorPages/man...', Array)
+#4 C:\xampp\htdocs\kimaara\ciFiles\app\Controllers\VendorPageLoader.php(49): App\Controllers\VendorPageLoader->vendor_page_loader('manage_account', Array)
+#5 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(918): App\Controllers\VendorPageLoader->manage_account()
+#6 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\VendorPageLoader))
+#7 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\kimaara\index.php(46): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2020-12-18 22:42:01 --> Undefined variable: success
+#0 C:\xampp\htdocs\kimaara\ciFiles\app\Views\vendorPages\manage_account.php(7): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 7, Array)
+#1 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\View\View.php(246): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\Common.php(1119): CodeIgniter\View\View->render('vendorPages/man...', Array, true)
+#3 C:\xampp\htdocs\kimaara\ciFiles\app\Controllers\VendorPageLoader.php(12): view('vendorPages/man...', Array)
+#4 C:\xampp\htdocs\kimaara\ciFiles\app\Controllers\VendorPageLoader.php(49): App\Controllers\VendorPageLoader->vendor_page_loader('manage_account', Array)
+#5 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(918): App\Controllers\VendorPageLoader->manage_account()
+#6 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\VendorPageLoader))
+#7 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\kimaara\index.php(46): CodeIgniter\CodeIgniter->run()
+#9 {main}

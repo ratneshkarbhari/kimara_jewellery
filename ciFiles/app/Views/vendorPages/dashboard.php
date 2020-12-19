@@ -3,25 +3,35 @@
     <div class="container">
 
 
-    <h3 class="page-title"><?php echo $title; ?></h3>
+        <h3 class="page-title"><?php echo $title; ?></h3>
     
         <?php if($_SESSION['approved']=='yes'): ?>
 
             <div class="row text-center" style="margin: 3% 0;">
         
-                <div class="col-lg-6 col-md-6 col-sm-12">
+                <div class="col-lg-4 col-md-6 col-sm-12">
                 
-                    <a href="<?php echo site_url('manage-categories'); ?>">
+                    <a href="<?php echo site_url('manage-account-vendor'); ?>">
                         <div class="card custom-card-dashboard">
                         
-                            Categories
+                            Account
                         
                         </div>
                     </a>
                 
                 </div>
-                <div class="col-lg-6 col-md-6 col-sm-12">
-                    <a href="<?php echo site_url('manage-products'); ?>">
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <a href="<?php echo site_url('manage-store-vendor'); ?>">
+                        <div class="card custom-card-dashboard">
+                        
+                            Store
+                        
+                        </div>
+                    </a>
+                
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <a href="<?php echo site_url('manage-products-vendor'); ?>">
                         <div class="card custom-card-dashboard">
                         
                             Products
@@ -32,10 +42,10 @@
                 </div>
                 <div class="col-lg-12 col-md-12 col-sm-12">
                 
-                    <a href="<?php echo site_url('manage-orders'); ?>">
+                    <a href="<?php echo site_url('manage-sales'); ?>">
                         <div class="card custom-card-dashboard">
                         
-                            Orders
+                            Sales
                         
                         </div>
                     </a>
@@ -45,13 +55,7 @@
             </div>
 
         <?php elseif($_SESSION['approved']=='no'): ?>
-
             <h4>Your Account is not yet approved, wait for the approval process it will be completed shortly.</h4>
-
-
-            
-
-
         <?php elseif($_SESSION['approved']=='not-submitted'): ?>
             <h4 style="margin: 3% 0;">Submit Documents for Approval</h4>
             <form action="<?php echo site_url("submit-vendor-for-approval"); ?>" enctype="multipart/form-data" method="post">
@@ -70,6 +74,8 @@
                 </div>
                 <button type="submit" class="btn btn-success">Submit</button>
             </form>
+        <?php elseif ($_SESSION['approved']=='rejected') : ?>
+            <h4>Your Account is rejected. Connect on +919137976398 if you have any questions.</h4>
         <?php endif; ?>
     </div>
 

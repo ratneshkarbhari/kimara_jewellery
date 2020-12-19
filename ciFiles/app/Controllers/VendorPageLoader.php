@@ -4,18 +4,6 @@
 class VendorPageLoader extends BaseController
 {
 
-    private function send_to_login(){
-
-        $session = session();
-
-		$role = $session->get('role');
-
-		if($role!='vendor'){
-			return redirect()->to(site_url('vendor-login')); 
-        }
-
-    }
-
     
 
     private function vendor_page_loader($viewName,$data){
@@ -31,11 +19,35 @@ class VendorPageLoader extends BaseController
 	public function dashboard()
 	{
 
-        $this->send_to_login();
-        
+        $session = session();
+
+		$role = $session->get('role');
+
+		if($role!='vendor'){
+			return redirect()->to(site_url('vendor-login')); 
+        }
+    
         $data['title'] = 'Vendor Dashboard';
         
         $this->vendor_page_loader('dashboard',$data);
+
+    }
+
+    public function manage_account()
+	{
+
+        $session = session();
+
+		$role = $session->get('role');
+
+		if($role!='vendor'){
+			return redirect()->to(site_url('vendor-login')); 
+        }
+    
+        $data['title'] = 'Manage Account';
+        $data['success'] = $data['error'] = '';
+        
+        $this->vendor_page_loader('manage_account',$data);
 
     }
 

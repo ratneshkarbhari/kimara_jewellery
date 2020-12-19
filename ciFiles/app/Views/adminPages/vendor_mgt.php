@@ -22,20 +22,20 @@
                         <td style="font-size: 1.2rem; font-weight: 500;">Full Name</td>
                         <td style="font-size: 1.2rem; font-weight: 500;">Email</td>
                         <td style="font-size: 1.2rem; font-weight: 500;">Contact Number</td>
-                        <td style="font-size: 1.2rem; font-weight: 500;">Adhaar Link</td>
-                        <td style="font-size: 1.2rem; font-weight: 500;">Pan Link</td>
                         <td style="font-size: 1.2rem; font-weight: 500;">Actions</td>
                     </tr>
                 </thead>
                 <tbody>
+                    <?php foreach($approved_vendors as $av): ?>
                     <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td><?php echo $av['first_name'].' '.$av['first_name']; ?></td>
+                        <td><?php echo $av['email']; ?></td>
+                        <td><?php echo $av['mobile_number']; ?></td>
+                        <td>
+                        
+                        </td>
                     </tr>
+                    <?php endforeach; ?>
                 </tbody>
             </table>
         </div>

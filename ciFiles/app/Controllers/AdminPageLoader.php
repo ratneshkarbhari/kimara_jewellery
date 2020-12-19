@@ -9,6 +9,7 @@ use App\Models\HomePageSlideModel;
 use App\Models\CategoryPositionModel;
 use App\Models\CouponModel;
 use App\Models\VendorApprovalModel;
+use App\Models\AuthModel;
 use Config\Services; 
 
 
@@ -41,6 +42,8 @@ class AdminPageLoader extends BaseController
 			return redirect()->to(site_url('admin-login')); 
         }
         $vendorModel = new VendorApprovalModel();
+        $authModel = new AuthModel();
+        $data['approved_vendors'] = $authModel->where('role','vendor')->where('approved','yes')->findAll();
         $data['vendor_requests'] = $vendorModel->findAll(); 
         $data['title'] = 'Vendor Mgt';
         $this->admin_page_loader('vendor_mgt',$data);
@@ -288,7 +291,6 @@ class AdminPageLoader extends BaseController
 	{
 
         $session = session();
-
         
         $role = $session->get('role');
         

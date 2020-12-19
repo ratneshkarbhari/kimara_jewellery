@@ -65,8 +65,13 @@
             </li>
             <?php if($_SESSION['approved']=='yes'): ?>
             <li class="nav-item">
-                <a class="nav-link sidebar-link" href="<?php echo site_url('manage-account'); ?>">
+                <a class="nav-link sidebar-link" href="<?php echo site_url('manage-account-vendor'); ?>">
                 Account 
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link sidebar-link" href="<?php echo site_url('manage-store-vendor'); ?>">
+                Store 
                 </a>
             </li>
             <li class="nav-item">
