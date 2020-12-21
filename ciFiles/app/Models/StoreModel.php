@@ -9,6 +9,6 @@ class StoreModel extends Model
 
     protected $primaryKey = 'id';
 
-    protected $allowedFields = ['name', 'code','logo','products','vendor'];
+    protected $allowedFields = ['name', 'code','logo','product_ids','vendor'];
 
 }

@@ -39,11 +39,9 @@ class Stores extends BaseController
 
         $storeModel = new StoreModel();
 
-        $exists = $storeModel->where("vendor",$this->request->getPost("vendor_id"))->first();
+        $exists = $storeModel->where("code",$this->request->getPost("code"))->first();
 
-        if ($exists) {
-            $created = $storeModel->update($exists['id'],$newData);
-        } else {
+        if (!$exists) {
             $created = $storeModel->insert($newData);
         }
 
@@ -96,10 +94,48 @@ class Stores extends BaseController
             'vendor' => $this->request->getPost("vendor_id")
         );
 
-        $updated = $storeModel->update($prevStoreData['id'],$newData);
+        $exists = $storeModel->where("code",$this->request->getPost("code"))->first();
 
-        return redirect()->to(site_url('manage-store-vendor'));
+        if (!$exists&&$exists["id"]!=$prevStoreData["id"]) {
+
+
+            return redirect()->to(site_url('manage-store-vendor'));
+        }else{
+            $updated = $storeModel->update($prevStoreData['id'],$newData);            
+        }
+
+
         
+    }
+
+    public function update_products_exe(){
+        $session = session();
+
+		$role = $session->get('role');
+
+		if($role!='vendor'){
+			return redirect()->to(site_url('vendor-login')); 
+        }
+
+        $storeModel = new StoreModel();
+    
+        $store_id = $this->request->getPost("store_id");
+        $storeData = $storeModel->find($store_id);
+
+        $productsSelected = $this->request->getPost("selected_products");
+
+        $productsSelectedJson = json_encode($productsSelected);
+
+        $storeData["product_ids"] = $productsSelectedJson;
+
+
+        $updated = $storeModel->update($store_id,$storeData);
+
+
+        return redirect()->to(site_url('update-store-products'));       
+
+
+
     }
 
 }

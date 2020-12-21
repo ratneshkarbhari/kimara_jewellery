@@ -17,6 +17,28 @@ class VendorPageLoader extends BaseController
     }
 
 
+    public function update_store_products(){
+
+        $session = session();
+
+		$role = $session->get('role');
+
+		if($role!='vendor'){
+			return redirect()->to(site_url('vendor-login')); 
+        }
+
+        $data['title'] = "Manage Store Products";
+        $productModel = new ProductModel();
+        $storeModel = new StoreModel();
+        $data['store'] = $storeModel->where("vendor",$_SESSION["id"])->first();
+        $data['products'] = $productModel->findAll();
+        $data['store_product_ids'] = json_decode($data["store"]['product_ids'],TRUE);
+        
+        $this->vendor_page_loader("manage_store_products",$data);
+
+    }
+
+
     public function manage_store(){
 
         $session = session();

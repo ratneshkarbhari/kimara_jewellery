@@ -82,12 +82,15 @@ $routes->post('update-order','Orders::update');
 $routes->get('vendor-dashboard','VendorPageLoader::dashboard');
 $routes->get('manage-account-vendor','VendorPageLoader::manage_account');
 $routes->get("manage-store-vendor",'VendorPageLoader::manage_store');
+$routes->get("update-store-products","VendorPageLoader::update_store_products");
 
 // Vendor feature routes
 $routes->post('update-vendor-profile','Authentication::update_vendor_profile');
 $routes->post("update-vendor-password","Authentication::update_vendor_pwd");
 $routes->post("create-store-exe","Stores::create_exe");
 $routes->post("update-store-exe","Stores::update_exe");
+$routes->post("update-products-exe","Stores::update_products_exe");
+
 
 // Auth Endpoints
 $routes->post('approve-vendor-exe','Authentication::approve_vendor_exe');

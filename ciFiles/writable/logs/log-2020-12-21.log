@@ -1,0 +1,24 @@
+CRITICAL - 2020-12-21 00:54:29 --> in_array() expects parameter 2 to be array, null given
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'in_array() expe...', 'C:\\xampp\\htdocs...', 18, Array)
+#1 C:\xampp\htdocs\kimaara\ciFiles\app\Views\vendorPages\manage_store_products.php(18): in_array('15', NULL)
+#2 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\View\View.php(246): include('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\Common.php(1119): CodeIgniter\View\View->render('vendorPages/man...', Array, true)
+#4 C:\xampp\htdocs\kimaara\ciFiles\app\Controllers\VendorPageLoader.php(14): view('vendorPages/man...', Array)
+#5 C:\xampp\htdocs\kimaara\ciFiles\app\Controllers\VendorPageLoader.php(37): App\Controllers\VendorPageLoader->vendor_page_loader('manage_store_pr...', Array)
+#6 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(918): App\Controllers\VendorPageLoader->update_store_products()
+#7 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\VendorPageLoader))
+#8 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\kimaara\index.php(46): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2020-12-21 00:55:03 --> in_array() expects parameter 2 to be array, null given
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'in_array() expe...', 'C:\\xampp\\htdocs...', 18, Array)
+#1 C:\xampp\htdocs\kimaara\ciFiles\app\Views\vendorPages\manage_store_products.php(18): in_array('15', NULL)
+#2 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\View\View.php(246): include('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\Common.php(1119): CodeIgniter\View\View->render('vendorPages/man...', Array, true)
+#4 C:\xampp\htdocs\kimaara\ciFiles\app\Controllers\VendorPageLoader.php(14): view('vendorPages/man...', Array)
+#5 C:\xampp\htdocs\kimaara\ciFiles\app\Controllers\VendorPageLoader.php(37): App\Controllers\VendorPageLoader->vendor_page_loader('manage_store_pr...', Array)
+#6 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(918): App\Controllers\VendorPageLoader->update_store_products()
+#7 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\VendorPageLoader))
+#8 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\kimaara\index.php(46): CodeIgniter\CodeIgniter->run()
+#10 {main}
