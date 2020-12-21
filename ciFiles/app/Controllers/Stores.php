@@ -51,4 +51,55 @@ class Stores extends BaseController
         
     }
 
+    public function update_exe(){
+    
+        $session = session();
+
+		$role = $session->get('role');
+
+		if($role!='vendor'){
+			return redirect()->to(site_url('vendor-login')); 
+        }
+
+        $storeModel = new StoreModel();
+    
+        $store_id = $this->request->getPost("store_id");
+        
+        $prevStoreData = $storeModel->find($store_id);
+
+        $logo = $this->request->getFile('logo');
+
+        if ($logo->isValid()) {
+
+            $featuredImageFolderPath = './assets/store_logos';
+
+            $currentLogoPath = $featuredImageFolderPath.$prevStoreData["logo"];
+
+            if (is_file($currentLogoPath)) {
+                unlink($currentLogoPath);
+            }
+
+            $logoRandomName = $logo->getRandomName();
+
+            $logo->move('assets/store_logos', $logoRandomName);
+            
+        }else {
+
+            $logoRandomName = $prevStoreData["logo"];
+            
+        }
+
+        $newData = array(
+            'name' => $this->request->getPost("name"),
+            'code' => $this->request->getPost("code"),
+            'logo' => $logoRandomName,
+            'vendor' => $this->request->getPost("vendor_id")
+        );
+
+        $updated = $storeModel->update($prevStoreData['id'],$newData);
+
+        return redirect()->to(site_url('manage-store-vendor'));
+        
+    }
+
 }

@@ -6,7 +6,7 @@
         <p class="text-success"><?php echo $success; ?></p>
         <p class="text-danger"><?php echo $error; ?></p>
 
-        <form action="<?php echo site_url("update-store"); ?>" enctype="multipart/form-data" method="post">
+        <form action="<?php echo site_url("update-store-exe"); ?>" enctype="multipart/form-data" method="post">
 
             <input type="hidden" name="store_id" value="<?php echo $existing_store['id']; ?>">
             <input type="hidden" name="vendor_id" value="<?php echo $_SESSION['id']; ?>">
@@ -20,7 +20,7 @@
             <div class="form-group">
             
                 <label for="code">Code</label>
-                <input required class="form-control" type="text" name="code" value="<?php echo $existing_store['name']; ?>" id="code">
+                <input required class="form-control" type="text" name="code" value="<?php echo $existing_store['code']; ?>" id="code">
 
             </div>
             
