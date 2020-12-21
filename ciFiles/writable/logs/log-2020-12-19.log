@@ -71,3 +71,34 @@ CRITICAL - 2020-12-19 02:17:20 --> Undefined variable: mobile_number
 #3 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
 #4 C:\xampp\htdocs\kimaara\index.php(46): CodeIgniter\CodeIgniter->run()
 #5 {main}
+CRITICAL - 2020-12-19 05:23:08 --> Invalid file: vendorPages/manage_store.php
+#0 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\View\View.php(228): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('vendorPages/man...')
+#1 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\Common.php(1119): CodeIgniter\View\View->render('vendorPages/man...', Array, true)
+#2 C:\xampp\htdocs\kimaara\ciFiles\app\Controllers\VendorPageLoader.php(14): view('vendorPages/man...', Array)
+#3 C:\xampp\htdocs\kimaara\ciFiles\app\Controllers\VendorPageLoader.php(41): App\Controllers\VendorPageLoader->vendor_page_loader('manage_store', Array)
+#4 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(918): App\Controllers\VendorPageLoader->manage_store()
+#5 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\VendorPageLoader))
+#6 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\kimaara\index.php(46): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-12-19 05:27:28 --> Undefined variable: existing_store
+#0 C:\xampp\htdocs\kimaara\ciFiles\app\Views\vendorPages\manage_store.php(11): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 11, Array)
+#1 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\View\View.php(246): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\Common.php(1119): CodeIgniter\View\View->render('vendorPages/man...', Array, true)
+#3 C:\xampp\htdocs\kimaara\ciFiles\app\Controllers\VendorPageLoader.php(14): view('vendorPages/man...', Array)
+#4 C:\xampp\htdocs\kimaara\ciFiles\app\Controllers\VendorPageLoader.php(41): App\Controllers\VendorPageLoader->vendor_page_loader('manage_store', Array)
+#5 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(918): App\Controllers\VendorPageLoader->manage_store()
+#6 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\VendorPageLoader))
+#7 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\kimaara\index.php(46): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2020-12-19 05:31:30 --> Cannot use object of type App\Models\StoreModel as array
+#0 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\View\View.php(246): include()
+#1 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\Common.php(1119): CodeIgniter\View\View->render('vendorPages/man...', Array, true)
+#2 C:\xampp\htdocs\kimaara\ciFiles\app\Controllers\VendorPageLoader.php(14): view('vendorPages/man...', Array)
+#3 C:\xampp\htdocs\kimaara\ciFiles\app\Controllers\VendorPageLoader.php(43): App\Controllers\VendorPageLoader->vendor_page_loader('manage_store', Array)
+#4 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(918): App\Controllers\VendorPageLoader->manage_store()
+#5 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\VendorPageLoader))
+#6 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\kimaara\index.php(46): CodeIgniter\CodeIgniter->run()
+#8 {main}

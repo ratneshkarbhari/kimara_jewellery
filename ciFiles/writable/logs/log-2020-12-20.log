@@ -1,0 +1,11 @@
+CRITICAL - 2020-12-20 23:47:09 --> Undefined variable: vendor_requests
+#0 C:\xampp\htdocs\kimaara\ciFiles\app\Views\adminPages\vendor_mgt.php(60): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 60, Array)
+#1 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\View\View.php(246): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\Common.php(1119): CodeIgniter\View\View->render('adminPages/vend...', Array, true)
+#3 C:\xampp\htdocs\kimaara\ciFiles\app\Controllers\AdminPageLoader.php(28): view('adminPages/vend...', Array)
+#4 C:\xampp\htdocs\kimaara\ciFiles\app\Controllers\AdminPageLoader.php(49): App\Controllers\AdminPageLoader->admin_page_loader('vendor_mgt', Array)
+#5 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(918): App\Controllers\AdminPageLoader->vendor_mgt()
+#6 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminPageLoader))
+#7 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\kimaara\index.php(46): CodeIgniter\CodeIgniter->run()
+#9 {main}

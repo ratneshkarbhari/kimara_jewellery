@@ -41,12 +41,30 @@ class AdminPageLoader extends BaseController
 		if($role!='admin'){
 			return redirect()->to(site_url('admin-login')); 
         }
-        $vendorModel = new VendorApprovalModel();
+
         $authModel = new AuthModel();
         $data['approved_vendors'] = $authModel->where('role','vendor')->where('approved','yes')->findAll();
-        $data['vendor_requests'] = $vendorModel->findAll(); 
+
         $data['title'] = 'Vendor Mgt';
         $this->admin_page_loader('vendor_mgt',$data);
+    }
+
+    public function vendor_requests(){
+        $session = session();
+
+        
+        $role = $session->get('role');
+        
+
+		if($role!='admin'){
+			return redirect()->to(site_url('admin-login')); 
+        }
+        $vendorModel = new VendorApprovalModel();
+
+
+        $data['vendor_requests'] = $vendorModel->findAll(); 
+        $data['title'] = 'Vendor Mgt';
+        $this->admin_page_loader('vendor_req',$data);
     }
 
     public function edit_vendor($id){

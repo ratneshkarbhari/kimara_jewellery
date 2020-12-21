@@ -110,6 +110,11 @@
               </a>
             </li>
             <li class="nav-item">
+              <a href="<?php echo site_url('vendor-requests'); ?>" class="nav-link sidebar-link">
+              Vendor Req.
+              </a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link sidebar-link" href="<?php echo site_url('flush-cache'); ?>">
                 Flush Cache
                 </a>

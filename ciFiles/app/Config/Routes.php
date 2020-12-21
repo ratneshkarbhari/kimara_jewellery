@@ -81,7 +81,6 @@ $routes->post('update-order','Orders::update');
 // Vendor Dashboard Endpoints
 $routes->get('vendor-dashboard','VendorPageLoader::dashboard');
 $routes->get('manage-account-vendor','VendorPageLoader::manage_account');
-$routes->get('manage-store-vendor','VendorPageLoader::manage_store');
 $routes->get("manage-store-vendor",'VendorPageLoader::manage_store');
 
 // Vendor feature routes
@@ -119,6 +118,7 @@ $routes->post('set-coupon-cookie','Coupons::set_coupon_cookie');
 $routes->post('unset-coupon-cookie','Coupons::unset_coupon_cookie');
 
 // Admin Dashboard
+$routes->get('vendor-requests','AdminPageLoader::vendor_requests');
 $routes->get("edit-vendor-details/(:any)",'AdminPageLoader::edit_vendor/$1');
 $routes->get('vendors-mgt','AdminPageLoader::vendor_mgt');
 $routes->get('edit-coupon/(:any)','AdminPageLoader::edit_coupon/$1');
