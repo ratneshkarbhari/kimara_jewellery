@@ -86,6 +86,7 @@ $routes->get("manage-store-vendor",'VendorPageLoader::manage_store');
 // Vendor feature routes
 $routes->post('update-vendor-profile','Authentication::update_vendor_profile');
 $routes->post("update-vendor-password","Authentication::update_vendor_pwd");
+$routes->post("create-store-exe","Stores::create_exe");
 
 // Auth Endpoints
 $routes->post('approve-vendor-exe','Authentication::approve_vendor_exe');

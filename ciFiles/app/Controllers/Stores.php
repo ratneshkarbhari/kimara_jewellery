@@ -6,7 +6,7 @@ use App\Models\ProductModel;
 class Stores extends BaseController
 {
 
-    public function add(){
+    public function create_exe(){
     
         $session = session();
 
@@ -39,9 +39,9 @@ class Stores extends BaseController
 
         $storeModel = new StoreModel();
 
-        $exists = $storeModel->where("vendor",$this->request->getPost("vendor_id"));
+        $exists = $storeModel->where("vendor",$this->request->getPost("vendor_id"))->first();
 
-        if (condition) {
+        if ($exists) {
             $created = $storeModel->update($exists['id'],$newData);
         } else {
             $created = $storeModel->insert($newData);

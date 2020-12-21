@@ -6,7 +6,7 @@
         <p class="text-success"><?php echo $success; ?></p>
         <p class="text-danger"><?php echo $error; ?></p>
 
-        <form action="<?php echo site_url("create-store"); ?>" enctype="multipart/form-data" method="post">
+        <form action="<?php echo site_url("create-store-exe"); ?>" enctype="multipart/form-data" method="post">
 
             <input type="hidden" name="vendor_id" value="<?php echo $_SESSION['id']; ?>">
 
