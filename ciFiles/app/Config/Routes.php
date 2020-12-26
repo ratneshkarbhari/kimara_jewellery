@@ -91,6 +91,7 @@ $routes->post("create-store-exe","Stores::create_exe");
 $routes->post("update-store-exe","Stores::update_exe");
 $routes->post("update-products-exe","Stores::update_products_exe");
 
+$routes->post("product-search-to-add-to-store","VendorPageLoader::search_products_add_to_store");
 
 // Auth Endpoints
 $routes->post('approve-vendor-exe','Authentication::approve_vendor_exe');

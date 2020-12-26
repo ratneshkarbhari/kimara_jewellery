@@ -122,19 +122,21 @@ class Stores extends BaseController
         $store_id = $this->request->getPost("store_id");
         $storeData = $storeModel->find($store_id);
 
-        $productsSelected = $this->request->getPost("selected_products");
+        $productsToBeAddedArray = $this->request->getPost("selected_products");
 
-        $productsSelectedJson = json_encode($productsSelected);
+        $productsInStoreArray = json_decode($storeData["product_ids"],TRUE);
 
-        $storeData["product_ids"] = $productsSelectedJson;
+        if($productsInStoreArray==NULL){
+            $productsInStoreArray = array();
+        }
 
+        $finalProductIdArray = array_merge($productsInStoreArray,$productsToBeAddedArray);
+        
+        $storeData["product_ids"] = json_encode($finalProductIdArray);
 
         $updated = $storeModel->update($store_id,$storeData);
 
-
         return redirect()->to(site_url('update-store-products'));       
-
-
 
     }
 

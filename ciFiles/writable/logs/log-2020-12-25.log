@@ -1,0 +1,22 @@
+CRITICAL - 2020-12-25 22:55:40 --> Undefined variable: catsByPos
+#0 C:\xampp\htdocs\kimaara\ciFiles\app\Views\templates\header.php(176): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 176, Array)
+#1 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\View\View.php(246): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\Common.php(1119): CodeIgniter\View\View->render('templates/heade...', Array, true)
+#3 C:\xampp\htdocs\kimaara\ciFiles\app\Controllers\Authentication.php(847): view('templates/heade...', Array)
+#4 C:\xampp\htdocs\kimaara\ciFiles\app\Controllers\Authentication.php(638): App\Controllers\Authentication->load_admin_login_error('An admin with t...')
+#5 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(918): App\Controllers\Authentication->login()
+#6 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Authentication))
+#7 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\kimaara\index.php(46): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2020-12-25 23:59:52 --> Undefined variable: store
+#0 C:\xampp\htdocs\kimaara\ciFiles\app\Views\vendorPages\product_search_results.php(23): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 23, Array)
+#1 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\View\View.php(246): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\Common.php(1119): CodeIgniter\View\View->render('vendorPages/pro...', Array, true)
+#3 C:\xampp\htdocs\kimaara\ciFiles\app\Controllers\VendorPageLoader.php(14): view('vendorPages/pro...', Array)
+#4 C:\xampp\htdocs\kimaara\ciFiles\app\Controllers\VendorPageLoader.php(60): App\Controllers\VendorPageLoader->vendor_page_loader('product_search_...', Array)
+#5 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(918): App\Controllers\VendorPageLoader->search_products_add_to_store()
+#6 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\VendorPageLoader))
+#7 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\kimaara\index.php(46): CodeIgniter\CodeIgniter->run()
+#9 {main}

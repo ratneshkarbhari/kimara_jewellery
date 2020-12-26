@@ -31,11 +31,38 @@ class VendorPageLoader extends BaseController
         $productModel = new ProductModel();
         $storeModel = new StoreModel();
         $data['store'] = $storeModel->where("vendor",$_SESSION["id"])->first();
-        $data['products'] = $productModel->findAll();
         $data['store_product_ids'] = json_decode($data["store"]['product_ids'],TRUE);
+        $data['products'] = $productModel->findAll();
+
         
         $this->vendor_page_loader("manage_store_products",$data);
 
+    }
+
+
+    public function search_products_add_to_store(){
+
+        $session = session();
+
+		$role = $session->get('role');
+
+		if($role!='vendor'){
+			return redirect()->to(site_url('vendor-login')); 
+        }
+
+        $searchQuery = $this->request->getPost("search-query");        
+
+        $productModel = new ProductModel();
+        
+		$products = $productModel->like('title',$searchQuery)->orlike('sku',$searchQuery)->findAll();
+        $data['products'] = $products;
+        $storeModel = new StoreModel();
+        $data['store'] = $storeModel->where("vendor",$_SESSION["id"])->first();
+        $data['store_product_ids'] = json_decode($data["store"]['product_ids'],TRUE);
+        
+        $data['title'] = 'Search Results for adding Products to Store';
+		$this->vendor_page_loader('product_search_results',$data);
+        
     }
 
 
