@@ -18,5 +18,8 @@ class CartModel extends Model
     public function fetch_all_cart_items(){
         return $this->where('ip_address',$_SERVER['REMOTE_ADDR'])->findAll();
     }
+    public function fetch_all_cart_items_store($code){
+        return $this->where('ip_address',$_SERVER['REMOTE_ADDR'])->where("store",$code)->findAll();
+    }
 
 }

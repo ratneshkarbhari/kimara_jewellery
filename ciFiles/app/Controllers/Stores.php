@@ -126,17 +126,26 @@ class Stores extends BaseController
 
         $productsInStoreArray = json_decode($storeData["product_ids"],TRUE);
 
-        if($productsInStoreArray==NULL){
-            $productsInStoreArray = array();
+        $newPrIdArray = array();
+
+        
+        foreach ($productsToBeAddedArray as $pr2Add) {
+            if($productsInStoreArray!=NULL){
+                if(!in_array($pr2Add,$productsInStoreArray)){
+                    $productsInStoreArray[] = $pr2Add;
+                }
+            }else {
+                $productsInStoreArray[] = $pr2Add;
+            }
         }
 
-        $finalProductIdArray = array_merge($productsInStoreArray,$productsToBeAddedArray);
-        
-        $storeData["product_ids"] = json_encode($finalProductIdArray);
+        $newPrIdArrayJson = json_encode($productsInStoreArray);
 
-        $updated = $storeModel->update($store_id,$storeData);
+        $storeData["product_ids"] = $newPrIdArrayJson;
 
-        return redirect()->to(site_url('update-store-products'));       
+        $storeModel->update($storeData["id"],$storeData);
+
+        return redirect()->to(site_url('update-store-products')); 
 
     }
 

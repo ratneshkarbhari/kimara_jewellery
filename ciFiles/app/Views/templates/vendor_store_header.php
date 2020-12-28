@@ -61,7 +61,7 @@
                                     <div class="dropdown-menu" style="width: 250px;" aria-labelledby="navbarDropdown">
                                     <?php foreach($categories as $category): if($category['parent']==0):  ?>
 
-                                    <a class="dropdown-item" href="<?php echo site_url('category/'.$category['slug']); ?>"><?php echo $category['title']; ?></a>
+                                    <a class="dropdown-item" href="<?php echo site_url('category/'.$category['slug'].'?store_code='.$_COOKIE["store_code"]); ?>"><?php echo $category['title']; ?></a>
 
                                     <?php endif; endforeach; ?>
 
@@ -163,16 +163,15 @@
            <img src="<?php echo site_url('assets/images/newestlogo.png'); ?>" id="logonew" style="width: 70%; margin: 10% auto;">
            </div>
            <div id="sidenavCatBox" >
-           <?php $sidenavCats = $catsByPos['sidenav']; $sidenavCatsArray = explode(',',$sidenavCats); foreach($categories as $category): if($category['parent']==0): if(in_array($category['id'],$sidenavCatsArray)):  ?>
+           <?php  foreach($categories as $category): if($category['parent']==0):   ?>
 
-                <a href="<?php echo site_url('category/'.$category['slug']); ?>" class="sidenav-link"><?php echo $category['title']; ?></a>
+                <a href="<?php echo site_url('category/'.$category['slug']).'?store='.$_COOKIE["store_code"]; ?>" class="sidenav-link"><?php echo $category['title']; ?></a>
 
-           <?php endif; endif; endforeach; ?>
+           <?php endif; endforeach; ?>
            </div>
 
             <div id="other-links-menu" style="position: absolute; margin-top: 20%; left: 0; right: 0;">
-                <a href="<?php echo site_url('/'); ?>" class="sidenav-link">Home</a>
-                <a href="<?php echo site_url('shop'); ?>" class="sidenav-link">Shop</a>
+                <a href="<?php echo site_url('store/'.$_COOKIE["store_code"]); ?>" class="sidenav-link">Home</a>
                 <a href="<?php echo site_url('about'); ?>" class="sidenav-link">About</a>
                 <a href="<?php echo site_url('contact'); ?>" class="sidenav-link">Contact</a>
             </div>

@@ -15,7 +15,7 @@ use App\Models\OrderModel;
 use App\Models\ShippingRateModel;
 use App\Models\CategoryPositionModel;
 use App\Models\CouponModel;
-
+use App\Models\StoreModel;
 
 
 class PublicPageLoader extends BaseController
@@ -59,6 +59,22 @@ class PublicPageLoader extends BaseController
 		echo view('templates/footer',$data);
 
 	}
+
+	private function public_vendor_page_loader($viewName,$data){
+
+
+
+		if(!isset($_COOKIE['location'])){
+			setcookie('location','india',time()+(24*3600));
+		}
+
+
+		echo view('templates/vendor_store_header',$data);
+		echo view('vendorPublicPages/'.$viewName,$data);
+		echo view('templates/vendor_store_footer',$data);
+
+	}
+
 
 	public function contact(){
 		$data['title'] = 'Contact';
@@ -470,10 +486,40 @@ class PublicPageLoader extends BaseController
 
 		$productModel = new ProductModel();
 
-		$data['products_in_category'] = $productModel->where('category',$focusCategory['id'])->findAll();
+		if(isset($_GET['store_code'])){
 
+			$storeModel = new StoreModel();
 
-		$this->public_page_loader('category_page',$data);
+			$storeData = $storeModel->where("code",$_GET["store_code"])->first();
+
+			$productsInStoreForCat = array();
+
+			foreach (json_decode($storeData["product_ids"],TRUE) as $prId) {
+				$prData = $productModel->find($prId);
+				if($prData['id']==$focusCategory["id"]){
+					$productsInStoreForCat[] = $prData;
+				}
+			}
+
+			$data["products_in_category"] = $productsInStoreForCat;
+
+			$cartModel = new CartModel();
+			$cart_items = $cartModel->fetch_all_cart_items_store($_GET['store_code']);
+
+			$data["cart_item_count"] = count($cart_items);
+
+			setcookie("store_code",$_GET['store_code'],time()+(30*12*24*60*60));
+
+			echo view('templates/vendor_store_header',$data);
+			echo view('vendorPublicPages/category_page',$data);
+			echo view('templates/vendor_store_footer',$data);
+
+		}else {
+			$data['products_in_category'] = $productModel->where('category',$focusCategory['id'])->findAll();
+			$this->public_page_loader('category_page',$data);
+
+		}
+
 
 	}
 
