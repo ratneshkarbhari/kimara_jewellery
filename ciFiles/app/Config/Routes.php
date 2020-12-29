@@ -80,6 +80,7 @@ $routes->post('create-cod-order','Orders::create_cod_order');
 $routes->post('create-order','Orders::create');
 $routes->post('update-order','Orders::update');
 
+$routes->post("create-vendor-account-exe",'Authentication::create_vendor_account');
 
 // Vendor Dashboard Endpoints
 $routes->get('vendor-dashboard','VendorPageLoader::dashboard');
