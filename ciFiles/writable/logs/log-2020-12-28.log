@@ -104,3 +104,131 @@ CRITICAL - 2020-12-28 01:45:14 --> in_array() expects parameter 2 to be array, n
 #4 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
 #5 C:\xampp\htdocs\kimaara\index.php(46): CodeIgniter\CodeIgniter->run()
 #6 {main}
+CRITICAL - 2020-12-28 03:33:30 --> array_unique() expects parameter 1 to be array, string given
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'array_unique() ...', 'C:\\xampp\\htdocs...', 145, Array)
+#1 C:\xampp\htdocs\kimaara\ciFiles\app\Controllers\Stores.php(145): array_unique('serialize', Array)
+#2 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(918): App\Controllers\Stores->update_products_exe()
+#3 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Stores))
+#4 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\kimaara\index.php(46): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-12-28 03:35:32 --> array_merge(): Expected parameter 1 to be an array, int given
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'array_merge(): ...', 'C:\\xampp\\htdocs...', 143, Array)
+#1 C:\xampp\htdocs\kimaara\ciFiles\app\Controllers\Stores.php(143): array_merge(1, Array)
+#2 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(918): App\Controllers\Stores->update_products_exe()
+#3 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Stores))
+#4 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\kimaara\index.php(46): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-12-28 03:36:48 --> array_merge(): Expected parameter 1 to be an array, int given
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'array_merge(): ...', 'C:\\xampp\\htdocs...', 144, Array)
+#1 C:\xampp\htdocs\kimaara\ciFiles\app\Controllers\Stores.php(144): array_merge(1, Array)
+#2 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(918): App\Controllers\Stores->update_products_exe()
+#3 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Stores))
+#4 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\kimaara\index.php(46): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-12-28 03:37:19 --> Undefined variable: res
+#0 C:\xampp\htdocs\kimaara\ciFiles\app\Controllers\Stores.php(150): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 150, Array)
+#1 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(918): App\Controllers\Stores->update_products_exe()
+#2 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Stores))
+#3 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\kimaara\index.php(46): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-12-28 03:38:12 --> array_merge(): Expected parameter 1 to be an array, int given
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'array_merge(): ...', 'C:\\xampp\\htdocs...', 144, Array)
+#1 C:\xampp\htdocs\kimaara\ciFiles\app\Controllers\Stores.php(144): array_merge(16, Array)
+#2 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(918): App\Controllers\Stores->update_products_exe()
+#3 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Stores))
+#4 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\kimaara\index.php(46): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-12-28 04:58:45 --> Undefined variable: storeProducts
+#0 C:\xampp\htdocs\kimaara\ciFiles\app\Controllers\PublicPageLoader.php(486): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 486, Array)
+#1 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(918): App\Controllers\PublicPageLoader->category_page('bali')
+#2 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PublicPageLoader))
+#3 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\kimaara\index.php(46): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-12-28 04:59:24 --> Undefined variable: storeCategories
+#0 C:\xampp\htdocs\kimaara\ciFiles\app\Controllers\PublicPageLoader.php(491): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 491, Array)
+#1 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(918): App\Controllers\PublicPageLoader->category_page('bali')
+#2 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PublicPageLoader))
+#3 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\kimaara\index.php(46): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-12-28 23:18:19 --> Undefined variable: categories
+#0 C:\xampp\htdocs\kimaara\ciFiles\app\Views\templates\vendor_store_header.php(62): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 62, Array)
+#1 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\View\View.php(246): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\Common.php(1119): CodeIgniter\View\View->render('templates/vendo...', Array, true)
+#3 C:\xampp\htdocs\kimaara\ciFiles\app\Controllers\PublicPageLoader.php(512): view('templates/vendo...', Array)
+#4 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(918): App\Controllers\PublicPageLoader->category_page('bali')
+#5 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PublicPageLoader))
+#6 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\kimaara\index.php(46): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-12-28 23:20:49 --> Undefined variable: view
+#0 C:\xampp\htdocs\kimaara\ciFiles\app\Controllers\PublicPageLoader.php(48): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 48, Array)
+#1 C:\xampp\htdocs\kimaara\ciFiles\app\Controllers\PublicPageLoader.php(543): App\Controllers\PublicPageLoader->vendor_public_page_loader('category_page', Array)
+#2 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(918): App\Controllers\PublicPageLoader->category_page('bali')
+#3 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PublicPageLoader))
+#4 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\kimaara\index.php(46): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-12-28 23:22:35 --> Undefined variable: products_in_category
+#0 C:\xampp\htdocs\kimaara\ciFiles\app\Views\vendorPublicPages\category_page.php(31): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 31, Array)
+#1 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\View\View.php(246): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\Common.php(1119): CodeIgniter\View\View->render('vendorPublicPag...', Array, true)
+#3 C:\xampp\htdocs\kimaara\ciFiles\app\Controllers\PublicPageLoader.php(48): view('vendorPublicPag...', Array)
+#4 C:\xampp\htdocs\kimaara\ciFiles\app\Controllers\PublicPageLoader.php(541): App\Controllers\PublicPageLoader->vendor_public_page_loader('category_page', Array)
+#5 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(918): App\Controllers\PublicPageLoader->category_page('tops')
+#6 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PublicPageLoader))
+#7 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\kimaara\index.php(46): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2020-12-28 23:29:41 --> Class 'App\Controllers\ProdcutModel' not found
+#0 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(918): App\Controllers\PublicPageLoader->category_page('tops')
+#1 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PublicPageLoader))
+#2 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\kimaara\index.php(46): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-12-28 23:30:03 --> Illegal string offset 'category'
+#0 C:\xampp\htdocs\kimaara\ciFiles\app\Controllers\PublicPageLoader.php(528): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Illegal string ...', 'C:\\xampp\\htdocs...', 528, Array)
+#1 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(918): App\Controllers\PublicPageLoader->category_page('tops')
+#2 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PublicPageLoader))
+#3 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\kimaara\index.php(46): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-12-28 23:30:33 --> Undefined variable: title
+#0 C:\xampp\htdocs\kimaara\ciFiles\app\Views\templates\header.php(6): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 6, Array)
+#1 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\View\View.php(246): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\Common.php(1119): CodeIgniter\View\View->render('templates/heade...', Array, true)
+#3 C:\xampp\htdocs\kimaara\ciFiles\app\Controllers\PublicPageLoader.php(88): view('templates/heade...', Array)
+#4 C:\xampp\htdocs\kimaara\ciFiles\app\Controllers\PublicPageLoader.php(536): App\Controllers\PublicPageLoader->public_page_loader('category_page', Array)
+#5 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(918): App\Controllers\PublicPageLoader->category_page('tops')
+#6 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PublicPageLoader))
+#7 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\kimaara\index.php(46): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2020-12-28 23:30:43 --> Undefined variable: title
+#0 C:\xampp\htdocs\kimaara\ciFiles\app\Views\templates\header.php(6): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 6, Array)
+#1 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\View\View.php(246): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\Common.php(1119): CodeIgniter\View\View->render('templates/heade...', Array, true)
+#3 C:\xampp\htdocs\kimaara\ciFiles\app\Controllers\PublicPageLoader.php(88): view('templates/heade...', Array)
+#4 C:\xampp\htdocs\kimaara\ciFiles\app\Controllers\PublicPageLoader.php(536): App\Controllers\PublicPageLoader->public_page_loader('category_page', Array)
+#5 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(918): App\Controllers\PublicPageLoader->category_page('tops')
+#6 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PublicPageLoader))
+#7 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\kimaara\index.php(46): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2020-12-28 23:30:44 --> Undefined variable: title
+#0 C:\xampp\htdocs\kimaara\ciFiles\app\Views\templates\header.php(6): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 6, Array)
+#1 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\View\View.php(246): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\Common.php(1119): CodeIgniter\View\View->render('templates/heade...', Array, true)
+#3 C:\xampp\htdocs\kimaara\ciFiles\app\Controllers\PublicPageLoader.php(88): view('templates/heade...', Array)
+#4 C:\xampp\htdocs\kimaara\ciFiles\app\Controllers\PublicPageLoader.php(536): App\Controllers\PublicPageLoader->public_page_loader('category_page', Array)
+#5 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(918): App\Controllers\PublicPageLoader->category_page('tops')
+#6 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PublicPageLoader))
+#7 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\kimaara\index.php(46): CodeIgniter\CodeIgniter->run()
+#9 {main}

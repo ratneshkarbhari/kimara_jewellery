@@ -33,7 +33,7 @@
                 
                     <div class="col-lg-3 col-md-6-sm-12 text-center custom-half-grid" style="margin-bottom: 5%; padding: 5px;">
                     
-                        <a href="<?php echo site_url('product/'.$product['slug']); ?>">
+                        <a href="<?php echo site_url('product/'.$product['slug'].'?stored_code='.$_COOKIE["store_code"]); ?>">
                             <div class="card">
                             
                                 <img src="<?php echo site_url('assets/images/featured_image_product/'.$product['featured_image']); ?>" class="card-img-top">

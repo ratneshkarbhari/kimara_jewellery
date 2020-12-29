@@ -1,0 +1,41 @@
+CRITICAL - 2020-12-29 00:01:02 --> Cannot use object of type App\Models\StoreModel as array
+#0 C:\xampp\htdocs\kimaara\ciFiles\app\Controllers\PublicPageLoader.php(560): App\Controllers\PublicPageLoader->vendor_public_page_loader('category_page', Array)
+#1 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(918): App\Controllers\PublicPageLoader->category_page('bali')
+#2 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PublicPageLoader))
+#3 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\kimaara\index.php(46): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-12-29 00:01:05 --> Cannot use object of type App\Models\StoreModel as array
+#0 C:\xampp\htdocs\kimaara\ciFiles\app\Controllers\PublicPageLoader.php(560): App\Controllers\PublicPageLoader->vendor_public_page_loader('category_page', Array)
+#1 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(918): App\Controllers\PublicPageLoader->category_page('bali')
+#2 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PublicPageLoader))
+#3 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\kimaara\index.php(46): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-12-29 00:01:30 --> Invalid argument supplied for foreach()
+#0 C:\xampp\htdocs\kimaara\ciFiles\app\Controllers\PublicPageLoader.php(52): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Invalid argumen...', 'C:\\xampp\\htdocs...', 52, Array)
+#1 C:\xampp\htdocs\kimaara\ciFiles\app\Controllers\PublicPageLoader.php(560): App\Controllers\PublicPageLoader->vendor_public_page_loader('category_page', Array)
+#2 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(918): App\Controllers\PublicPageLoader->category_page('bali')
+#3 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PublicPageLoader))
+#4 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\kimaara\index.php(46): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-12-29 00:02:16 --> Invalid argument supplied for foreach()
+#0 C:\xampp\htdocs\kimaara\ciFiles\app\Controllers\PublicPageLoader.php(54): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Invalid argumen...', 'C:\\xampp\\htdocs...', 54, Array)
+#1 C:\xampp\htdocs\kimaara\ciFiles\app\Controllers\PublicPageLoader.php(562): App\Controllers\PublicPageLoader->vendor_public_page_loader('category_page', Array)
+#2 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(918): App\Controllers\PublicPageLoader->category_page('bali')
+#3 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PublicPageLoader))
+#4 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\kimaara\index.php(46): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-12-29 00:03:13 --> Undefined variable: categories
+#0 C:\xampp\htdocs\kimaara\ciFiles\app\Views\templates\vendor_store_header.php(62): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 62, Array)
+#1 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\View\View.php(246): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\Common.php(1119): CodeIgniter\View\View->render('templates/vendo...', Array, true)
+#3 C:\xampp\htdocs\kimaara\ciFiles\app\Controllers\PublicPageLoader.php(86): view('templates/vendo...', Array)
+#4 C:\xampp\htdocs\kimaara\ciFiles\app\Controllers\PublicPageLoader.php(562): App\Controllers\PublicPageLoader->vendor_public_page_loader('category_page', Array)
+#5 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(918): App\Controllers\PublicPageLoader->category_page('bali')
+#6 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PublicPageLoader))
+#7 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\kimaara\index.php(46): CodeIgniter\CodeIgniter->run()
+#9 {main}

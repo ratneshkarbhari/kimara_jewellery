@@ -25,7 +25,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-3">
-                    <a class="navbar-brand" href="<?php echo site_url(''); ?>"><img src="<?php echo site_url('assets/images/newestlogo.png'); ?>" id="siteLogo"></a>
+                    <a class="navbar-brand" href="<?php echo site_url('store/'.$store_data["code"]); ?>"><img src="<?php echo site_url('assets/store_logos/'.$store_data["logo"]); ?>" id="siteLogo"></a>
                 </div>
                 <div class="col-lg-7">
                     <form action="<?php echo site_url('universal-product-search'); ?>" class="d-inline" method="post">
@@ -74,18 +74,16 @@
 
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav ml-auto">
+                                
                                 <li class="nav-item">
-                                    <a class="nav-link" href="<?php echo site_url(''); ?>">Home</a>
+                                    <a class="nav-link" href="<?php echo site_url('store/'.$store_data["code"]); ?>">Shop</a>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="<?php echo site_url('shop'); ?>">Shop</a>
-                                </li>
-                                <li class="nav-item">
+                                <!-- <li class="nav-item">
                                     <a class="nav-link" href="<?php echo site_url('about'); ?>">About</a>
                                 </li>         
                                 <li class="nav-item">
                                     <a class="nav-link" href="<?php echo site_url('contact'); ?>">Contact</a>
-                                </li>                         
+                                </li>                          -->
                             </ul>
                             
                         </div>

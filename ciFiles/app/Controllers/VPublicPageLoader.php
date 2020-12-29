@@ -59,8 +59,6 @@ class VPublicPageLoader extends BaseController
 		}else {
 			$allCategories = $cache->get('categories');
 		}
-
-
 		
 		if(!$cache->get('products')){
 			$productModel = new ProductModel();
@@ -77,7 +75,7 @@ class VPublicPageLoader extends BaseController
 			}
 		}
 
-		$stCatIds = array();
+	$stCatIds = array();
 
 		foreach ($allCategories as $cat) {
 			foreach ($storeProducts as $stpro) {

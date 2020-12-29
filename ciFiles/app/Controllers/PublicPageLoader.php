@@ -21,6 +21,76 @@ use App\Models\StoreModel;
 class PublicPageLoader extends BaseController
 {
 
+	private function vendor_public_page_loader($viewName,$data){
+
+		$cartModel = new CartModel();
+
+		$cache = \Config\Services::cache();
+
+		if (isset($_GET["store_code"])) {
+
+			if(!$cache->get('categories')){
+				$categoryModel = new CategoryModel();
+				$categoriesFetched = $categoryModel->findAll();	
+				$cache->save('categories',$categoriesFetched,24*60*60);
+				$allCategories = $cache->get('categories');
+			}else {
+				$allCategories = $cache->get('categories');
+			}
+
+			$storeModel = new StoreModel();
+
+			$storeData = $storeModel->where("code",$_GET["store_code"])->first();
+
+			$storeProductIds = $storeData["product_ids"];
+
+			$productModel = new ProductModel();
+
+			$storeCats = array();
+			$storeCatIds = array();
+
+			foreach (json_decode($storeProductIds,TRUE) as $strprdId) {
+				
+				$prdata = $productModel->find($strprdId);
+
+				foreach($allCategories as $singleCat){
+					if(($prdata["category"]==$singleCat["id"])&&!(in_array($singleCat["id"],$storeCatIds))){
+						$storeCatIds[] = $singleCat["id"];
+						$storeCats[] = $singleCat;
+					}
+				}				
+
+			}
+
+			$data["categories"] = $storeCats;
+
+		}else {
+			if(!$cache->get('categories')){
+				$categoryModel = new CategoryModel();
+				$categoriesFetched = $categoryModel->findAll();	
+				$cache->save('categories',$categoriesFetched,24*60*60);
+				$data['categories'] = $cache->get('categories');
+			}else {
+				$data['categories'] = $cache->get('categories');
+			}
+		}
+
+
+		$cart_items = $cartModel->fetch_all_cart_items();
+		$data['cart_item_count'] = count($cart_items);
+
+		if(!isset($_COOKIE['location'])){
+			setcookie('location','india',time()+(24*3600));
+		}
+
+		echo view('templates/vendor_store_header',$data);
+		echo view('vendorPublicPages/'.$viewName,$data);
+		echo view('templates/vendor_store_footer',$data);
+
+	}
+
+
+
 	private function public_page_loader($viewName,$data){
 
 		$cartModel = new CartModel();
@@ -57,21 +127,6 @@ class PublicPageLoader extends BaseController
 		echo view('templates/header',$data);
 		echo view('sitePages/'.$viewName,$data);
 		echo view('templates/footer',$data);
-
-	}
-
-	private function public_vendor_page_loader($viewName,$data){
-
-
-
-		if(!isset($_COOKIE['location'])){
-			setcookie('location','india',time()+(24*3600));
-		}
-
-
-		echo view('templates/vendor_store_header',$data);
-		echo view('vendorPublicPages/'.$viewName,$data);
-		echo view('templates/vendor_store_footer',$data);
 
 	}
 
@@ -478,43 +533,43 @@ class PublicPageLoader extends BaseController
 
 		$categoryModel = new CategoryModel();
 
-		$data['categories'] = $categoryModel->findAll();
 
-		$data['focus_category'] = $focusCategory = $categoryModel->where('slug',$slug)->first();
+		$data["focus_category"] = $focusCategory = $categoryModel->where("slug",$slug)->first();
 		
-		$data['title'] = $focusCategory['title'];
-
-		$productModel = new ProductModel();
+		$data['title'] = 'Products under '.$focusCategory["title"];
 
 		if(isset($_GET['store_code'])){
 
 			$storeModel = new StoreModel();
 
-			$storeData = $storeModel->where("code",$_GET["store_code"])->first();
+			$data["store_data"] = $storeData = $storeModel->where("code",$_GET["store_code"])->first();
+
+			$productModel = new ProductModel();
+
+			$productsInStore = json_decode($storeData["product_ids"],TRUE);
 
 			$productsInStoreForCat = array();
 
-			foreach (json_decode($storeData["product_ids"],TRUE) as $prId) {
-				$prData = $productModel->find($prId);
-				if($prData['id']==$focusCategory["id"]){
-					$productsInStoreForCat[] = $prData;
+			foreach ($productsInStore as $productId) {
+				$prdata = $productModel->find($productId);
+				if($prdata["category"]==$focusCategory["id"]){
+					$productsInStoreForCat[] = $prdata;
 				}
 			}
 
 			$data["products_in_category"] = $productsInStoreForCat;
 
-			$cartModel = new CartModel();
-			$cart_items = $cartModel->fetch_all_cart_items_store($_GET['store_code']);
-
-			$data["cart_item_count"] = count($cart_items);
-
-			setcookie("store_code",$_GET['store_code'],time()+(30*12*24*60*60));
-
-			echo view('templates/vendor_store_header',$data);
-			echo view('vendorPublicPages/category_page',$data);
-			echo view('templates/vendor_store_footer',$data);
+			$this->vendor_public_page_loader("category_page",$data);
 
 		}else {
+
+			$categoryModel = new CategoryModel();
+		
+			$data['title'] = $focusCategory['title'];
+	
+			$productModel = new ProductModel();
+	
+
 			$data['products_in_category'] = $productModel->where('category',$focusCategory['id'])->findAll();
 			$this->public_page_loader('category_page',$data);
 

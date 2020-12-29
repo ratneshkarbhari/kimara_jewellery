@@ -124,27 +124,44 @@ class Stores extends BaseController
 
         $productsToBeAddedArray = $this->request->getPost("selected_products");
 
+        $productsToBeAddedJson = json_encode($productsToBeAddedArray);
+
+        $storeData['product_ids'] = $productsToBeAddedJson;
+
+        $updated = $storeModel->update($storeData["id"],$storeData);
+    
+        return redirect()->to(site_url('update-store-products')); 
+
+    }
+
+    public function add_products_exe(){
+        $session = session();
+
+		$role = $session->get('role');
+
+		if($role!='vendor'){
+			return redirect()->to(site_url('vendor-login')); 
+        }
+
+        $storeModel = new StoreModel();
+    
+        $store_id = $this->request->getPost("store_id");
+        $storeData = $storeModel->find($store_id);
+
         $productsInStoreArray = json_decode($storeData["product_ids"],TRUE);
 
-        $newPrIdArray = array();
+        $productsToBeAddedArray = $this->request->getPost("selected_products");
 
-        
         foreach ($productsToBeAddedArray as $pr2Add) {
-            if($productsInStoreArray!=NULL){
-                if(!in_array($pr2Add,$productsInStoreArray)){
-                    $productsInStoreArray[] = $pr2Add;
-                }
-            }else {
+            if (!in_array($productsInStoreArray)) {
                 $productsInStoreArray[] = $pr2Add;
             }
         }
 
-        $newPrIdArrayJson = json_encode($productsInStoreArray);
+        $storeData["product_ids"] = json_encode($productsInStoreArray);
 
-        $storeData["product_ids"] = $newPrIdArrayJson;
-
-        $storeModel->update($storeData["id"],$storeData);
-
+        $updated = $storeModel->update($storeData["id"],$storeData);
+    
         return redirect()->to(site_url('update-store-products')); 
 
     }

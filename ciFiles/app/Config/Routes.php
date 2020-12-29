@@ -92,7 +92,8 @@ $routes->post('update-vendor-profile','Authentication::update_vendor_profile');
 $routes->post("update-vendor-password","Authentication::update_vendor_pwd");
 $routes->post("create-store-exe","Stores::create_exe");
 $routes->post("update-store-exe","Stores::update_exe");
-$routes->post("update-products-exe","Stores::update_products_exe");
+$routes->post("add-products-to-store-exe","Stores::update_products_exe");
+$routes->post("add-products-to-store-search-exe","Stores::add_products_exe");
 
 $routes->post("product-search-to-add-to-store","VendorPageLoader::search_products_add_to_store");
 

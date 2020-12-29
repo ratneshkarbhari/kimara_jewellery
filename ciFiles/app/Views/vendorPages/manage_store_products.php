@@ -17,7 +17,7 @@
         
         </form>
 
-        <form class="row" action="<?php echo site_url("update-products-exe"); ?>" enctype="multipart/form-data" method="post">
+    <form class="row" action="<?php echo site_url("add-products-to-store-exe"); ?>" enctype="multipart/form-data" method="post">
 
             <button type="submit" style="position: fixed; bottom: 5%; right: 2.5%; z-index: 500;" class="btn btn-success">Save</button>
             <input type="hidden" name="store_id" value="<?php echo $store["id"]; ?>">
