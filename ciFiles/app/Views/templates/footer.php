@@ -104,6 +104,9 @@
                         <h2 class="widgettitle">Information</h2>
                         <ul class="menu">
                             <li class="menu-item">
+                                <a href="<?php echo site_url('vendor-login'); ?>">Vendor Login</a>
+                            </li>
+                            <li class="menu-item">
                                 <a href="<?php echo site_url('terms-and-conditions'); ?>">Terms and Conditions</a>
                             </li>
                             <li class="menu-item">
@@ -118,6 +121,7 @@
                             <li class="menu-item">
                                 <a href="<?php echo site_url('contact'); ?>">Contact Us</a>
                             </li>
+                            
                         </ul>
                     </div>
                 </div>
