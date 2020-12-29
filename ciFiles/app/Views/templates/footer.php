@@ -45,9 +45,7 @@
                             <li class="menu-item">
                                 <a href="<?php echo site_url('customer-login'); ?>">Login</a>
                             </li>
-                            <li class="menu-item">
-                                <a href="<?php echo site_url('vendor-login'); ?>">Vendor Login</a>
-                            </li>
+
                             <?php $count = 0; foreach($categories as $category): if($category['parent']==0): if ($count<6): ?>
                             <li class="menu-item">
                                 <a href="<?php echo site_url('category/'.$category['slug']); ?>"><?php echo $category['title']; ?></a>
@@ -122,7 +120,9 @@
                             <li class="menu-item">
                                 <a href="<?php echo site_url('contact'); ?>">Contact Us</a>
                             </li>
-                            
+                            <li class="menu-item">
+                                <a href="<?php echo site_url('vendor-login'); ?>">Vendor Login</a>
+                            </li>
                         </ul>
                     </div>
                 </div>
