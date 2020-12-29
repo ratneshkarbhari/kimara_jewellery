@@ -72,7 +72,8 @@ class VPublicPageLoader extends BaseController
 		}		
 		
 		foreach ($allProducts as $prod) {
-			if(in_array($prod["id"],json_decode($storeData["product_ids"],TRUE))){
+			$prodIdArray = json_decode($storeData["product_ids"],TRUE);
+			if(in_array($prod["id"],$prodIdArray)){
 				$storeProducts[] = $prod;
 			}
 		}
