@@ -39,3 +39,171 @@ CRITICAL - 2020-12-29 00:03:13 --> Undefined variable: categories
 #7 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
 #8 C:\xampp\htdocs\kimaara\index.php(46): CodeIgniter\CodeIgniter->run()
 #9 {main}
+CRITICAL - 2020-12-29 00:19:11 --> Undefined index: store_code
+#0 C:\xampp\htdocs\kimaara\ciFiles\app\Controllers\PublicPageLoader.php(584): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 584, Array)
+#1 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(918): App\Controllers\PublicPageLoader->product_page('classy-style')
+#2 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PublicPageLoader))
+#3 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\kimaara\index.php(46): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-12-29 00:19:57 --> Call to undefined function App\Controllers\first()
+#0 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(918): App\Controllers\PublicPageLoader->product_page('classy-style')
+#1 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PublicPageLoader))
+#2 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\kimaara\index.php(46): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-12-29 00:20:35 --> Undefined variable: storeData
+#0 C:\xampp\htdocs\kimaara\ciFiles\app\Controllers\PublicPageLoader.php(606): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 606, Array)
+#1 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(918): App\Controllers\PublicPageLoader->product_page('classy-style')
+#2 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PublicPageLoader))
+#3 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\kimaara\index.php(46): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-12-29 00:21:00 --> Undefined index: store_code
+#0 C:\xampp\htdocs\kimaara\ciFiles\app\Views\templates\vendor_store_header.php(64): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 64, Array)
+#1 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\View\View.php(246): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\Common.php(1119): CodeIgniter\View\View->render('templates/vendo...', Array, true)
+#3 C:\xampp\htdocs\kimaara\ciFiles\app\Controllers\PublicPageLoader.php(86): view('templates/vendo...', Array)
+#4 C:\xampp\htdocs\kimaara\ciFiles\app\Controllers\PublicPageLoader.php(608): App\Controllers\PublicPageLoader->vendor_public_page_loader('product_page', Array)
+#5 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(918): App\Controllers\PublicPageLoader->product_page('classy-style')
+#6 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PublicPageLoader))
+#7 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\kimaara\index.php(46): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2020-12-29 00:22:04 --> Undefined index: store_code
+#0 C:\xampp\htdocs\kimaara\ciFiles\app\Views\templates\vendor_store_header.php(64): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 64, Array)
+#1 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\View\View.php(246): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\Common.php(1119): CodeIgniter\View\View->render('templates/vendo...', Array, true)
+#3 C:\xampp\htdocs\kimaara\ciFiles\app\Controllers\PublicPageLoader.php(86): view('templates/vendo...', Array)
+#4 C:\xampp\htdocs\kimaara\ciFiles\app\Controllers\PublicPageLoader.php(610): App\Controllers\PublicPageLoader->vendor_public_page_loader('product_page', Array)
+#5 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(918): App\Controllers\PublicPageLoader->product_page('classy-style')
+#6 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PublicPageLoader))
+#7 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\kimaara\index.php(46): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2020-12-29 00:22:06 --> Undefined index: store_code
+#0 C:\xampp\htdocs\kimaara\ciFiles\app\Views\templates\vendor_store_header.php(64): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 64, Array)
+#1 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\View\View.php(246): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\Common.php(1119): CodeIgniter\View\View->render('templates/vendo...', Array, true)
+#3 C:\xampp\htdocs\kimaara\ciFiles\app\Controllers\PublicPageLoader.php(86): view('templates/vendo...', Array)
+#4 C:\xampp\htdocs\kimaara\ciFiles\app\Controllers\PublicPageLoader.php(610): App\Controllers\PublicPageLoader->vendor_public_page_loader('product_page', Array)
+#5 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(918): App\Controllers\PublicPageLoader->product_page('classy-style')
+#6 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PublicPageLoader))
+#7 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\kimaara\index.php(46): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2020-12-29 00:22:24 --> Undefined index: store_code
+#0 C:\xampp\htdocs\kimaara\ciFiles\app\Views\templates\vendor_store_header.php(64): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 64, Array)
+#1 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\View\View.php(246): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\Common.php(1119): CodeIgniter\View\View->render('templates/vendo...', Array, true)
+#3 C:\xampp\htdocs\kimaara\ciFiles\app\Controllers\PublicPageLoader.php(86): view('templates/vendo...', Array)
+#4 C:\xampp\htdocs\kimaara\ciFiles\app\Controllers\PublicPageLoader.php(610): App\Controllers\PublicPageLoader->vendor_public_page_loader('product_page', Array)
+#5 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(918): App\Controllers\PublicPageLoader->product_page('classy-style')
+#6 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PublicPageLoader))
+#7 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\kimaara\index.php(46): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2020-12-29 00:23:09 --> Undefined index: store_code
+#0 C:\xampp\htdocs\kimaara\ciFiles\app\Views\templates\vendor_store_header.php(64): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 64, Array)
+#1 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\View\View.php(246): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\Common.php(1119): CodeIgniter\View\View->render('templates/vendo...', Array, true)
+#3 C:\xampp\htdocs\kimaara\ciFiles\app\Controllers\VPublicPageLoader.php(34): view('templates/vendo...', Array)
+#4 C:\xampp\htdocs\kimaara\ciFiles\app\Controllers\VPublicPageLoader.php(101): App\Controllers\VPublicPageLoader->public_page_loader('shop', Array)
+#5 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(918): App\Controllers\VPublicPageLoader->store('demostore123')
+#6 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\VPublicPageLoader))
+#7 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\kimaara\index.php(46): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2020-12-29 00:23:09 --> Undefined index: store_code
+#0 C:\xampp\htdocs\kimaara\ciFiles\app\Views\templates\vendor_store_header.php(64): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 64, Array)
+#1 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\View\View.php(246): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\Common.php(1119): CodeIgniter\View\View->render('templates/vendo...', Array, true)
+#3 C:\xampp\htdocs\kimaara\ciFiles\app\Controllers\VPublicPageLoader.php(34): view('templates/vendo...', Array)
+#4 C:\xampp\htdocs\kimaara\ciFiles\app\Controllers\VPublicPageLoader.php(101): App\Controllers\VPublicPageLoader->public_page_loader('shop', Array)
+#5 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(918): App\Controllers\VPublicPageLoader->store('demostore123')
+#6 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\VPublicPageLoader))
+#7 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\kimaara\index.php(46): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2020-12-29 00:25:47 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\kimaara\ciFiles\app\Controllers\VPublicPageLoader.php(75): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', 'C:\\xampp\\htdocs...', 75, Array)
+#1 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(918): App\Controllers\VPublicPageLoader->store()
+#2 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\VPublicPageLoader))
+#3 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\kimaara\index.php(46): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-12-29 00:27:48 --> Undefined index: store_code
+#0 C:\xampp\htdocs\kimaara\ciFiles\app\Controllers\PublicPageLoader.php(584): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 584, Array)
+#1 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(918): App\Controllers\PublicPageLoader->product_page('darem-to-dazzle')
+#2 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PublicPageLoader))
+#3 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\kimaara\index.php(46): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-12-29 00:28:11 --> Undefined index: store_code
+#0 C:\xampp\htdocs\kimaara\ciFiles\app\Controllers\PublicPageLoader.php(584): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 584, Array)
+#1 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(918): App\Controllers\PublicPageLoader->product_page('darem-to-dazzle')
+#2 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PublicPageLoader))
+#3 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\kimaara\index.php(46): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-12-29 01:04:09 --> Undefined variable: store_data
+#0 C:\xampp\htdocs\kimaara\ciFiles\app\Views\templates\vendor_store_header.php(28): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 28, Array)
+#1 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\View\View.php(246): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\Common.php(1119): CodeIgniter\View\View->render('templates/vendo...', Array, true)
+#3 C:\xampp\htdocs\kimaara\ciFiles\app\Controllers\PublicPageLoader.php(86): view('templates/vendo...', Array)
+#4 C:\xampp\htdocs\kimaara\ciFiles\app\Controllers\PublicPageLoader.php(408): App\Controllers\PublicPageLoader->vendor_public_page_loader('cart', Array)
+#5 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(918): App\Controllers\PublicPageLoader->cart()
+#6 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PublicPageLoader))
+#7 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\kimaara\index.php(46): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2020-12-29 01:04:18 --> Undefined variable: store_data
+#0 C:\xampp\htdocs\kimaara\ciFiles\app\Views\templates\vendor_store_header.php(28): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 28, Array)
+#1 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\View\View.php(246): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\Common.php(1119): CodeIgniter\View\View->render('templates/vendo...', Array, true)
+#3 C:\xampp\htdocs\kimaara\ciFiles\app\Controllers\PublicPageLoader.php(86): view('templates/vendo...', Array)
+#4 C:\xampp\htdocs\kimaara\ciFiles\app\Controllers\PublicPageLoader.php(408): App\Controllers\PublicPageLoader->vendor_public_page_loader('cart', Array)
+#5 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(918): App\Controllers\PublicPageLoader->cart()
+#6 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PublicPageLoader))
+#7 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\kimaara\index.php(46): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2020-12-29 01:05:03 --> Invalid file: vendorPublicPages/cart.php
+#0 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\View\View.php(228): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('vendorPublicPag...')
+#1 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\Common.php(1119): CodeIgniter\View\View->render('vendorPublicPag...', Array, true)
+#2 C:\xampp\htdocs\kimaara\ciFiles\app\Controllers\PublicPageLoader.php(87): view('vendorPublicPag...', Array)
+#3 C:\xampp\htdocs\kimaara\ciFiles\app\Controllers\PublicPageLoader.php(412): App\Controllers\PublicPageLoader->vendor_public_page_loader('cart', Array)
+#4 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(918): App\Controllers\PublicPageLoader->cart()
+#5 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PublicPageLoader))
+#6 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\kimaara\index.php(46): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-12-29 01:09:32 --> Undefined index: store_code
+#0 C:\xampp\htdocs\kimaara\ciFiles\app\Controllers\PublicPageLoader.php(606): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 606, Array)
+#1 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(918): App\Controllers\PublicPageLoader->product_page('shimmer-the-shi...')
+#2 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PublicPageLoader))
+#3 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\kimaara\index.php(46): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-12-29 01:10:22 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\kimaara\ciFiles\app\Controllers\VPublicPageLoader.php(75): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', 'C:\\xampp\\htdocs...', 75, Array)
+#1 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(918): App\Controllers\VPublicPageLoader->store()
+#2 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\VPublicPageLoader))
+#3 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\kimaara\index.php(46): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-12-29 01:31:59 --> Array to string conversion
+#0 C:\xampp\htdocs\kimaara\vendor\razorpay\razorpay\src\Request.php(148): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Array to string...', 'C:\\xampp\\htdocs...', 148, Array)
+#1 C:\xampp\htdocs\kimaara\vendor\razorpay\razorpay\src\Request.php(218): Razorpay\Api\Request->throwServerError(Array, 500)
+#2 C:\xampp\htdocs\kimaara\vendor\razorpay\razorpay\src\Request.php(115): Razorpay\Api\Request->verifyErrorFormat(Array, 500)
+#3 C:\xampp\htdocs\kimaara\vendor\razorpay\razorpay\src\Request.php(109): Razorpay\Api\Request->processError(Array, 500, Object(Requests_Response))
+#4 C:\xampp\htdocs\kimaara\vendor\razorpay\razorpay\src\Request.php(58): Razorpay\Api\Request->checkErrors(Object(Requests_Response))
+#5 C:\xampp\htdocs\kimaara\vendor\razorpay\razorpay\src\Entity.php(86): Razorpay\Api\Request->request('POST', 'https://api.raz...', Array)
+#6 C:\xampp\htdocs\kimaara\vendor\razorpay\razorpay\src\Entity.php(15): Razorpay\Api\Entity->request('POST', 'orders/', Array)
+#7 C:\xampp\htdocs\kimaara\vendor\razorpay\razorpay\src\Order.php(12): Razorpay\Api\Entity->create(Array)
+#8 C:\xampp\htdocs\kimaara\ciFiles\app\Controllers\PublicPageLoader.php(391): Razorpay\Api\Order->create(Array)
+#9 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(918): App\Controllers\PublicPageLoader->cart()
+#10 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PublicPageLoader))
+#11 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\kimaara\index.php(46): CodeIgniter\CodeIgniter->run()
+#13 {main}

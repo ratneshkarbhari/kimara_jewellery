@@ -289,7 +289,8 @@
                                             'amount' : '<?php echo ($orderData['amount']/100); ?>',
                                             'contact_number' : localStorage.getItem('orderContactNumber'),
                                             'shipping_address' : localStorage.getItem('shippingAddress'),
-                                            'billing_address' : localStorage.getItem('billingAddress'),                                            
+                                            'billing_address' : localStorage.getItem('billingAddress'),
+                                            'store' : '<?php echo $store_data["code"]; ?>',                                            
                                         },
                                         success: function (response) {
                                             if(response=='success'){
@@ -380,6 +381,7 @@ $("button#makePayment").click(function (e) {
         "image": "<?php echo site_url('assets/images/newestlogo.png'); ?>",
         // "order_id": "<?php echo $orderData['id']; ?>", //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
         "handler": function (response){
+            console.log(response);
             $.ajax({
                 type: "POST",
                 url: '<?php echo site_url('create-order'); ?>',
@@ -390,10 +392,12 @@ $("button#makePayment").click(function (e) {
                     'contact_number' : localStorage.getItem('orderContactNumber'),
                     'shipping_address' : localStorage.getItem('shippingAddress'),
                     'billing_address' : localStorage.getItem('billingAddress'),
-                    'store' : 'NA'
+                    'store' : '<?php echo $store_data["code"]; ?>'
                 },
                 success: function (response) {
-                    window.location.href = "<?php echo site_url('thank-you'); ?>";
+                    if (response=='success') {
+                        window.location.href = "<?php echo site_url('thank-you'); ?>";
+                    }
                 }
             });        
         },

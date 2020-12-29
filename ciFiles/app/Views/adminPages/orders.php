@@ -16,6 +16,7 @@
                             <td style="font-size: 1.2rem; font-weight: 500;">Public Order ID</td>
                             <td style="font-size: 1.2rem; font-weight: 500;">Customer Name</td>
                             <td style="font-size: 1.2rem; font-weight: 500;">Email</td>
+                            <td style="font-size: 1.2rem; font-weight: 500;">Store</td>
                             <td style="font-size: 1.2rem; font-weight: 500;">Status</td>
                             <td style="font-size: 1.2rem; font-weight: 500;">Actions</td>
                         </tr>
@@ -26,6 +27,7 @@
                             <td><?php echo $order['public_order_id']; ?></td>
                             <td><?php echo $order['customer_name']; ?></td>
                             <td><?php echo $order['customer_email']; ?></td>
+                            <td><?php echo $order['store']; ?></td>
                             <td><?php echo $order['status']; ?></td>
                             <td>
                                 <a class="btn btn-primary" data-toggle="modal" data-target="#orderDetailsModal-<?php echo $order['public_order_id']; ?>">See Details</a>

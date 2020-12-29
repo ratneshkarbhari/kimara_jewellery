@@ -25,7 +25,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-3">
-                    <a class="navbar-brand" href="<?php echo site_url('store/'.$store_data["code"]); ?>"><img src="<?php echo site_url('assets/store_logos/'.$store_data["logo"]); ?>" id="siteLogo"></a>
+                    <a class="navbar-brand" href="<?php echo site_url('store?store_code='.$store_data["code"]); ?>"><img src="<?php echo site_url('assets/store_logos/'.$store_data["logo"]); ?>" id="siteLogo"></a>
                 </div>
                 <div class="col-lg-7">
                     <form action="<?php echo site_url('universal-product-search'); ?>" class="d-inline" method="post">
@@ -39,7 +39,7 @@
                     <nav id="top-right-nav" class="ml-auto">
                     <a class="nav-link d-inline" href="<?php echo site_url('customer-login'); ?>"><img src="<?php echo site_url('assets/icons/user.svg'); ?>" width="30px" height="30px"></a>
                     <a class="nav-link d-inline" href="<?php if($cart_item_count>0){
-                        echo site_url('cart');
+                        echo site_url('cart?store_code='.$_GET["store_code"]);
                     }else {
                         echo '#';
                     }  ?>"><img src="<?php echo site_url('assets/icons/shopping-bag.svg'); ?>" width="30px" height="30px"><span class="cart-count-circle" style="position: absolute; top: 3%; width: 22px; height: 22px; line-height: 22px;     font-size: 15px; background-color: black; right: 25%; color: white; font-weight: bolder; padding-left: 4%;"><?php echo $cart_item_count; ?></span></a>
@@ -61,7 +61,7 @@
                                     <div class="dropdown-menu" style="width: 250px;" aria-labelledby="navbarDropdown">
                                     <?php foreach($categories as $category): if($category['parent']==0):  ?>
 
-                                    <a class="dropdown-item" href="<?php echo site_url('category/'.$category['slug'].'?store_code='.$_COOKIE["store_code"]); ?>"><?php echo $category['title']; ?></a>
+                                    <a class="dropdown-item" href="<?php echo site_url('category/'.$category['slug'].'?store_code='.$_GET["store_code"]); ?>"><?php echo $category['title']; ?></a>
 
                                     <?php endif; endforeach; ?>
 
@@ -76,7 +76,7 @@
                             <ul class="navbar-nav ml-auto">
                                 
                                 <li class="nav-item">
-                                    <a class="nav-link" href="<?php echo site_url('store/'.$store_data["code"]); ?>">Shop</a>
+                                    <a class="nav-link" href="<?php echo site_url('store?store_code='.$_GET["store_code"]); ?>">Shop</a>
                                 </li>
                                 <!-- <li class="nav-item">
                                     <a class="nav-link" href="<?php echo site_url('about'); ?>">About</a>
@@ -99,7 +99,7 @@
             <a href="#" id="sideNavOpenLink" class="nav-link"><img src="<?php echo site_url('assets/icons/menu.svg'); ?>" width="15px" height="15px"></a>
 
                 
-            <a class="navbar-brandx mr-auto ml-auto" style="margin-left: 3%; width: 60%; text-align: center;" href="<?php echo site_url('/'); ?>"><img style="width: 100%;" src="<?php echo site_url('assets/images/newestlogo.png'); ?>" id="logonew"></a>
+            <a class="navbar-brandx mr-auto ml-auto" style="margin-left: 3%; width: 60%; text-align: center;" href="<?php echo site_url('store?store_code='.$_GET["store_code"]); ?>"><img style="width: 100%;" src="<?php echo site_url('assets/images/newestlogo.png'); ?>" id="logonew"></a>
             
             <a class="nav-link" id="toggleSearchBar" href="#"><img src="<?php echo site_url('assets/icons/search.svg'); ?>" width="15px" height="15px"></a>
             <div id="searchBox" class="container" style="padding: 5%;">
@@ -163,13 +163,13 @@
            <div id="sidenavCatBox" >
            <?php  foreach($categories as $category): if($category['parent']==0):   ?>
 
-                <a href="<?php echo site_url('category/'.$category['slug']).'?store='.$_COOKIE["store_code"]; ?>" class="sidenav-link"><?php echo $category['title']; ?></a>
+                <a href="<?php echo site_url('category/'.$category['slug']).'?store='.$_GET["store_code"]; ?>" class="sidenav-link"><?php echo $category['title']; ?></a>
 
            <?php endif; endforeach; ?>
            </div>
 
             <div id="other-links-menu" style="position: absolute; margin-top: 20%; left: 0; right: 0;">
-                <a href="<?php echo site_url('store/'.$_COOKIE["store_code"]); ?>" class="sidenav-link">Home</a>
+                <a href="<?php echo site_url('store/'.$_GET["store_code"]); ?>" class="sidenav-link">Home</a>
                 <a href="<?php echo site_url('about'); ?>" class="sidenav-link">About</a>
                 <a href="<?php echo site_url('contact'); ?>" class="sidenav-link">Contact</a>
             </div>

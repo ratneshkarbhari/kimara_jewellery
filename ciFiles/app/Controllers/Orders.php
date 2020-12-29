@@ -61,7 +61,8 @@ class Orders extends BaseController
             'contact_number' => $contactNumber,
             'shipping_address' => $shippingAddress,
             'billing_address' => $billingAddress,
-            'date' => date("m-d-Y")
+            'date' => date("m-d-Y"),
+            'store' => $this->request->getPost("store")
         );
 
         $orderModel = new OrderModel();
@@ -124,7 +125,8 @@ class Orders extends BaseController
             'contact_number' => $contactNumber,
             'shipping_address' => $shippingAddress,
             'billing_address' => $billingAddress,
-            'date' => date("m-d-Y")
+            'date' => date("m-d-Y"),
+            'store' => $this->request->getPost("store")
         );
 
         $orderModel = new OrderModel();

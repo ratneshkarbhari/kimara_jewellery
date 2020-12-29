@@ -174,7 +174,11 @@
 
 
                             <div class="col-lg-6 col-md-6 col-sm-6 text-left custom-half-grid" style="padding-left: 0; margin-top: 1%;">
-                                <a style="font-size: 19px;" href="https://api.whatsapp.com/send?phone=919022906690&text=<?php echo urlencode('I am interested in '.site_url('product/'.$product['slug'])); ?>">Inquiry on <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/1200px-WhatsApp.svg.png" width="20px" height="20px"></a>
+                                <a style="font-size: 19px;" href="https://api.whatsapp.com/send?phone=<?php if(isset($vendorData["mobile_number"])){
+                                     echo $vendorData["mobile_number"];
+                                }else {
+                                    echo "919022906690";
+                                } ?>&text=<?php echo urlencode('I am interested in '.site_url('product/'.$product['slug'])); ?>">Inquiry on <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/1200px-WhatsApp.svg.png" width="20px" height="20px"></a>
                             </div>
                             <div id="description-box" class="col-lg-12 col-md-12 col-sm-12" style="margin-top: 10%;">
                                 <p class="product-description text-left"><?php echo $product['description']; ?></p>
@@ -203,7 +207,7 @@
             <h1 class="text-center section-title">Related Products</h1>
             <div class="owl-carousel owl-theme" id="related-products">
                 <?php foreach($related_products as $related_product): if($related_product['id']!=$product['id']): ?>
-                    <a href="<?php echo site_url('product/'.$related_product['slug']); ?>"><div class="card text-center"> <img src="<?php echo site_url('assets/images/featured_image_product/'.$related_product['featured_image']); ?>" class="card-img-top"><div class="card-body">                            
+                    <a href="<?php echo site_url('product/'.$related_product['slug'].'?store_code='.$store_data["code"]); ?>"><div class="card text-center"> <img src="<?php echo site_url('assets/images/featured_image_product/'.$related_product['featured_image']); ?>" class="card-img-top"><div class="card-body">                            
                     <h6 class="related_product-title"><?php if(strlen($related_product['title'])>9){
                     echo substr($related_product['title'],0,9).'...';
                     }else {
@@ -248,7 +252,7 @@
                 material : productMaterial,
                 size : productSize,
                 quantity : productQuantity,
-                store: 'NA'
+                store: '<?php echo $store_data["code"] ?>'
             },
             success: function (response) {
                 if(response=='success'){

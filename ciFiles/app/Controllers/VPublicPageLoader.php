@@ -38,7 +38,9 @@ class VPublicPageLoader extends BaseController
 	}
 
 	
-	public function store($code){
+	public function store(){
+
+		$code = $_GET['store_code'];
 
 		setcookie("store_code",$code,time()+(365*24*60*60));
 

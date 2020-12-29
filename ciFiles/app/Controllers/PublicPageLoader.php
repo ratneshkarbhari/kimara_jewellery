@@ -76,7 +76,7 @@ class PublicPageLoader extends BaseController
 		}
 
 
-		$cart_items = $cartModel->fetch_all_cart_items();
+		$cart_items = $cartModel->fetch_all_cart_items_store($storeData["code"]);
 		$data['cart_item_count'] = count($cart_items);
 
 		if(!isset($_COOKIE['location'])){
@@ -318,6 +318,7 @@ class PublicPageLoader extends BaseController
 
 	public function cart(){
 
+
 		$cache = \Config\Services::cache();
 
 	
@@ -336,7 +337,14 @@ class PublicPageLoader extends BaseController
 			$data['products'] = $products = $cache->get('products');
 		}
 
-		$data['cart_items'] = $cart_items =  $cartModel->fetch_all_cart_items();
+		if(isset($_GET["store_code"])){
+			$data['cart_items'] = $cart_items =  $cartModel->fetch_all_cart_items_store($_GET["store_code"]);
+		}else {
+			$data['cart_items'] = $cart_items =  $cartModel->fetch_all_cart_items();
+		}
+
+
+	
 
 		$shippingRateModel = new ShippingRateModel();
 
@@ -350,8 +358,8 @@ class PublicPageLoader extends BaseController
 
 		if($role=='customer'&&!empty($cart_items)){
 			if(!empty($cart_items)){
-				$api = new Api('rzp_live_u5KGjme6VZlvYo', 'dR3h6yH6SmxQWQkJgDlc7M23');
-				// $api = new Api('rzp_test_mlYXTmYaM1BGAt', 'EyHBhRQFsgaxhaKvlWPan9ds');
+				// $api = new Api('rzp_live_u5KGjme6VZlvYo', 'dR3h6yH6SmxQWQkJgDlc7M23');
+				$api = new Api('rzp_test_tt5wGNQQXooze8', 'e1qIxvJbkhRb77P9hg2ZW4Zw');
 	
 				$totalPayable = 0.00;
 	
@@ -394,7 +402,21 @@ class PublicPageLoader extends BaseController
 			$data['percentage_discount'] = $couponDetails['percentage_discount'];
 		}
 
-		$this->public_page_loader('cart',$data);
+		$storeModel = new StoreModel();
+
+		$data["store_data"] = $storeModel->where("code",$_GET["store_code"])->first();
+
+		if(isset($_GET["store_code"])){
+
+			
+			$this->vendor_public_page_loader('cart',$data);
+
+
+		}else {
+
+			$this->public_page_loader('cart',$data);
+
+		}
 
 	}
 
@@ -580,21 +602,54 @@ class PublicPageLoader extends BaseController
 
 	public function product_page($slug){
 
-		$productModel = new ProductModel();
 
-		$data['product'] = $productModel->where('slug',$slug)->first();
+		if(isset($_GET["store_code"])){
 
+			$storeModel = new StoreModel();
 
-		$data['title'] = $data['product']['title'];
-
-		$categoryModel = new CategoryModel();
-
-		$data['categories'] = $categoryModel->findAll();
-
-		$data['related_products'] = $productModel->where('category',$data['product']['category'])->findAll();
+			$data["store_data"] = $storeData = $storeModel->where("code",$_GET["store_code"])->first();
 
 
-		$this->public_page_loader('product_page',$data);
+			$productModel = new ProductModel();
+
+			$data['product'] = $productModel->where('slug',$slug)->first();
+	
+	
+			$data['title'] = $data['product']['title'];
+	
+			$categoryModel = new CategoryModel();
+	
+			$data['categories'] = $categoryModel->findAll();
+	
+			$data['related_products'] = $productModel->where('category',$data['product']['category'])->findAll();
+
+			$authModel = new AuthModel();
+
+			$data["vendorData"] = $authModel->where("id",$storeData["vendor"])->first();
+
+			$this->vendor_public_page_loader("product_page",$data);
+			
+
+		}else {
+
+			$productModel = new ProductModel();
+
+			$data['product'] = $productModel->where('slug',$slug)->first();
+	
+	
+			$data['title'] = $data['product']['title'];
+	
+			$categoryModel = new CategoryModel();
+	
+			$data['categories'] = $categoryModel->findAll();
+	
+			$data['related_products'] = $productModel->where('category',$data['product']['category'])->findAll();
+	
+	
+			$this->public_page_loader('product_page',$data);	
+			
+		}
+
 
 	}
 

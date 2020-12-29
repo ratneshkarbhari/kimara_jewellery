@@ -18,7 +18,7 @@ class Cart extends BaseController
         
         $cartModel = new CartModel();
         
-        $existsAlready = $cartModel->where('product_id',$pid)->where('material',$material)->where('size',$size)->where('ip_address',$_SERVER['REMOTE_ADDR'])->first();
+        $existsAlready = $cartModel->where('product_id',$pid)->where('material',$material)->where('size',$size)->where('ip_address',$_SERVER['REMOTE_ADDR'])->where("store",$this->request->getPost("store"))->first();
         
         if ($existsAlready) {
             $existsAlready['quantity'] = $existsAlready['quantity']+$quantity;
@@ -34,7 +34,8 @@ class Cart extends BaseController
                 'material' => $material,
                 'size' => $size,
                 'quantity' => $quantity,
-                'ip_address' => $_SERVER['REMOTE_ADDR']
+                'ip_address' => $_SERVER['REMOTE_ADDR'],
+                'store' => $this->request->getPost("store")
             );
             $res = $cartModel->insert($data);
             if ($res) {

@@ -37,7 +37,7 @@ $routes->get('/', 'PublicPageLoader::home');
 $routes->get('flush-cache','PublicPageLoader::flush_cache');
 
 // Vendor Store Pages
-$routes->get("store/(:any)","VPublicPageLoader::store/$1");
+$routes->get("store","VPublicPageLoader::store");
 
 // SitePages
 $routes->get('admin-login','PublicPageLoader::admin_login');

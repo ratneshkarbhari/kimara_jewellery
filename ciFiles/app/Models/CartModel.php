@@ -9,7 +9,7 @@ class CartModel extends Model
 
     protected $primaryKey = 'id';
 
-    protected $allowedFields = ['product_id','material','size','quantity','ip_address'];
+    protected $allowedFields = ['product_id','material','size','quantity','ip_address','store'];
 
     public function clear_cart_for_ip(){
         return $this->where('ip_address',$_SERVER['REMOTE_ADDR'])->delete();
