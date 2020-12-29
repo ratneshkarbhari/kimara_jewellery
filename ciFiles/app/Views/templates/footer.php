@@ -45,6 +45,9 @@
                             <li class="menu-item">
                                 <a href="<?php echo site_url('customer-login'); ?>">Login</a>
                             </li>
+                            <li class="menu-item">
+                                <a href="<?php echo site_url('vendor-login'); ?>">Vendor Login</a>
+                            </li>
                             <?php $count = 0; foreach($categories as $category): if($category['parent']==0): if ($count<6): ?>
                             <li class="menu-item">
                                 <a href="<?php echo site_url('category/'.$category['slug']); ?>"><?php echo $category['title']; ?></a>
@@ -103,9 +106,7 @@
                     <div class="ysera-custommenu default">
                         <h2 class="widgettitle">Information</h2>
                         <ul class="menu">
-                            <li class="menu-item">
-                                <a href="<?php echo site_url('vendor-login'); ?>">Vendor Login</a>
-                            </li>
+                            
                             <li class="menu-item">
                                 <a href="<?php echo site_url('terms-and-conditions'); ?>">Terms and Conditions</a>
                             </li>
