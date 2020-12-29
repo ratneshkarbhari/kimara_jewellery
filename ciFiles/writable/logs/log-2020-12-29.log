@@ -207,3 +207,10 @@ CRITICAL - 2020-12-29 01:31:59 --> Array to string conversion
 #11 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
 #12 C:\xampp\htdocs\kimaara\index.php(46): CodeIgniter\CodeIgniter->run()
 #13 {main}
+CRITICAL - 2020-12-29 02:33:13 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\kimaara\ciFiles\app\Controllers\VPublicPageLoader.php(75): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', 'C:\\xampp\\htdocs...', 75, Array)
+#1 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(918): App\Controllers\VPublicPageLoader->store()
+#2 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\VPublicPageLoader))
+#3 C:\xampp\htdocs\kimaara\ciFiles\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\kimaara\index.php(46): CodeIgniter\CodeIgniter->run()
+#5 {main}

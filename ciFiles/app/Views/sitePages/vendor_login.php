@@ -30,6 +30,14 @@
                     <button type="submit" style="margin: 3% 0;" class="btn btn-success">Login</button>
                 
                 </form>
+
+                <br>
+
+                <div class="text-center" style="margin-top: 15%;">
+                    
+                    <p>Dont have a Vendor Account? <a style="color: red;" href="<?php echo site_url('vendor-registration'); ?>">Register Here</a></p>
+                
+                </div>
             
             </div>
             <div class="col-lg-4 col-md-12 col-sm-12"></div>

@@ -142,6 +142,12 @@
 
                         </div>
 
+                        <div class="text-center" style="margin-top: 15%;">
+                    
+                            <p>Already have a Vendor Account? <a style="color: red;" href="<?php echo site_url('vendor-login'); ?>">Register Here</a></p>
+                        
+                        </div>
+
                         <script>
 
 
