@@ -81,7 +81,7 @@
 
         <?php else: ?>
 
-            <h6>No Categories Added</h6>
+            <h6>No Sales have happened</h6>
 
         <?php endif; ?>
 
