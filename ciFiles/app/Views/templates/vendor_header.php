@@ -80,7 +80,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link sidebar-link" href="<?php echo site_url('salesx'); ?>">
+                <a class="nav-link sidebar-link" href="<?php echo site_url('vendor-sales'); ?>">
                 Sales 
                 </a>
             </li>

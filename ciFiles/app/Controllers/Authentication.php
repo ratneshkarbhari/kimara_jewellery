@@ -16,6 +16,7 @@ use App\Models\VendorApprovalModel;
 use App\Models\CartModel;
 use App\Models\OrderModel;
 use App\Models\OtpModel;
+use App\Models\StoreModel;
 
 
 class Authentication extends BaseController
@@ -239,6 +240,14 @@ class Authentication extends BaseController
 
                 if ($passwordCorrect) {
                     
+                    $storeModel = new StoreModel();
+
+                    $storeData = $storeModel->where("vendor",$userData["id"])->first();
+
+                    if(!$storeData){
+                        $storeData['code'] = 'NA';
+                    }
+
                     $newdata = [
                         'id' => $userData['id'],
                         'first_name'  => $userData['first_name'],
@@ -246,7 +255,8 @@ class Authentication extends BaseController
                         'email'     => $userData['email'],
                         'role' => $userData['role'],
                         'mobile_number' => $userData['mobile_number'],
-                        'approved' => $userData['approved']
+                        'approved' => $userData['approved'],
+                        'store_code' => $storeData['code']
                     ];
                 
                     $session->set($newdata);                

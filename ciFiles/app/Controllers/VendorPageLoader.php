@@ -2,6 +2,7 @@
 
 use App\Models\ProductModel;
 use App\Models\StoreModel;
+use App\Models\OrderModel;
 
 class VendorPageLoader extends BaseController
 {
@@ -13,6 +14,26 @@ class VendorPageLoader extends BaseController
         echo view('templates/vendor_header',$data);
         echo view('vendorPages/'.$viewName,$data);
         echo view('templates/vendor_footer',$data);
+
+    }
+
+    public function vendor_sales(){
+
+        $session = session();
+
+		$role = $session->get('role');
+
+		if($role!='vendor'){
+			return redirect()->to(site_url('vendor-login')); 
+        }
+
+        $data["title"] = "Sales";
+
+        $orderModel = new OrderModel();
+
+        $data["orders"] = $orderModel->where("store",$_SESSION["store_code"])->findAll();
+
+        $this->vendor_page_loader("orders",$data);
 
     }
 
