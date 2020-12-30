@@ -20,6 +20,17 @@
                 <input value="<?php echo $vendor_data['last_name']; ?>" class="form-control" type="text" name="last_name" id="last_name">
             </div>
             <div class="form-group">
+                <label for="status">Activate / Deactivate</label>
+                <select name="status" id="status" class="form-control">
+                    <option value="active" <?php if ($vendor_data["status"]=='active') {
+                        echo "selected";
+                    } ?>>Active</option>
+                    <option value="disabled" <?php if ($vendor_data["status"]=='disabled') {
+                        echo "selected";
+                    } ?>>Disabled</option>
+                </select>
+            </div>
+            <div class="form-group">
                 <label for="email">Email</label>
                 <input value="<?php echo $vendor_data['email']; ?>" class="form-control" type="email" name="email" id="email">
             </div>

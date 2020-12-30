@@ -121,6 +121,7 @@
                                     url: "<?php echo site_url('set-coupon-cookie'); ?>",
                                     data: {
                                         'code' : couPonCode
+                                        'vendor' : 'NA'
                                     },
                                     success: function (response) {
                                         window.location.reload();

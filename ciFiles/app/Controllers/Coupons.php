@@ -54,6 +54,10 @@ class Coupons extends BaseController
 
         $couponExists = $couponModel->where('code',$code)->first();
 
+        $authModel = new AuthModel();
+        
+        $data["vendors"] = $vendors = $authModel->where("role",'vendor')->findAll();
+
         if ($couponExists) {
             
             $data['title']  = 'Add Coupon';
@@ -81,8 +85,12 @@ class Coupons extends BaseController
 
     public function set_coupon_cookie(){
         $code = $this->request->getPost('code');
+        $merchant = $this->request->getPost("vendor");
+        if ($merchant='NA') {
+            $merchant = 0;
+        }
         $couponModel = new CouponModel();
-        $couponData = $couponModel->where('code',$code)->where('status','active')->first();
+        $couponData = $couponModel->where('code',$code)->where('status','active')->where("merchant",$merchant)->first();
         if ($couponData) {
             setcookie('coupon',$couponData['code'],time()+90000000000);
         }

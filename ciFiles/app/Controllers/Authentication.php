@@ -233,8 +233,9 @@ class Authentication extends BaseController
             $userData = $authModel->where('email',$enteredEmail)->where('role','vendor')->first();
 
 
+
             
-            if ($userData) {
+            if (isset($userData)&&$userData['status']=='active') {
                 
                 $passwordCorrect = password_verify($enteredPassword,$userData['password']);
 
@@ -272,7 +273,7 @@ class Authentication extends BaseController
                 
             } else {
 
-                $this->load_vendor_login_error('A customer with ths email is not found');
+                $this->load_vendor_login_error('A vendor with ths email is not found or your account is disabled');
                 
 
             }
@@ -301,7 +302,8 @@ class Authentication extends BaseController
             'role' => 'vendor',
             'adhaar' => '',
             'pan' => '',
-            'approved' => 'not-submitted'
+            'approved' => 'not-submitted',
+            'status' => 'active'
         );
 
         $authModel = new AuthModel();
@@ -377,7 +379,8 @@ class Authentication extends BaseController
             'first_name' => $first_name,
             'last_name' => $last_name,
             'email' => $email,
-            'mobile_number' => $mobile_number
+            'mobile_number' => $mobile_number,
+            'status' => $this->request->getPost("status")
         );
 
         $authModel = new AuthModel();
@@ -884,6 +887,16 @@ class Authentication extends BaseController
         $cart_items = $cartModel->fetch_all_cart_items();		
         $data['cart_item_count'] = count($cart_items);
 
+        $cache = \Config\Services::cache();
+
+        if(!$cache->get('catsByPos')){
+			$catPosModel = new CategoryPositionModel();
+			$catsByPos = $catPosModel->first();;	
+			$cache->save('catsByPos',$catsByPos,24*60*60);
+			$data['catsByPos'] = $cache->get('catsByPos');
+		}else {
+			$data['catsByPos'] = $cache->get('catsByPos');
+		}
 
         echo view('templates/header',$data);
         echo view('sitePages/vendor_login',$data);

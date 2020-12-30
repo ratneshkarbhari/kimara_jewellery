@@ -20,6 +20,9 @@
             <label>Merchant</label>
             <select class="form-control" name="merchant" id="merchant">
                 <option value="NA">Not Applicable</option>
+            <?php foreach($vendors as $vendor): ?>
+                <option value="<?php echo $vendor["id"]; ?>"><?php echo $vendor["first_name"].' '.$vendor["last_name"]; ?></option>
+            <?php endforeach; ?>
             </select>
             <div class="form-group">
                 <label for="code">Code</label>

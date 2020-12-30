@@ -100,6 +100,10 @@ class AdminPageLoader extends BaseController
 		if($role!='admin'){
 			return redirect()->to(site_url('admin-login')); 
         }
+        
+        $authModel = new AuthModel();
+        
+        $data["vendors"] = $vendors = $authModel->where("role",'vendor')->findAll();
         $data['title']  = 'Add Coupon';
         $data['success'] = $data['error'] = '';
         $this->admin_page_loader('add_coupon_page',$data);               
