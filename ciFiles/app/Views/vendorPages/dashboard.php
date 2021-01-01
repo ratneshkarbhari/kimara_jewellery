@@ -5,7 +5,7 @@
 
         <h3 class="page-title"><?php echo $title; ?></h3>
 
-        <h5>Store Link: <?php echo site_url("store?store_code=".$_SESSION["store_code"]); ?></h5>
+        <p>Store Link: <?php echo site_url("store?store_code=".$_SESSION["store_code"]); ?></p>
     
         <?php if($_SESSION['approved']=='yes'): ?>
 

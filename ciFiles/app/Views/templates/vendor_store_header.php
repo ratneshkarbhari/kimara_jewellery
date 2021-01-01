@@ -99,7 +99,7 @@
             <a href="#" id="sideNavOpenLink" class="nav-link"><img src="<?php echo site_url('assets/icons/menu.svg'); ?>" width="15px" height="15px"></a>
 
                 
-            <a class="navbar-brandx mr-auto ml-auto" style="margin-left: 3%; width: 60%; text-align: center;" href="<?php echo site_url('store?store_code='.$_GET["store_code"]); ?>"><img style="width: 100%;" src="<?php echo site_url('assets/images/newestlogo.png'); ?>" id="logonew"></a>
+            <a class="navbar-brandx mr-auto ml-auto" style="margin-left: 3%; width: 60%; text-align: center;" href="<?php echo site_url('store?store_code='.$_GET["store_code"]); ?>"><img style="width: 100%;" src="<?php echo site_url('assets/store_logos/'.$store_data["logo"]); ?>" id="logonew"></a>
             
             <a class="nav-link" id="toggleSearchBar" href="#"><img src="<?php echo site_url('assets/icons/search.svg'); ?>" width="15px" height="15px"></a>
             <div id="searchBox" class="container" style="padding: 5%;">
@@ -158,7 +158,7 @@
     max-height: 500vh;
     height: 100vh;">
            <div id="sidenavLogoBox" style="text-align: center;">
-           <img src="<?php echo site_url('assets/images/newestlogo.png'); ?>" id="logonew" style="width: 70%; margin: 10% auto;">
+           <img src="<?php echo site_url('assets/store_logos/'.$store_data["logo"]); ?>" id="logonew" style="width: 70%; margin: 10% auto;">
            </div>
            <div id="sidenavCatBox" >
            <?php  foreach($categories as $category): if($category['parent']==0):   ?>
