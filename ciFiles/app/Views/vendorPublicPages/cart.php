@@ -385,7 +385,7 @@ $("button#makePayment").click(function (e) {
             console.log(response);
             $.ajax({
                 type: "POST",
-                url: '<?php echo site_url('create-order'); ?>',
+                url: '<?php echo site_url('create-order-vendor'); ?>',
                 data: {
                     'payee_customer_email' : '<?php echo $_SESSION['email']; ?>',
                     'payee_customer_name' : '<?php echo $_SESSION['first_name'].' '.$_SESSION['last_name']; ?>',
