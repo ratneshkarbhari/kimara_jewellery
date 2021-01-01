@@ -174,7 +174,7 @@
 
 
                             <div class="col-lg-6 col-md-6 col-sm-6 text-left custom-half-grid" style="padding-left: 0; margin-top: 1%;">
-                                <a style="font-size: 19px;" href="https://api.whatsapp.com/send?phone=<?php if(isset($vendorData["mobile_number"])){
+                                <a style="font-size: 19px;" href="https://api.whatsapp.com/send?phone=+91<?php if(isset($vendorData["mobile_number"])){
                                      echo $vendorData["mobile_number"];
                                 }else {
                                     echo "919022906690";
