@@ -3,6 +3,7 @@
 use App\Models\ProductModel;
 use App\Models\StoreModel;
 use App\Models\OrderModel;
+use App\Models\CouponModel;
 
 class VendorPageLoader extends BaseController
 {
@@ -34,6 +35,28 @@ class VendorPageLoader extends BaseController
         $data["orders"] = $orderModel->where("store",$_SESSION["store_code"])->findAll();
 
         $this->vendor_page_loader("orders",$data);
+
+    }
+
+    public function alloted_coupons(){
+
+        $session = session();
+
+		$role = $session->get('role');
+
+		if($role!='vendor'){
+			return redirect()->to(site_url('vendor-login')); 
+        }
+
+        $data["title"] = "Alloted Coupons";
+
+        $couponModel = new CouponModel();
+
+        $data["coupons"] = $couponModel->where("merchant",$_SESSION['id'])->findAll();
+
+        $data["success"] = $data["error"] = "";
+
+        $this->vendor_page_loader("coupons",$data);
 
     }
 
