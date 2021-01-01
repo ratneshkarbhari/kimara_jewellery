@@ -81,6 +81,39 @@ class Orders extends BaseController
 
     }
 
+    public function delete(){
+
+        $orderModel = new OrderModel();
+
+        $orderData = $orderModel->find($this->request->getPost("id"));
+
+        $orderDeleted = $orderModel->delete($orderData["id"]);
+
+        if ($orderDeleted) {
+            
+            $data['title'] = 'Orders';
+            $orderModel = new OrderModel();
+            $orders = $orderModel->findAll();
+    
+            $data['orders'] = array_reverse($orders);
+    
+            $this->admin_page_loader('orders',$data);
+
+        } else {
+
+            $data['title'] = 'Orders';
+            $orderModel = new OrderModel();
+            $orders = $orderModel->findAll();
+    
+            $data['orders'] = array_reverse($orders);
+    
+            $this->admin_page_loader('orders',$data);
+            
+        }
+        
+
+    }
+
     public function create_cod_order(){
 
         $cartModel = new CartModel();

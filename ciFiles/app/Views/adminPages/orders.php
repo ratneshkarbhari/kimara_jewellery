@@ -70,7 +70,7 @@
                                     </div>
                                 </div>
 
-                                <form action="<?php echo site_url('delete-category-exe'); ?>" style="display: inline;" method="post">
+                                <form action="<?php echo site_url('delete-order-exe'); ?>" style="display: inline;" method="post">
                                     <input type="hidden" name="id" value="<?php echo $order['id']; ?>">
                                     <button type="submit" class="btn btn-danger">Delete</button>
                                 </form>
