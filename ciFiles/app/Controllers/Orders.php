@@ -81,6 +81,70 @@ class Orders extends BaseController
 
     }
 
+    public function create_vendor(){
+
+        $cartModel = new CartModel();
+
+        $cartItems = $cartModel->fetch_all_cart_items_store($this->request->getPost('store'));
+
+        $payee_customer_email = $this->request->getPost('payee_customer_email');
+        $payee_customer_name = $this->request->getPost('payee_customer_name');
+        $amount = $this->request->getPost('amount');
+
+        $contactNumber = $this->request->getPost('contact_number');
+        $shippingAddress = $this->request->getPost('shipping_address');
+        $billingAddress = $this->request->getPost('billing_address');
+
+        $items_qty_json = '';
+
+        $itemsJsonObject = array();
+
+        foreach($cartItems as $cartItem){
+            $itemsJsonObject[] = array(
+                'product_id' => $cartItem['product_id'],
+                'quantity' => $cartItem['quantity'],
+                'material' => $cartItem['material'],
+                'size' => $cartItem['size']
+            );
+        }
+
+        $items_qty_json = json_encode($itemsJsonObject);
+
+        $publicOrderId = uniqid();
+
+
+        $orderObject = array(
+            'public_order_id' => $publicOrderId,
+            'products_qty_json' => $items_qty_json,
+            'amount_paid' => $amount,
+            'status' => 'placed',
+            'status_details' => 'Order is placed by payment made via RazorPay',
+            'customer_email' => $payee_customer_email,
+            'customer_name' => $payee_customer_name,
+            'mode' => 'prepaid',
+            'contact_number' => $contactNumber,
+            'shipping_address' => $shippingAddress,
+            'billing_address' => $billingAddress,
+            'date' => date("m-d-Y"),
+            'store' => $this->request->getPost("store")
+        );
+
+        $orderModel = new OrderModel();
+
+        $res = $orderModel->insert($orderObject);
+
+ 
+        if ($res) {
+            setcookie('latest_order_id',$publicOrderId,time()+600);
+            $cartModel->where('ip_address', $_SERVER['REMOTE_ADDR'])->delete();
+            $this->order_create_notification($orderObject);
+            exit('success');
+        }else {
+            exit('failure');
+        }
+
+    }
+
     public function delete(){
 
         $orderModel = new OrderModel();

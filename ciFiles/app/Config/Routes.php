@@ -78,6 +78,7 @@ $routes->post('update-category-positions','CategoryPositions::update');
 // Order EndPoint
 $routes->post('create-cod-order','Orders::create_cod_order');
 $routes->post('create-order','Orders::create');
+$routes->post('create-order-vendor','Orders::create_vendor');
 $routes->post('update-order','Orders::update');
 $routes->post("delete-order-exe","Orders::delete");
 
