@@ -2,7 +2,7 @@
 
 
 use App\Models\CouponModel;
-
+use App\Models\AuthModel;
 
 class Coupons extends BaseController
 {
