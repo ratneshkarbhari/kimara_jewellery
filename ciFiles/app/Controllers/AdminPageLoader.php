@@ -16,9 +16,65 @@ use Config\Services;
 class AdminPageLoader extends BaseController
 {
 
-    private function send_to_login(){
+    public function sales_reports(){
 
+
+        $session = session();
+
+        $role = $session->get('role');
         
+
+		if($role!='admin'){
+			return redirect()->to(site_url('admin-login')); 
+        }
+
+        $data['title'] = 'Orders';
+        $orderModel = new OrderModel();
+        $orders = $orderModel->findAll();
+
+        $data["orders"] = $orders;
+        
+        $role = $session->get('role');
+        
+
+		if($role!='admin'){
+			return redirect()->to(site_url('admin-login')); 
+        }
+        
+        $data['title'] = 'Reports';
+        
+        $this->admin_page_loader('reports',$data);
+
+    }
+
+
+    public function orders_from_store($store_code){
+
+        $session = session();
+
+        $role = $session->get('role');
+        
+
+		if($role!='admin'){
+			return redirect()->to(site_url('admin-login')); 
+        }
+
+        $data['title'] = 'Orders';
+        $orderModel = new OrderModel();
+        $orders = $orderModel->where("store",$store_code)->findAll();
+
+        $data["orders"] = $orders;
+        
+        $role = $session->get('role');
+        
+
+		if($role!='admin'){
+			return redirect()->to(site_url('admin-login')); 
+        }
+        
+        $data['title'] = 'Reports';
+        
+        $this->admin_page_loader('reports',$data);
 
     }
 

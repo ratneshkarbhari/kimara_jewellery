@@ -133,6 +133,9 @@ $routes->post('set-coupon-cookie','Coupons::set_coupon_cookie');
 $routes->post('unset-coupon-cookie','Coupons::unset_coupon_cookie');
 
 // Admin Dashboard
+$routes->get("orders-from-store/(:any)","AdminPageLoader::orders_from_store/$1");
+$routes->get("orders-from-code/(:any)","AdminPageLoader::orders_from_code/$1");
+$routes->get('sales-reports','AdminPageLoader::sales_reports');
 $routes->get('vendor-requests','AdminPageLoader::vendor_requests');
 $routes->get("edit-vendor-details/(:any)",'AdminPageLoader::edit_vendor/$1');
 $routes->get('vendors-mgt','AdminPageLoader::vendor_mgt');

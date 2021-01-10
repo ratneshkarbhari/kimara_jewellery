@@ -62,8 +62,9 @@ class Orders extends BaseController
             'contact_number' => $contactNumber,
             'shipping_address' => $shippingAddress,
             'billing_address' => $billingAddress,
-            'date' => date("m-d-Y"),
-            'store' => $this->request->getPost("store")
+            'date' => date("d-m-Y"),
+            'store' => $this->request->getPost("store"),
+            'code' => $this->request->getPost("coupon")
         );
 
         $orderModel = new OrderModel();
@@ -129,8 +130,9 @@ class Orders extends BaseController
             'contact_number' => $contactNumber,
             'shipping_address' => $shippingAddress,
             'billing_address' => $billingAddress,
-            'date' => date("m-d-Y"),
-            'store' => $storeCode
+            'date' => date("d-m-Y"),
+            'store' => $storeCode,
+            'code' => $this->request->getPost("coupon")
         );
 
         $orderModel = new OrderModel();
@@ -143,10 +145,10 @@ class Orders extends BaseController
             $cartModel->where('ip_address', $_SERVER['REMOTE_ADDR'])->delete();
             $this->order_create_notification($orderObject);
             $storeModel = new StoreModel();
-            $authModel = AuthModel();
+            $authModel = new AuthModel();
             $storeData = $storeModel->where("code",$storeCode)->first();
             $vendorData = $authModel->where("id",$storeData['vendor'])->first();
-            $this->order_create_notification_vendor($orderObject,$vendoremail);
+            $this->order_create_notification_vendor($orderObject,$vendorData["email"]);
             exit('success');
         }else {
             exit('failure');

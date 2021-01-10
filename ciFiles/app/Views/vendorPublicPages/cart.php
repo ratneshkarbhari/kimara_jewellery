@@ -120,7 +120,7 @@
                                     type: "POST",
                                     url: "<?php echo site_url('set-coupon-cookie'); ?>",
                                     data: {
-                                        'code' : couPonCode
+                                        'code' : couPonCode,
                                         'vendor' : $store_data["vendor"]
                                     },
                                     success: function (response) {
@@ -393,7 +393,8 @@ $("button#makePayment").click(function (e) {
                     'contact_number' : localStorage.getItem('orderContactNumber'),
                     'shipping_address' : localStorage.getItem('shippingAddress'),
                     'billing_address' : localStorage.getItem('billingAddress'),
-                    'store' : '<?php echo $store_data["code"]; ?>'
+                    'store' : '<?php echo $store_data["code"]; ?>',
+                    'coupon' : '<?php if(isset($_COOKIE["coupon"])){echo $_COOKIE["coupon"];}else{echo 'NA';} ?>'
                 },
                 success: function (response) {
                     if (response=='success') {

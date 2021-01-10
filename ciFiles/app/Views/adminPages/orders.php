@@ -83,7 +83,7 @@
 
         <?php else: ?>
 
-            <h6>No Categories Added</h6>
+            <h6>No Orders Found</h6>
 
         <?php endif; ?>
 

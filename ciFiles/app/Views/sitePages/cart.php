@@ -120,7 +120,7 @@
                                     type: "POST",
                                     url: "<?php echo site_url('set-coupon-cookie'); ?>",
                                     data: {
-                                        'code' : couPonCode
+                                        'code' : couPonCode,
                                         'vendor' : 'NA'
                                     },
                                     success: function (response) {
@@ -391,7 +391,8 @@ $("button#makePayment").click(function (e) {
                     'contact_number' : localStorage.getItem('orderContactNumber'),
                     'shipping_address' : localStorage.getItem('shippingAddress'),
                     'billing_address' : localStorage.getItem('billingAddress'),
-                    'store' : 'NA'
+                    'store' : 'NA',
+                    'coupon' : '<?php if(isset($_COOKIE["coupon"])){echo $_COOKIE["coupon"];}else{echo 'NA';} ?>'
                 },
                 success: function (response) {
                     window.location.href = "<?php echo site_url('thank-you'); ?>";

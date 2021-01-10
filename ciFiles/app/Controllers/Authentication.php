@@ -12,6 +12,7 @@ use PHPMailer\PHPMailer\SMTP;
 
 use App\Models\AuthModel;
 use App\Models\CategoryModel;
+use App\Models\CategoryPositionModel;
 use App\Models\VendorApprovalModel;
 use App\Models\CartModel;
 use App\Models\OrderModel;
@@ -642,6 +643,8 @@ class Authentication extends BaseController
 
                 } else {
 
+
+
                     $this->load_admin_login_error('The Password entered is incorrect');                    
 
                 }
@@ -851,6 +854,20 @@ class Authentication extends BaseController
         $data['error'] = $errorMessage;
         $categoryModel = new CategoryModel();
         $cartModel = new CartModel();
+
+        $cache = \Config\Services::cache();
+
+        
+
+        if(!$cache->get('catsByPos')){
+			$catPosModel = new CategoryPositionModel();
+			$catsByPos = $catPosModel->first();;	
+			$cache->save('catsByPos',$catsByPos,24*60*60);
+			$data['catsByPos'] = $cache->get('catsByPos');
+		}else {
+			$data['catsByPos'] = $cache->get('catsByPos');
+		}
+
 
         $cart_items = $cartModel->fetch_all_cart_items();		$data['cart_item_count'] = count($cart_items);
 
