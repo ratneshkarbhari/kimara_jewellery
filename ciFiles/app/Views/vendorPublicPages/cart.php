@@ -398,7 +398,7 @@ $("button#makePayment").click(function (e) {
                 },
                 success: function (response) {
                     if (response=='success') {
-                        window.location.href = "<?php echo site_url('thank-you'); ?>";
+                        window.location.replace("<?php echo site_url('thank-you'); ?>");
                     }
                 }
             });        

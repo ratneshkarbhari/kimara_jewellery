@@ -22,7 +22,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <?php foreach($orders as $order): ?>
+                        <?php $orders = array_reverse($orders); foreach($orders as $order): ?>
                         <tr>
                             <td><?php echo $order['public_order_id']; ?></td>
                             <td><?php echo $order['customer_name']; ?></td>

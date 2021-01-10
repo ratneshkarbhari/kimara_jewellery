@@ -395,7 +395,7 @@ $("button#makePayment").click(function (e) {
                     'coupon' : '<?php if(isset($_COOKIE["coupon"])){echo $_COOKIE["coupon"];}else{echo 'NA';} ?>'
                 },
                 success: function (response) {
-                    window.location.href = "<?php echo site_url('thank-you'); ?>";
+                    window.location.replace("<?php echo site_url('thank-you'); ?>");
                 }
             });        
         },
