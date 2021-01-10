@@ -33,6 +33,10 @@ class AdminPageLoader extends BaseController
         $orders = $orderModel->findAll();
 
         $data["orders"] = $orders;
+
+        $categoryModel = new CategoryModel();
+
+        $data['categories'] = $categoryModel->findAll();
         
         $role = $session->get('role');
         
@@ -54,6 +58,9 @@ class AdminPageLoader extends BaseController
 
         $role = $session->get('role');
         
+        $categoryModel = new CategoryModel();
+
+        $data['categories'] = $categoryModel->findAll();
 
 		if($role!='admin'){
 			return redirect()->to(site_url('admin-login')); 
@@ -84,6 +91,9 @@ class AdminPageLoader extends BaseController
 
         $role = $session->get('role');
         
+        $categoryModel = new CategoryModel();
+
+        $data['categories'] = $categoryModel->findAll();
 
 		if($role!='admin'){
 			return redirect()->to(site_url('admin-login')); 
@@ -106,6 +116,37 @@ class AdminPageLoader extends BaseController
         
         $this->admin_page_loader('reports',$data);
 
+    }
+
+    public function orders_between_dates(){
+        $session = session();
+
+        $role = $session->get('role');
+        
+        $categoryModel = new CategoryModel();
+
+        $data['categories'] = $categoryModel->findAll();
+
+		if($role!='admin'){
+			return redirect()->to(site_url('admin-login')); 
+        }
+
+        $data['title'] = 'Orders';
+        $orderModel = new OrderModel();
+        $orders = $orderModel->where("date<=",$this->request->getPost("date_end"))->where("date>=",$this->request->getPost("date_start"))->findAll();
+
+        $data["orders"] = $orders;
+        
+        $role = $session->get('role');
+        
+
+		if($role!='admin'){
+			return redirect()->to(site_url('admin-login')); 
+        }
+        
+        $data['title'] = 'Reports';
+        
+        $this->admin_page_loader('reports',$data);
     }
 
     private function admin_page_loader($viewName,$data){

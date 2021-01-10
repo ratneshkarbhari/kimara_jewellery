@@ -133,6 +133,7 @@ $routes->post('set-coupon-cookie','Coupons::set_coupon_cookie');
 $routes->post('unset-coupon-cookie','Coupons::unset_coupon_cookie');
 
 // Admin Dashboard
+$routes->post("filter-sales-by-date","AdminPageLoader::orders_between_dates");
 $routes->get("orders-from-store/(:any)","AdminPageLoader::orders_from_store/$1");
 $routes->get("orders-from-code/(:any)","AdminPageLoader::orders_from_code/$1");
 $routes->get('sales-reports','AdminPageLoader::sales_reports');
