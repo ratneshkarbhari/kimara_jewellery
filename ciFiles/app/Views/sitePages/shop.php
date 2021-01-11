@@ -101,6 +101,7 @@ $(".price-slider").change(function (e) {
 });
 $("input.filter-trigger").change(function (e) { 
     e.preventDefault();
+    $("div#productsBox").html('Fetching Products for filter');
     let max_price = $("input#max_price").val();
     var selected_categories = [];
     $("input.filter-category:checked").each(function(i){
