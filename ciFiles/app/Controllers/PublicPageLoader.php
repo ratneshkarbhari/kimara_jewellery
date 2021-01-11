@@ -90,6 +90,12 @@ class PublicPageLoader extends BaseController
 	}
 
 
+	public function filter_endpoint(){
+	
+		return json_encode($_POST);
+		
+	}
+
 
 	private function public_page_loader($viewName,$data){
 
