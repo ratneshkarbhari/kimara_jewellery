@@ -39,7 +39,7 @@
                     <!-- <h1 class="section-title text-center" id="filtered-title">ALL Products</h1> -->
         
                             
-                    <div class="row" >
+                    <div id="productsBox" class="row" >
         
                         <?php foreach($products as $product):  ?>
                     
@@ -102,7 +102,10 @@ $(".price-slider").change(function (e) {
 $("input.filter-trigger").change(function (e) { 
     e.preventDefault();
     let max_price = $("input#max_price").val();
-    let selected_categories = $("input.filter-category").val();
+    var selected_categories = [];
+    $("input.filter-category:checked").each(function(i){
+        selected_categories[i] = $(this).val();
+        });
     $.ajax({
         type: "POST",
         url: "<?php echo site_url('filter-endpoint'); ?>",
@@ -111,7 +114,7 @@ $("input.filter-trigger").change(function (e) {
             'selected_categories' : selected_categories
         },
         success: function (response) {
-            console.log(response);
+            $("div#productsBox").html(response);
         }
     });
 });

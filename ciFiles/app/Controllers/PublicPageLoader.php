@@ -92,8 +92,49 @@ class PublicPageLoader extends BaseController
 
 	public function filter_endpoint(){
 	
-		return json_encode($_POST);
+		$max_price = $this->request->getPost("max_price");
+		$selected_categories = $this->request->getPost("selected_categories");
+
+		$productModel = new ProductModel();
+
+		$results_max_price = $productModel->where('sale_price<=',$max_price)->findAll();
+
+		$results_max_price_n_cat = array();
+
+		foreach ($results_max_price as $rmp ) {
+			if (in_array($rmp['category'],$selected_categories)) {
+				$results_max_price_n_cat[] = $rmp;
+			}
+		}
+
+		$finalReturnJson = '';
+
+		foreach ($results_max_price_n_cat as $rmpc) {
+			$finalReturnJson.='<div class="col-lg-3 col-md-6-sm-12 text-center custom-half-grid" style="margin-bottom: 5%; padding: 5px;">
+                        
+			<a href="'.site_url("product/".$rmpc['slug']).'">
+				<div class="card">
+				
+					<img src="'.site_url("assets/images/featured_image_product/".$rmpc['featured_image']).'" class="card-img-top">
+				
+					<div class="card-body">
+					
+					<h6 class="product-title">Gems &amp; Ga...</h6>                                                                                <span class="larger-price-card"> ₹ '.$rmpc["sale_price"].'</span> | <del><span class="smaller-price-card"> ₹ '.$rmpc["price"].'</span></del>
+						
+						<br><br>
+
+						<button class="btn btn-primary">BUY NOW</button>
+
+					</div>
+
+				</div>
+			</a>
+
+		</div>';
+		}
 		
+		return $finalReturnJson;
+
 	}
 
 
