@@ -580,11 +580,35 @@ class PublicPageLoader extends BaseController
 
 		if(!$cache->get('products')){
 			$productModel = new ProductModel();
-			$productsFetched = $productModel->findAll();	
-			$cache->save('products',$productsFetched,24*60*60);
-			$data['products'] = $cache->get('products');
+			$productsFetched = $productModel->findAll();
+			$finalProductsGrid = '';	
+			foreach ($productsFetched as $rmpc) {
+				$finalProductsGrid.='<div class="col-lg-3 col-md-6-sm-12 text-center custom-half-grid" style="margin-bottom: 5%; padding: 5px;">
+							
+				<a href="'.site_url("product/".$rmpc['slug']).'">
+					<div class="card">
+					
+						<img src="'.site_url("assets/images/featured_image_product/".$rmpc['featured_image']).'" class="card-img-top">
+					
+						<div class="card-body">
+						
+						<h6 class="product-title">Gems &amp; Ga...</h6>                                                                                <span class="larger-price-card"> ₹ '.$rmpc["sale_price"].'</span> | <del><span class="smaller-price-card"> ₹ '.$rmpc["price"].'</span></del>
+							
+							<br><br>
+	
+							<button class="btn btn-primary">BUY NOW</button>
+	
+						</div>
+	
+					</div>
+				</a>
+	
+			</div>';
+			}
+			$cache->save('products-grid-cache',$finalProductsGrid,24*60*60);
+			$data['products_grid_cache'] = $cache->get('products-grid-cache');
 		}else {
-			$data['products'] = $cache->get('products');
+			$data['products_grid_cache'] = $cache->get('products-grid-cache');
 		}
 
 		$this->public_page_loader('shop',$data);
