@@ -158,6 +158,7 @@ class PublicPageLoader extends BaseController
 		$max_price = $this->request->getPost("max_price");
 		$selected_categories = $this->request->getPost("selected_categories");
 		$store_products_json = $this->request->getPost('store_products');
+
 	
 		$store_productIDS = json_decode($store_products_json,TRUE);
 
@@ -181,7 +182,7 @@ class PublicPageLoader extends BaseController
 		$results_max_price_n_cat = array();
 
 		foreach ($store_products as $rmp ) {
-			if ((in_array($rmp['category'],$selected_categories))&&$rmp['sale_price']<=$max_price) {
+			if ($rmp['sale_price']<=$max_price) {
 				$results_max_price_n_cat[] = $rmp;
 			}
 		}
@@ -191,7 +192,7 @@ class PublicPageLoader extends BaseController
 		foreach ($results_max_price_n_cat as $rmpc) {
 			$finalReturnJson.='<div class="col-lg-3 col-md-6-sm-12 text-center custom-half-grid" style="margin-bottom: 5%; padding: 5px;">
                         
-			<a href="'.site_url("product/".$rmpc['slug']).'">
+			<a href="'.site_url('product/'.$rmpc['slug'].'?store_code='.$_COOKIE["store_code"]).'">
 				<div class="card">
 				
 					<img src="'.site_url("assets/images/featured_image_product/".$rmpc['featured_image']).'" class="card-img-top">

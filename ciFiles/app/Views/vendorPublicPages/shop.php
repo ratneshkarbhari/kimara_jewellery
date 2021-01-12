@@ -20,7 +20,7 @@
 
 
                 <h5>by categories</h5>
-                <?php print_r($categories); foreach($categories as $category): ?>
+                <?php foreach($categories as $category): ?>
                     <div class="form-check">
                         <input class="form-check-input filter-trigger filter-category" filter-type="category" type="checkbox" value="<?php echo $category['id']; ?>" id="category-<?php echo $category['id']; ?>">
                         <label class="form-check-label" for="category-<?php echo $category['id']; ?>">
@@ -45,7 +45,7 @@
                 
                     <div class="col-lg-3 col-md-6-sm-12 text-center custom-half-grid" style="margin-bottom: 5%; padding: 5px;">
                     
-                        <a href="<?php echo site_url('product/'.$product['slug']); ?>">
+                        <a href="<?php echo site_url('product/'.$product['slug'].'?store_code='.$_COOKIE["store_code"]); ?>">
                             <div class="card">
                             
                                 <img src="<?php echo site_url('assets/images/placeholder.png'); ?>" data-src="<?php echo site_url('assets/images/featured_image_product/'.$product['featured_image']); ?>" class="card-img-top lazy ">
@@ -116,8 +116,8 @@ $.ajax({
         'store_products' : '<?php echo json_encode($prodIdArray); ?>'
     },
     success: function (response) {
-        console.log(response);
-        // $("div#productsBox").html(response);
+        // console.log(response);
+        $("div#productsBox").html(response);
     }
 });
 });

@@ -70,31 +70,26 @@ class VPublicPageLoader extends BaseController
 		}else {
 			$allProducts = $cache->get('products');
 		}		
+	
 		
-
+		$stCats = array();
+		$stCatIds = array();
 		foreach ($allProducts as $prod) {
 			$prodIdArray = json_decode($storeData["product_ids"],TRUE);
 			if(in_array($prod["id"],$prodIdArray)){
-				
 				$storeProducts[] = $prod;
-			}
-		}
-
-	$stCatIds = array();
-
-		foreach ($storeProducts as $stpro) {
-			foreach ($allCategories as $cat) {
-				if ($stpro["category"]==$cat["id"]) {
-					if(!in_array($cat["id"],$stCatIds)){
-						$stCatIds[] = $cat["id"];
-						$storeCategories[] = $cat;
+				foreach ($allCategories as $cat) {
+					if ($prod['category']==$cat['id']&&(!in_array($cat['id'],$stCatIds))) {
+						$stCatIds[] = $cat['id'];
+						$stCats[] = $cat;
 					}
 				}
 			}
 		}
 
+
 		$data["products"] = $storeProducts;
-		$data["categories"] = $storeCategories;
+		$data["categories"] = $stCats;
 		$data["store_data"] = $storeData;
 		$data["title"] = $storeData["name"];
 		$data["prodIdArray"] = $prodIdArray;
