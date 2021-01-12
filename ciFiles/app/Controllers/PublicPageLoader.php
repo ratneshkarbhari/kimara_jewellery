@@ -95,15 +95,20 @@ class PublicPageLoader extends BaseController
 		$max_price = $this->request->getPost("max_price");
 		$selected_categories = $this->request->getPost("selected_categories");
 
-		$productModel = new ProductModel();
+		$cache = \Config\Services::cache();		
 
-		$results_max_price = $productModel->where('sale_price<=',$max_price)->findAll();
+		if(!$cache->get('products')){
+			$productModel = new ProductModel();
+			$productsFetched = $productModel->findAll();	
+			$cache->save('products',$productsFetched,24*60*60);
+			$allProducts = $cache->get('products');
+		}else {
+			$allProducts = $cache->get('products');
+		}
 
-		$results_max_price_n_cat = array();
-
-		foreach ($results_max_price as $rmp ) {
-			if (in_array($rmp['category'],$selected_categories)) {
-				$results_max_price_n_cat[] = $rmp;
+		foreach ($allProducts as $prod ) {
+			if (($prod['sale_price']<$max_price)&&(in_array($prod['category'],$selected_categories))) {
+				$results_max_price_n_cat[] = $prod;
 			}
 		}
 
