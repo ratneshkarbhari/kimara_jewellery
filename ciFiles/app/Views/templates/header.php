@@ -12,64 +12,7 @@
 <body>
 <script src="<?php echo site_url('assets/js/jquery.min.js'); ?>"></script>
 <script src="<?php echo site_url('assets/js/feather.min.js'); ?>"></script>
-<script>
-/**
- * jQuery Unveil
- * A very lightweight jQuery plugin to lazy load images
- * http://luis-almeida.github.com/unveil
- *
- * Licensed under the MIT license.
- * Copyright 2013 Luís Almeida
- * https://github.com/luis-almeida
- */
-
-;(function($) {
-
-$.fn.unveil = function(threshold, callback) {
-
-  var $w = $(window),
-      th = threshold || 0,
-      retina = window.devicePixelRatio > 1,
-      attrib = retina? "data-src-retina" : "data-src",
-      images = this,
-      loaded;
-
-  this.one("unveil", function() {
-    var source = this.getAttribute(attrib);
-    source = source || this.getAttribute("data-src");
-    if (source) {
-      this.setAttribute("src", source);
-      if (typeof callback === "function") callback.call(this);
-    }
-  });
-
-  function unveil() {
-    var inview = images.filter(function() {
-      var $e = $(this);
-      if ($e.is(":hidden")) return;
-
-      var wt = $w.scrollTop(),
-          wb = wt + $w.height(),
-          et = $e.offset().top,
-          eb = et + $e.height();
-
-      return eb >= wt - th && et <= wb + th;
-    });
-
-    loaded = inview.trigger("unveil");
-    images = images.not(loaded);
-  }
-
-  $w.on("scroll.unveil resize.unveil lookup.unveil", unveil);
-
-  unveil();
-
-  return this;
-
-};
-
-})(window.jQuery || window.Zepto);
-</script>
+<script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.3.0/dist/lazyload.min.js"></script>
     <header id="desktop" class="sticky-top">
         <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-5HJTYVW80C"></script>

@@ -1,7 +1,5 @@
     <script>
-    $(document).ready(function() {
-        $("img").unveil();
-    });
+    var lazyLoadInstance = new LazyLoad({});
     </script>
     <nav id="mobileBottomNav" class="container" style="padding: 0.5rem 0.7rem; width: 100%; margin: auto;" >
         
