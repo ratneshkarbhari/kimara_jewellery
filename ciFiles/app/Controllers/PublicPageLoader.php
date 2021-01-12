@@ -92,11 +92,13 @@ class PublicPageLoader extends BaseController
 
 	public function filter_endpoint(){
 	
-		$cache = \Config\Services::cache();
 
 
 		$max_price = $this->request->getPost("max_price");
 		$selected_categories = $this->request->getPost("selected_categories");
+
+		$cache = \Config\Services::cache();
+
 
 		if(!$cache->get('products')){
 			$productModel = new ProductModel();
@@ -171,13 +173,14 @@ class PublicPageLoader extends BaseController
 	
 		$cache = \Config\Services::cache();
 
-
+		$max_price = $this->request->getPost("max_price");
+		$store_product_ids = $this->request->getPost("store_products");
+		$selected_categories = $this->request->getPost("selected_categories");
 		$max_price = $this->request->getPost("max_price");
 		$selected_categories = $this->request->getPost("selected_categories");
-		$store_products_json = $this->request->getPost('store_products');
 
-	
-		$store_productIDS = json_decode($store_products_json,TRUE);
+		$cache = \Config\Services::cache();
+
 
 		if(!$cache->get('products')){
 			$productModel = new ProductModel();
@@ -188,18 +191,29 @@ class PublicPageLoader extends BaseController
 			$allProducts = $cache->get('products');
 		}
 
-		$store_products = array();
 
-		foreach ($allProducts as $singlePro) {
-			if (in_array($singlePro['id'],$store_productIDS)) {
-				$store_products[] = $singlePro;
-			}
-		}
 
 		$results_max_price_n_cat = array();
 
-		foreach ($store_products as $rmp ) {
-			if ($rmp['sale_price']<=$max_price) {
+
+		if ($selected_categories==NULL) {
+
+			if(!$cache->get('categories')){
+				$productModel = new ProductModel();
+				$categoriesFetched = $productModel->findAll();	
+				$cache->save('categories',$categoriesFetched,24*60*60);
+				$allcategories = $cache->get('categories');
+			}else {
+				$allcategories = $cache->get('categories');
+			}			
+			
+			$selected_categories = $allcategories;
+
+		}
+
+
+		foreach ($allProducts as $rmp ) {
+			if ((in_array($rmp['category'],$selected_categories))||$rmp['sale_price']<=$max_price) {
 				$results_max_price_n_cat[] = $rmp;
 			}
 		}
@@ -209,7 +223,7 @@ class PublicPageLoader extends BaseController
 		foreach ($results_max_price_n_cat as $rmpc) {
 			$finalReturnJson.='<div class="col-lg-3 col-md-6-sm-12 text-center custom-half-grid" style="margin-bottom: 5%; padding: 5px;">
                         
-			<a href="'.site_url('product/'.$rmpc['slug'].'?store_code='.$_COOKIE["store_code"]).'">
+			<a href="'.site_url("product/".$rmpc['slug']).'">
 				<div class="card">
 				
 					<img src="'.site_url("assets/images/featured_image_product/".$rmpc['featured_image']).'" class="card-img-top">
@@ -235,7 +249,6 @@ class PublicPageLoader extends BaseController
 		}else {
 			return 'No Products match your filters';
 		}
-
 
 	}
 

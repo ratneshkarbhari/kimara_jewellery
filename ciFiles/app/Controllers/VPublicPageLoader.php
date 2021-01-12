@@ -48,8 +48,21 @@ class VPublicPageLoader extends BaseController
 		
 		$storeData = $storeModel->where("code",$code)->first();
 
-		$storeProducts = array();
+		$categoryModel = new CategoryModel();
+		$productModel = new ProductModel();
+
+		$cartModel = new CartModel();
+		$cart_items = $cartModel->fetch_all_cart_items_store($code);
+		$data['cart_item_count'] = count($cart_items);
+
+		$data['prodIdArray'] = $storeData['product_ids'];
+
+		$storeProducts = $productModel->find(json_decode($storeData['product_ids'],TRUE));
+		
 		$storeCategories = array();
+
+		$stCatIds = array(); 
+
 
 		$cache = \Config\Services::cache();
 
@@ -57,49 +70,33 @@ class VPublicPageLoader extends BaseController
 			$categoryModel = new CategoryModel();
 			$categoriesFetched = $categoryModel->findAll();	
 			$cache->save('categories',$categoriesFetched,24*60*60);
-			$allCategories = $cache->get('categories');
+			$allCats = $cache->get('categories');
 		}else {
-			$allCategories = $cache->get('categories');
+			$allCats = $cache->get('categories');
 		}
-		
-		if(!$cache->get('products')){
-			$productModel = new ProductModel();
-			$productsFetched = $productModel->findAll();	
-			$cache->save('products',$productsFetched,24*60*60);
-			$allProducts = $cache->get('products');
-		}else {
-			$allProducts = $cache->get('products');
-		}		
-	
-		
-		$stCats = array();
-		$stCatIds = array();
-		foreach ($allProducts as $prod) {
-			$prodIdArray = json_decode($storeData["product_ids"],TRUE);
-			if(in_array($prod["id"],$prodIdArray)){
-				$storeProducts[] = $prod;
-				foreach ($allCategories as $cat) {
-					if ($prod['category']==$cat['id']&&(!in_array($cat['id'],$stCatIds))) {
+
+		foreach ($storeProducts as $stpro) {
+			foreach ($allCats as $cat) {
+				if($stpro['category']==$cat['id']){
+
+					if (!in_array($cat['id'],$stCatIds)) {
 						$stCatIds[] = $cat['id'];
-						$stCats[] = $cat;
+						$storeCategories[] = $cat;
 					}
+
 				}
 			}
 		}
 
+		$data['products'] = $storeProducts;
+		$data['categories'] = $storeCategories;
 
-		$data["products"] = $storeProducts;
-		$data["categories"] = $stCats;
-		$data["store_data"] = $storeData;
-		$data["title"] = $storeData["name"];
-		$data["prodIdArray"] = $prodIdArray;
-	
-		$cartModel = new CartModel();
-		$cart_items = $cartModel->fetch_all_cart_items_store($code);
-		$data['cart_item_count'] = count($cart_items);
-		
 
-		$this->public_page_loader("shop",$data);
+		$data['store_data'] = $storeData;
+		$data['title'] = $storeData['name'];
+
+
+		$this->public_page_loader('shop',$data);
 
 	}
 

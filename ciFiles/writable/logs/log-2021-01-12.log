@@ -69,3 +69,135 @@ CRITICAL - 2021-01-12 03:43:52 --> in_array() expects parameter 2 to be array, n
 #4 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
 #5 /var/www/html/kimaara/index.php(46): CodeIgniter\CodeIgniter->run()
 #6 {main}
+CRITICAL - 2021-01-12 03:59:51 --> Illegal string offset 'sale_price'
+#0 /var/www/html/kimaara/ciFiles/app/Controllers/PublicPageLoader.php(189): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\PublicPageLoader->filter_endpoint_vendor()
+#2 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#3 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#4 /var/www/html/kimaara/index.php(46): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-01-12 03:59:53 --> Illegal string offset 'sale_price'
+#0 /var/www/html/kimaara/ciFiles/app/Controllers/PublicPageLoader.php(189): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\PublicPageLoader->filter_endpoint_vendor()
+#2 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#3 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#4 /var/www/html/kimaara/index.php(46): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-01-12 03:59:55 --> Illegal string offset 'sale_price'
+#0 /var/www/html/kimaara/ciFiles/app/Controllers/PublicPageLoader.php(189): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\PublicPageLoader->filter_endpoint_vendor()
+#2 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#3 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#4 /var/www/html/kimaara/index.php(46): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-01-12 04:00:10 --> Illegal string offset 'sale_price'
+#0 /var/www/html/kimaara/ciFiles/app/Controllers/PublicPageLoader.php(189): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\PublicPageLoader->filter_endpoint_vendor()
+#2 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#3 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#4 /var/www/html/kimaara/index.php(46): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-01-12 04:01:49 --> Illegal string offset 'sale_price'
+#0 /var/www/html/kimaara/ciFiles/app/Controllers/PublicPageLoader.php(189): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\PublicPageLoader->filter_endpoint_vendor()
+#2 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#3 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#4 /var/www/html/kimaara/index.php(46): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-01-12 04:39:45 --> Invalid argument supplied for foreach()
+#0 /var/www/html/kimaara/ciFiles/app/Controllers/VPublicPageLoader.php(71): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\VPublicPageLoader->store()
+#2 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#3 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#4 /var/www/html/kimaara/index.php(46): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-01-12 04:40:21 --> Invalid argument supplied for foreach()
+#0 /var/www/html/kimaara/ciFiles/app/Controllers/VPublicPageLoader.php(71): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\VPublicPageLoader->store()
+#2 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#3 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#4 /var/www/html/kimaara/index.php(46): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-01-12 04:40:40 --> Invalid argument supplied for foreach()
+#0 /var/www/html/kimaara/ciFiles/app/Controllers/VPublicPageLoader.php(72): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\VPublicPageLoader->store()
+#2 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#3 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#4 /var/www/html/kimaara/index.php(46): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-01-12 04:41:29 --> Undefined variable: title
+#0 /var/www/html/kimaara/ciFiles/app/Views/templates/vendor_store_header.php(6): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/View/View.php(246): include('/var/www/html/k...')
+#2 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/Common.php(1119): CodeIgniter\View\View->render()
+#3 /var/www/html/kimaara/ciFiles/app/Controllers/VPublicPageLoader.php(34): view()
+#4 /var/www/html/kimaara/ciFiles/app/Controllers/VPublicPageLoader.php(88): App\Controllers\VPublicPageLoader->public_page_loader()
+#5 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\VPublicPageLoader->store()
+#6 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#7 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#8 /var/www/html/kimaara/index.php(46): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2021-01-12 04:41:48 --> Undefined index: title
+#0 /var/www/html/kimaara/ciFiles/app/Controllers/VPublicPageLoader.php(61): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\VPublicPageLoader->store()
+#2 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#3 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#4 /var/www/html/kimaara/index.php(46): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-01-12 04:41:50 --> Undefined index: title
+#0 /var/www/html/kimaara/ciFiles/app/Controllers/VPublicPageLoader.php(61): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\VPublicPageLoader->store()
+#2 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#3 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#4 /var/www/html/kimaara/index.php(46): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-01-12 04:42:07 --> Undefined index: title
+#0 /var/www/html/kimaara/ciFiles/app/Controllers/VPublicPageLoader.php(89): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\VPublicPageLoader->store()
+#2 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#3 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#4 /var/www/html/kimaara/index.php(46): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-01-12 04:42:20 --> Undefined variable: store_data
+#0 /var/www/html/kimaara/ciFiles/app/Views/templates/vendor_store_header.php(29): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/View/View.php(246): include('/var/www/html/k...')
+#2 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/Common.php(1119): CodeIgniter\View\View->render()
+#3 /var/www/html/kimaara/ciFiles/app/Controllers/VPublicPageLoader.php(34): view()
+#4 /var/www/html/kimaara/ciFiles/app/Controllers/VPublicPageLoader.php(92): App\Controllers\VPublicPageLoader->public_page_loader()
+#5 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\VPublicPageLoader->store()
+#6 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#7 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#8 /var/www/html/kimaara/index.php(46): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2021-01-12 04:42:46 --> Undefined variable: cart_item_count
+#0 /var/www/html/kimaara/ciFiles/app/Views/templates/vendor_store_header.php(42): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/View/View.php(246): include('/var/www/html/k...')
+#2 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/Common.php(1119): CodeIgniter\View\View->render()
+#3 /var/www/html/kimaara/ciFiles/app/Controllers/VPublicPageLoader.php(34): view()
+#4 /var/www/html/kimaara/ciFiles/app/Controllers/VPublicPageLoader.php(92): App\Controllers\VPublicPageLoader->public_page_loader()
+#5 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\VPublicPageLoader->store()
+#6 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#7 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#8 /var/www/html/kimaara/index.php(46): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2021-01-12 04:43:15 --> Undefined variable: cart_item_count
+#0 /var/www/html/kimaara/ciFiles/app/Views/templates/vendor_store_header.php(42): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/View/View.php(246): include('/var/www/html/k...')
+#2 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/Common.php(1119): CodeIgniter\View\View->render()
+#3 /var/www/html/kimaara/ciFiles/app/Controllers/VPublicPageLoader.php(34): view()
+#4 /var/www/html/kimaara/ciFiles/app/Controllers/VPublicPageLoader.php(92): App\Controllers\VPublicPageLoader->public_page_loader()
+#5 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\VPublicPageLoader->store()
+#6 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#7 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#8 /var/www/html/kimaara/index.php(46): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2021-01-12 04:44:42 --> Undefined variable: prodIdArray
+#0 /var/www/html/kimaara/ciFiles/app/Views/vendorPublicPages/shop.php(116): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/View/View.php(246): include('/var/www/html/k...')
+#2 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/Common.php(1119): CodeIgniter\View\View->render()
+#3 /var/www/html/kimaara/ciFiles/app/Controllers/VPublicPageLoader.php(35): view()
+#4 /var/www/html/kimaara/ciFiles/app/Controllers/VPublicPageLoader.php(95): App\Controllers\VPublicPageLoader->public_page_loader()
+#5 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\VPublicPageLoader->store()
+#6 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#7 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#8 /var/www/html/kimaara/index.php(46): CodeIgniter\CodeIgniter->run()
+#9 {main}
