@@ -48,7 +48,7 @@
                             <a href="<?php echo site_url('product/'.$product['slug']); ?>">
                                 <div class="card">
                                 
-                                    <img src="<?php echo site_url('assets/images/featured_image_product/'.$product['featured_image']); ?>" class="card-img-top">
+                                    <img src="<?php echo site_url('assets/images/placeholder.png'); ?>" data-src="<?php echo site_url('assets/images/featured_image_product/'.$product['featured_image']); ?>" class="card-img-top">
                                 
                                     <div class="card-body">
                                     

@@ -1,5 +1,8 @@
-
-
+    <script>
+    $(document).ready(function() {
+        $("img").unveil();
+    });
+    </script>
     <nav id="mobileBottomNav" class="container" style="padding: 0.5rem 0.7rem; width: 100%; margin: auto;" >
         
         <a href="<?php echo site_url(''); ?>" class="nav-linkx w-20 d-inline-block text-center "><img src="<?php echo site_url('assets/icons/home.svg'); ?>" width="15px" height="15px"><br><small>Home</small></a>
