@@ -40,6 +40,7 @@ $routes->get('flush-cache','PublicPageLoader::flush_cache');
 $routes->get("store","VPublicPageLoader::store");
 
 // SitePages
+$routes->post("filter-endpoint-vendor",'PublicPageLoader::filter_endpoint_vendor');
 $routes->post("filter-endpoint",'PublicPageLoader::filter_endpoint');
 $routes->get('admin-login','PublicPageLoader::admin_login');
 $routes->get('shop','PublicPageLoader::shop');
