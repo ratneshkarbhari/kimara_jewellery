@@ -92,23 +92,32 @@ class PublicPageLoader extends BaseController
 
 	public function filter_endpoint(){
 	
+		$cache = \Config\Services::cache();
+
+
 		$max_price = $this->request->getPost("max_price");
 		$selected_categories = $this->request->getPost("selected_categories");
-
-		$cache = \Config\Services::cache();		
 
 		if(!$cache->get('products')){
 			$productModel = new ProductModel();
 			$productsFetched = $productModel->findAll();	
 			$cache->save('products',$productsFetched,24*60*60);
-			$allProducts = $cache->get('products');
+			$data['products'] = $cache->get('products');
 		}else {
-			$allProducts = $cache->get('products');
+			$data['products'] = $cache->get('products');
 		}
 
-		foreach ($allProducts as $prod ) {
-			if (($prod['sale_price']<$max_price)&&(in_array($prod['category'],$selected_categories))) {
-				$results_max_price_n_cat[] = $prod;
+		$productModel = new ProductModel();
+
+
+
+		$results_max_price = $productModel->where('sale_price<=',$max_price)->findAll();
+
+		$results_max_price_n_cat = array();
+
+		foreach ($results_max_price as $rmp ) {
+			if (in_array($rmp['category'],$selected_categories)) {
+				$results_max_price_n_cat[] = $rmp;
 			}
 		}
 
@@ -580,35 +589,11 @@ class PublicPageLoader extends BaseController
 
 		if(!$cache->get('products')){
 			$productModel = new ProductModel();
-			$productsFetched = $productModel->findAll();
-			$finalProductsGrid = '';	
-			foreach ($productsFetched as $rmpc) {
-				$finalProductsGrid.='<div class="col-lg-3 col-md-6-sm-12 text-center custom-half-grid" style="margin-bottom: 5%; padding: 5px;">
-							
-				<a href="'.site_url("product/".$rmpc['slug']).'">
-					<div class="card">
-					
-						<img src="'.site_url("assets/images/featured_image_product/".$rmpc['featured_image']).'" class="card-img-top">
-					
-						<div class="card-body">
-						
-						<h6 class="product-title">Gems &amp; Ga...</h6>                                                                                <span class="larger-price-card"> ₹ '.$rmpc["sale_price"].'</span> | <del><span class="smaller-price-card"> ₹ '.$rmpc["price"].'</span></del>
-							
-							<br><br>
-	
-							<button class="btn btn-primary">BUY NOW</button>
-	
-						</div>
-	
-					</div>
-				</a>
-	
-			</div>';
-			}
-			$cache->save('products-grid-cache',$finalProductsGrid,24*60*60);
-			$data['products_grid_cache'] = $cache->get('products-grid-cache');
+			$productsFetched = $productModel->findAll();	
+			$cache->save('products',$productsFetched,24*60*60);
+			$data['products'] = $cache->get('products');
 		}else {
-			$data['products_grid_cache'] = $cache->get('products-grid-cache');
+			$data['products'] = $cache->get('products');
 		}
 
 		$this->public_page_loader('shop',$data);
