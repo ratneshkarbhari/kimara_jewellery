@@ -20,7 +20,7 @@
 
 
                 <h5>by categories</h5>
-                <?php foreach($categories as $category): ?>
+                <?php print_r($categories); foreach($categories as $category): ?>
                     <div class="form-check">
                         <input class="form-check-input filter-trigger filter-category" filter-type="category" type="checkbox" value="<?php echo $category['id']; ?>" id="category-<?php echo $category['id']; ?>">
                         <label class="form-check-label" for="category-<?php echo $category['id']; ?>">
@@ -113,10 +113,11 @@ $.ajax({
     data: {
         'max_price' : max_price,
         'selected_categories' : selected_categories,
-        'store_products' : '<?php echo json_encode($products); ?>'
+        'store_products' : '<?php echo json_encode($prodIdArray); ?>'
     },
     success: function (response) {
-        $("div#productsBox").html(response);
+        console.log(response);
+        // $("div#productsBox").html(response);
     }
 });
 });

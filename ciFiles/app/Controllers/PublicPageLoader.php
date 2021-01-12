@@ -143,7 +143,11 @@ class PublicPageLoader extends BaseController
 		</div>';
 		}
 		
-		return $finalReturnJson;
+		if ($finalReturnJson!='') {
+			return $finalReturnJson;
+		}else {
+			return 'No Products match your filters';
+		}
 
 	}
 	public function filter_endpoint_vendor(){
@@ -154,13 +158,29 @@ class PublicPageLoader extends BaseController
 		$max_price = $this->request->getPost("max_price");
 		$selected_categories = $this->request->getPost("selected_categories");
 		$store_products_json = $this->request->getPost('store_products');
-		$store_products = json_decode($store_products_json,TRUE);
+	
+		$store_productIDS = json_decode($store_products_json,TRUE);
 
-		$allProducts = $store_products;
+		if(!$cache->get('products')){
+			$productModel = new ProductModel();
+			$productsFetched = $productModel->findAll();	
+			$cache->save('products',$productsFetched,24*60*60);
+			$allProducts = $cache->get('products');
+		}else {
+			$allProducts = $cache->get('products');
+		}
+
+		$store_products = array();
+
+		foreach ($allProducts as $singlePro) {
+			if (in_array($singlePro['id'],$store_productIDS)) {
+				$store_products[] = $singlePro;
+			}
+		}
 
 		$results_max_price_n_cat = array();
 
-		foreach ($allProducts as $rmp ) {
+		foreach ($store_products as $rmp ) {
 			if ((in_array($rmp['category'],$selected_categories))&&$rmp['sale_price']<=$max_price) {
 				$results_max_price_n_cat[] = $rmp;
 			}
@@ -192,7 +212,12 @@ class PublicPageLoader extends BaseController
 		</div>';
 		}
 		
-		return $finalReturnJson;
+		if ($finalReturnJson!='') {
+			return $finalReturnJson;
+		}else {
+			return 'No Products match your filters';
+		}
+
 
 	}
 
