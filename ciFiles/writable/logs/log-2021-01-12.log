@@ -50,3 +50,22 @@ CRITICAL - 2021-01-12 00:56:56 --> in_array() expects parameter 2 to be array, n
 #4 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
 #5 /var/www/html/kimaara/index.php(46): CodeIgniter\CodeIgniter->run()
 #6 {main}
+CRITICAL - 2021-01-12 03:43:23 --> Undefined variable: products
+#0 /var/www/html/kimaara/ciFiles/app/Views/sitePages/shop.php(44): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/View/View.php(246): include('/var/www/html/k...')
+#2 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/Common.php(1119): CodeIgniter\View\View->render()
+#3 /var/www/html/kimaara/ciFiles/app/Controllers/PublicPageLoader.php(260): view()
+#4 /var/www/html/kimaara/ciFiles/app/Controllers/PublicPageLoader.php(752): App\Controllers\PublicPageLoader->public_page_loader()
+#5 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\PublicPageLoader->category_page()
+#6 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#7 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#8 /var/www/html/kimaara/index.php(46): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2021-01-12 03:43:52 --> in_array() expects parameter 2 to be array, null given
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/kimaara/ciFiles/app/Controllers/PublicPageLoader.php(115): in_array()
+#2 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\PublicPageLoader->filter_endpoint()
+#3 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#4 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#5 /var/www/html/kimaara/index.php(46): CodeIgniter\CodeIgniter->run()
+#6 {main}

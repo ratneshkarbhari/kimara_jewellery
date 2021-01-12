@@ -111,6 +111,23 @@ class PublicPageLoader extends BaseController
 
 		$results_max_price_n_cat = array();
 
+
+		if ($selected_categories==NULL) {
+
+			if(!$cache->get('categories')){
+				$productModel = new ProductModel();
+				$categoriesFetched = $productModel->findAll();	
+				$cache->save('categories',$categoriesFetched,24*60*60);
+				$allcategories = $cache->get('categories');
+			}else {
+				$allcategories = $cache->get('categories');
+			}			
+			
+			$selected_categories = $allcategories;
+
+		}
+
+
 		foreach ($allProducts as $rmp ) {
 			if ((in_array($rmp['category'],$selected_categories))&&$rmp['sale_price']<=$max_price) {
 				$results_max_price_n_cat[] = $rmp;
@@ -723,9 +740,33 @@ class PublicPageLoader extends BaseController
 	
 			$productModel = new ProductModel();
 	
+			$products_in_cat = array();
 
-			$data['products_in_category'] = $productModel->where('category',$focusCategory['id'])->findAll();
-			$this->public_page_loader('category_page',$data);
+
+			$cache = \Config\Services::cache();
+
+
+			$data['title'] = 'Products in '.$focusCategory['title'];
+
+			if(!$cache->get('products')){
+				$productModel = new ProductModel();
+				$productsFetched = $productModel->findAll();	
+				$cache->save('products',$productsFetched,24*60*60);
+				$allProducts = $cache->get('products');
+			}else {
+				$allProducts = $cache->get('products');
+			}
+
+			foreach ($allProducts as $pro) {
+				if ($pro['category']==$focusCategory['id']) {
+					$products_in_cat[] = $pro;
+				}
+			}
+
+			$data['products'] = $products_in_cat;
+
+
+			$this->public_page_loader('shop',$data);
 
 		}
 
