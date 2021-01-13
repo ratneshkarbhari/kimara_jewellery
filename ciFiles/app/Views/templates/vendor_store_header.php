@@ -6,7 +6,7 @@
     <title><?php echo $title; ?> | Kimara Jewellery</title>
     <link rel="stylesheet" href="<?php echo site_url('assets/css/normalize.min.css'); ?>">
     <link rel="stylesheet" href="<?php echo site_url('assets/css/bootstrap.min.css'); ?>">
-    <link rel="stylesheet" href="<?php echo site_url('assets/css/app.min.css?v=2.1'); ?>">
+    <link rel="stylesheet" href="<?php echo site_url('assets/css/app.min.css?v=2.2'); ?>">
     <link rel="icon" href="<?php echo site_url('favicon.png'); ?>" type="image/png"/>
 </head>
 <body>
@@ -26,7 +26,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-3">
-                    <a class="navbar-brand" href="<?php echo site_url('store?store_code='.$store_data["code"]); ?>"><img src="<?php echo site_url('assets/store_logos/'.$store_data["logo"]); ?>" id="siteLogo"></a>
+                    <a class="navbar-brand" href="<?php echo site_url('store?store_code='.$store_data["code"]); ?>"><img style="width: 70% !important;" src="<?php echo site_url('assets/store_logos/'.$store_data["logo"]); ?>" id="siteLogoVendor"></a>
                 </div>
                 <div class="col-lg-7">
                     <form action="<?php echo site_url('universal-product-search'); ?>" class="d-inline" method="post">
