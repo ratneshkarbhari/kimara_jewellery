@@ -133,6 +133,7 @@ $routes->post('update-coupon','Coupons::update');
 $routes->post('delete-coupon','Coupons::delete');
 $routes->post('set-coupon-cookie','Coupons::set_coupon_cookie');
 $routes->post('unset-coupon-cookie','Coupons::unset_coupon_cookie');
+$routes->post('load-twelve-more-products','PublicPageLoader::load_twelve_more_products');
 
 // Admin Dashboard
 $routes->post("filter-sales-by-date","AdminPageLoader::orders_between_dates");

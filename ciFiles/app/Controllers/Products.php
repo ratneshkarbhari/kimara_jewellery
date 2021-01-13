@@ -7,6 +7,8 @@ use App\Models\CategoryModel;
 class Products extends BaseController
 {
 
+
+
     private function send_to_login(){
 
         $session = session();

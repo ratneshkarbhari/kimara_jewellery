@@ -8,14 +8,17 @@
             <div class="col-lg-3 col-md-12 col-sm-12">
             
                 <!-- <h4 class="section-titlex">Filter Products</h4> -->
-                <div id="filterBox">
-                    <!-- <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css"> -->
+                <div id="filterBox" style="
+    position: absolute;
+    left: 5%;
+    top: 0%;
+">
 
                     <h5>by price</h5>
 
                     <div class="form-group">
                         <label for="max_price">Max Price:  <span id="max-price-display"></span></label><br>
-                        <input style="width: 70%;" filter-type="max_price" type="range" name="max_price" min="0" max="30000" class="price-slider filter-trigger" id="max_price" filter-type="max_price" name="max_price" class="from-control">
+                        <input style="width: 120%;" filter-type="max_price" type="range" name="max_price" min="0" max="30000" class="price-slider filter-trigger" id="max_price" filter-type="max_price" name="max_price" class="from-control">
                     </div>
 
 
@@ -39,7 +42,7 @@
                     <!-- <h1 class="section-title text-center" id="filtered-title">ALL Products</h1> -->
         
                             
-                    <div id="productsBox" class="row" >
+                    <div id="productsBox" class="row" style="min-height: 300px;">
         
                         <?php foreach($products as $product):  ?>
                     
@@ -118,5 +121,21 @@ $("input.filter-trigger").change(function (e) {
             $("div#productsBox").html(response);
         }
     });
+});
+
+let offset = 12;
+$(window).scroll(function(){
+    if ($(window).scrollTop() == ($(document).height()) - ($(window).height())){
+        $.ajax({
+            type: "POST",
+            url: "<?php echo site_url('load-twelve-more-products') ?>",
+            data: {
+                'offset' : offset
+            },
+            success: function (response) {
+                $("div#productsBox").append(response);
+            }
+        });
+    }
 });
 </script>

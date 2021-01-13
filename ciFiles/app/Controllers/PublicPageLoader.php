@@ -89,6 +89,41 @@ class PublicPageLoader extends BaseController
 
 	}
 
+	public function load_twelve_more_products(){
+        $offset = $this->request->getPost('offset');
+        $productModel = new ProductModel();
+        $fetchedProducts = $productModel->findAll(12,$offset);
+        $finalReturn = '';
+        if(count($fetchedProducts)>0){
+            foreach ($fetchedProducts as $rmpc) {
+                $finalReturn.='<div class="col-lg-3 col-md-6-sm-12 text-center custom-half-grid" style="margin-bottom: 5%; padding: 5px;">
+                        
+				<a href="'.site_url("product/".$rmpc['slug']).'">
+					<div class="card">
+					
+						<img src="'.site_url("assets/images/featured_image_product/".$rmpc['featured_image']).'" class="card-img-top">
+					
+						<div class="card-body">
+						
+						<h6 class="product-title">Gems &amp; Ga...</h6>                                                                                <span class="larger-price-card"> ₹ '.$rmpc["sale_price"].'</span> | <del><span class="smaller-price-card"> ₹ '.$rmpc["price"].'</span></del>
+							
+							<br><br>
+	
+							<button class="btn btn-primary">BUY NOW</button>
+	
+						</div>
+	
+					</div>
+				</a>
+	
+			</div>';
+            }
+        }
+
+		return $finalReturn;
+		
+    }
+
 
 	public function filter_endpoint(){
 	
@@ -681,13 +716,13 @@ class PublicPageLoader extends BaseController
 
 		$data['title'] = 'Shop';
 
-		if(!$cache->get('products')){
+		if(!$cache->get('twelve_products')){
 			$productModel = new ProductModel();
-			$productsFetched = $productModel->findAll();	
-			$cache->save('products',$productsFetched,24*60*60);
-			$data['products'] = $cache->get('products');
+			$twelve_productsFetched = $productModel->findAll(12,0);	
+			$cache->save('twelve_products',$twelve_productsFetched,24*60*60);
+			$data['products'] = $cache->get('twelve_products');
 		}else {
-			$data['products'] = $cache->get('products');
+			$data['products'] = $cache->get('twelve_products');
 		}
 
 		$this->public_page_loader('shop',$data);
