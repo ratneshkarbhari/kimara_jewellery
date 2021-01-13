@@ -43,7 +43,7 @@
     
                     <?php foreach($products as $product):  ?>
                 
-                    <div class="col-lg-3 d-none col-md-6-sm-12 text-center custom-half-grid" style="margin-bottom: 5%; padding: 5px;">
+                    <div class="col-lg-3 col-md-6-sm-12 text-center custom-half-grid" style="margin-bottom: 5%; padding: 5px;">
                     
                         <a href="<?php echo site_url('product/'.$product['slug'].'?store_code='.$_COOKIE["store_code"]); ?>">
                             <div class="card">

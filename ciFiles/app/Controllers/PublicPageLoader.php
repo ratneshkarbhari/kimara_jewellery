@@ -605,11 +605,11 @@ class PublicPageLoader extends BaseController
 
 		$storeModel = new StoreModel();
 
-		$data["store_data"] = $storeModel->where("code",$_GET["store_code"])->first();
 
 		if(isset($_GET["store_code"])){
+			$data["store_data"] = $storeModel->where("code",$_GET["store_code"])->first();
 
-			
+
 			$this->vendor_public_page_loader('cart',$data);
 
 
