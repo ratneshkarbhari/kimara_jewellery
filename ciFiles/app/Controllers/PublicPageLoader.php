@@ -729,7 +729,7 @@ class PublicPageLoader extends BaseController
 
 		if(!$cache->get('twelve_products')){
 			$productModel = new ProductModel();
-			$twelve_productsFetched = $productModel->findAll(12,0);	
+			$twelve_productsFetched = $productModel->findAll(8,0);	
 			$cache->save('twelve_products',$twelve_productsFetched,24*60*60);
 			$data['products'] = $cache->get('twelve_products');
 		}else {
