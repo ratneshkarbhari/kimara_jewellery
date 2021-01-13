@@ -141,7 +141,7 @@ class Stores extends BaseController
 
         $updated = $storeModel->update($storeData["id"],$storeData);
     
-        return redirect()->to(site_url('update-store-products')); 
+        return redirect()->to(site_url('vendor-dashboard')); 
 
     }
 
