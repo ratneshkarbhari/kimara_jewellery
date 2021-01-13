@@ -110,6 +110,7 @@ $("input.filter-trigger").change(function (e) {
     $("input.filter-category:checked").each(function(i){
         selected_categories[i] = $(this).val();
         });
+        console.log(selected_categories);
     $.ajax({
         type: "POST",
         url: "<?php echo site_url('filter-endpoint'); ?>",

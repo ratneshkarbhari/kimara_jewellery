@@ -149,7 +149,7 @@ class PublicPageLoader extends BaseController
 		$results_max_price_n_cat = array();
 
 
-		if ($selected_categories==NULL) {
+		if (!is_array($selected_categories)) {
 
 			if(!$cache->get('categories')){
 				$productModel = new ProductModel();
@@ -160,9 +160,20 @@ class PublicPageLoader extends BaseController
 				$allcategories = $cache->get('categories');
 			}			
 			
-			$selected_categories = $allcategories;
+			$selected_categories = $allcategories;$catIdsArray = array();
+
+			foreach ($selected_categories as $selCat) {
+				$catIdsArray[] = $selCat['id'];
+			}
+
+			$selected_categories = $catIdsArray;
+
+
 
 		}
+
+		
+
 
 
 		foreach ($allProducts as $rmp ) {
