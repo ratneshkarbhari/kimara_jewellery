@@ -257,7 +257,10 @@ class AdminPageLoader extends BaseController
         }
         $data['title']  = 'Coupons Management';
         $data['success'] = $data['error'] = '';
+        $authModel = new AuthModel();
+        $data['vendors'] = $authModel->where('role','vendor')->findAll();
         $couponModel = new CouponModel();
+        
         $data['coupons'] = $couponModel->findAll();
         $this->admin_page_loader('coupons_mgt',$data);       
     }

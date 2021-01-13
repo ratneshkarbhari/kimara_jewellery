@@ -16,6 +16,7 @@
                         <tr>
                             <td style="font-size: 1.2rem; font-weight: 500;">Code</td>
                             <td style="font-size: 1.2rem; font-weight: 500;">Discount %</td>
+                            <td style="font-size: 1.2rem; font-weight: 500;">Vendor</td>
                             <td style="font-size: 1.2rem; font-weight: 500;">Status</td>
                             <td style="font-size: 1.2rem; font-weight: 500;">Actions</td>
                         </tr>
@@ -25,6 +26,11 @@
                         <tr>
                             <td><?php echo $coupon['code']; ?></td>
                             <td><?php echo $coupon['percentage_discount']; ?></td>
+                            <td><?php foreach ($vendors as $vendor) {
+                                if($coupon['merchant']==$vendor['id']){
+                                    echo $vendor['first_name'].' '.$vendor['last_name'];
+                                }
+                            } ?></td>
                             <td><?php echo $coupon['status']; ?></td>
                             <td>
                                 <a href="<?php echo site_url('edit-coupon/'.$coupon['code']); ?>" class="btn btn-success">Edit</a>
