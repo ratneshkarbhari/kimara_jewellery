@@ -123,9 +123,20 @@ class Stores extends BaseController
         $storeData = $storeModel->find($store_id);
 
         $productsToBeAddedArray = $this->request->getPost("selected_products");
+        $categoryIdsStore = array();
+        $productModel = new ProductModel();
+        foreach ($productsToBeAddedArray as $pid) {
+            $pdata = $productModel->find($pid);
+            if(!in_array($pid,$categoryIdsStore)){
+                $categoryIdsStore[] = $pdata['category'];
+            }
+        }
+
+        $categoryIdsStore = array_unique($categoryIdsStore);
 
         $productsToBeAddedJson = json_encode($productsToBeAddedArray);
 
+        $storeData['category_ids'] = json_encode($categoryIdsStore);
         $storeData['product_ids'] = $productsToBeAddedJson;
 
         $updated = $storeModel->update($storeData["id"],$storeData);
@@ -153,7 +164,7 @@ class Stores extends BaseController
         $productsToBeAddedArray = $this->request->getPost("selected_products");
 
         foreach ($productsToBeAddedArray as $pr2Add) {
-            if (!in_array($productsInStoreArray)) {
+            if (!in_array($pr2Add,$productsInStoreArray)) {
                 $productsInStoreArray[] = $pr2Add;
             }
         }

@@ -19,3 +19,9 @@ CRITICAL - 2021-01-13 01:57:45 --> Undefined index: store_code
 #3 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
 #4 /var/www/html/kimaara/index.php(46): CodeIgniter\CodeIgniter->run()
 #5 {main}
+CRITICAL - 2021-01-13 03:13:39 --> [] operator not supported for strings
+#0 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Stores->update_products_exe()
+#1 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#2 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#3 /var/www/html/kimaara/index.php(46): CodeIgniter\CodeIgniter->run()
+#4 {main}
