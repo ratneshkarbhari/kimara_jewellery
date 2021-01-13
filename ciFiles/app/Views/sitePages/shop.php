@@ -124,7 +124,7 @@ $("input.filter-trigger").change(function (e) {
     });
 });
 
-let offset = 12;
+let offset = 8;
 $(window).scroll(function(){
     if ($(window).scrollTop() == ($(document).height()) - ($(window).height())){
         $.ajax({
@@ -135,7 +135,7 @@ $(window).scroll(function(){
             },
             success: function (response) {
                 $("div#productsBox").append(response);
-                offset = offset+12;
+                offset = offset+8;
             }
         });
     }

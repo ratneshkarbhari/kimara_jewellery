@@ -92,7 +92,7 @@ class PublicPageLoader extends BaseController
 	public function load_twelve_more_products(){
         $offset = $this->request->getPost('offset');
         $productModel = new ProductModel();
-        $fetchedProducts = $productModel->findAll(12,$offset);
+        $fetchedProducts = $productModel->findAll(8,$offset);
         $finalReturn = '';
         if(count($fetchedProducts)>0){
             foreach ($fetchedProducts as $rmpc) {
@@ -727,13 +727,13 @@ class PublicPageLoader extends BaseController
 
 		$data['title'] = 'Shop';
 
-		if(!$cache->get('twelve_products')){
+		if(!$cache->get('eight_products')){
 			$productModel = new ProductModel();
-			$twelve_productsFetched = $productModel->findAll(8,0);	
-			$cache->save('twelve_products',$twelve_productsFetched,24*60*60);
-			$data['products'] = $cache->get('twelve_products');
+			$eight_productsFetched = $productModel->findAll(8,0);	
+			$cache->save('eight_products',$eight_productsFetched,24*60*60);
+			$data['products'] = $cache->get('eight_products');
 		}else {
-			$data['products'] = $cache->get('twelve_products');
+			$data['products'] = $cache->get('eight_products');
 		}
 
 		$this->public_page_loader('shop',$data);
