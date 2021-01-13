@@ -134,6 +134,7 @@ $(window).scroll(function(){
             },
             success: function (response) {
                 $("div#productsBox").append(response);
+                offset = offset+12;
             }
         });
     }
