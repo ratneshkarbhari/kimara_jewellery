@@ -1,4 +1,3 @@
-
 <main class="page-content" id="shop">
 
     <div class="container-fluid">
@@ -6,19 +5,48 @@
         <div class="row" style="margin: 5% 0;">
         
             <div class="col-lg-3 col-md-12 col-sm-12">
-            
+
+                <div id="sideNavFilterBox" class="d-lg-none d-sm-block d-md-block">
+                    <button type="button" id="openSidenavFilter" class="btn btn-block" style="background-color: black; color: white;">Filter Products</button>
+                    <br><br>
+                    <script>
+                        $("button#openSidenavFilter").click(function (e) { 
+                            e.preventDefault();
+                            console.log('clicked');
+                            $("div#sidenavMobileCloser").css('display','block');
+                            $("div#sidenavMobileProductFilter").css('display','block');
+                        });
+                    </script>
+                </div>
+                <div id="sidenavMobileProductFilter" style="padding: 5%;">
+                    <h5>by price</h5>
+
+                    <div class="form-group">
+                        <label for="max_price">Max Price:  <span id="max-price-display"></span></label><br>
+                        <input style="width: 80%; margin: 0 auto;" filter-type="max_price" type="range" name="max_price" min="0" max="30000" class="price-slider filter-trigger" id="max_price" filter-type="max_price" name="max_price" class="from-control">
+                    </div>
+
+
+                    <h5>by categories</h5>
+                    <?php foreach($categories as $category): ?>
+                        <div class="form-check">
+                            <input class="form-check-input filter-trigger filter-category" filter-type="category" type="checkbox" value="<?php echo $category['id']; ?>" id="category-<?php echo $category['id']; ?>">
+                            <label class="form-check-label" for="category-<?php echo $category['id']; ?>">
+                                <?php echo $category['title']; ?>
+                            </label>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+
+
                 <!-- <h4 class="section-titlex">Filter Products</h4> -->
-                <div id="filterBox" style="
-    position: absolute;
-    left: 5%;
-    top: 0%;
-">
+                <div id="filterBox" >
 
                     <h5>by price</h5>
 
                     <div class="form-group">
                         <label for="max_price">Max Price:  <span id="max-price-display"></span></label><br>
-                        <input style="width: 120%;" filter-type="max_price" type="range" name="max_price" min="0" max="30000" class="price-slider filter-trigger" id="max_price" filter-type="max_price" name="max_price" class="from-control">
+                        <input style="width: 90%;" filter-type="max_price" type="range" name="max_price" min="0" max="30000" class="price-slider filter-trigger" id="max_price" filter-type="max_price" name="max_price" class="from-control">
                     </div>
 
 
