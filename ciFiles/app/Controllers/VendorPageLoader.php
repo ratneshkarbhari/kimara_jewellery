@@ -76,8 +76,19 @@ class VendorPageLoader extends BaseController
         $storeModel = new StoreModel();
         $data['store'] = $storeModel->where("vendor",$_SESSION["id"])->first();
         $data['store_product_ids'] = json_decode($data["store"]['product_ids'],TRUE);
-        $data['products'] = $productModel->findAll();
 
+        $cache = \Config\Services::cache();
+
+        if(!$cache->get('eight_products')){
+            $productModel = new ProductModel();
+            $categoriesFetched = $productModel->findAll(8,0);	
+            $cache->save('eight_products',$categoriesFetched,24*60*60);
+            $eightProducts = $cache->get('eight_products');
+        }else {
+            $eightProducts = $cache->get('eight_products');
+        }
+
+        $data['products'] = $eightProducts;
         
         $this->vendor_page_loader("manage_store_products",$data);
 
