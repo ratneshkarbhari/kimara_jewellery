@@ -23,7 +23,7 @@
 
                     <div class="form-group">
                         <label for="max_price">Max Price:  <span id="max-price-display"></span></label><br>
-                        <input style="width: 80%; margin: 0 auto;" filter-type="max_price" type="range" name="max_price" min="0" max="30000" class="price-slider filter-trigger" id="max_price" filter-type="max_price" name="max_price" class="from-control">
+                        <input style="width: 80%; margin: 0 auto;" filter-type="max_price" type="range" name="max_price" min="0" max="10000" class="price-slider filter-trigger" id="max_price" filter-type="max_price" name="max_price" class="from-control">
                     </div>
 
 
@@ -108,6 +108,10 @@
         
                     </div>
                     
+                    <div class="text-center">
+                        <button type="button" id="loadMoreProducts" class="btn btn-primary">Load More Products</button>
+                    </div>
+
                 </div>
             
             
@@ -153,20 +157,18 @@ $("input.filter-trigger").change(function (e) {
 });
 
 let offset = 8;
-$(window).scroll(function(){
-    if ($(window).scrollTop() == ($(document).height()) - ($(window).height())){
-        $.ajax({
-            type: "POST",
-            url: "<?php echo site_url('load-twelve-more-products') ?>",
-            data: {
-                'offset' : offset
-            },
-            success: function (response) {
-                $("div#productsBox").append(response);
-                offset = offset+8;
-                lazyLoadInstance.update();
-            }
-        });
-    }
+$("button#loadMoreProducts").click(function(){
+    $.ajax({
+        type: "POST",
+        url: "<?php echo site_url('load-twelve-more-products') ?>",
+        data: {
+            'offset' : offset
+        },
+        success: function (response) {
+            $("div#productsBox").append(response);
+            offset = offset+8;
+            lazyLoadInstance.update();
+        }
+    });
 });
 </script>
