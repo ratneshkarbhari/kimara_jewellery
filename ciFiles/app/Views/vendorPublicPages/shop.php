@@ -94,31 +94,32 @@ padding-top: 0 !important;
 }
 </style>
 <script>
-$(".price-slider").change(function (e) { 
-e.preventDefault();
-console.log($(this).val());
-$("span#max-price-display").html('₹ '+$(this).val());
-});
 $("input.filter-trigger").change(function (e) { 
-e.preventDefault();
-$("div#productsBox").html('Fetching Products for filter');
-let max_price = $("input#max_price").val();
-var selected_categories = [];
-$("input.filter-category:checked").each(function(i){
-    selected_categories[i] = $(this).val();
+    e.preventDefault();
+    $("div#productsBox").html('Fetching Products for filter');
+    let max_price = $("input#max_price").val();
+    var selected_categories = [];
+    $("input.filter-category:checked").each(function(i){
+        selected_categories[i] = $(this).val();
+        });
+        console.log(selected_categories);
+    $.ajax({
+        type: "POST",
+        url: "<?php echo site_url('filter-endpoint-vendor'); ?>",
+        data: {
+            'max_price' : max_price,
+            'selected_categories' : selected_categories,
+            'prod_ids' : '<?php echo json_encode($prodIdArray); ?>'
+        },
+        success: function (response) {
+            // console.log(response);
+            $("div#productsBox").html(response);
+        }
     });
-$.ajax({
-    type: "POST",
-    url: "<?php echo site_url('filter-endpoint-vendor'); ?>",
-    data: {
-        'max_price' : max_price,
-        'selected_categories' : selected_categories,
-        'store_products' : '<?php echo json_encode($prodIdArray); ?>'
-    },
-    success: function (response) {
-        // console.log(response);
-        $("div#productsBox").html(response);
-    }
 });
+$(".price-slider").change(function (e) { 
+    e.preventDefault();
+    console.log($(this).val());
+    $("span#max-price-display").html('₹ '+$(this).val());
 });
 </script>

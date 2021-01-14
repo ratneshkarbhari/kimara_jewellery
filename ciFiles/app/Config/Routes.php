@@ -95,6 +95,7 @@ $routes->get("manage-store-vendor",'VendorPageLoader::manage_store');
 $routes->get("update-store-products","VendorPageLoader::update_store_products");
 
 // Vendor feature routes
+$routes->post("vendor-store-product-search",'Stores::search_products');
 $routes->post('update-vendor-profile','Authentication::update_vendor_profile');
 $routes->post("update-vendor-password","Authentication::update_vendor_pwd");
 $routes->post("create-store-exe","Stores::create_exe");

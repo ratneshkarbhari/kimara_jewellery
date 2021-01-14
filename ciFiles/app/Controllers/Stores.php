@@ -145,6 +145,10 @@ class Stores extends BaseController
 
     }
 
+    public function search_products(){
+        
+    }
+
     public function add_products_exe(){
         $session = session();
 

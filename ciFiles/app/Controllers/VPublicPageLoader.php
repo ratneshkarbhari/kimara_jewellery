@@ -61,7 +61,7 @@ class VPublicPageLoader extends BaseController
 		$cartmodel = new CartModel();
 		$cart_items = $cartmodel->fetch_all_cart_items_store($code);
 		$data["cart_item_count"] = count($cart_items);
-		$data["prodIdArray"] = json_decode($storeData['category_ids'],TRUE);
+		$data["prodIdArray"] = json_decode($storeData['product_ids'],TRUE);
 		$this->public_page_loader('shop',$data);
 
 	}

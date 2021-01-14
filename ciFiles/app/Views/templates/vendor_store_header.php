@@ -29,7 +29,7 @@
                     <a class="navbar-brand" href="<?php echo site_url('store?store_code='.$store_data["code"]); ?>"><img style="width: 70% !important;" src="<?php echo site_url('assets/store_logos/'.$store_data["logo"]); ?>" id="siteLogoVendor"></a>
                 </div>
                 <div class="col-lg-7">
-                    <form action="<?php echo site_url('universal-product-search'); ?>" class="d-inline" method="post">
+                    <form action="<?php echo site_url('vendor-store-product-search'); ?>" class="d-inline" method="post">
                         <div class="form-group">
                         <input style="margin-top: 2%; border: 1px solid black;" placeholder="Find what you love" type="search" name="universal-search" id="universal-search" class="form-control">
                         </div>
