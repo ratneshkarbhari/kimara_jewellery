@@ -30,6 +30,8 @@
                 </div>
                 <div class="col-lg-7">
                     <form action="<?php echo site_url('vendor-store-product-search'); ?>" class="d-inline" method="post">
+                    
+                        <input name="store_code"  type="hidden" value="<?php echo $store_data["code"]; ?>">
                         <div class="form-group">
                         <input style="margin-top: 2%; border: 1px solid black;" placeholder="Find what you love" type="search" name="universal-search" id="universal-search" class="form-control">
                         </div>

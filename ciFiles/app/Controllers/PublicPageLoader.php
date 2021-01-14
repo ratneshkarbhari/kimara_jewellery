@@ -215,6 +215,47 @@ class PublicPageLoader extends BaseController
 		}
 
 	}
+
+
+	public function search_vendor_store(){
+		$query = $this->request->getPost('universal-search');
+		$productModel = new ProductModel();
+		$products = $productModel->like('title',$query)->findAll();
+
+		
+		$storeModel = new StoreModel();
+		
+		$storeData = $storeModel->where("code",$this->request->getPost('store_code'))->first();
+
+		$storeProductsIds = json_decode($storeData["product_ids"],TRUE);
+
+		$res_products = array();
+
+		foreach ($products as $pro) {
+			if (in_array($pro["id"],$storeProductsIds)) {
+				$res_products[] = $pro;
+			}
+		}
+
+		$data['products'] = $res_products;
+
+		$cache = \Config\Services::cache();
+		if(!$cache->get('categories')){
+			$categoryModel = new CategoryModel();
+			$categoriesFetched = $categoryModel->findAll();	
+			$cache->save('categories',$categoriesFetched,24*60*60);
+			$data['categories'] = $cache->get('categories');
+		}else {
+			$data['categories'] = $cache->get('categories');
+		}
+
+		$data['store_data'] = $storeData;
+
+		$data['title'] = 'Search Results';
+		$this->public_page_loader('search_results_vendor',$data);
+	}
+
+
 	public function filter_endpoint_vendor(){
 	
 		$max_price = $this->request->getPost("max_price");
@@ -769,8 +810,15 @@ class PublicPageLoader extends BaseController
 		$productModel = new ProductModel();
 		$products = $productModel->like('title',$query)->findAll();
 		$data['products'] = $products;
-		$categoryModel = new CategoryModel();
-		$data['categories'] = $categoryModel->findAll();
+		$cache = \Config\Services::cache();
+		if(!$cache->get('categories')){
+			$categoryModel = new CategoryModel();
+			$categoriesFetched = $categoryModel->findAll();	
+			$cache->save('categories',$categoriesFetched,24*60*60);
+			$data['categories'] = $cache->get('categories');
+		}else {
+			$data['categories'] = $cache->get('categories');
+		}
 		$data['title'] = 'Search Results';
 		$this->public_page_loader('search_results',$data);
 	}

@@ -82,3 +82,10 @@ CRITICAL - 2021-01-14 01:10:30 --> Undefined variable: store_prods
 #3 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
 #4 /var/www/html/kimaara/index.php(46): CodeIgniter\CodeIgniter->run()
 #5 {main}
+CRITICAL - 2021-01-14 01:43:20 --> Trying to access array offset on value of type null
+#0 /var/www/html/kimaara/ciFiles/app/Controllers/PublicPageLoader.php(230): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\PublicPageLoader->search_vendor_store()
+#2 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#3 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#4 /var/www/html/kimaara/index.php(46): CodeIgniter\CodeIgniter->run()
+#5 {main}
