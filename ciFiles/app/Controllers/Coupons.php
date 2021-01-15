@@ -4,6 +4,7 @@
 use App\Models\CouponModel;
 use App\Models\AuthModel;
 
+
 class Coupons extends BaseController
 {
 
@@ -131,9 +132,11 @@ class Coupons extends BaseController
         $codeExists = $couponModel->where('code',$code)->first();
 
         if ($codeExists && $codeExists['id']!=$prevCouponData['id']) {
-            $data['title']  = 'Add Coupon';
+            $data['title']  = 'Edit Coupon';
             $data['success'] = ''; $data['error'] = 'Coupon code already exists';
-            $this->admin_page_loader('add_coupon_page',$data);
+            $authModel = new AuthModel();
+            $data['vendors'] = $authModel->where("role",'vendor')->findAll();
+            $this->admin_page_loader('edit_coupon',$data);
         } else {
             $title = $this->request->getPost('title');    
             $percentage_discount = $this->request->getPost('percentage_discount');
@@ -153,6 +156,8 @@ class Coupons extends BaseController
                 $data['focus_coupon'] = $focus_coupon = $couponModel->find($prevCouponData['id']);
                 $data['title'] = 'Editing '.$focus_coupon['title'];
                 $data['success'] = 'Coupon Updated successfully'; $data['error'] = '';
+                $authModel = new AuthModel();
+                $data['vendors'] = $authModel->where("role",'vendor')->findAll();
                 $this->admin_page_loader('edit_coupon',$data);        
             } else {
                 $data['focus_coupon'] = $focus_coupon = $couponModel->find($prevCouponData['id']);

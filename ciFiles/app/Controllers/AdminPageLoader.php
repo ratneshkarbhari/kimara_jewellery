@@ -242,6 +242,8 @@ class AdminPageLoader extends BaseController
         $data['focus_coupon'] = $focus_coupon;
         $data['title'] = 'Editing '.$focus_coupon['title'];
         $data['success'] = $data['error'] = '';
+        $authModel = new AuthModel();
+        $data['vendors'] = $authModel->where("role",'vendor')->findAll();
         $this->admin_page_loader('edit_coupon',$data);        
     }
 

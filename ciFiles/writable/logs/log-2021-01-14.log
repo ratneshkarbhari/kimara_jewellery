@@ -89,3 +89,14 @@ CRITICAL - 2021-01-14 01:43:20 --> Trying to access array offset on value of typ
 #3 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
 #4 /var/www/html/kimaara/index.php(46): CodeIgniter\CodeIgniter->run()
 #5 {main}
+CRITICAL - 2021-01-14 22:03:17 --> Undefined variable: vendors
+#0 /var/www/html/kimaara/ciFiles/app/Views/adminPages/edit_coupon.php(26): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/View/View.php(246): include('/var/www/html/k...')
+#2 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/Common.php(1119): CodeIgniter\View\View->render()
+#3 /var/www/html/kimaara/ciFiles/app/Controllers/Coupons.php(27): view()
+#4 /var/www/html/kimaara/ciFiles/app/Controllers/Coupons.php(156): App\Controllers\Coupons->admin_page_loader()
+#5 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Coupons->update()
+#6 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#7 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#8 /var/www/html/kimaara/index.php(46): CodeIgniter\CodeIgniter->run()
+#9 {main}
