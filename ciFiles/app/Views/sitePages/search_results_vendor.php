@@ -34,7 +34,7 @@
                             <a href="<?php echo site_url('product/'.$product['slug'].'?store_code='.$store_data["code"]); ?>">
                                 <div class="card">
                                 
-                                    <img src="<?php echo site_url('assets/images/featured_image_product/'.$product['featured_image']); ?>" class="card-img-top">
+                                    <img src="<?php echo site_url('assets/images/featured_image_product/'.$product['featured_image']); ?>" class="card-img-top lazy">
                                 
                                     <div class="card-body">
                                     

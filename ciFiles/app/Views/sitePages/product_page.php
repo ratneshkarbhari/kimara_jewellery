@@ -203,7 +203,7 @@
             <h1 class="text-center section-title">Related Products</h1>
             <div class="owl-carousel owl-theme" id="related-products">
                 <?php foreach($related_products as $related_product): if($related_product['id']!=$product['id']): ?>
-                    <a href="<?php echo site_url('product/'.$related_product['slug']); ?>"><div class="card text-center"> <img src="<?php echo site_url('assets/images/featured_image_product/'.$related_product['featured_image']); ?>" class="card-img-top"><div class="card-body">                            
+                    <a href="<?php echo site_url('product/'.$related_product['slug']); ?>"><div class="card text-center"> <img src="<?php echo site_url('assets/images/featured_image_product/'.$related_product['featured_image']); ?>" class="card-img-top lazy"><div class="card-body">                            
                     <h6 class="related_product-title"><?php if(strlen($related_product['title'])>9){
                     echo substr($related_product['title'],0,9).'...';
                     }else {
