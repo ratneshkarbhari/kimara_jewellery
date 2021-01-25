@@ -292,14 +292,4 @@
             </div>
         </div>
     </section>
-</main>
-<style>
-.slide{
-    min-height: 70vh;
-    max-height: 70vh;
-}
-
-a.nav-link.active{
-    color: #fff !important;
-}
-</style>
+</main><style>.slide{min-height: 70vh; max-height: 70vh;}a.nav-link.active{color: #fff !important;}</style>
