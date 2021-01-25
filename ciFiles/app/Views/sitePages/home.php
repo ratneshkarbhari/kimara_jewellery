@@ -12,8 +12,7 @@
             </a>
             <?php endif; endif; endforeach; ?>
         </div>
-    </section>
-    
+    </section> 
     <section id="home-slider-section" class="d-none d-lg-block">
         <div id="home-hero-slider" class="owl-carousel owl-theme">
             <?php foreach($slides as $slide): ?>
@@ -28,7 +27,7 @@
 
             <?php foreach($slides as $slide): ?>
             <a href="<?php echo $slide['link'] ?>" target="_blank">
-                <img src="<?php echo site_url('favicon.png'); ?>" data-src="<?php echo site_url('assets/images/banners/'.$slide['touch_image']); ?>" class="w-100">
+                <img src="<?php echo site_url('favicon.png'); ?>" data-src="<?php echo site_url('assets/images/banners/'.$slide['touch_image']); ?>" class="w-100 lazy">
             </a>
             <?php endforeach; ?>
 
