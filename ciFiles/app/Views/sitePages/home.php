@@ -39,7 +39,7 @@
                 <div class="col-lg-1 col-md-1 col-sm-12"></div>
                 <div class="col-lg-5 col-md-5 col-sm-12" style="margin-bottom: 3% !important;">
                     <a href="<?php echo site_url('shop'); ?>">
-                        <img src="<?php echo site_url('preloader.gif'); ?>" data-src="<?php echo site_url('assets/images/b1.jpg'); ?>" data-src="<?php echo site_url('assets/images/b1.jpg'); ?>" class="w-100 lazy">
+                        <img src="<?php echo site_url('preloader.gif'); ?>" data-src="<?php echo site_url('assets/images/b1.jpg'); ?>"  class="w-100 lazy">
                     </a>
                 </div>
                 <div class="col-lg-5 col-md-5 col-sm-12" style="margin-bottom: 3% !important;">
