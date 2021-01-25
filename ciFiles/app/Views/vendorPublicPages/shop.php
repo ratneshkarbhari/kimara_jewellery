@@ -48,7 +48,7 @@
                         <a href="<?php echo site_url('product/'.$product['slug'].'?store_code='.$_COOKIE["store_code"]); ?>">
                             <div class="card">
                             
-                                <img src="<?php echo site_url('assets/images/placeholder.png'); ?>" data-src="<?php echo site_url('assets/images/featured_image_product/'.$product['featured_image']); ?>" class="card-img-top lazy ">
+                                <img src="<?php echo site_url('assets/images/preloader.gif'); ?>" data-src="<?php echo site_url('assets/images/featured_image_product/'.$product['featured_image']); ?>" class="card-img-top lazy ">
                             
                                 <div class="card-body">
                                 

@@ -35,7 +35,7 @@
                         <a href="<?php echo site_url('product/'.$product['slug']); ?>">
                             <div class="card">
                             
-                                <img class="lazy" src="<?php echo site_url('assets/images/placeholder.png'); ?>" style="width: 100%;;" data-src="<?php echo site_url('assets/images/featured_image_product/'.$product['featured_image']); ?>" class="card-img-top lazy">
+                                <img class="lazy" src="<?php echo site_url('assets/images/preloader.gif'); ?>" style="width: 100%;;" data-src="<?php echo site_url('assets/images/featured_image_product/'.$product['featured_image']); ?>" class="card-img-top lazy">
                             
                                 <div class="card-body">
                                 

@@ -101,7 +101,7 @@ class PublicPageLoader extends BaseController
 				<a href="'.site_url("product/".$rmpc['slug']).'">
 					<div class="card">
 					
-						<img src="'.site_url('assets/images/placeholder.png').'" data-src="'.site_url("assets/images/featured_image_product/".$rmpc['featured_image']).'" class="card-img-top lazy">
+						<img src="'.site_url('assets/images/preloader.gif').'" data-src="'.site_url("assets/images/featured_image_product/".$rmpc['featured_image']).'" class="card-img-top lazy">
 					
 						<div class="card-body">
 						

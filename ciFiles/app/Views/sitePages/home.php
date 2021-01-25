@@ -6,8 +6,8 @@
         <div id="home-category-slider-mobile" class="owl-carousel text-center">
             <?php $igFeedCats = $catsByPos['ig_feed']; $igFeedCatsArray = explode(',',$igFeedCats); foreach($categories as $category): if($category['parent']==0): if(in_array($category['id'],$igFeedCatsArray)): ?>
             <a href="<?php echo site_url('category/'.$category['slug']); ?>" target="_blank">
-                <img style="border-radius: 50%;" src="<?php echo site_url('favicon.png'); ?>"  data-src="<?php echo site_url('assets/images/category_featured_images/'.$category['featured_image_circular']); ?>" 
-                class="w-100">
+                <img style="border-radius: 50%;" src="<?php echo site_url('preloader.gif'); ?>"  data-src="<?php echo site_url('assets/images/category_featured_images/'.$category['featured_image_circular']); ?>" 
+                class="w-100 lazy">
                 <small><?php echo $category['title']; ?></small>
             </a>
             <?php endif; endif; endforeach; ?>
@@ -27,7 +27,7 @@
 
             <?php foreach($slides as $slide): ?>
             <a href="<?php echo $slide['link'] ?>" target="_blank">
-                <img src="<?php echo site_url('favicon.png'); ?>" data-src="<?php echo site_url('assets/images/banners/'.$slide['touch_image']); ?>" class="w-100 lazy">
+                <img src="<?php echo site_url('preloader.gif'); ?>" data-src="<?php echo site_url('assets/images/banners/'.$slide['touch_image']); ?>" class="w-100 lazy">
             </a>
             <?php endforeach; ?>
 
@@ -39,12 +39,12 @@
                 <div class="col-lg-1 col-md-1 col-sm-12"></div>
                 <div class="col-lg-5 col-md-5 col-sm-12" style="margin-bottom: 3% !important;">
                     <a href="<?php echo site_url('shop'); ?>">
-                        <img src="<?php echo site_url('favicon.png'); ?>" data-src="<?php echo site_url('assets/images/b1.jpg'); ?>" data-src="<?php echo site_url('assets/images/b1.jpg'); ?>" class="w-100 lazy">
+                        <img src="<?php echo site_url('preloader.gif'); ?>" data-src="<?php echo site_url('assets/images/b1.jpg'); ?>" data-src="<?php echo site_url('assets/images/b1.jpg'); ?>" class="w-100 lazy">
                     </a>
                 </div>
                 <div class="col-lg-5 col-md-5 col-sm-12" style="margin-bottom: 3% !important;">
                     <a href="<?php echo site_url('shop'); ?>">
-                        <img src="<?php echo site_url('favicon.png'); ?>" data-src="<?php echo site_url('assets/images/b2.jpg'); ?>" class="w-100 lazy">
+                        <img src="<?php echo site_url('preloader.gif'); ?>" data-src="<?php echo site_url('assets/images/b2.jpg'); ?>" class="w-100 lazy">
                     </a>
                 </div>
                 <div class="col-lg-1 col-md-1 col-sm-12"></div>
@@ -60,7 +60,7 @@
                 
                 <?php foreach ($products as $product): if($product['daily_deal']=='yes'): ?>
             
-                    <a href="<?php echo site_url('product/'.$product['slug']); ?>"><div class="card"> <img src="<?php echo site_url('favicon.png'); ?>" data-src="<?php echo site_url('assets/images/featured_image_product/'.$product['featured_image']); ?>" class="card-img-top lazy"><div class="card-body">                            <h6 class="product-title"><?php if(strlen($product['title'])>9){
+                    <a href="<?php echo site_url('product/'.$product['slug']); ?>"><div class="card"> <img src="<?php echo site_url('preloader.gif'); ?>" data-src="<?php echo site_url('assets/images/featured_image_product/'.$product['featured_image']); ?>" class="card-img-top lazy"><div class="card-body">                            <h6 class="product-title"><?php if(strlen($product['title'])>9){
                                         echo substr($product['title'],0,9).'...';
                                         }else {
                                         echo $product['title'];
@@ -87,7 +87,7 @@
                     <a href="<?php echo site_url('category/'.$category['slug']); ?>">
                     
 
-                        <img src="<?php echo site_url('favicon.png'); ?>" data-src="<?php echo site_url('assets/images/category_featured_images/'.$category['featured_image_rect']); ?>" class="card-img-top lazy">
+                        <img src="<?php echo site_url('preloader.gif'); ?>" data-src="<?php echo site_url('assets/images/category_featured_images/'.$category['featured_image_rect']); ?>" class="card-img-top lazy">
 
 
                         
@@ -118,7 +118,7 @@
                     <a href="<?php echo site_url('category/'.$category['slug']); ?>">
                     
 
-                        <img src="<?php echo site_url('favicon.png'); ?>" data-src="<?php echo site_url('assets/images/category_featured_images/'.$category['featured_image_square']); ?>" class="card-img-top lazy">
+                        <img src="<?php echo site_url('preloader.gif'); ?>" data-src="<?php echo site_url('assets/images/category_featured_images/'.$category['featured_image_square']); ?>" class="card-img-top lazy">
 
 
                         
@@ -167,7 +167,7 @@
 
                                 <?php  $bsProducts = array_rand($products,4); foreach($bsProducts as $bspro): ?>
 
-                                    <div class="col-lg-3 col-md-6-sm-6 text-center custom-half-grid" style="margin-bottom: 2%; padding: 5px;"> <a href="<?php echo site_url('product/'.$products[$bspro]['slug']); ?>"><div class="card"> <img src="<?php echo site_url('favicon.png'); ?>" data-src="<?php echo site_url('assets/images/featured_image_product/'.$products[$bspro]['featured_image']); ?>" class="card-img-top lazy"><div class="card-body">                            <h6 class="product-title"><?php if(strlen($products[$bspro]['title'])>9){
+                                    <div class="col-lg-3 col-md-6-sm-6 text-center custom-half-grid" style="margin-bottom: 2%; padding: 5px;"> <a href="<?php echo site_url('product/'.$products[$bspro]['slug']); ?>"><div class="card"> <img src="<?php echo site_url('preloader.gif'); ?>" data-src="<?php echo site_url('assets/images/featured_image_product/'.$products[$bspro]['featured_image']); ?>" class="card-img-top lazy"><div class="card-body">                            <h6 class="product-title"><?php if(strlen($products[$bspro]['title'])>9){
                                     echo substr($products[$bspro]['title'],0,9).'...';
                                     }else {
                                     echo $products[$bspro]['title'];
@@ -184,7 +184,7 @@
                                     
                                     <?php $productsReverse = array_reverse($products); $counter = 0; foreach ($productsReverse as $product) : if($counter!=5): ?>
 
-                                        <div class="col-lg-3 col-md-6-sm-6 text-center custom-half-grid" style="margin-bottom: 2%; padding: 5px;"> <a href="<?php echo site_url('product/'.$product['slug']); ?>"><div class="card"> <img src="<?php echo site_url('favicon.png'); ?>" data-src="<?php echo site_url('assets/images/featured_image_product/'.$product['featured_image']); ?>" class="card-img-top lazy"><div class="card-body">                            <h6 class="product-title"><?php if(strlen($product['title'])>9){
+                                        <div class="col-lg-3 col-md-6-sm-6 text-center custom-half-grid" style="margin-bottom: 2%; padding: 5px;"> <a href="<?php echo site_url('product/'.$product['slug']); ?>"><div class="card"> <img src="<?php echo site_url('preloader.gif'); ?>" data-src="<?php echo site_url('assets/images/featured_image_product/'.$product['featured_image']); ?>" class="card-img-top lazy"><div class="card-body">                            <h6 class="product-title"><?php if(strlen($product['title'])>9){
                                         echo substr($product['title'],0,9).'...';
                                         }else {
                                         echo $product['title'];
@@ -201,7 +201,7 @@
                                 <?php $topProds = array_rand($products,4); foreach($topProds as $tproduct): ?>
 
 
-                                    <div class="col-lg-3 col-md-6-sm-6 text-center custom-half-grid" style="margin-bottom: 2%; padding: 5px;"> <a href="<?php echo site_url('product/'.$products[$tproduct]['slug']); ?>"><div class="card"> <img src="<?php echo site_url('favicon.png'); ?>" data-src="<?php echo site_url('assets/images/featured_image_product/'.$products[$tproduct]['featured_image']); ?>" class="card-img-top lazy"><div class="card-body">                            <h6 class="product-title"><?php if(strlen($products[$tproduct]['title'])>9){
+                                    <div class="col-lg-3 col-md-6-sm-6 text-center custom-half-grid" style="margin-bottom: 2%; padding: 5px;"> <a href="<?php echo site_url('product/'.$products[$tproduct]['slug']); ?>"><div class="card"> <img src="<?php echo site_url('preloader.gif'); ?>" data-src="<?php echo site_url('assets/images/featured_image_product/'.$products[$tproduct]['featured_image']); ?>" class="card-img-top lazy"><div class="card-body">                            <h6 class="product-title"><?php if(strlen($products[$tproduct]['title'])>9){
                                     echo substr($products[$tproduct]['title'],0,9).'...';
                                     }else {
                                     echo $products[$tproduct]['title'];
