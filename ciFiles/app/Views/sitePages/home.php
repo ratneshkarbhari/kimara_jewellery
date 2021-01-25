@@ -182,7 +182,7 @@
                             <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab" style="padding-top: 3%;">
                                 <div class="row" syyle="margin-top: 3%;">
                                     
-                                    <?php $productsReverse = array_reverse($products); $counter = 0; foreach ($productsReverse as $product) : if($counter!=5): ?>
+                                    <?php $productsReverse = array_reverse($products); $counter = 0; foreach ($productsReverse as $product) : if($counter<5): ?>
 
                                         <div class="col-lg-3 col-md-6-sm-6 text-center custom-half-grid" style="margin-bottom: 2%; padding: 5px;"> <a href="<?php echo site_url('product/'.$product['slug']); ?>"><div class="card"> <img src="<?php echo site_url('preloader.gif'); ?>" data-src="<?php echo site_url('assets/images/featured_image_product/'.$product['featured_image']); ?>" class="card-img-top lazy"><div class="card-body">                            <h6 class="product-title"><?php if(strlen($product['title'])>9){
                                         echo substr($product['title'],0,9).'...';
@@ -190,7 +190,7 @@
                                         echo $product['title'];
                                         } ?></h6><span class="larger-price-card"> ₹ <?php echo $product['sale_price']; ?></span> | <del><span class="smaller-price-card"> ₹ <?php echo $product['price']; ?></span></del> <br><br><button class="btn btn-primary">BUY NOW</button></div></div> </a></div>
 
-                                    <?php endif; endforeach ?>
+                                    <?php endif;  endforeach; $counter++; ?>
                                 
                                 </div>
                             </div>
