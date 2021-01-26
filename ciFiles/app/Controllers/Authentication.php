@@ -656,7 +656,7 @@ class Authentication extends BaseController
             
             $session = session();
 
-            
+            $session->set('approved', 'no');
 
             if ($updated) {
                 return redirect()->to(site_url('vendor-dashboard')); 
