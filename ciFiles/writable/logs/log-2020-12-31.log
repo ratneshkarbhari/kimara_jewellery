@@ -1,0 +1,18 @@
+CRITICAL - 2020-12-31 08:53:47 --> Class 'App\Controllers\AuthModel' not found
+#0 /home2/kimaa3l6/public_html/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Coupons->add()
+#1 /home2/kimaa3l6/public_html/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Coupons))
+#2 /home2/kimaa3l6/public_html/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /home2/kimaa3l6/public_html/index.php(46): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-12-31 08:53:54 --> Class 'App\Controllers\AuthModel' not found
+#0 /home2/kimaa3l6/public_html/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Coupons->add()
+#1 /home2/kimaa3l6/public_html/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Coupons))
+#2 /home2/kimaa3l6/public_html/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /home2/kimaa3l6/public_html/index.php(46): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-12-31 08:54:24 --> Class 'App\Controllers\AuthModel' not found
+#0 /home2/kimaa3l6/public_html/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Coupons->add()
+#1 /home2/kimaa3l6/public_html/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Coupons))
+#2 /home2/kimaa3l6/public_html/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /home2/kimaa3l6/public_html/index.php(46): CodeIgniter\CodeIgniter->run()
+#4 {main}

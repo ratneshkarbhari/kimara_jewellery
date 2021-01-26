@@ -1,0 +1,16 @@
+CRITICAL - 2021-01-26 05:53:07 --> The original file is not a valid file.
+#0 /home2/kimaa3l6/public_html/ciFiles/vendor/codeigniter4/framework/system/HTTP/Files/UploadedFile.php(172): CodeIgniter\HTTP\Exceptions\HTTPException::forInvalidFile()
+#1 /home2/kimaa3l6/public_html/ciFiles/app/Controllers/Authentication.php(538): CodeIgniter\HTTP\Files\UploadedFile->move('assets/vendor_d...', '1611661987_1861...')
+#2 /home2/kimaa3l6/public_html/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Authentication->submit_vendor_for_approval()
+#3 /home2/kimaa3l6/public_html/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Authentication))
+#4 /home2/kimaa3l6/public_html/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /home2/kimaa3l6/public_html/index.php(46): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2021-01-26 05:56:47 --> The original file is not a valid file.
+#0 /home2/kimaa3l6/public_html/ciFiles/vendor/codeigniter4/framework/system/HTTP/Files/UploadedFile.php(172): CodeIgniter\HTTP\Exceptions\HTTPException::forInvalidFile()
+#1 /home2/kimaa3l6/public_html/ciFiles/app/Controllers/Authentication.php(548): CodeIgniter\HTTP\Files\UploadedFile->move('assets/vendor_d...', '1611662207_68ad...')
+#2 /home2/kimaa3l6/public_html/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Authentication->submit_vendor_for_approval()
+#3 /home2/kimaa3l6/public_html/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Authentication))
+#4 /home2/kimaa3l6/public_html/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /home2/kimaa3l6/public_html/index.php(46): CodeIgniter\CodeIgniter->run()
+#6 {main}
