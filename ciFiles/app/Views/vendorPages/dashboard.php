@@ -35,7 +35,7 @@
                 
                 </div>
                 <div class="col-lg-4 col-md-6 col-sm-12">
-                    <a href="<?php echo site_url('manage-products-vendor'); ?>">
+                    <a href="<?php echo site_url('update-store-products'); ?>">
                         <div class="card custom-card-dashboard">
                         
                             Products
@@ -46,7 +46,7 @@
                 </div>
                 <div class="col-lg-12 col-md-12 col-sm-12">
                 
-                    <a href="<?php echo site_url('manage-sales'); ?>">
+                    <a href="<?php echo site_url('vendor-sales'); ?>">
                         <div class="card custom-card-dashboard">
                         
                             Sales
