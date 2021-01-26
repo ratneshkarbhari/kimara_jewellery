@@ -33,7 +33,7 @@
                             } else {
                                 $.ajax({
                                     type: "POST",
-                                    url: "<?php echo site_url('get-email-verif-code'); ?>",
+                                    url: "<?php echo site_url('get-email-verif-code-vendor'); ?>",
                                     data: {
                                         'emailEntered' : enteredEmail
                                     },

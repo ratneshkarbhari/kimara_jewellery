@@ -116,6 +116,7 @@ $routes->post('user-login-exe','Authentication::login');
 $routes->post('customer-login-exe','Authentication::customer_login');
 $routes->get('logout','Authentication::logout');
 $routes->post('get-email-verif-code','Authentication::get_email_verif_code');
+$routes->post('get-email-verif-code-vendor','Authentication::get_email_verif_code_vendor');
 $routes->post('verify-email-exe','Authentication::verify_email_exe');
 $routes->post('create-customer-account-exe','Authentication::create_customer_account');
 $routes->post('get-email-verif-code-pw-reset','Authentication::get_email_verif_code_pw_reset');

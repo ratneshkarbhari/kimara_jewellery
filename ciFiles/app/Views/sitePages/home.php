@@ -190,7 +190,7 @@
                                         echo $product['title'];
                                         } ?></h6><span class="larger-price-card"> ₹ <?php echo $product['sale_price']; ?></span> | <del><span class="smaller-price-card"> ₹ <?php echo $product['price']; ?></span></del> <br><br><button class="btn btn-primary">BUY NOW</button></div></div> </a></div>
 
-                                    <?php endif;  endforeach; $counter++; ?>
+                                    <?php endif; $counter++;   endforeach; ?>
                                 
                                 </div>
                             </div>
