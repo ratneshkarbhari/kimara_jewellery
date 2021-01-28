@@ -808,7 +808,7 @@ class PublicPageLoader extends BaseController
 	public function universal_product_search(){
 		$query = $this->request->getPost('universal-search');
 		$productModel = new ProductModel();
-		$products = $productModel->like('title',$query)->findAll();
+		$products = $productModel->like('title',$query)->orlike('sku',$query)->findAll();
 		$data['products'] = $products;
 		$cache = \Config\Services::cache();
 		if(!$cache->get('categories')){
