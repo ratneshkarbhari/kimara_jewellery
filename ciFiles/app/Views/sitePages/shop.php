@@ -48,9 +48,7 @@
                             var selected_categories = [];
                             $("input.filter-category:checked").each(function(i){
                                 selected_categories[i] = $(this).val();
-                                });
-                                console.log(max_price);
-                                console.log(selected_categories);
+                            });
                             $.ajax({
                                 type: "POST",
                                 url: "<?php echo site_url('filter-endpoint'); ?>",
