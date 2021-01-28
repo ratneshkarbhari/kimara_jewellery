@@ -16,14 +16,41 @@
                             $("div#sidenavMobileCloser").css('display','block');
                             $("div#sidenavMobileProductFilter").css('display','block');
                         });
+                        $(".price-slider").change(function (e) { 
+                            e.preventDefault();
+                            console.log($(this).val());
+                            $("span#max-price-display").html('₹ '+$(this).val());
+                        });
+                        $("input.filter-trigger").change(function (e) { 
+                            e.preventDefault();
+                            $("div#productsBox").html('Fetching Products for filter');
+                            let max_price = $("input#max_price").val();
+                            var selected_categories = [];
+                            $("input.filter-category:checked").each(function(i){
+                                selected_categories[i] = $(this).val();
+                                });
+                                console.log(selected_categories);
+                            $.ajax({
+                                type: "POST",
+                                url: "<?php echo site_url('filter-endpoint'); ?>",
+                                data: {
+                                    'max_price' : max_price,
+                                    'selected_categories' : selected_categories
+                                },
+                                success: function (response) {
+                                    $("div#productsBox").html(response);
+                                }
+                            });
+                        });
                     </script>
+                    
                 </div>
                 <div id="sidenavMobileProductFilter" style="padding: 5%;">
                     <h5>by price</h5>
 
                     <div class="form-group">
                         <label for="max_price">Max Price:  <span id="max-price-display"></span></label><br>
-                        <input style="width: 80%; margin: 0 auto;" filter-type="max_price" type="range" name="max_price" min="0" max="10000" class="price-slider filter-trigger" id="max_price" filter-type="max_price" name="max_price" class="from-control">
+                        <input style="width: 80%; margin: 0 auto;" min="0" max="10000" value="5000" type="range" class="slider-trigger from-control" id="max_price">
                     </div>
 
 
@@ -45,8 +72,8 @@
                     <h5>by price</h5>
 
                     <div class="form-group">
-                        <label for="max_price">Max Price:  <span id="max-price-display"></span></label><br>
-                        <input style="width: 90%;" filter-type="max_price" type="range" name="max_price" min="0" max="30000" class="price-slider filter-trigger" id="max_price" filter-type="max_price" name="max_price" class="from-control">
+                        <label for="max_price">Max Price: <span id="max-price-display"> ₹ 5000 </span></label><br>
+                        <input style="width: 90%;"  type="range" value="5000" min="0" max="10000" class="price-slider filter-trigger" id="max_price_desktop"   class="from-control">
                     </div>
 
 
@@ -129,20 +156,14 @@
 }
 </style>
 <script>
-$(".price-slider").change(function (e) { 
+$("input.filter-trigger").on('change input',function (e) { 
     e.preventDefault();
-    console.log($(this).val());
-    $("span#max-price-display").html('₹ '+$(this).val());
-});
-$("input.filter-trigger").change(function (e) { 
-    e.preventDefault();
-    $("div#productsBox").html('Fetching Products for filter');
-    let max_price = $("input#max_price").val();
-    var selected_categories = [];
+    let max_price = $("input#max_price_desktop").val();
+    $("span#max-price-display").html('₹ '+max_price);
+    let selected_categories = [];
     $("input.filter-category:checked").each(function(i){
         selected_categories[i] = $(this).val();
-        });
-        console.log(selected_categories);
+    });
     $.ajax({
         type: "POST",
         url: "<?php echo site_url('filter-endpoint'); ?>",
@@ -155,6 +176,8 @@ $("input.filter-trigger").change(function (e) {
         }
     });
 });
+
+
 
 let offset = 8;
 $("button#loadMoreProducts").click(function(){
