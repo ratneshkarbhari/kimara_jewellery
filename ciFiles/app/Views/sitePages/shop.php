@@ -9,6 +9,27 @@
                 <div id="sideNavFilterBox" class="d-lg-none d-sm-block d-md-block">
                     <button type="button" id="openSidenavFilter" class="btn btn-block" style="background-color: black; color: white;">Filter Products</button>
                     <br><br>
+                    
+                    
+                </div>
+                <div id="sidenavMobileProductFilter" style="padding: 5%;">
+                    <h5>by price</h5>
+
+                    <div class="form-group">
+                        <label for="max_price">Max Price:  <span id="max-price-display"></span></label><br>
+                        <input style="width: 80%; margin: 0 auto;" min="0" max="10000" value="5000" type="range" class="slider-trigger from-control price-slider filter-trigger-mobile" id="max_price_mobile">
+                    </div>
+
+
+                    <h5>by categories</h5>
+                    <?php foreach($categories as $category): ?>
+                        <div class="form-check">
+                            <input class="form-check-input filter-trigger-mobile filter-category" filter-type="category" type="checkbox" value="<?php echo $category['id']; ?>" id="category-<?php echo $category['id']; ?>">
+                            <label class="form-check-label" for="category-<?php echo $category['id']; ?>">
+                                <?php echo $category['title']; ?>
+                            </label>
+                        </div>
+                    <?php endforeach; ?>
                     <script>
                         $("button#openSidenavFilter").click(function (e) { 
                             e.preventDefault();
@@ -18,17 +39,17 @@
                         });
                         $(".price-slider").change(function (e) { 
                             e.preventDefault();
-                            console.log($(this).val());
                             $("span#max-price-display").html('₹ '+$(this).val());
                         });
-                        $("input.filter-trigger").change(function (e) { 
+                        $(".filter-trigger-mobile").on("change input",function (e) { 
                             e.preventDefault();
                             $("div#productsBox").html('Fetching Products for filter');
-                            let max_price = $("input#max_price").val();
+                            let max_price = $("input#max_price_mobile").val();
                             var selected_categories = [];
                             $("input.filter-category:checked").each(function(i){
                                 selected_categories[i] = $(this).val();
                                 });
+                                console.log(max_price);
                                 console.log(selected_categories);
                             $.ajax({
                                 type: "POST",
@@ -43,26 +64,6 @@
                             });
                         });
                     </script>
-                    
-                </div>
-                <div id="sidenavMobileProductFilter" style="padding: 5%;">
-                    <h5>by price</h5>
-
-                    <div class="form-group">
-                        <label for="max_price">Max Price:  <span id="max-price-display"></span></label><br>
-                        <input style="width: 80%; margin: 0 auto;" min="0" max="10000" value="5000" type="range" class="slider-trigger from-control" id="max_price">
-                    </div>
-
-
-                    <h5>by categories</h5>
-                    <?php foreach($categories as $category): ?>
-                        <div class="form-check">
-                            <input class="form-check-input filter-trigger filter-category" filter-type="category" type="checkbox" value="<?php echo $category['id']; ?>" id="category-<?php echo $category['id']; ?>">
-                            <label class="form-check-label" for="category-<?php echo $category['id']; ?>">
-                                <?php echo $category['title']; ?>
-                            </label>
-                        </div>
-                    <?php endforeach; ?>
                 </div>
 
 
