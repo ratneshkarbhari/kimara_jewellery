@@ -160,7 +160,8 @@ class PublicPageLoader extends BaseController
 				$allcategories = $cache->get('categories');
 			}			
 			
-			$selected_categories = $allcategories;$catIdsArray = array();
+			$selected_categories = $allcategories;
+			$catIdsArray = array();
 
 			foreach ($selected_categories as $selCat) {
 				$catIdsArray[] = $selCat['id'];
