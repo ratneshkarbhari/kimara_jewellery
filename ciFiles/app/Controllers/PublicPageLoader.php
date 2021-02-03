@@ -122,6 +122,56 @@ class PublicPageLoader extends BaseController
 
 		return $finalReturn;
 		
+	}
+	public function load_twelve_more_products_vendor(){
+        $offset = $this->request->getPost('offset');
+		$store_product_ids = json_decode($this->request->getPost("product_ids"),TRUE);
+		$productModel = new ProductModel();
+        $fetchedProducts = $productModel->findAll(8,$offset);
+		$finalReturn = '';
+		
+        if(count($fetchedProducts)>0){
+            foreach ($fetchedProducts as $rmpc) {
+				if(is_array($store_product_ids)){ 
+					if(in_array($rmpc["id"],$store_product_ids)){
+						$bg_color = "blue";
+						$text_color = "white";
+						$selected = "selected";
+					}else {
+						$bg_color = "white";
+						$text_color = "black";
+						$selected = "";
+					}
+				} 
+                $finalReturn.='<div class="col-lg-3 col-md-6-sm-12" style="margin-bottom: 5%; padding: 5px;" >
+                        
+
+					<div class="card add-to-store '.$selected.'" style="background-color: '.$bg_color.'; color: '.$text_color.'" pid="'.$rmpc["id"].'" cid="'.$rmpc["category"].'">
+						<img src="'.site_url('assets/images/preloader.gif').'" data-src="'.site_url("assets/images/featured_image_product/".$rmpc['featured_image']).'" class="card-img-top lazy">
+					
+						<div class="card-body">
+						
+						<h6 class="product-title" style="'.$text_color.' !important;" >'.$rmpc["title"].'</h6>
+						
+						<br>
+						<p>SKU : '.$rmpc["sku"].'</p>
+						<br>
+
+						<span class="larger-price-card"> ₹ '.$rmpc["sale_price"].'</span> | <del><span class="smaller-price-card"> ₹ '.$rmpc["price"].'</span></del>
+												
+							<br>
+
+						</div>
+	
+					</div>
+				
+	
+			</div>';
+            }
+        }
+
+		return $finalReturn;
+		
     }
 
 
@@ -205,6 +255,113 @@ class PublicPageLoader extends BaseController
 
 				</div>
 			</a>
+
+		</div>';
+		}
+		
+		if ($finalReturnJson!='') {
+			return $finalReturnJson;
+		}else {
+			return 'No Products match your filters';
+		}
+
+	}
+	public function filter_endpoint_x(){
+	
+
+
+		$max_price = $this->request->getPost("max_price");
+		$selected_categories = $this->request->getPost("selected_categories");
+
+		$cache = \Config\Services::cache();
+
+
+		if(!$cache->get('products')){
+			$productModel = new ProductModel();
+			$productsFetched = $productModel->findAll();	
+			$cache->save('products',$productsFetched,24*60*60);
+			$allProducts = $cache->get('products');
+		}else {
+			$allProducts = $cache->get('products');
+		}
+
+
+
+		$results_max_price_n_cat = array();
+
+
+		if (!is_array($selected_categories)) {
+
+			if(!$cache->get('categories')){
+				$productModel = new ProductModel();
+				$categoriesFetched = $productModel->findAll();	
+				$cache->save('categories',$categoriesFetched,24*60*60);
+				$allcategories = $cache->get('categories');
+			}else {
+				$allcategories = $cache->get('categories');
+			}			
+			
+			$selected_categories = $allcategories;
+			$catIdsArray = array();
+
+			foreach ($selected_categories as $selCat) {
+				$catIdsArray[] = $selCat['id'];
+			}
+
+			$selected_categories = $catIdsArray;
+
+
+
+		}
+
+		
+
+
+
+		foreach ($allProducts as $rmp ) {
+			if ((in_array($rmp['category'],$selected_categories))&&$rmp['sale_price']<=$max_price) {
+				$results_max_price_n_cat[] = $rmp;
+			}
+		}
+
+		$finalReturnJson = '';
+
+		$store_product_ids = json_decode($this->request->getPost("store_product_ids"),TRUE);
+
+		foreach ($results_max_price_n_cat as $rmpc) {
+			if(is_array($store_product_ids)){ 
+				if(in_array($rmpc["id"],$store_product_ids)){
+					$bg_color = "blue";
+					$text_color = "white";
+					$selected = "selected";
+				}else {
+					$bg_color = "white";
+					$text_color = "black";
+					$selected = "";
+				}
+			} 
+			$finalReturnJson.='<div class="col-lg-3 col-md-6-sm-12" style="margin-bottom: 5%; padding: 5px;" >
+					
+
+				<div class="card add-to-store '.$selected.'" style="background-color: '.$bg_color.'; color: '.$text_color.'" pid="'.$rmpc["id"].'" cid="'.$rmpc["category"].'">
+					<img src="'.site_url('assets/images/preloader.gif').'" data-src="'.site_url("assets/images/featured_image_product/".$rmpc['featured_image']).'" class="card-img-top lazy">
+				
+					<div class="card-body">
+					
+					<h6 class="product-title" style="'.$text_color.' !important;" >'.$rmpc["title"].'</h6>
+					
+					<br>
+					<p>SKU : '.$rmpc["sku"].'</p>
+					<br>
+
+					<span class="larger-price-card"> ₹ '.$rmpc["sale_price"].'</span> | <del><span class="smaller-price-card"> ₹ '.$rmpc["price"].'</span></del>
+											
+						<br>
+
+					</div>
+
+				</div>
+			
 
 		</div>';
 		}

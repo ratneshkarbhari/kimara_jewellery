@@ -109,39 +109,88 @@ class Stores extends BaseController
     }
 
     public function update_products_exe(){
-        $session = session();
 
-		$role = $session->get('role');
-
-		if($role!='vendor'){
-			return redirect()->to(site_url('vendor-login')); 
-        }
+    
+        $product_id = $this->request->getPost("product_id");
+        $category_id = $this->request->getPost("category_id");
+        $store_id = $this->request->getPost("store_id");
 
         $storeModel = new StoreModel();
-    
-        $store_id = $this->request->getPost("store_id");
+
         $storeData = $storeModel->find($store_id);
 
-        $productsToBeAddedArray = $this->request->getPost("selected_products");
-        $categoryIdsStore = array();
-        $productModel = new ProductModel();
-        foreach ($productsToBeAddedArray as $pid) {
-            $pdata = $productModel->find($pid);
-            if(!in_array($pid,$categoryIdsStore)){
-                $categoryIdsStore[] = $pdata['category'];
-            }
+        $storeProducts = json_decode($storeData["product_ids"],TRUE);
+
+        $storeCategories = json_decode($storeData["category_ids"],TRUE);
+
+        if(is_array($storeProducts)){
+            if(!in_array($product_id,$storeProducts)){
+                $storeProducts[] = $product_id;
+                $storeData["product_ids"] = json_encode($storeProducts);
+                if(is_array($storeCategories)){
+                    if(!in_array($category_id,$storeCategories)){
+                        $storeCategories[] = $category_id;
+                        $storeData["category_ids"] = json_encode($storeCategories);
+                    }
+                }else {
+                    $storeCategories = array();
+                    if(!in_array($category_id,$storeCategories)){
+                        $storeCategories[] = $category_id;
+                        $storeData["category_ids"] = json_encode($storeCategories);
+                    }
+                }
+            }            
+        }else {
+            $storeProducts = array();
+            if(!in_array($product_id,$storeProducts)){
+                $storeProducts[] = $product_id;
+                $storeData["product_ids"] = json_encode($storeProducts);
+                if(is_array($storeCategories)){
+                    if(!in_array($category_id,$storeCategories)){
+                        $storeCategories[] = $category_id;
+                        $storeData["category_ids"] = json_encode($storeCategories);
+                    }
+                }else {
+                    $storeCategories = array();
+                    if(!in_array($category_id,$storeCategories)){
+                        $storeCategories[] = $category_id;
+                        $storeData["category_ids"] = json_encode ($storeCategories);
+                    }
+                }
+            }      
         }
 
-        $categoryIdsStore = array_unique($categoryIdsStore);
+        $storeModel->update($store_id,$storeData);
 
-        $productsToBeAddedJson = json_encode($productsToBeAddedArray);
+        exit("Done");
 
-        $storeData['category_ids'] = json_encode($categoryIdsStore);
-        $storeData['product_ids'] = $productsToBeAddedJson;
+    }
+    public function remove_products_exe(){
 
-        $updated = $storeModel->update($storeData["id"],$storeData);
     
-        return redirect()->to(site_url('vendor-dashboard')); 
+        $product_id = $this->request->getPost("product_id");
+        $store_id = $this->request->getPost("store_id");
+
+        $storeModel = new StoreModel();
+
+        $storeData = $storeModel->find($store_id);
+
+        $storeProducts = json_decode($storeData["product_ids"],TRUE);
+
+
+        $key = array_search($product_id,$storeProducts);
+
+        unset($storeProducts[$key]);
+       
+        array_values($storeProducts);
+
+        $stprojson = json_encode($storeProducts);
+
+        $storeData["product_ids"] = $stprojson;
+
+        $storeModel->update($store_id,$storeData);
+
+        exit("done");
 
     }
 

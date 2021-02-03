@@ -1,0 +1,57 @@
+CRITICAL - 2021-01-29 01:32:37 --> Undefined variable: products
+#0 /var/www/html/kimaara/ciFiles/app/Views/vendorPages/manage_store_products.php(26): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/View/View.php(246): include('/var/www/html/k...')
+#2 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/Common.php(1119): CodeIgniter\View\View->render()
+#3 /var/www/html/kimaara/ciFiles/app/Controllers/VendorPageLoader.php(16): view()
+#4 /var/www/html/kimaara/ciFiles/app/Controllers/VendorPageLoader.php(93): App\Controllers\VendorPageLoader->vendor_page_loader()
+#5 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\VendorPageLoader->update_store_products()
+#6 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#7 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#8 /var/www/html/kimaara/index.php(46): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2021-01-29 01:33:03 --> Undefined variable: products
+#0 /var/www/html/kimaara/ciFiles/app/Views/vendorPages/manage_store_products.php(26): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/View/View.php(246): include('/var/www/html/k...')
+#2 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/Common.php(1119): CodeIgniter\View\View->render()
+#3 /var/www/html/kimaara/ciFiles/app/Controllers/VendorPageLoader.php(16): view()
+#4 /var/www/html/kimaara/ciFiles/app/Controllers/VendorPageLoader.php(93): App\Controllers\VendorPageLoader->vendor_page_loader()
+#5 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\VendorPageLoader->update_store_products()
+#6 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#7 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#8 /var/www/html/kimaara/index.php(46): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2021-01-29 02:07:29 --> Class 'App\Controllers\CategoryModel' not found
+#0 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\VendorPageLoader->add_products_to_store_cat()
+#1 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#2 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#3 /var/www/html/kimaara/index.php(46): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2021-01-29 02:08:07 --> Undefined variable: store
+#0 /var/www/html/kimaara/ciFiles/app/Views/vendorPages/add_category_products_to_store.php(23): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/View/View.php(246): include('/var/www/html/k...')
+#2 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/Common.php(1119): CodeIgniter\View\View->render()
+#3 /var/www/html/kimaara/ciFiles/app/Controllers/VendorPageLoader.php(17): view()
+#4 /var/www/html/kimaara/ciFiles/app/Controllers/VendorPageLoader.php(119): App\Controllers\VendorPageLoader->vendor_page_loader()
+#5 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\VendorPageLoader->add_products_to_store_cat()
+#6 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#7 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#8 /var/www/html/kimaara/index.php(46): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2021-01-29 02:11:08 --> Undefined variable: store_product_ids
+#0 /var/www/html/kimaara/ciFiles/app/Views/vendorPages/add_category_products_to_store.php(35): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/View/View.php(246): include('/var/www/html/k...')
+#2 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/Common.php(1119): CodeIgniter\View\View->render()
+#3 /var/www/html/kimaara/ciFiles/app/Controllers/VendorPageLoader.php(17): view()
+#4 /var/www/html/kimaara/ciFiles/app/Controllers/VendorPageLoader.php(119): App\Controllers\VendorPageLoader->vendor_page_loader()
+#5 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\VendorPageLoader->add_products_to_store_cat()
+#6 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#7 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#8 /var/www/html/kimaara/index.php(46): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2021-01-29 02:14:17 --> Undefined index: store_product_ids
+#0 /var/www/html/kimaara/ciFiles/app/Controllers/VendorPageLoader.php(121): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\VendorPageLoader->add_products_to_store_cat()
+#2 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#3 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#4 /var/www/html/kimaara/index.php(46): CodeIgniter\CodeIgniter->run()
+#5 {main}

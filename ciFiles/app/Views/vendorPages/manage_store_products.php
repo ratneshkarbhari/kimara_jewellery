@@ -4,35 +4,37 @@
     
         <h2 class="page-title"><?php echo $title; ?></h2>
 
-        <form action="<?php echo site_url("product-search-to-add-to-store"); ?>" method="post">
+        <h5>by price</h5>
 
-            <div class="form-group">
-                <label for="product-search">
-                    Search for Product name you want
-                </label>
-                <input type="search" style="border: 1px solid black !important;" name="search-query" id="search-query" class="form-control">
-                <br>
-                <button type="submit" class="btn btn-primary">Search </button>
-            </div>
+                    <div class="form-group">
+                        <label for="max_price_desktop">Max Price:  <span id="max-price-display"></span></label><br>
+                        <input style="width: 80%; margin: 0 auto;" min="0" max="10000" value="5000" type="range" class="slider-trigger from-control price-slider filter-trigger" id="max_price_desktop">
+                    </div>
+
+
+                    <h5>by categories</h5>
+                    <?php foreach($categories as $category): ?>
+                        <div class="form-check d-inline">
+                            <input class="form-check-input filter-trigger filter-category" filter-type="category" type="checkbox" value="<?php echo $category['id']; ?>" id="category-<?php echo $category['id']; ?>">
+                            <label class="form-check-label" for="category-<?php echo $category['id']; ?>">
+                                <?php echo $category['title']; ?>
+                            </label>
+                        </div>
+                    <?php endforeach; ?>
         
-        </form>
 
-        <form action="<?php echo site_url("add-products-to-store-exe"); ?>" enctype="multipart/form-data" method="post">
-
-            <button type="submit" style="position: fixed; bottom: 5%; right: 2.5%; z-index: 500;" class="btn btn-success">Save</button>
-            <input type="hidden" name="store_id" value="<?php echo $store["id"]; ?>">
-            <div id="productsBox" class="row" >
-            
+        <br><br>    
+        <div class="row" id="productsBox">
+            <div id="productsBox" class="row">
                 <?php foreach($products as $product): ?>
-                <div class="col-lg-3 col-md-12 col-sm-12">
+                <div class="col-lg-3 col-md-12 col-sm-12" >
                     
-                    <div class="card" style="margin-bottom: 5%;">
+                    <div class="card add-to-store <?php if(is_array($store_product_ids)): if(in_array($product["id"],$store_product_ids)){echo 'selected';} endif; ?>" style="margin-bottom: 5%; <?php if(is_array($store_product_ids)): if(in_array($product["id"],$store_product_ids)){echo 'background-color: blue; color: white;';} endif; ?>" pid="<?php echo $product["id"]; ?>" cid="<?php echo $product["category"]; ?>">
                             <label for="<?php echo $product["slug"]; ?>">
                             <img src="<?php echo site_url("assets/images/featured_image_product/".$product["featured_image"]); ?>" style="width:100%;"></label>
                         <div class="card-body">
 
                             <h4><?php echo $product["title"]; ?></h4>
-                            <input type="checkbox" name="selected_products[]" id="<?php echo $product["slug"]; ?>" value="<?php echo $product["id"]; ?>" <?php if(is_array($store_product_ids)): if(in_array($product["id"],$store_product_ids)){echo 'checked';} endif; ?>> Select
                             <br>
                             <p>SKU : <?php if (isset($product["sku"])) {
                                 echo $product["sku"];
@@ -44,7 +46,7 @@
                 </div>
                 <?php endforeach; ?>
             </div>
-        </form>
+        </div>
         <div class="text-center">
             <button type="button" id="loadMoreProducts" class="btn btn-primary">Load More Products</button>
         </div>
@@ -56,9 +58,10 @@ let offset = 8;
 $("button#loadMoreProducts").click(function(){
     $.ajax({
         type: "POST",
-        url: "<?php echo site_url('load-twelve-more-products') ?>",
+        url: "<?php echo site_url('load-twelve-more-products-vendor') ?>",
         data: {
-            'offset' : offset
+            'offset' : offset,
+            'product_ids' : '<?php echo json_encode($store_product_ids); ?>'
         },
         success: function (response) {
             $("div#productsBox").append(response);
@@ -67,4 +70,80 @@ $("button#loadMoreProducts").click(function(){
         }
     });
 });
+$(document).on("click",".add-to-store",function (e) {
+    e.preventDefault();
+    if(!($(this).hasClass("selected"))){
+        $(this).css("background-color","blue");
+        $(this).css("color","white");
+        $(this).addClass("selected");
+        let product_id = $(this).attr("pid");
+        let category_id = $(this).attr("cid");
+        $.ajax({
+            type: "POST",
+            url: "<?php echo site_url("add-products-to-store-exe") ?>",
+            data: {
+                "product_id" : product_id,
+                'category_id' : category_id,
+                "store_product_ids" : '<?php echo json_encode($store_product_ids); ?>',
+                'store_id' : '<?php echo $store["id"]; ?>'
+            },
+            success: function (response) {
+                console.log(response);                
+            }
+        });
+    }else{
+        $(this).css("background-color","white");
+        $(this).css("color","black");
+        $(this).removeClass("selected");  
+        let product_id = $(this).attr("pid");
+        let category_id = $(this).attr("cid");
+        $.ajax({
+            type: "POST",
+            url: "<?php echo site_url("remove-products-from-store-exe") ?>",
+            data: {
+                "product_id" : product_id,
+                "store_product_ids" : '<?php echo json_encode($store_product_ids); ?>',
+                'store_id' : '<?php echo $store["id"]; ?>'
+            },
+            success: function (response) {
+                console.log(response);
+            }
+        });
+    }
+    
+});
+$(".filter-trigger").on('change',function (e) { 
+    e.preventDefault();
+    var preloaderImage = '<img src="<?php echo site_url("preloader.gif"); ?>">';
+    $("div#productsBox").html(preloaderImage);
+    let max_price = $("input#max_price_desktop").val();
+    $("span#max-price-display").html('₹ '+max_price);
+    let selected_categories = [];
+    $("input.filter-category:checked").each(function(i){
+        selected_categories[i] = $(this).val();
+    });
+    console.log(max_price);
+    console.log(selected_categories);
+    $.ajax({
+        type: "POST",
+        url: "<?php echo site_url('filter-endpoint-x'); ?>",
+        data: {
+            "store_product_ids" : '<?php echo json_encode($store_product_ids); ?>',
+            'store_id' : '<?php echo $store["id"]; ?>',
+            'max_price' : max_price,
+            'selected_categories' : selected_categories
+        },
+        success: function (response) {
+            $("div#productsBox").html(response);
+            lazyLoadInstance.update();
+
+        }
+    });
+}); 
 </script>
+
+<style>
+.add-to-store{
+    cursor: pointer;
+}
+</style>

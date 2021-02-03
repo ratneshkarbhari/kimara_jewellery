@@ -3,6 +3,7 @@
 use App\Models\ProductModel;
 use App\Models\StoreModel;
 use App\Models\OrderModel;
+use App\Models\CategoryModel;
 use App\Models\CouponModel;
 
 class VendorPageLoader extends BaseController
@@ -65,6 +66,8 @@ class VendorPageLoader extends BaseController
 
         $session = session();
 
+        
+
 		$role = $session->get('role');
 
 		if($role!='vendor'){
@@ -87,6 +90,17 @@ class VendorPageLoader extends BaseController
         }else {
             $eightProducts = $cache->get('eight_products');
         }
+
+        if(!$cache->get('categories')){
+            $categoryModel = new CategoryModel();
+            $categoriesFetched = $categoryModel->findAll(8,0);	
+            $cache->save('categories',$categoriesFetched,24*60*60);
+            $categories = $cache->get('categories');
+        }else {
+            $categories = $cache->get('categories');
+        }
+
+        $data['categories'] = $categories;
 
         $data['products'] = $eightProducts;
         

@@ -43,6 +43,7 @@ $routes->get("store","VPublicPageLoader::store");
 $routes->post("vendor-store-product-search",'PublicPageLoader::search_vendor_store');
 $routes->post("filter-endpoint-vendor",'PublicPageLoader::filter_endpoint_vendor');
 $routes->post("filter-endpoint",'PublicPageLoader::filter_endpoint');
+$routes->post("filter-endpoint-x",'PublicPageLoader::filter_endpoint_x');
 $routes->get('admin-login','PublicPageLoader::admin_login');
 $routes->get('shop','PublicPageLoader::shop');
 $routes->get('about','PublicPageLoader::about');
@@ -102,7 +103,7 @@ $routes->post("update-vendor-password","Authentication::update_vendor_pwd");
 $routes->post("create-store-exe","Stores::create_exe");
 $routes->post("update-store-exe","Stores::update_exe");
 $routes->post("add-products-to-store-exe","Stores::update_products_exe");
-$routes->post("add-products-to-store-search-exe","Stores::add_products_exe");
+$routes->post("remove-products-from-store-exe","Stores::remove_products_exe");
 $routes->get("alloted-coupons","VendorPageLoader::alloted_coupons");
 $routes->post("product-search-to-add-to-store","VendorPageLoader::search_products_add_to_store");
 
@@ -137,6 +138,7 @@ $routes->post('delete-coupon','Coupons::delete');
 $routes->post('set-coupon-cookie','Coupons::set_coupon_cookie');
 $routes->post('unset-coupon-cookie','Coupons::unset_coupon_cookie');
 $routes->post('load-twelve-more-products','PublicPageLoader::load_twelve_more_products');
+$routes->post('load-twelve-more-products-vendor','PublicPageLoader::load_twelve_more_products_vendor');
 
 // Admin Dashboard
 $routes->post("filter-sales-by-date","AdminPageLoader::orders_between_dates");

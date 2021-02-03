@@ -1,0 +1,184 @@
+CRITICAL - 2021-02-03 00:53:53 --> Undefined variable: store_id
+#0 /var/www/html/kimaara/ciFiles/app/Controllers/Stores.php(129): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Stores->update_products_exe()
+#2 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#3 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#4 /var/www/html/kimaara/index.php(46): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-02-03 00:53:55 --> Undefined variable: store_id
+#0 /var/www/html/kimaara/ciFiles/app/Controllers/Stores.php(129): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Stores->update_products_exe()
+#2 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#3 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#4 /var/www/html/kimaara/index.php(46): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-02-03 00:54:32 --> Undefined variable: store_id
+#0 /var/www/html/kimaara/ciFiles/app/Controllers/Stores.php(129): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Stores->update_products_exe()
+#2 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#3 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#4 /var/www/html/kimaara/index.php(46): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-02-03 00:55:34 --> in_array() expects parameter 2 to be array, null given
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/kimaara/ciFiles/app/Controllers/Stores.php(118): in_array()
+#2 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Stores->update_products_exe()
+#3 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#4 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#5 /var/www/html/kimaara/index.php(46): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2021-02-03 00:58:17 --> Undefined variable: stored_id
+#0 /var/www/html/kimaara/ciFiles/app/Controllers/Stores.php(139): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Stores->update_products_exe()
+#2 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#3 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#4 /var/www/html/kimaara/index.php(46): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-02-03 02:58:41 --> Undefined variable: categories
+#0 /var/www/html/kimaara/ciFiles/app/Views/vendorPages/manage_store_products.php(16): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/View/View.php(246): include('/var/www/html/k...')
+#2 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/Common.php(1119): CodeIgniter\View\View->render()
+#3 /var/www/html/kimaara/ciFiles/app/Controllers/VendorPageLoader.php(16): view()
+#4 /var/www/html/kimaara/ciFiles/app/Controllers/VendorPageLoader.php(93): App\Controllers\VendorPageLoader->vendor_page_loader()
+#5 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\VendorPageLoader->update_store_products()
+#6 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#7 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#8 /var/www/html/kimaara/index.php(46): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2021-02-03 02:59:47 --> Class 'App\Controllers\CategoryModel' not found
+#0 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\VendorPageLoader->update_store_products()
+#1 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#2 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#3 /var/www/html/kimaara/index.php(46): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2021-02-03 03:00:12 --> Undefined variable: categories
+#0 /var/www/html/kimaara/ciFiles/app/Views/vendorPages/manage_store_products.php(16): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/View/View.php(246): include('/var/www/html/k...')
+#2 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/Common.php(1119): CodeIgniter\View\View->render()
+#3 /var/www/html/kimaara/ciFiles/app/Controllers/VendorPageLoader.php(17): view()
+#4 /var/www/html/kimaara/ciFiles/app/Controllers/VendorPageLoader.php(105): App\Controllers\VendorPageLoader->vendor_page_loader()
+#5 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\VendorPageLoader->update_store_products()
+#6 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#7 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#8 /var/www/html/kimaara/index.php(46): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2021-02-03 03:58:49 --> Undefined variable: store_product_ids
+#0 /var/www/html/kimaara/ciFiles/app/Controllers/PublicPageLoader.php(330): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\PublicPageLoader->filter_endpoint_x()
+#2 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#3 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#4 /var/www/html/kimaara/index.php(46): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-02-03 03:58:55 --> Undefined variable: store_product_ids
+#0 /var/www/html/kimaara/ciFiles/app/Controllers/PublicPageLoader.php(330): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\PublicPageLoader->filter_endpoint_x()
+#2 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#3 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#4 /var/www/html/kimaara/index.php(46): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-02-03 04:00:47 --> Undefined variable: store_product_ids
+#0 /var/www/html/kimaara/ciFiles/app/Controllers/PublicPageLoader.php(330): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\PublicPageLoader->filter_endpoint_x()
+#2 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#3 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#4 /var/www/html/kimaara/index.php(46): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-02-03 04:02:12 --> Undefined variable: finalReturn
+#0 /var/www/html/kimaara/ciFiles/app/Controllers/PublicPageLoader.php(357): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\PublicPageLoader->filter_endpoint_x()
+#2 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#3 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#4 /var/www/html/kimaara/index.php(46): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-02-03 04:54:07 --> unlink(15): No such file or directory
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/kimaara/ciFiles/app/Controllers/Stores.php(183): unlink()
+#2 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Stores->remove_products_exe()
+#3 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#4 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#5 /var/www/html/kimaara/index.php(46): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2021-02-03 04:58:21 --> Undefined offset: 0
+#0 /var/www/html/kimaara/ciFiles/app/Controllers/Stores.php(182): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Stores->remove_products_exe()
+#2 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#3 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#4 /var/www/html/kimaara/index.php(46): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-02-03 04:58:21 --> Undefined offset: 0
+#0 /var/www/html/kimaara/ciFiles/app/Controllers/Stores.php(182): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Stores->remove_products_exe()
+#2 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#3 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#4 /var/www/html/kimaara/index.php(46): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-02-03 04:58:22 --> Undefined offset: 0
+#0 /var/www/html/kimaara/ciFiles/app/Controllers/Stores.php(182): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Stores->remove_products_exe()
+#2 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#3 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#4 /var/www/html/kimaara/index.php(46): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-02-03 04:58:23 --> Undefined offset: 0
+#0 /var/www/html/kimaara/ciFiles/app/Controllers/Stores.php(182): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Stores->remove_products_exe()
+#2 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#3 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#4 /var/www/html/kimaara/index.php(46): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-02-03 04:58:24 --> Undefined offset: 0
+#0 /var/www/html/kimaara/ciFiles/app/Controllers/Stores.php(182): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Stores->remove_products_exe()
+#2 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#3 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#4 /var/www/html/kimaara/index.php(46): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-02-03 04:58:24 --> Undefined offset: 0
+#0 /var/www/html/kimaara/ciFiles/app/Controllers/Stores.php(182): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Stores->remove_products_exe()
+#2 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#3 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#4 /var/www/html/kimaara/index.php(46): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-02-03 04:58:25 --> Undefined offset: 0
+#0 /var/www/html/kimaara/ciFiles/app/Controllers/Stores.php(182): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Stores->remove_products_exe()
+#2 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#3 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#4 /var/www/html/kimaara/index.php(46): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-02-03 04:58:29 --> Undefined offset: 0
+#0 /var/www/html/kimaara/ciFiles/app/Controllers/Stores.php(182): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Stores->remove_products_exe()
+#2 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#3 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#4 /var/www/html/kimaara/index.php(46): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-02-03 04:58:42 --> Undefined offset: 0
+#0 /var/www/html/kimaara/ciFiles/app/Controllers/Stores.php(182): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Stores->remove_products_exe()
+#2 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#3 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#4 /var/www/html/kimaara/index.php(46): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-02-03 04:58:56 --> Undefined offset: 0
+#0 /var/www/html/kimaara/ciFiles/app/Controllers/Stores.php(182): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Stores->remove_products_exe()
+#2 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#3 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#4 /var/www/html/kimaara/index.php(46): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-02-03 05:02:55 --> Undefined offset: 0
+#0 /var/www/html/kimaara/ciFiles/app/Controllers/Stores.php(182): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Stores->remove_products_exe()
+#2 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#3 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#4 /var/www/html/kimaara/index.php(46): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-02-03 05:03:03 --> Undefined offset: 0
+#0 /var/www/html/kimaara/ciFiles/app/Controllers/Stores.php(182): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Stores->remove_products_exe()
+#2 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#3 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#4 /var/www/html/kimaara/index.php(46): CodeIgniter\CodeIgniter->run()
+#5 {main}

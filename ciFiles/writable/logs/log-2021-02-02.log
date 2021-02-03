@@ -1,0 +1,21 @@
+CRITICAL - 2021-02-02 02:34:05 --> Undefined variable: product
+#0 /var/www/html/kimaara/ciFiles/app/Controllers/PublicPageLoader.php(136): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\PublicPageLoader->load_twelve_more_products_vendor()
+#2 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#3 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#4 /var/www/html/kimaara/index.php(46): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-02-02 02:34:41 --> Undefined variable: checked
+#0 /var/www/html/kimaara/ciFiles/app/Controllers/PublicPageLoader.php(151): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\PublicPageLoader->load_twelve_more_products_vendor()
+#2 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#3 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#4 /var/www/html/kimaara/index.php(46): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-02-02 02:36:29 --> Undefined variable: product
+#0 /var/www/html/kimaara/ciFiles/app/Controllers/PublicPageLoader.php(153): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\PublicPageLoader->load_twelve_more_products_vendor()
+#2 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#3 /var/www/html/kimaara/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#4 /var/www/html/kimaara/index.php(46): CodeIgniter\CodeIgniter->run()
+#5 {main}
