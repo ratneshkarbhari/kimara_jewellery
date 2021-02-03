@@ -157,6 +157,7 @@
 <script>
 $("input.filter-trigger").on('change input',function (e) { 
     e.preventDefault();
+    $("button#loadMoreProducts").css("display","none");
     var preloaderImage = '<img src="<?php echo site_url("preloader.gif"); ?>">';
     $("div#productsBox").html(preloaderImage);
     let max_price = $("input#max_price_desktop").val();
