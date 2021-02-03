@@ -38,13 +38,14 @@ class VPublicPageLoader extends BaseController
 	}
 
 	
-	public function store(){
+	public function store($code){
 
-		$code = $_GET['store_code'];
+		// $code = $_GET['store_code'];
 
 		setcookie("store_code",$code,time()+(365*24*60*60));
 
 		$storeModel = new StoreModel();
+		
 		
 		$storeData = $storeModel->where("code",$code)->first();
 
