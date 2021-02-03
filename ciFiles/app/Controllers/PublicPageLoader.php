@@ -1047,7 +1047,7 @@ class PublicPageLoader extends BaseController
 			$data['products'] = $products_in_cat;
 
 
-			$this->public_page_loader('category_page',$data);
+			$this->public_page_loader('shop',$data);
 
 		}
 
