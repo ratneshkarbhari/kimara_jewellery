@@ -134,7 +134,7 @@ class PublicPageLoader extends BaseController
             foreach ($fetchedProducts as $rmpc) {
 				if(is_array($store_product_ids)){ 
 					if(in_array($rmpc["id"],$store_product_ids)){
-						$bg_color = "blue";
+						$bg_color = "purple";
 						$text_color = "white";
 						$selected = "selected";
 					}else {
@@ -335,7 +335,7 @@ class PublicPageLoader extends BaseController
 		foreach ($results_max_price_n_cat as $rmpc) {
 			if(is_array($store_product_ids)){ 
 				if(in_array($rmpc["id"],$store_product_ids)){
-					$bg_color = "blue";
+					$bg_color = "purple";
 					$text_color = "white";
 					$selected = "selected";
 				}else {
@@ -352,7 +352,10 @@ class PublicPageLoader extends BaseController
 				
 					<div class="card-body">
 					
-					<h6 class="product-title" style="'.$text_color.' !important;" >'.$rmpc["title"].'</h6>
+					<h4 style="color: '.$text_color.' !important;"><?php echo $product["title"]; endif; ?></h4>
+
+
+					<h6 class="product-title" style="color: '.$text_color.' !important;" >'.$rmp["title"].'</h6>
 					
 					<br>
 					<p>SKU : '.$rmpc["sku"].'</p>
@@ -425,10 +428,6 @@ class PublicPageLoader extends BaseController
 
 		$cache = \Config\Services::cache();
 
-
-
-
-
 		$results_max_price_n_cat = array();
 
 
@@ -475,10 +474,14 @@ class PublicPageLoader extends BaseController
 		}
 		
 
-		// return json_encode($selected_categories,TRUE);
+		$selected_collections = $this->request->getPost("selected_collections");
+
+		if(!(is_array($selected_collections))){
+			$selected_collections = array("best-sellers","top-rated");
+		}
 
 		foreach ($allProducts as $rmp ) {
-			if (in_array($rmp['category'],$selected_categories)&&$rmp['sale_price']<=$max_price) {
+			if (in_array($rmp['category'],$selected_categories)&&(in_array($rmp['collection'],$selected_collections))&&$rmp['sale_price']<=$max_price) {
 				$results_max_price_n_cat[] = $rmp;
 			}
 		}
@@ -954,7 +957,6 @@ class PublicPageLoader extends BaseController
 
 		$cache = \Config\Services::cache();
 
-
 		$data['title'] = 'Shop';
 
 		if(!$cache->get('eight_products')){
@@ -966,17 +968,8 @@ class PublicPageLoader extends BaseController
 			$data['products'] = $cache->get('eight_products');
 		}
 
-		if(!$cache->get('collections')){
-			$collectionModel = new CollectionModel();
-			$collectionsFetched = $collectionModel->findAll();	
-			$cache->save('collections',$collectionsFetched,24*60*60);
-			$data['collections'] = $cache->get('collections');
-		}else {
-			$data['collections'] = $cache->get('collections');
-		}
-
-
 		$this->public_page_loader('shop',$data);
+
 	}
 
 

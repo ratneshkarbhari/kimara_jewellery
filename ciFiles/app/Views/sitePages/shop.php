@@ -87,14 +87,14 @@
                     <?php endforeach; ?>
                         <br>
                     <h5>by collection</h5>
-                        <div class="form-check" style="padding-left: 0;">
-                            <input id="best-sellers" type="checkbox" class=" filter-trigger filter-collection" value="best-sellers">
-                            <label for="best-sellers">Best Sellers</label>
-                        </div>
-                        <div class="form-check" style="padding-left: 0;">
-                            <input id="top-rated" type="checkbox" class=" filter-trigger filter-collection" value="top-rated">
-                            <label for="top-rated">Top Rated</label>
-                        </div>
+                    <div class="form-check" style="padding-left: 0;">
+                        <input id="best-sellers" type="checkbox" class=" filter-trigger filter-collection" value="best-sellers">
+                        <label for="best-sellers">Best Sellers</label>
+                    </div>
+                    <div class="form-check" style="padding-left: 0;">
+                        <input id="top-rated" type="checkbox" class=" filter-trigger filter-collection" value="top-rated">
+                        <label for="top-rated">Top Rated</label>
+                    </div>
 
                 </div>
             
