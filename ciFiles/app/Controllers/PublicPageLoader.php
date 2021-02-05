@@ -224,11 +224,15 @@ class PublicPageLoader extends BaseController
 		}
 
 		
+		$selected_collections = $this->request->getPost("selected_collections");
 
+		if(!(is_array($selected_collections))){
+			$selected_collections = array("best-sellers","top-rated");
+		}
 
 
 		foreach ($allProducts as $rmp ) {
-			if ((in_array($rmp['category'],$selected_categories))&&$rmp['sale_price']<=$max_price) {
+			if ((in_array($rmp['category'],$selected_categories))&&(in_array($rmp['collection'],$selected_collections))&&$rmp['sale_price']<=$max_price) {
 				$results_max_price_n_cat[] = $rmp;
 			}
 		}
@@ -862,7 +866,11 @@ class PublicPageLoader extends BaseController
 		
 	}
 
-	public function home(){
+	public function home($code ='NA'){
+
+		if($code!='NA'){
+			return redirect()->to(site_url('store/'.$code));
+		}
 
 		$data['title'] = 'Buy Sterling Silver Jewellery Online';
 
@@ -957,6 +965,16 @@ class PublicPageLoader extends BaseController
 		}else {
 			$data['products'] = $cache->get('eight_products');
 		}
+
+		if(!$cache->get('collections')){
+			$collectionModel = new CollectionModel();
+			$collectionsFetched = $collectionModel->findAll();	
+			$cache->save('collections',$collectionsFetched,24*60*60);
+			$data['collections'] = $cache->get('collections');
+		}else {
+			$data['collections'] = $cache->get('collections');
+		}
+
 
 		$this->public_page_loader('shop',$data);
 	}

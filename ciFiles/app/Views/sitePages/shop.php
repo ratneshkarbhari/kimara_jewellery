@@ -85,7 +85,17 @@
                             </label>
                         </div>
                     <?php endforeach; ?>
-                
+                        <br>
+                    <h5>by collection</h5>
+                        <div class="form-check" style="padding-left: 0;">
+                            <input id="best-sellers" type="checkbox" class=" filter-trigger filter-collection" value="best-sellers">
+                            <label for="best-sellers">Best Sellers</label>
+                        </div>
+                        <div class="form-check" style="padding-left: 0;">
+                            <input id="top-rated" type="checkbox" class=" filter-trigger filter-collection" value="top-rated">
+                            <label for="top-rated">Top Rated</label>
+                        </div>
+
                 </div>
             
             </div>
@@ -162,16 +172,20 @@ $("input.filter-trigger").on('change input',function (e) {
     $("div#productsBox").html(preloaderImage);
     let max_price = $("input#max_price_desktop").val();
     $("span#max-price-display").html('₹ '+max_price);
-    let selected_categories = [];
+    let selected_categories = []; let selected_collections = [];
     $("input.filter-category:checked").each(function(i){
         selected_categories[i] = $(this).val();
+    });
+    $("input.filter-collection:checked").each(function(i){
+        selected_collections[i] = $(this).val();
     });
     $.ajax({
         type: "POST",
         url: "<?php echo site_url('filter-endpoint'); ?>",
         data: {
             'max_price' : max_price,
-            'selected_categories' : selected_categories
+            'selected_categories' : selected_categories,
+            'selected_collections' : selected_collections
         },
         success: function (response) {
             $("div#productsBox").html(response);

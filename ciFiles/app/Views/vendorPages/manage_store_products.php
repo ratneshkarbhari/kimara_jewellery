@@ -29,12 +29,12 @@
                 <?php foreach($products as $product): ?>
                 <div class="col-lg-3 col-md-12 col-sm-12" >
                     
-                    <div class="card add-to-store <?php if(is_array($store_product_ids)): if(in_array($product["id"],$store_product_ids)){echo 'selected';} endif; ?>" style="margin-bottom: 5%; <?php if(is_array($store_product_ids)): if(in_array($product["id"],$store_product_ids)){echo 'background-color: blue; color: white;';} endif; ?>" pid="<?php echo $product["id"]; ?>" cid="<?php echo $product["category"]; ?>">
+                    <div class="card add-to-store <?php if(is_array($store_product_ids)): if(in_array($product["id"],$store_product_ids)){echo 'selected';} endif; ?>" style="margin-bottom: 5%; <?php if(is_array($store_product_ids)): if(in_array($product["id"],$store_product_ids)){echo 'background-color: purple; color: white;';} endif; ?>" pid="<?php echo $product["id"]; ?>" cid="<?php echo $product["category"]; ?>">
                             <label for="<?php echo $product["slug"]; ?>">
                             <img src="<?php echo site_url("assets/images/featured_image_product/".$product["featured_image"]); ?>" style="width:100%;"></label>
                         <div class="card-body">
 
-                            <h4><?php echo $product["title"]; ?></h4>
+                            <h4 style="<?php if(is_array($store_product_ids)): if(in_array($product["id"],$store_product_ids)){ echo 'color: white !important;';  } ?>"><?php echo $product["title"]; endif; ?></h4>
                             <br>
                             <p>SKU : <?php if (isset($product["sku"])) {
                                 echo $product["sku"];
@@ -123,8 +123,6 @@ $(".filter-trigger").on('change',function (e) {
     $("input.filter-category:checked").each(function(i){
         selected_categories[i] = $(this).val();
     });
-    console.log(max_price);
-    console.log(selected_categories);
     $.ajax({
         type: "POST",
         url: "<?php echo site_url('filter-endpoint-x'); ?>",
