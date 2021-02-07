@@ -36,6 +36,10 @@
 
                             <h4 style="<?php if(is_array($store_product_ids)): if(in_array($product["id"],$store_product_ids)){ echo 'color: white !important;';  } ?>"><?php echo $product["title"]; endif; ?></h4>
                             <br>
+                            <p><?php if(in_array($product["id"],$store_product_ids)){
+                                echo "selected";
+                            } ?></p>
+                            <br>
                             <p>SKU : <?php if (isset($product["sku"])) {
                                 echo $product["sku"];
                             } ?></p>

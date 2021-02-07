@@ -361,6 +361,10 @@ class PublicPageLoader extends BaseController
 					<p>SKU : '.$rmpc["sku"].'</p>
 					<br>
 
+					<br>
+					<p>Selected : '.$selcted.'</p>
+					<br>
+
 					<span class="larger-price-card"> ₹ '.$rmpc["sale_price"].'</span> | <del><span class="smaller-price-card"> ₹ '.$rmpc["price"].'</span></del>
 											
 						<br>
