@@ -34,14 +34,13 @@
                             <img src="<?php echo site_url("assets/images/featured_image_product/".$product["featured_image"]); ?>" style="width:100%;"></label>
                         <div class="card-body">
 
-                            <h4 style="<?php if(is_array($store_product_ids)): if(in_array($product["id"],$store_product_ids)){ echo 'color: white !important;';  } ?>"><?php echo $product["title"]; endif; ?></h4>
-                            <br>
-                            <p><?php if(in_array($product["id"],$store_product_ids)){
-                                echo "selected";
-                            } ?></p>
+                            <h4 id="product-title-<?php echo $product["id"]; ?>" style="<?php if(is_array($store_product_ids)): if(in_array($product["id"],$store_product_ids)){ echo 'color: white !important;';  } ?>"><?php echo $product["title"]; endif; ?></h4>
                             <br>
                             <p>SKU : <?php if (isset($product["sku"])) {
                                 echo $product["sku"];
+                            } ?></p>
+                            <p id="selected-text-<?php echo $product["id"]; ?>"><?php if(in_array($product["id"],$store_product_ids)){
+                                echo "selected";
                             } ?></p>
                             <p style="margin-bottom: 6px;">₹ <?php echo $product["sale_price"]; ?> | <del>₹ <?php echo $product["price"]; ?></del></p>
                         </div>
@@ -69,7 +68,7 @@ $("button#loadMoreProducts").click(function(){
         },
         success: function (response) {
             $("div#productsBox").append(response);
-            offset = offset+8;
+            offset = offset+8; 
             lazyLoadInstance.update();
         }
     });
@@ -77,11 +76,14 @@ $("button#loadMoreProducts").click(function(){
 $(document).on("click",".add-to-store",function (e) {
     e.preventDefault();
     if(!($(this).hasClass("selected"))){
-        $(this).css("background-color","blue");
+        $(this).css("background-color","purple");
         $(this).css("color","white");
         $(this).addClass("selected");
         let product_id = $(this).attr("pid");
         let category_id = $(this).attr("cid");
+        $("h4#product-title-"+product_id).css("color","white");
+        $("p#selected-text-"+product_id).html("selected");
+        $("p#selected-text-"+product_id).css("color","white");
         $.ajax({
             type: "POST",
             url: "<?php echo site_url("add-products-to-store-exe") ?>",
@@ -92,7 +94,7 @@ $(document).on("click",".add-to-store",function (e) {
                 'store_id' : '<?php echo $store["id"]; ?>'
             },
             success: function (response) {
-                console.log(response);                
+                console.log("span#selected-text-"+product_id);                
             }
         });
     }else{
@@ -101,6 +103,9 @@ $(document).on("click",".add-to-store",function (e) {
         $(this).removeClass("selected");  
         let product_id = $(this).attr("pid");
         let category_id = $(this).attr("cid");
+        $("p#selected-text-"+product_id).html("");
+        $("h4#product-title-"+product_id).css("color","black");
+        $("p#selected-text-"+product_id).css("color","black");
         $.ajax({
             type: "POST",
             url: "<?php echo site_url("remove-products-from-store-exe") ?>",

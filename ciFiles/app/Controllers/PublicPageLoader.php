@@ -105,9 +105,18 @@ class PublicPageLoader extends BaseController
 					
 						<div class="card-body">
 						
-						<h6 class="product-title">Gems &amp; Ga...</h6>                                                                                <span class="larger-price-card"> ₹ '.$rmpc["sale_price"].'</span> | <del><span class="smaller-price-card"> ₹ '.$rmpc["price"].'</span></del>
+						<h4 class="product-title-'.$rmpc["id"].'">'.$rmpc["title"].'</h4>                                                                                <span class="larger-price-card"> ₹ '.$rmpc["sale_price"].'</span> | <del><span class="smaller-price-card"> ₹ '.$rmpc["price"].'</span></del>
+						
+							<br>
+
+							<p>SKU : '.$rmpc["sku"].'
+                            } ?></p>
+
+							<br>
+
+							<p id="select-text-'.$rmpc["id"].'"></p>
 							
-							<br><br>
+							<br>
 	
 							<button class="btn btn-primary">BUY NOW</button>
 	
@@ -151,11 +160,13 @@ class PublicPageLoader extends BaseController
 					
 						<div class="card-body">
 						
-						<h6 class="product-title" style="'.$text_color.' !important;" >'.$rmpc["title"].'</h6>
+						<h4 id="product-title-'.$rmpc["id"].'" style="color: '.$text_color.' !important;" >'.$rmpc["title"].'</h4>
 						
 						<br>
 						<p>SKU : '.$rmpc["sku"].'</p>
 						<br>
+
+						<p id="selected-text-'.$rmpc["id"].'">'.$selected.'</p>
 
 						<span class="larger-price-card"> ₹ '.$rmpc["sale_price"].'</span> | <del><span class="smaller-price-card"> ₹ '.$rmpc["price"].'</span></del>
 												
@@ -352,22 +363,18 @@ class PublicPageLoader extends BaseController
 				
 					<div class="card-body">
 					
-					<h4 style="color: '.$text_color.' !important;"><?php echo $product["title"]; endif; ?></h4>
 
 
-					<h6 class="product-title" style="color: '.$text_color.' !important;" >'.$rmp["title"].'</h6>
+					<h4 id="product-title-'.$rmpc["id"].'" class="product-title" style="color: '.$text_color.' !important;" >'.$rmpc["title"].'</h4>
 					
 					<br>
 					<p>SKU : '.$rmpc["sku"].'</p>
 					<br>
 
-					<br>
-					<p>Selected : '.$selcted.'</p>
-					<br>
+					<p id="selected-text-'.$rmpc["id"].'">'.$selected.'</p>
 
 					<span class="larger-price-card"> ₹ '.$rmpc["sale_price"].'</span> | <del><span class="smaller-price-card"> ₹ '.$rmpc["price"].'</span></del>
-											
-						<br>
+										
 
 					</div>
 

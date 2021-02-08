@@ -1,0 +1,70 @@
+CRITICAL - 2021-02-07 22:40:48 --> Undefined variable: product
+#0 /var/www/html/kimaara_local/ciFiles/app/Controllers/PublicPageLoader.php(169): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/kimaara_local/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\PublicPageLoader->load_twelve_more_products_vendor()
+#2 /var/www/html/kimaara_local/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#3 /var/www/html/kimaara_local/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#4 /var/www/html/kimaara_local/index.php(46): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-02-07 22:40:52 --> Undefined variable: product
+#0 /var/www/html/kimaara_local/ciFiles/app/Controllers/PublicPageLoader.php(169): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/kimaara_local/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\PublicPageLoader->load_twelve_more_products_vendor()
+#2 /var/www/html/kimaara_local/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#3 /var/www/html/kimaara_local/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#4 /var/www/html/kimaara_local/index.php(46): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-02-07 22:41:02 --> Undefined variable: product
+#0 /var/www/html/kimaara_local/ciFiles/app/Controllers/PublicPageLoader.php(169): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/kimaara_local/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\PublicPageLoader->load_twelve_more_products_vendor()
+#2 /var/www/html/kimaara_local/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#3 /var/www/html/kimaara_local/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#4 /var/www/html/kimaara_local/index.php(46): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-02-07 22:42:07 --> Undefined variable: product
+#0 /var/www/html/kimaara_local/ciFiles/app/Controllers/PublicPageLoader.php(169): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/kimaara_local/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\PublicPageLoader->load_twelve_more_products_vendor()
+#2 /var/www/html/kimaara_local/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#3 /var/www/html/kimaara_local/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#4 /var/www/html/kimaara_local/index.php(46): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-02-07 22:42:08 --> Undefined variable: product
+#0 /var/www/html/kimaara_local/ciFiles/app/Controllers/PublicPageLoader.php(169): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/kimaara_local/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\PublicPageLoader->load_twelve_more_products_vendor()
+#2 /var/www/html/kimaara_local/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#3 /var/www/html/kimaara_local/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#4 /var/www/html/kimaara_local/index.php(46): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-02-07 22:42:09 --> Undefined variable: product
+#0 /var/www/html/kimaara_local/ciFiles/app/Controllers/PublicPageLoader.php(169): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/kimaara_local/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\PublicPageLoader->load_twelve_more_products_vendor()
+#2 /var/www/html/kimaara_local/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#3 /var/www/html/kimaara_local/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#4 /var/www/html/kimaara_local/index.php(46): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-02-07 22:43:32 --> Undefined variable: product
+#0 /var/www/html/kimaara_local/ciFiles/app/Controllers/PublicPageLoader.php(168): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/kimaara_local/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\PublicPageLoader->load_twelve_more_products_vendor()
+#2 /var/www/html/kimaara_local/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#3 /var/www/html/kimaara_local/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#4 /var/www/html/kimaara_local/index.php(46): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-02-07 22:45:27 --> Undefined variable: see
+#0 /var/www/html/kimaara_local/ciFiles/app/Controllers/PublicPageLoader.php(169): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/kimaara_local/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\PublicPageLoader->load_twelve_more_products_vendor()
+#2 /var/www/html/kimaara_local/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#3 /var/www/html/kimaara_local/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#4 /var/www/html/kimaara_local/index.php(46): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-02-07 22:45:27 --> Undefined variable: see
+#0 /var/www/html/kimaara_local/ciFiles/app/Controllers/PublicPageLoader.php(169): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/kimaara_local/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\PublicPageLoader->load_twelve_more_products_vendor()
+#2 /var/www/html/kimaara_local/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#3 /var/www/html/kimaara_local/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#4 /var/www/html/kimaara_local/index.php(46): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-02-07 22:45:32 --> Undefined variable: see
+#0 /var/www/html/kimaara_local/ciFiles/app/Controllers/PublicPageLoader.php(169): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/kimaara_local/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\PublicPageLoader->load_twelve_more_products_vendor()
+#2 /var/www/html/kimaara_local/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#3 /var/www/html/kimaara_local/ciFiles/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#4 /var/www/html/kimaara_local/index.php(46): CodeIgniter\CodeIgniter->run()
+#5 {main}
