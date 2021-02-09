@@ -100,8 +100,13 @@ class Stores extends BaseController
 
 
             return redirect()->to(site_url('manage-store-vendor'));
+
         }else{
+        
             $updated = $storeModel->update($prevStoreData['id'],$newData);            
+       
+            return redirect()->to(site_url('manage-store-vendor'));
+            
         }
 
 

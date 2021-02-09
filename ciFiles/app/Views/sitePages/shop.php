@@ -119,11 +119,15 @@
                                 
                                     <div class="card-body">
                                     
-                                    <h6 class="product-title"><?php if(strlen($product['title'])>9){
+                                    <h4 class="product-title"><?php if(strlen($product['title'])>9){
                                         echo substr($product['title'],0,9).'...';
                                         }else {
                                         echo $product['title'];
-                                        } ?></h6>                                        <?php if($product['sale_price']!=0.00): ?>
+                                        } ?></h4>           
+                                        <p>SKU : <?php if (isset($product["sku"])) {
+                                            echo $product["sku"];
+                                        } ?></p>                             
+                                        <?php if($product['sale_price']!=0.00): ?>
                                         <span class="larger-price-card"> ₹ <?php echo $product['sale_price']; ?></span> | <del><span class="smaller-price-card"> ₹ <?php echo $product['price']; ?></span></del>
                                         <?php else: ?>
                                         <span class="smaller-price-card"> ₹ <?php echo $product['price']; ?></span>

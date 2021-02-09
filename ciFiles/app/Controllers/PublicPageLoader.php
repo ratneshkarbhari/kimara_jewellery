@@ -105,12 +105,11 @@ class PublicPageLoader extends BaseController
 					
 						<div class="card-body">
 						
-						<h4 class="product-title-'.$rmpc["id"].'">'.$rmpc["title"].'</h4>                                                                                <span class="larger-price-card"> ₹ '.$rmpc["sale_price"].'</span> | <del><span class="smaller-price-card"> ₹ '.$rmpc["price"].'</span></del>
+						<h4 class="product-title-'.$rmpc["id"].'">'.substr($rmpc["title"],0,9).'...</h4>                                                                                <span class="larger-price-card"> ₹ '.$rmpc["sale_price"].'</span> | <del><span class="smaller-price-card"> ₹ '.$rmpc["price"].'</span></del>
 						
 							<br>
 
-							<p>SKU : '.$rmpc["sku"].'
-                            } ?></p>
+							<p>SKU : '.$rmpc["sku"].'</p>
 
 							<br>
 
